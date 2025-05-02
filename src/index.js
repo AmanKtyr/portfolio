@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Import i18n
+import './i18n/i18n';
+
 // Import Google Fonts
 import WebFont from 'webfontloader';
 

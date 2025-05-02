@@ -1,0 +1,89 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "hireMe": "Hire Me"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Your Name",
+    "title": "Web Developer & Freelancer",
+    "description": "I create stunning websites for businesses and individuals looking to stand out in the digital world. With expertise in modern web technologies, I deliver high-quality solutions that help my clients achieve their goals.",
+    "hireMe": "Hire Me",
+    "viewProjects": "View Projects",
+    "scrollDown": "Scroll Down"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "heading": "I'm a Passionate Web Developer & Freelancer",
+    "paragraph1": "With over 5 years of experience in web development, I specialize in creating responsive, user-friendly websites and web applications that help businesses grow their online presence.",
+    "paragraph2": "I'm passionate about combining beautiful design with clean, efficient code to deliver exceptional user experiences. My approach is client-focused, ensuring that every project meets the unique needs and goals of the businesses I work with.",
+    "name": "Name:",
+    "email": "Email:",
+    "location": "Location:",
+    "freelance": "Freelance:",
+    "available": "Available",
+    "downloadResume": "Download Resume"
+  },
+  "skills": {
+    "title": "My Skills",
+    "subtitle": "What I can do for you",
+    "webDev": "Web Development",
+    "responsive": "Responsive Design",
+    "mobileFist": "Mobile-First",
+    "api": "API Integration"
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Recent work I've done",
+    "all": "All",
+    "web": "Web",
+    "app": "App",
+    "viewDetails": "View Details",
+    "viewAll": "View All Projects"
+  },
+  "services": {
+    "title": "My Services",
+    "subtitle": "What I offer as a freelancer",
+    "learnMore": "Learn More",
+    "hireMe": "Hire Me For Your Project"
+  },
+  "testimonials": {
+    "title": "Client Testimonials",
+    "subtitle": "What my clients say about my work"
+  },
+  "blog": {
+    "title": "Latest Articles",
+    "subtitle": "Insights and tutorials from my experience",
+    "readMore": "Read More",
+    "viewAll": "View All Articles"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Get in touch with me",
+    "getInTouch": "Get in Touch",
+    "contactDesc": "Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your vision.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "sendMessage": "Send Me a Message",
+    "yourName": "Your Name",
+    "yourEmail": "Your Email",
+    "subject": "Subject",
+    "yourMessage": "Your Message",
+    "send": "Send Message",
+    "sending": "Sending..."
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contactInfo": "Contact Info",
+    "rights": "All rights reserved. Made with"
+  }
+}

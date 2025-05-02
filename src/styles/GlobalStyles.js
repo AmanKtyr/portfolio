@@ -2,15 +2,20 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --accent-color: #3b82f6;
-    --dark-color: #1e293b;
-    --light-color: #f8fafc;
-    --gray-color: #64748b;
-    --success-color: #10b981;
-    --warning-color: #f59e0b;
-    --danger-color: #ef4444;
+    --primary-color: ${({ theme }) => theme.colors.primary};
+    --secondary-color: ${({ theme }) => theme.colors.secondary};
+    --accent-color: ${({ theme }) => theme.colors.accent};
+    --dark-color: ${({ theme }) => theme.colors.dark};
+    --light-color: ${({ theme }) => theme.colors.light};
+    --gray-color: ${({ theme }) => theme.colors.gray};
+    --success-color: ${({ theme }) => theme.colors.success};
+    --warning-color: ${({ theme }) => theme.colors.warning};
+    --danger-color: ${({ theme }) => theme.colors.danger};
+    --background-color: ${({ theme }) => theme.colors.background};
+    --card-bg-color: ${({ theme }) => theme.colors.cardBg};
+    --text-color: ${({ theme }) => theme.colors.text};
+    --text-secondary-color: ${({ theme }) => theme.colors.textSecondary};
+    --border-color: ${({ theme }) => theme.colors.border};
     --transition: all 0.3s ease;
     --max-width: 1200px;
     --border-radius: 8px;
@@ -29,9 +34,24 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var(--dark-color);
-    background-color: var(--light-color);
+    color: var(--text-color);
+    background-color: var(--background-color);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark-mode {
+    --primary-color: ${({ theme }) => theme.isDarkMode ? theme.colors.primary : ''};
+    --secondary-color: ${({ theme }) => theme.isDarkMode ? theme.colors.secondary : ''};
+    --accent-color: ${({ theme }) => theme.isDarkMode ? theme.colors.accent : ''};
+    --dark-color: ${({ theme }) => theme.isDarkMode ? theme.colors.dark : ''};
+    --light-color: ${({ theme }) => theme.isDarkMode ? theme.colors.light : ''};
+    --gray-color: ${({ theme }) => theme.isDarkMode ? theme.colors.gray : ''};
+    --background-color: ${({ theme }) => theme.isDarkMode ? theme.colors.background : ''};
+    --card-bg-color: ${({ theme }) => theme.isDarkMode ? theme.colors.cardBg : ''};
+    --text-color: ${({ theme }) => theme.isDarkMode ? theme.colors.text : ''};
+    --text-secondary-color: ${({ theme }) => theme.isDarkMode ? theme.colors.textSecondary : ''};
+    --border-color: ${({ theme }) => theme.isDarkMode ? theme.colors.border : ''};
   }
 
   a {
@@ -74,14 +94,14 @@ const GlobalStyles = createGlobalStyle`
   .section-title {
     text-align: center;
     margin-bottom: 3rem;
-    
+
     h2 {
       font-size: 2.5rem;
       font-weight: 700;
       position: relative;
       display: inline-block;
       margin-bottom: 1rem;
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -97,7 +117,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 2rem;
       }
     }
-    
+
     p {
       color: var(--gray-color);
       max-width: 600px;
@@ -120,7 +140,7 @@ const GlobalStyles = createGlobalStyle`
   .btn-primary {
     background-color: var(--primary-color);
     color: white;
-    
+
     &:hover {
       background-color: var(--secondary-color);
     }
@@ -130,7 +150,7 @@ const GlobalStyles = createGlobalStyle`
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
     background: transparent;
-    
+
     &:hover {
       background-color: var(--primary-color);
       color: white;

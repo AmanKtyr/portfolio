@@ -7,9 +7,13 @@ export const HeaderContainer = styled.header`
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: ${({ scrolled }) => 
-    scrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent'};
-  box-shadow: ${({ scrolled }) => 
+  background-color: ${({ scrolled, theme }) =>
+    scrolled
+      ? theme.isDarkMode
+        ? 'rgba(15, 23, 42, 0.95)'
+        : 'rgba(255, 255, 255, 0.95)'
+      : 'transparent'};
+  box-shadow: ${({ scrolled }) =>
     scrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none'};
   transition: all 0.3s ease;
   padding: ${({ scrolled }) => (scrolled ? '0.5rem 0' : '1rem 0')};
@@ -33,7 +37,7 @@ export const Logo = styled(Link)`
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--primary-color);
-  
+
   span {
     span {
       color: var(--dark-color);
@@ -44,7 +48,7 @@ export const Logo = styled(Link)`
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
     position: fixed;
@@ -52,7 +56,7 @@ export const NavMenu = styled.ul`
     right: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
     width: 80%;
     height: 100vh;
-    background-color: white;
+    background-color: ${({ theme }) => theme.isDarkMode ? 'var(--card-bg-color)' : 'white'};
     padding: 2rem;
     transition: all 0.3s ease;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
@@ -61,11 +65,11 @@ export const NavMenu = styled.ul`
 
 export const NavItem = styled.li`
   margin-left: 2rem;
-  
+
   @media (max-width: 768px) {
     margin: 1rem 0;
   }
-  
+
   .btn-primary {
     display: inline-block;
     padding: 0.6rem 1.2rem;
@@ -73,7 +77,7 @@ export const NavItem = styled.li`
     color: white;
     border-radius: var(--border-radius);
     transition: var(--transition);
-    
+
     &:hover {
       background-color: var(--secondary-color);
     }
@@ -81,11 +85,11 @@ export const NavItem = styled.li`
 `;
 
 export const NavLink = styled(Link)`
-  color: ${({ active }) => 
-    active === 'true' ? 'var(--primary-color)' : 'var(--dark-color)'};
+  color: ${({ active }) =>
+    active === 'true' ? 'var(--primary-color)' : 'var(--text-color)'};
   font-weight: 500;
   position: relative;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -96,10 +100,10 @@ export const NavLink = styled(Link)`
     background-color: var(--primary-color);
     transition: var(--transition);
   }
-  
+
   &:hover {
     color: var(--primary-color);
-    
+
     &::after {
       width: 100%;
     }
@@ -108,11 +112,31 @@ export const NavLink = styled(Link)`
 
 export const MobileIcon = styled.div`
   display: none;
-  
+
   @media (max-width: 768px) {
     display: block;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--dark-color);
+    color: var(--text-color);
+  }
+`;
+
+export const ThemeToggleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
+`;
+
+export const LanguageToggleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    margin-top: 1rem;
   }
 `;

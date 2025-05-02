@@ -10,7 +10,7 @@ export const AboutContent = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  
+
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -19,13 +19,13 @@ export const AboutContent = styled.div`
 
 export const AboutImage = styled.div`
   position: relative;
-  
+
   img {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -37,7 +37,7 @@ export const AboutImage = styled.div`
     border-left: 3px solid var(--primary-color);
     z-index: -1;
   }
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -49,7 +49,7 @@ export const AboutImage = styled.div`
     border-right: 3px solid var(--primary-color);
     z-index: -1;
   }
-  
+
   @media (max-width: 992px) {
     max-width: 500px;
     margin: 0 auto;
@@ -62,7 +62,7 @@ export const AboutText = styled.div`
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 1rem;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -72,12 +72,12 @@ export const AboutText = styled.div`
       height: 3px;
       background-color: var(--primary-color);
     }
-    
+
     @media (max-width: 768px) {
       font-size: 1.8rem;
     }
   }
-  
+
   p {
     margin-bottom: 1.5rem;
     color: var(--gray-color);
@@ -90,7 +90,7 @@ export const AboutInfo = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
-  
+
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
   }
@@ -99,7 +99,7 @@ export const AboutInfo = styled.div`
 export const InfoItem = styled.div`
   display: flex;
   align-items: center;
-  
+
   strong {
     margin-right: 0.5rem;
     color: var(--dark-color);
@@ -110,7 +110,7 @@ export const AboutSkills = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  
+
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
   }
@@ -120,14 +120,43 @@ export const SkillItem = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  
+
   svg {
     font-size: 1.5rem;
     color: var(--primary-color);
   }
-  
+
   h4 {
     font-size: 1.1rem;
     font-weight: 500;
+  }
+`;
+
+export const ResumeButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: var(--transition);
+  margin-top: 1rem;
+  grid-column: 1 / -1;
+  width: fit-content;
+
+  svg {
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 576px) {
+    width: 100%;
+    justify-content: center;
   }
 `;

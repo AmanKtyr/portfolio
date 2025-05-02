@@ -1,158 +1,99 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { FaCode, FaLaptopCode, FaMobileAlt, FaServer } from 'react-icons/fa';
-import { AboutContainer, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem } from './AboutStyles';
+import { FaCode, FaLaptopCode, FaMobileAlt, FaServer, FaDownload } from 'react-icons/fa';
+import { AboutContainer, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton } from './AboutStyles';
 import aboutImg from '../../assets/about-image.png'; // You'll need to add this image
+import resumePdf from '../../assets/resume.pdf'; // Add your resume PDF
+import ScrollAnimation from '../ScrollAnimation/ScrollAnimation';
 
 const About = () => {
   return (
     <AboutContainer id="about">
       <div className="container">
-        <motion.div 
-          className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
+        <ScrollAnimation animation="fadeUp" className="section-title">
           <h2>About Me</h2>
           <p>Get to know me better</p>
-        </motion.div>
-        
+        </ScrollAnimation>
+
         <AboutContent>
           <AboutImage>
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
+            <ScrollAnimation animation="fadeLeft">
               <img src={aboutImg} alt="About Me" />
-            </motion.div>
+            </ScrollAnimation>
           </AboutImage>
-          
+
           <AboutText>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              I'm a Passionate Web Developer & Freelancer
-            </motion.h3>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              With over 5 years of experience in web development, I specialize in creating responsive, user-friendly websites and web applications that help businesses grow their online presence.
-            </motion.p>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              I'm passionate about combining beautiful design with clean, efficient code to deliver exceptional user experiences. My approach is client-focused, ensuring that every project meets the unique needs and goals of the businesses I work with.
-            </motion.p>
-            
+            <ScrollAnimation animation="fadeRight">
+              <h3>I'm a Passionate Web Developer & Freelancer</h3>
+            </ScrollAnimation>
+
+            <ScrollAnimation animation="fadeRight" delay={0.1}>
+              <p>With over 5 years of experience in web development, I specialize in creating responsive, user-friendly websites and web applications that help businesses grow their online presence.</p>
+            </ScrollAnimation>
+
+            <ScrollAnimation animation="fadeRight" delay={0.2}>
+              <p>I'm passionate about combining beautiful design with clean, efficient code to deliver exceptional user experiences. My approach is client-focused, ensuring that every project meets the unique needs and goals of the businesses I work with.</p>
+            </ScrollAnimation>
+
             <AboutInfo>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
+              <ScrollAnimation animation="fadeUp" delay={0.3}>
                 <InfoItem>
                   <strong>Name:</strong> Your Name
                 </InfoItem>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="fadeUp" delay={0.4}>
                 <InfoItem>
                   <strong>Email:</strong> your.email@example.com
                 </InfoItem>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                viewport={{ once: true }}
-              >
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="fadeUp" delay={0.5}>
                 <InfoItem>
                   <strong>Location:</strong> Your City, Country
                 </InfoItem>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                viewport={{ once: true }}
-              >
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="fadeUp" delay={0.6}>
                 <InfoItem>
                   <strong>Freelance:</strong> Available
                 </InfoItem>
-              </motion.div>
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="fadeUp" delay={0.7}>
+                <ResumeButton href={resumePdf} download="your-name-resume.pdf">
+                  <FaDownload /> Download Resume
+                </ResumeButton>
+              </ScrollAnimation>
             </AboutInfo>
-            
+
             <AboutSkills>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-                viewport={{ once: true }}
-              >
+              <ScrollAnimation animation="zoom" delay={0.7}>
                 <SkillItem>
                   <FaCode />
                   <h4>Web Development</h4>
                 </SkillItem>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                viewport={{ once: true }}
-              >
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="zoom" delay={0.8}>
                 <SkillItem>
                   <FaLaptopCode />
                   <h4>Responsive Design</h4>
                 </SkillItem>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.9 }}
-                viewport={{ once: true }}
-              >
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="zoom" delay={0.9}>
                 <SkillItem>
                   <FaMobileAlt />
                   <h4>Mobile-First</h4>
                 </SkillItem>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1 }}
-                viewport={{ once: true }}
-              >
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="zoom" delay={1.0}>
                 <SkillItem>
                   <FaServer />
                   <h4>API Integration</h4>
                 </SkillItem>
-              </motion.div>
+              </ScrollAnimation>
             </AboutSkills>
           </AboutText>
         </AboutContent>

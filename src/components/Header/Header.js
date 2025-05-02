@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { HeaderContainer, Nav, Logo, NavMenu, NavItem, NavLink, MobileIcon } from './HeaderStyles';
+import { useTranslation } from 'react-i18next';
+import { HeaderContainer, Nav, Logo, NavMenu, NavItem, NavLink, MobileIcon, ThemeToggleWrapper, LanguageToggleWrapper } from './HeaderStyles';
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -52,33 +56,43 @@ const Header = () => {
 
         <NavMenu isOpen={isOpen}>
           <NavItem>
-            <NavLink 
-              to="/" 
+            <NavLink
+              to="/"
               active={location.pathname === '/' ? 'true' : 'false'}
             >
-              Home
+              {t('header.home')}
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink 
-              to="/services" 
+            <NavLink
+              to="/services"
               active={location.pathname === '/services' ? 'true' : 'false'}
             >
-              Services
+              {t('header.services')}
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink 
-              to="/contact" 
+            <NavLink
+              to="/contact"
               active={location.pathname === '/contact' ? 'true' : 'false'}
             >
-              Contact
+              {t('header.contact')}
             </NavLink>
           </NavItem>
           <NavItem>
             <Link to="/contact" className="btn-primary">
-              Hire Me
+              {t('header.hireMe')}
             </Link>
+          </NavItem>
+          <NavItem>
+            <ThemeToggleWrapper>
+              <ThemeSwitcher />
+            </ThemeToggleWrapper>
+          </NavItem>
+          <NavItem>
+            <LanguageToggleWrapper>
+              <LanguageSwitcher />
+            </LanguageToggleWrapper>
           </NavItem>
         </NavMenu>
       </Nav>
