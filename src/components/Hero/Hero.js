@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { HeroContainer, HeroContent, HeroText, HeroImage, HeroBtns, SocialIcons, SocialIcon, ScrollDown } from './HeroStyles';
-import heroImg from '../../assets/hero-image.png'; // You'll need to add this image
+import ThreeModel from '../ThreeModel/ThreeModel';
 
 const Hero = () => {
   return (
@@ -38,14 +38,19 @@ const Hero = () => {
           >
             I create stunning websites for businesses and individuals looking to stand out in the digital world. With expertise in modern web technologies, I deliver high-quality solutions that help my clients achieve their goals.
           </motion.p>
-          
+
           <HeroBtns>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
-              <Link to="/contact" className="btn-primary">
+              <Link
+                to="/contact"
+                className="btn-primary"
+                data-cursor-text="Contact"
+                data-cursor-variant="button"
+              >
                 Hire Me <FaArrowRight />
               </Link>
             </motion.div>
@@ -54,19 +59,30 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1 }}
             >
-              <Link to="/projects" className="btn-outline">
+              <Link
+                to="/projects"
+                className="btn-outline"
+                data-cursor-text="Projects"
+                data-cursor-variant="link"
+              >
                 View Projects
               </Link>
             </motion.div>
           </HeroBtns>
-          
+
           <SocialIcons>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.2 }}
             >
-              <SocialIcon href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <SocialIcon
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor-text="GitHub"
+                data-cursor-variant="text"
+              >
                 <FaGithub />
               </SocialIcon>
             </motion.div>
@@ -90,18 +106,19 @@ const Hero = () => {
             </motion.div>
           </SocialIcons>
         </HeroText>
-        
+
         <HeroImage>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
+            style={{ height: '100%' }}
           >
-            <img src={heroImg} alt="Hero" />
+            <ThreeModel />
           </motion.div>
         </HeroImage>
       </HeroContent>
-      
+
       <ScrollDown
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

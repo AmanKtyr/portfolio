@@ -14,6 +14,8 @@ import ContactPage from './pages/Contact/Contact';
 
 // Components
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import ThreeBackground from './components/ThreeBackground/ThreeBackground';
+import CustomCursor from './components/CustomCursor/CustomCursor';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function AppContent() {
   return (
     <StyledThemeProvider theme={theme(isDarkMode)}>
       <GlobalStyles />
+      <ThreeBackground />
+      <CustomCursor />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

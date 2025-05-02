@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const ThemeSwitcherContainer = styled.div`
   margin-left: 1rem;
+  position: relative;
 `;
 
-export const ThemeToggle = styled.button`
+export const ThemeToggle = styled(motion.button)`
   background: none;
   border: none;
   cursor: pointer;
@@ -14,13 +16,23 @@ export const ThemeToggle = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)'};
-  
+  background-color: ${({ theme }) =>
+    theme.isDarkMode
+      ? theme.glassmorphism.background
+      : theme.glassmorphism.background};
+  backdrop-filter: blur(5px);
+  box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
+  border: ${({ theme }) => theme.glassmorphism.border};
+
+  svg {
+    position: absolute;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
   &:hover {
-    background-color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)'};
-    transform: rotate(30deg);
+    transform: scale(1.1);
   }
 `;

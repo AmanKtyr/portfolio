@@ -50,12 +50,12 @@ const Blog = () => {
           <h2>Latest Articles</h2>
           <p>Insights and tutorials from my experience</p>
         </ScrollAnimation>
-        
+
         <BlogGrid>
           {blogData.map((blog, index) => (
-            <ScrollAnimation 
-              key={blog.id} 
-              animation="fadeUp" 
+            <ScrollAnimation
+              key={blog.id}
+              animation="fadeUp"
               delay={index * 0.1}
             >
               <BlogCard>
@@ -63,7 +63,7 @@ const Blog = () => {
                   <img src={blog.image} alt={blog.title} />
                   <div className="category">{blog.category}</div>
                 </BlogImage>
-                
+
                 <BlogContent>
                   <BlogMeta>
                     <div>
@@ -73,11 +73,11 @@ const Blog = () => {
                       <FaUser /> {blog.author}
                     </div>
                   </BlogMeta>
-                  
-                  <BlogTitle>{blog.title}</BlogTitle>
+
+                  <BlogTitle><Link to={`/blog/${blog.slug}`}>{blog.title}</Link></BlogTitle>
                   <BlogExcerpt>{blog.excerpt}</BlogExcerpt>
-                  
-                  <BlogLink to={`/blog/${blog.slug}`}>
+
+                  <BlogLink to={`/blog/${blog.slug}`} data-cursor-text="Read Article" data-cursor-variant="link">
                     Read More <FaArrowRight />
                   </BlogLink>
                 </BlogContent>
@@ -85,11 +85,11 @@ const Blog = () => {
             </ScrollAnimation>
           ))}
         </BlogGrid>
-        
+
         <ScrollAnimation animation="fadeUp" delay={0.3}>
           <div className="text-center" style={{ marginTop: '3rem' }}>
-            <Link to="/blog" className="btn-outline">
-              View All Articles
+            <Link to="/blog" className="btn-outline" data-cursor-text="All Articles" data-cursor-variant="button">
+              View All Articles <FaArrowRight />
             </Link>
           </div>
         </ScrollAnimation>

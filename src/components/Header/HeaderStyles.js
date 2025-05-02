@@ -10,11 +10,14 @@ export const HeaderContainer = styled.header`
   background-color: ${({ scrolled, theme }) =>
     scrolled
       ? theme.isDarkMode
-        ? 'rgba(15, 23, 42, 0.95)'
-        : 'rgba(255, 255, 255, 0.95)'
+        ? theme.glassmorphism.background
+        : theme.glassmorphism.background
       : 'transparent'};
-  box-shadow: ${({ scrolled }) =>
-    scrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none'};
+  backdrop-filter: ${({ scrolled }) => scrolled ? 'blur(10px)' : 'none'};
+  border-bottom: ${({ scrolled, theme }) =>
+    scrolled ? theme.glassmorphism.border : 'none'};
+  box-shadow: ${({ scrolled, theme }) =>
+    scrolled ? theme.glassmorphism.shadow : 'none'};
   transition: all 0.3s ease;
   padding: ${({ scrolled }) => (scrolled ? '0.5rem 0' : '1rem 0')};
 `;

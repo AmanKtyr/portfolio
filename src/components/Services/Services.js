@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaCode, FaMobileAlt, FaServer, FaShoppingCart, FaPalette, FaSearch } from 'react-icons/fa';
+import { FaCode, FaMobileAlt, FaServer, FaShoppingCart, FaPalette, FaSearch, FaArrowRight } from 'react-icons/fa';
 import { ServicesContainer, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText } from './ServicesStyles';
 
 const servicesData = [
@@ -47,7 +47,7 @@ const Services = () => {
   return (
     <ServicesContainer id="services">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ const Services = () => {
           <h2>My Services</h2>
           <p>What I offer as a freelancer</p>
         </motion.div>
-        
+
         <ServicesGrid>
           {servicesData.map((service, index) => (
             <motion.div
@@ -73,15 +73,15 @@ const Services = () => {
                 </ServiceIcon>
                 <ServiceTitle>{service.title}</ServiceTitle>
                 <ServiceText>{service.description}</ServiceText>
-                <Link to="/services" className="btn-text">
-                  Learn More
+                <Link to="/services" className="btn-text" data-cursor-text="View Service" data-cursor-variant="link">
+                  Learn More <FaArrowRight />
                 </Link>
               </ServiceCard>
             </motion.div>
           ))}
         </ServicesGrid>
-        
-        <motion.div 
+
+        <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ const Services = () => {
           viewport={{ once: true }}
           style={{ marginTop: '3rem' }}
         >
-          <Link to="/contact" className="btn-primary">
+          <Link to="/contact" className="btn-primary" data-cursor-text="Contact" data-cursor-variant="button">
             Hire Me For Your Project
           </Link>
         </motion.div>

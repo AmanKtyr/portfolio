@@ -38,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--background-color);
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: none; /* Hide default cursor for custom cursor */
   }
 
   .dark-mode {
@@ -57,6 +58,11 @@ const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
     color: var(--primary-color);
+    cursor: none; /* Hide default cursor for custom cursor */
+  }
+
+  button {
+    cursor: none; /* Hide default cursor for custom cursor */
   }
 
   ul {

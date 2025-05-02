@@ -30,6 +30,19 @@ const lightTheme = {
     medium: '0 5px 15px rgba(0, 0, 0, 0.1)',
     large: '0 10px 25px rgba(0, 0, 0, 0.1)',
   },
+  glassmorphism: {
+    background: 'rgba(255, 255, 255, 0.7)',
+    border: '1px solid rgba(255, 255, 255, 0.18)',
+    blur: '10px',
+    shadow: '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+  },
+  neumorphism: {
+    background: '#f0f4f8',
+    shadow1: '10px 10px 20px #d1d9e6',
+    shadow2: '-10px -10px 20px #ffffff',
+    activeShadow1: 'inset 5px 5px 10px #d1d9e6',
+    activeShadow2: 'inset -5px -5px 10px #ffffff',
+  },
   transitions: {
     default: 'all 0.3s ease',
     slow: 'all 0.5s ease',
@@ -74,6 +87,19 @@ const darkTheme = {
     small: '0 2px 8px rgba(0, 0, 0, 0.3)',
     medium: '0 5px 15px rgba(0, 0, 0, 0.3)',
     large: '0 10px 25px rgba(0, 0, 0, 0.3)',
+  },
+  glassmorphism: {
+    background: 'rgba(15, 23, 42, 0.7)',
+    border: '1px solid rgba(51, 65, 85, 0.18)',
+    blur: '10px',
+    shadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+  },
+  neumorphism: {
+    background: '#1e293b',
+    shadow1: '10px 10px 20px #131c27',
+    shadow2: '-10px -10px 20px #29364f',
+    activeShadow1: 'inset 5px 5px 10px #131c27',
+    activeShadow2: 'inset -5px -5px 10px #29364f',
   },
   transitions: {
     default: 'all 0.3s ease',
