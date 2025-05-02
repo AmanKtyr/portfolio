@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+// Import Google Fonts
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Poppins:300,400,500,600,700,800', 'sans-serif']
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
