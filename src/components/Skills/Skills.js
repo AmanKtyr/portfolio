@@ -2,12 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDatabase, FaFigma, FaGitAlt } from 'react-icons/fa';
 import { SkillsContainer, SkillsContent, SkillCard, SkillIcon, SkillTitle, SkillText, SkillList } from './SkillsStyles';
+import ProgressBar from './ProgressBar';
 
 const Skills = () => {
   return (
     <SkillsContainer id="skills">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +18,7 @@ const Skills = () => {
           <h2>My Skills</h2>
           <p>What I can do for you</p>
         </motion.div>
-        
+
         <SkillsContent>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -39,9 +40,10 @@ const Skills = () => {
                 <li>CSS Grid</li>
                 <li>Responsive Design</li>
               </SkillList>
+              <ProgressBar skill="HTML/CSS" percentage={95} />
             </SkillCard>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,9 +64,10 @@ const Skills = () => {
                 <li>Asynchronous JS</li>
                 <li>API Integration</li>
               </SkillList>
+              <ProgressBar skill="JavaScript" percentage={90} />
             </SkillCard>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -85,9 +88,10 @@ const Skills = () => {
                 <li>Redux</li>
                 <li>React Router</li>
               </SkillList>
+              <ProgressBar skill="React" percentage={85} />
             </SkillCard>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -108,9 +112,10 @@ const Skills = () => {
                 <li>Authentication</li>
                 <li>Server-side Rendering</li>
               </SkillList>
+              <ProgressBar skill="Node.js" percentage={80} />
             </SkillCard>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -131,9 +136,10 @@ const Skills = () => {
                 <li>Firebase</li>
                 <li>Data Modeling</li>
               </SkillList>
+              <ProgressBar skill="Databases" percentage={75} />
             </SkillCard>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -154,6 +160,7 @@ const Skills = () => {
                 <li>Branching Strategies</li>
                 <li>Code Reviews</li>
               </SkillList>
+              <ProgressBar skill="Version Control" percentage={85} />
             </SkillCard>
           </motion.div>
         </SkillsContent>

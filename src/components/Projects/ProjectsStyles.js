@@ -42,21 +42,52 @@ export const ProjectsGrid = styled.div`
 export const ProjectCard = styled.div`
   border-radius: var(--border-radius);
   overflow: hidden;
-  transition: var(--transition);
+  transition: all 0.5s ease;
   height: 100%;
   position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 
   /* Neumorphism effect */
   background-color: ${({ theme }) => theme.neumorphism.background};
   box-shadow: ${({ theme }) => `${theme.neumorphism.shadow1}, ${theme.neumorphism.shadow2}`};
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: ${({ theme }) => `${theme.neumorphism.shadow1.replace('10px', '15px')}, ${theme.neumorphism.shadow2.replace('-10px', '-15px')}`};
+    transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: ${({ theme }) => `${theme.neumorphism.shadow1.replace('10px', '20px')}, ${theme.neumorphism.shadow2.replace('-10px', '-20px')}`};
+
+    .project-content {
+      transform: translateZ(20px);
+    }
+
+    .project-img img {
+      transform: scale(1.1);
+    }
   }
 
   &:active {
     box-shadow: ${({ theme }) => `${theme.neumorphism.activeShadow1}, ${theme.neumorphism.activeShadow2}`};
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 100%);
+    transform: translateZ(10px);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
   }
 `;
 
@@ -64,15 +95,38 @@ export const ProjectImg = styled.div`
   position: relative;
   overflow: hidden;
 
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 70%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  ${ProjectCard}:hover &::after {
+    opacity: 1;
+  }
+
   img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    transition: var(--transition);
+    transition: transform 0.7s ease, filter 0.5s ease;
   }
 
   ${ProjectCard}:hover & img {
     transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.1);
   }
 `;
 
@@ -122,23 +176,77 @@ export const ProjectLink = styled.a`
 
 export const ProjectInfo = styled.div`
   padding: 1.5rem;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   background-color: ${({ theme }) =>
     theme.isDarkMode
       ? 'rgba(30, 41, 59, 0.8)'
       : 'rgba(255, 255, 255, 0.8)'};
   border-top: ${({ theme }) => theme.glassmorphism.border};
+  transition: transform 0.5s ease;
+  transform: translateZ(0);
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  ${ProjectCard}:hover &::before {
+    opacity: 1;
+  }
 
   .btn-text {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     color: var(--primary-color);
     font-weight: 500;
     margin-top: 1rem;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    position: relative;
+
+    svg {
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+      margin-left: 5px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      transition: width 0.3s ease;
+    }
 
     &:hover {
       color: var(--secondary-color);
-      text-decoration: underline;
+
+      &::after {
+        width: 100%;
+      }
+
+      svg {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   }
 `;

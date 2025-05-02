@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { HeroContainer, HeroContent, HeroText, HeroImage, HeroBtns, SocialIcons, SocialIcon, ScrollDown } from './HeroStyles';
-import ThreeModel from '../ThreeModel/ThreeModel';
+import laptopImage from '../../assets/laptop-code.svg';
 
 const Hero = () => {
   return (
@@ -22,14 +22,14 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Your Name
+            John Doe
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Web Developer & Freelancer
+            Frontend <span className="highlight">Developer</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -114,7 +114,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             style={{ height: '100%' }}
           >
-            <ThreeModel />
+            <img src={laptopImage} alt="Laptop with code" />
           </motion.div>
         </HeroImage>
       </HeroContent>
