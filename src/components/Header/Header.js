@@ -137,13 +137,24 @@ const Header = () => {
         null;
     }
 
-    if (activeRef) {
+    if (activeRef && window.innerWidth > 768) { // Only show indicator on desktop
       const rect = activeRef.getBoundingClientRect();
-      setIndicatorStyle({
-        left: rect.left,
-        width: rect.width,
-        opacity: 1
-      });
+      const navMenuRect = document.querySelector('.nav-menu-container')?.getBoundingClientRect();
+
+      if (navMenuRect) {
+        // Calculate position relative to the nav menu container
+        setIndicatorStyle({
+          left: rect.left - navMenuRect.left + 4, // Add small padding
+          width: rect.width - 8, // Subtract padding from both sides
+          opacity: 1
+        });
+      } else {
+        setIndicatorStyle({
+          left: rect.left,
+          width: rect.width,
+          opacity: 1
+        });
+      }
     } else {
       setIndicatorStyle({
         opacity: 0
@@ -406,7 +417,7 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Dev<span>Portfolio</span>
+            AmAn<span>KtYr</span>
           </motion.span>
         </Logo>
 
@@ -450,7 +461,7 @@ const Header = () => {
 
           {/* Desktop and Mobile Navigation */}
           <AnimatePresence>
-            <NavMenu isOpen={isOpen}>
+            <NavMenu isOpen={isOpen} className="nav-menu-container">
               <NavItem>
                 <NavLink
                   ref={homeRef}

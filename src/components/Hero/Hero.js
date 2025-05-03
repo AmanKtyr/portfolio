@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaArrowRight, FaGithub, FaLinkedin, FaCodepen, FaQuora } from 'react-icons/fa';
 import { HeroContainer, HeroContent, HeroText, HeroImage, HeroBtns, SocialIcons, SocialIcon, ScrollDown } from './HeroStyles';
 import laptopImage from '../../assets/laptop-code.svg';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <HeroContainer>
       <HeroContent>
@@ -15,28 +18,28 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Hello, I'm
+            {t('hero.greeting')}
           </motion.h4>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            John Doe
+            AmAn-KtYr
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Frontend <span className="highlight">Developer</span>
+            Web <span className="highlight">Developer</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            I create stunning websites for businesses and individuals looking to stand out in the digital world. With expertise in modern web technologies, I deliver high-quality solutions that help my clients achieve their goals.
+            I create a unique and appealing website in line with your brand and vision. I seamlessly blend creativity in design with excellence in functionality to deliver exceptional user experiences.
           </motion.p>
 
           <HeroBtns>
@@ -51,7 +54,7 @@ const Hero = () => {
                 data-cursor-text="Contact"
                 data-cursor-variant="button"
               >
-                Hire Me <FaArrowRight />
+                {t('hero.hireMe')} <FaArrowRight />
               </Link>
             </motion.div>
             <motion.div
@@ -60,12 +63,12 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 1 }}
             >
               <Link
-                to="/projects"
+                to="/#projects"
                 className="btn-outline"
                 data-cursor-text="Projects"
                 data-cursor-variant="link"
               >
-                View Projects
+                {t('hero.viewProjects')}
               </Link>
             </motion.div>
           </HeroBtns>
@@ -77,7 +80,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 1.2 }}
             >
               <SocialIcon
-                href="https://github.com"
+                href="https://github.com/AmanKtyr"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor-text="GitHub"
@@ -91,7 +94,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.3 }}
             >
-              <SocialIcon href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <SocialIcon href="https://www.linkedin.com/in/amanktyr" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </SocialIcon>
             </motion.div>
@@ -100,8 +103,17 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.4 }}
             >
-              <SocialIcon href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter />
+              <SocialIcon href="https://codepen.io/amanktyr" target="_blank" rel="noopener noreferrer">
+                <FaCodepen />
+              </SocialIcon>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.5 }}
+            >
+              <SocialIcon href="https://www.quora.com/profile/AmAn-KtYr-1" target="_blank" rel="noopener noreferrer">
+                <FaQuora />
               </SocialIcon>
             </motion.div>
           </SocialIcons>
@@ -128,7 +140,7 @@ const Hero = () => {
           <div className="wheel"></div>
         </div>
         <div>
-          <span>Scroll Down</span>
+          <span>{t('hero.scrollDown')}</span>
         </div>
       </ScrollDown>
     </HeroContainer>

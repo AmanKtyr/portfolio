@@ -1,17 +1,20 @@
 import React from 'react';
-import { FaCode, FaLaptopCode, FaMobileAlt, FaServer, FaDownload } from 'react-icons/fa';
+import { FaCode, FaLaptopCode, FaMobileAlt, FaServer, FaDownload, FaPhotoVideo } from 'react-icons/fa';
 import { AboutContainer, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton } from './AboutStyles';
 import aboutImg from '../../assets/about-image.png'; // You'll need to add this image
 import resumePdf from '../../assets/resume.pdf'; // Add your resume PDF
 import ScrollAnimation from '../ScrollAnimation/ScrollAnimation';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <AboutContainer id="about">
       <div className="container">
         <ScrollAnimation animation="fadeUp" className="section-title">
-          <h2>About Me</h2>
-          <p>Get to know me better</p>
+          <h2>{t('about.title')}</h2>
+          <p>{t('about.subtitle')}</p>
         </ScrollAnimation>
 
         <AboutContent>
@@ -23,45 +26,45 @@ const About = () => {
 
           <AboutText>
             <ScrollAnimation animation="fadeRight">
-              <h3>I'm a Passionate Web Developer & Freelancer</h3>
+              <h3>I'm a Web Developer from Lucknow, UP</h3>
             </ScrollAnimation>
 
             <ScrollAnimation animation="fadeRight" delay={0.1}>
-              <p>With over 5 years of experience in web development, I specialize in creating responsive, user-friendly websites and web applications that help businesses grow their online presence.</p>
+              <p>I create a unique and appealing website in line with your brand and vision. I seamlessly blend creativity in design with excellence in functionality to deliver exceptional user experiences.</p>
             </ScrollAnimation>
 
             <ScrollAnimation animation="fadeRight" delay={0.2}>
-              <p>I'm passionate about combining beautiful design with clean, efficient code to deliver exceptional user experiences. My approach is client-focused, ensuring that every project meets the unique needs and goals of the businesses I work with.</p>
+              <p>My approach is client-focused, ensuring that every project meets the unique needs and goals of the businesses I work with. I'm dedicated to delivering high-quality solutions that help my clients achieve their online objectives.</p>
             </ScrollAnimation>
 
             <AboutInfo>
               <ScrollAnimation animation="fadeUp" delay={0.3}>
                 <InfoItem>
-                  <strong>Name:</strong> Your Name
+                  <strong>{t('about.name')}</strong> AmAn-KtYr
                 </InfoItem>
               </ScrollAnimation>
 
               <ScrollAnimation animation="fadeUp" delay={0.4}>
                 <InfoItem>
-                  <strong>Email:</strong> your.email@example.com
+                  <strong>{t('about.email')}</strong> amanktyrrr@gmail.com
                 </InfoItem>
               </ScrollAnimation>
 
               <ScrollAnimation animation="fadeUp" delay={0.5}>
                 <InfoItem>
-                  <strong>Location:</strong> Your City, Country
+                  <strong>{t('about.location')}</strong> Lucknow, UP, India
                 </InfoItem>
               </ScrollAnimation>
 
               <ScrollAnimation animation="fadeUp" delay={0.6}>
                 <InfoItem>
-                  <strong>Freelance:</strong> Available
+                  <strong>{t('about.freelance')}</strong> {t('about.available')}
                 </InfoItem>
               </ScrollAnimation>
 
               <ScrollAnimation animation="fadeUp" delay={0.7}>
-                <ResumeButton href={resumePdf} download="your-name-resume.pdf">
-                  <FaDownload /> Download Resume
+                <ResumeButton href={resumePdf} download="aman-ktyr-resume.pdf">
+                  <FaDownload /> {t('about.downloadResume')}
                 </ResumeButton>
               </ScrollAnimation>
             </AboutInfo>
@@ -77,21 +80,21 @@ const About = () => {
               <ScrollAnimation animation="zoom" delay={0.8}>
                 <SkillItem>
                   <FaLaptopCode />
-                  <h4>Responsive Design</h4>
+                  <h4>App Development</h4>
                 </SkillItem>
               </ScrollAnimation>
 
               <ScrollAnimation animation="zoom" delay={0.9}>
                 <SkillItem>
-                  <FaMobileAlt />
-                  <h4>Mobile-First</h4>
+                  <FaPhotoVideo />
+                  <h4>Photoshop</h4>
                 </SkillItem>
               </ScrollAnimation>
 
               <ScrollAnimation animation="zoom" delay={1.0}>
                 <SkillItem>
                   <FaServer />
-                  <h4>API Integration</h4>
+                  <h4>SEO Marketing</h4>
                 </SkillItem>
               </ScrollAnimation>
             </AboutSkills>

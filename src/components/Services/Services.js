@@ -1,49 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaCode, FaMobileAlt, FaServer, FaShoppingCart, FaPalette, FaSearch, FaArrowRight } from 'react-icons/fa';
+import { FaCode, FaMobileAlt, FaServer, FaShoppingCart, FaPalette, FaSearch, FaArrowRight, FaPhotoVideo, FaDesktop } from 'react-icons/fa';
 import { ServicesContainer, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText } from './ServicesStyles';
+import { useTranslation } from 'react-i18next';
 
 const servicesData = [
   {
     id: 1,
     icon: <FaCode />,
     title: 'Web Development',
-    description: 'Custom website development using modern technologies like React, Vue, and Angular to create responsive and user-friendly web applications.',
+    description: 'We create a unique and appealing website in line with your brand and vision. We seamlessly blend creativity in design with excellence in functionality.',
   },
   {
     id: 2,
     icon: <FaMobileAlt />,
-    title: 'Responsive Design',
-    description: 'Creating websites that work flawlessly across all devices - from desktops to tablets and mobile phones, ensuring a consistent user experience.',
+    title: 'App Development',
+    description: 'Cross-platform Development: We leverage leading frameworks to develop apps that work seamlessly on both iOS and Android devices, reducing time and cost.',
   },
   {
     id: 3,
-    icon: <FaServer />,
-    title: 'API Development',
-    description: 'Building robust and scalable APIs using Node.js, Express, and other backend technologies to power your web and mobile applications.',
+    icon: <FaPhotoVideo />,
+    title: 'Photoshop',
+    description: 'Enhance your visuals with our expert Photoshop services. We specialize in transforming ordinary images into extraordinary works of art.',
   },
   {
     id: 4,
-    icon: <FaShoppingCart />,
-    title: 'E-commerce Solutions',
-    description: 'Developing online stores with secure payment gateways, product management systems, and user-friendly interfaces to boost your online sales.',
+    icon: <FaSearch />,
+    title: 'SEO Marketing',
+    description: 'Boost online visibility and audience reach with tailored SEO strategies. Optimize keywords, content, and links. Analyze performance for consistent high rankings.',
   },
   {
     id: 5,
-    icon: <FaPalette />,
-    title: 'UI/UX Design',
-    description: 'Creating intuitive and visually appealing user interfaces that enhance user experience and engagement with your digital products.',
+    icon: <FaDesktop />,
+    title: 'Responsive Design',
+    description: 'To provide a seamless experience for your audience, we make your website responsive on all devices - desktop, tablet, and mobile.',
   },
   {
     id: 6,
-    icon: <FaSearch />,
-    title: 'SEO Optimization',
-    description: 'Implementing best practices for search engine optimization to improve your website\'s visibility and ranking in search results.',
+    icon: <FaPalette />,
+    title: 'Social Media Marketing',
+    description: 'Enhance brand presence with our Social Media Marketing. Tailored strategies, engaging content, platform optimization, ad management, and performance insights for success.',
   },
 ];
 
 const Services = () => {
+  const { t } = useTranslation();
+
   return (
     <ServicesContainer id="services">
       <div className="container">
@@ -54,8 +57,8 @@ const Services = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2>My Services</h2>
-          <p>What I offer as a freelancer</p>
+          <h2>{t('services.title')}</h2>
+          <p>{t('services.subtitle')}</p>
         </motion.div>
 
         <ServicesGrid>
@@ -74,7 +77,7 @@ const Services = () => {
                 <ServiceTitle>{service.title}</ServiceTitle>
                 <ServiceText>{service.description}</ServiceText>
                 <Link to="/services" className="btn-text" data-cursor-text="View Service" data-cursor-variant="link">
-                  Learn More <FaArrowRight />
+                  {t('services.learnMore')} <FaArrowRight />
                 </Link>
               </ServiceCard>
             </motion.div>
