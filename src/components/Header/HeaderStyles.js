@@ -11,11 +11,11 @@ export const HeaderContainer = styled.header`
   background-color: ${({ scrolled, theme }) =>
     scrolled
       ? theme.isDarkMode
-        ? 'rgba(15, 23, 42, 0.85)'
-        : 'rgba(255, 255, 255, 0.85)'
+        ? 'rgba(15, 23, 42, 0.9)'
+        : 'rgba(255, 255, 255, 0.9)'
       : theme.isDarkMode
-        ? 'rgba(15, 23, 42, 0.65)'
-        : 'rgba(255, 255, 255, 0.65)'};
+        ? 'rgba(15, 23, 42, 0.7)'
+        : 'rgba(255, 255, 255, 0.7)'};
   backdrop-filter: ${({ scrolled }) => scrolled ? 'blur(20px)' : 'blur(15px)'};
   border-bottom: ${({ scrolled, theme }) =>
     theme.isDarkMode
@@ -32,7 +32,7 @@ export const HeaderContainer = styled.header`
         : '0 10px 30px -10px rgba(0, 0, 0, 0.15), 0 0 15px rgba(56, 189, 248, 0.05)'
       : 'none'};
   transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-  padding: ${({ scrolled }) => (scrolled ? '0.5rem 0' : '0.8rem 0')};
+  padding: ${({ scrolled }) => (scrolled ? '0.3rem 0' : '0.5rem 0')};
 
   &::before {
     content: '';
@@ -66,11 +66,12 @@ export const Nav = styled.nav`
 
   @media (max-width: 768px) {
     padding: 0 1rem;
+    justify-content: space-between;
   }
 `;
 
 export const Logo = styled(Link)`
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--primary-color);
   position: relative;
@@ -78,9 +79,24 @@ export const Logo = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
-  padding: 0.5rem;
-  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50px;
   overflow: hidden;
+  background: ${({ theme }) =>
+    theme.isDarkMode
+      ? 'linear-gradient(90deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5))'
+      : 'linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5))'};
+  backdrop-filter: blur(10px);
+  border: ${({ theme }) =>
+    theme.isDarkMode
+      ? '1px solid rgba(56, 189, 248, 0.15)'
+      : '1px solid rgba(226, 232, 240, 0.8)'};
+  box-shadow: ${({ theme }) =>
+    theme.isDarkMode
+      ? '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(56, 189, 248, 0.05)'
+      : '0 4px 20px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5)'};
+  margin-right: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
   &::before {
     content: '';
@@ -91,40 +107,77 @@ export const Logo = styled(Link)`
     height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))'
-        : 'linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(147, 51, 234, 0.05))'};
-    border-radius: 8px;
+        ? 'linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(147, 51, 234, 0.15))'
+        : 'linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(147, 51, 234, 0.1))'};
+    border-radius: 50px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: ${({ theme }) =>
+      theme.isDarkMode
+        ? '0 8px 25px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(56, 189, 248, 0.1)'
+        : '0 8px 25px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.6)'};
   }
 
   &:hover::before {
     opacity: 1;
   }
 
+  .logo-icon {
+    width: 26px;
+    height: 26px;
+    margin-right: 0.5rem;
+    background: linear-gradient(135deg, #38BDF8, #9333EA);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &:hover .logo-icon {
+    transform: rotate(10deg) scale(1.1);
+  }
+
   span {
     position: relative;
     background: linear-gradient(90deg,
-      var(--primary-color) 0%,
-      var(--secondary-color) 50%,
-      var(--primary-color) 100%);
+      #38BDF8 0%,
+      #9333EA 50%,
+      #38BDF8 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
     transition: all 0.5s ease;
+    letter-spacing: 0.5px;
+    font-size: 1.3rem;
 
     &:hover {
       background-position: right center;
-      transform: translateY(-2px);
     }
 
     span {
-      color: var(--dark-color);
+      color: ${({ theme }) =>
+        theme.isDarkMode
+          ? '#f1f5f9'
+          : '#0f172a'};
       background: none;
       -webkit-text-fill-color: currentColor;
       text-fill-color: currentColor;
+      font-weight: 600;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      font-size: 1rem;
 
       &::after {
         content: '';
@@ -133,17 +186,43 @@ export const Logo = styled(Link)`
         left: 0;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        background: linear-gradient(90deg, #38BDF8, #9333EA);
         border-radius: 4px;
         transform: scaleX(0);
         transform-origin: right;
-        transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
+    }
+
+    &:hover span {
+      opacity: 1;
     }
 
     &:hover span::after {
       transform: scaleX(1);
       transform-origin: left;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.4rem 0.6rem;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    margin-right: 0;
+
+    .logo-icon {
+      width: 22px;
+      height: 22px;
+      margin-right: 0.4rem;
+      font-size: 0.7rem;
+    }
+
+    span {
+      font-size: 1.1rem;
+
+      span {
+        font-size: 0.8rem;
+      }
     }
   }
 `;
@@ -152,6 +231,18 @@ export const NavMenuWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+  }
 `;
 
 export const NavMenu = styled.ul`
@@ -160,50 +251,53 @@ export const NavMenu = styled.ul`
   position: relative;
   margin: 0;
   padding: 0;
-  background: ${({ theme }) =>
-    theme.isDarkMode
-      ? 'rgba(15, 23, 42, 0.5)'
-      : 'rgba(255, 255, 255, 0.5)'};
-  border-radius: 50px;
-  padding: 0.3rem;
-  backdrop-filter: blur(10px);
-  border: ${({ theme }) =>
-    theme.isDarkMode
-      ? '1px solid rgba(56, 189, 248, 0.15)'
-      : '1px solid rgba(226, 232, 240, 0.8)'};
-  box-shadow: ${({ theme }) =>
-    theme.isDarkMode
-      ? '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(56, 189, 248, 0.05)'
-      : '0 4px 20px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5)'};
-  transition: all 0.3s ease;
+  list-style: none;
+
+  @media (min-width: 769px) {
+    background: ${({ theme }) =>
+      theme.isDarkMode
+        ? 'rgba(15, 23, 42, 0.5)'
+        : 'rgba(255, 255, 255, 0.5)'};
+    border-radius: 50px;
+    padding: 0.25rem;
+    backdrop-filter: blur(10px);
+    border: ${({ theme }) =>
+      theme.isDarkMode
+        ? '1px solid rgba(56, 189, 248, 0.15)'
+        : '1px solid rgba(226, 232, 240, 0.8)'};
+    box-shadow: ${({ theme }) =>
+      theme.isDarkMode
+        ? '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(56, 189, 248, 0.05)'
+        : '0 4px 20px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5)'};
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
     position: fixed;
-    top: 0;
-    right: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
-    width: 80%;
-    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 350px;
     background-color: ${({ theme }) =>
       theme.isDarkMode
         ? 'rgba(15, 23, 42, 0.95)'
         : 'rgba(255, 255, 255, 0.95)'};
-    padding: 5rem 2rem 2rem;
-    transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    padding: 2rem;
+    border-radius: 20px;
     box-shadow: ${({ theme }) =>
       theme.isDarkMode
-        ? '-10px 0 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(56, 189, 248, 0.1)'
-        : '-10px 0 30px rgba(0, 0, 0, 0.15), 0 0 15px rgba(56, 189, 248, 0.05)'};
-    z-index: 1;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border-left: ${({ theme }) =>
+        ? '0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(56, 189, 248, 0.1)'
+        : '0 10px 30px rgba(0, 0, 0, 0.15), 0 0 15px rgba(56, 189, 248, 0.05)'};
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    border: ${({ theme }) =>
       theme.isDarkMode
         ? '1px solid rgba(56, 189, 248, 0.2)'
         : '1px solid rgba(226, 232, 240, 0.8)'};
-    border-radius: 0;
     overflow-y: auto;
-    max-height: 100vh;
+    max-height: 80vh;
     backdrop-filter: blur(20px);
   }
 `;
@@ -310,7 +404,7 @@ export const ScrollProgressBar = styled(motion.div)`
 `;
 
 export const NavItem = styled.li`
-  margin-left: 0.3rem;
+  margin-left: 0.1rem;
   position: relative;
   list-style: none;
   display: flex;
@@ -323,6 +417,7 @@ export const NavItem = styled.li`
   @media (max-width: 768px) {
     margin: 0.5rem 0;
     width: 100%;
+    justify-content: center;
   }
 
   &.has-dropdown {
@@ -346,7 +441,7 @@ export const NavItem = styled.li`
 export const PrimaryButton = styled.div`
   .btn-primary {
     display: inline-block;
-    padding: 0.7rem 1.5rem;
+    padding: 0.5rem 1rem;
     background: linear-gradient(90deg, #38BDF8, #9333EA);
     color: white;
     border-radius: 30px;
@@ -360,6 +455,7 @@ export const PrimaryButton = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.2);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
+    font-size: 0.85rem;
 
     &::before {
       content: '';
@@ -422,6 +518,7 @@ export const PrimaryButton = styled.div`
       width: 100%;
       text-align: center;
       padding: 0.8rem 1.5rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -439,7 +536,7 @@ export const NavLink = styled(Link).attrs(props => ({
         : '#0f172a'}; // Very dark blue for light mode
   font-weight: 600;
   position: relative;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 0.8rem;
   text-decoration: none;
   letter-spacing: 0.5px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -449,11 +546,12 @@ export const NavLink = styled(Link).attrs(props => ({
   border-radius: 50px;
   overflow: hidden;
   z-index: 1;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-shadow: ${({ theme, active }) =>
     active === 'true' && theme.isDarkMode
       ? '0 0 10px rgba(56, 189, 248, 0.5)'
       : 'none'};
+  white-space: nowrap;
 
   svg {
     font-size: 1rem;
@@ -476,9 +574,11 @@ export const NavLink = styled(Link).attrs(props => ({
   }
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
-    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
     width: 100%;
+    text-align: center;
+    justify-content: center;
     border-radius: 12px;
     background: ${({ theme, active }) => {
       if (active === 'true') {
@@ -522,17 +622,17 @@ export const NavLink = styled(Link).attrs(props => ({
 
 export const MobileIcon = styled.div`
   display: none;
-  z-index: 2;
+  z-index: 101;
 
   @media (max-width: 768px) {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    cursor: none;
+    font-size: 1.3rem;
+    cursor: pointer;
     color: var(--text-color);
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: ${({ theme, isOpen }) =>
       isOpen
@@ -800,6 +900,21 @@ export const DropdownItem = styled(motion.div)`
     margin: 0.2rem 0.5rem;
     padding: 0.5rem 1rem;
   }
+`;
+
+export const MobileMenuBackdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${({ theme }) =>
+    theme.isDarkMode
+      ? 'rgba(15, 23, 42, 0.8)'
+      : 'rgba(241, 245, 249, 0.8)'};
+  backdrop-filter: blur(10px);
+  z-index: 98;
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
 `;
 
 export const FloatingElement = styled(motion.div)`

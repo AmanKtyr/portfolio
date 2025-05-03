@@ -16,7 +16,7 @@ import {
   LanguageToggleWrapper,
   NavMenuWrapper,
   NavIndicator,
-  MobileMenuOverlay,
+  MobileMenuBackdrop,
   ScrollProgressContainer,
   ScrollProgressBar,
   FloatingElement,
@@ -409,7 +409,18 @@ const Header = () => {
       />
 
       <Nav>
+        {/* Logo on the left */}
         <Logo to="/">
+          <motion.div
+            className="logo-icon"
+            variants={logoVariants}
+            initial="hidden"
+            animate="visible"
+            whileHover={{ rotate: 10 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            A
+          </motion.div>
           <motion.span
             variants={logoVariants}
             initial="hidden"
@@ -417,281 +428,127 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            AmAn<span>KtYr</span>
+            Aman<span>Katiyar</span>
           </motion.span>
         </Logo>
 
+        {/* Mobile Menu Toggle */}
         <MobileIcon onClick={toggleMenu} isOpen={isOpen}>
           <AnimatePresence mode="wait">
-            {isOpen ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <FaTimes />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="menu"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <FaBars />
-              </motion.div>
-            )}
+            {isOpen ? <FaTimes /> : <FaBars />}
           </AnimatePresence>
         </MobileIcon>
 
-        <NavMenuWrapper>
-          {/* Desktop Navigation Indicator */}
-          <NavIndicator
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: indicatorStyle.opacity,
-              left: indicatorStyle.left,
-              width: indicatorStyle.width,
-              transition: { duration: 0.3, ease: 'easeInOut' }
-            }}
-          />
+        {/* Navigation Menu */}
+        <NavMenuWrapper isOpen={isOpen}>
+          <NavMenu isOpen={isOpen}>
+            <NavItem>
+              <NavLink
+                ref={homeRef}
+                to="/"
+                active={location.pathname === '/' && !window.location.hash ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/")}
+              >
+                <FaHome />
+                {t('header.home')}
+              </NavLink>
+            </NavItem>
 
-          {/* Desktop and Mobile Navigation */}
-          <AnimatePresence>
-            <NavMenu isOpen={isOpen} className="nav-menu-container">
-              <NavItem>
-                <NavLink
-                  ref={homeRef}
-                  to="/"
-                  active={location.pathname === '/' && !window.location.hash ? 'true' : 'false'}
-                  as={motion.a}
-                  variants={navItemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  custom={1}
-                  index={0}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={(e) => handleNavigation(e, "/")}
-                >
-                  <FaHome />
-                  {t('header.home')}
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  ref={aboutRef}
-                  to="/#about"
-                  active={window.location.hash === '#about' ? 'true' : 'false'}
-                  as={motion.a}
-                  variants={navItemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  custom={2}
-                  index={1}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={(e) => handleNavigation(e, "/#about")}
-                >
-                  <FaUser />
-                  {t('header.about')}
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  ref={skillsRef}
-                  to="/#skills"
-                  active={window.location.hash === '#skills' ? 'true' : 'false'}
-                  as={motion.a}
-                  variants={navItemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  custom={3}
-                  index={2}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={(e) => handleNavigation(e, "/#skills")}
-                >
-                  <FaCode />
-                  {t('header.skills')}
-                </NavLink>
-              </NavItem>
-              <NavItem className="has-dropdown" ref={projectsDropdownRef}>
-                <NavLink
-                  ref={projectsRef}
-                  to="/#projects"
-                  active={window.location.hash === '#projects' || location.pathname.startsWith('/project/') ? 'true' : 'false'}
-                  as={motion.a}
-                  variants={navItemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  custom={4}
-                  index={3}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setShowProjectsDropdown(!showProjectsDropdown);
-                  }}
-                  className="dropdown-toggle"
-                >
-                  <FaLaptopCode />
-                  {t('header.projects')}
-                  <FaChevronDown className="dropdown-icon" />
-                </NavLink>
+            <NavItem>
+              <NavLink
+                ref={aboutRef}
+                to="/#about"
+                active={window.location.hash === '#about' ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/#about")}
+              >
+                <FaUser />
+                {t('header.about')}
+              </NavLink>
+            </NavItem>
 
-                <AnimatePresence>
-                  {showProjectsDropdown && (
-                    <DropdownMenu
-                      variants={dropdownVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                    >
-                      <DropdownItem variants={dropdownItemVariants}>
-                        <a href="/#projects" onClick={(e) => handleNavigation(e, "/#projects")}>
-                          <FaLaptopCode /> All Projects
-                        </a>
-                      </DropdownItem>
-                      <DropdownItem variants={dropdownItemVariants}>
-                        <a href="/project/1" onClick={(e) => handleNavigation(e, "/project/1")}>
-                          <FaLaptopCode /> E-commerce Website
-                        </a>
-                      </DropdownItem>
-                      <DropdownItem variants={dropdownItemVariants}>
-                        <a href="/project/2" onClick={(e) => handleNavigation(e, "/project/2")}>
-                          <FaLaptopCode /> Portfolio Website
-                        </a>
-                      </DropdownItem>
-                      <DropdownItem variants={dropdownItemVariants}>
-                        <a href="/project/3" onClick={(e) => handleNavigation(e, "/project/3")}>
-                          <FaLaptopCode /> Mobile App
-                        </a>
-                      </DropdownItem>
-                    </DropdownMenu>
-                  )}
-                </AnimatePresence>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  ref={servicesRef}
-                  to="/services"
-                  active={location.pathname === '/services' || window.location.hash === '#services' ? 'true' : 'false'}
-                  as={motion.a}
-                  variants={navItemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  custom={5}
-                  index={4}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={(e) => handleNavigation(e, "/services")}
-                >
-                  <FaCogs />
-                  {t('header.services')}
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  ref={blogRef}
-                  to="/#blog"
-                  active={window.location.hash === '#blog' ? 'true' : 'false'}
-                  as={motion.a}
-                  variants={navItemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  custom={6}
-                  index={5}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={(e) => handleNavigation(e, "/#blog")}
-                >
-                  <FaBlog />
-                  {t('header.blog')}
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  ref={contactRef}
-                  to="/contact"
-                  active={location.pathname === '/contact' || window.location.hash === '#contact' ? 'true' : 'false'}
-                  as={motion.a}
-                  variants={navItemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  custom={7}
-                  index={6}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={(e) => handleNavigation(e, "/contact")}
-                >
-                  <FaEnvelope />
-                  {t('header.contact')}
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <PrimaryButton>
-                  <motion.div
-                    variants={navItemVariants}
-                    initial="hidden"
-                    animate="visible"
-                    custom={8}
-                    whileHover={{ y: -5 }}
-                    whileTap={{ y: 0 }}
-                  >
-                    <Link to="/contact" className="btn-primary" onClick={(e) => handleNavigation(e, "/contact")}>
-                      {t('header.hireMe')}
-                    </Link>
-                  </motion.div>
-                </PrimaryButton>
-              </NavItem>
-              <NavItem>
-                <ThemeToggleWrapper>
-                  <motion.div
-                    variants={navItemVariants}
-                    initial="hidden"
-                    animate="visible"
-                    custom={9}
-                    whileHover={{ rotate: isDarkMode ? -15 : 15 }}
-                  >
-                    <ThemeSwitcher />
-                  </motion.div>
-                </ThemeToggleWrapper>
-              </NavItem>
-              <NavItem>
-                <LanguageToggleWrapper>
-                  <motion.div
-                    variants={navItemVariants}
-                    initial="hidden"
-                    animate="visible"
-                    custom={10}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <LanguageSwitcher />
-                  </motion.div>
-                </LanguageToggleWrapper>
-              </NavItem>
-            </NavMenu>
-          </AnimatePresence>
+            <NavItem>
+              <NavLink
+                ref={skillsRef}
+                to="/#skills"
+                active={window.location.hash === '#skills' ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/#skills")}
+              >
+                <FaCode />
+                {t('header.skills')}
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink
+                ref={projectsRef}
+                to="/#projects"
+                active={window.location.hash === '#projects' || location.pathname.startsWith('/project/') ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/#projects")}
+              >
+                <FaLaptopCode />
+                {t('header.projects')}
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink
+                ref={servicesRef}
+                to="/services"
+                active={location.pathname === '/services' || window.location.hash === '#services' ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/services")}
+              >
+                <FaCogs />
+                {t('header.services')}
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink
+                ref={blogRef}
+                to="/#blog"
+                active={window.location.hash === '#blog' ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/#blog")}
+              >
+                <FaBlog />
+                {t('header.blog')}
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink
+                ref={contactRef}
+                to="/contact"
+                active={location.pathname === '/contact' || window.location.hash === '#contact' ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/contact")}
+              >
+                <FaEnvelope />
+                {t('header.contact')}
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <PrimaryButton>
+                <Link to="/contact" className="btn-primary" onClick={(e) => handleNavigation(e, "/contact")}>
+                  {t('header.hireMe')}
+                </Link>
+              </PrimaryButton>
+            </NavItem>
+
+            <NavItem>
+              <ThemeToggleWrapper>
+                <ThemeSwitcher />
+              </ThemeToggleWrapper>
+            </NavItem>
+          </NavMenu>
         </NavMenuWrapper>
 
         {/* Mobile Menu Overlay */}
-        <AnimatePresence>
-          {isOpen && (
-            <MobileMenuOverlay
-              isOpen={isOpen}
-              variants={mobileMenuBgVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              onClick={() => setIsOpen(false)}
-            />
-          )}
-        </AnimatePresence>
+        {isOpen && (
+          <MobileMenuBackdrop
+            isOpen={isOpen}
+            onClick={() => setIsOpen(false)}
+          />
+        )}
       </Nav>
     </HeaderContainer>
   );
