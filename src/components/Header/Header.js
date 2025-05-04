@@ -131,9 +131,12 @@ const Header = () => {
     } else {
       // For other pages
       activeRef =
+        location.pathname === '/about' ? aboutRef.current :
+        location.pathname === '/skills' ? skillsRef.current :
+        location.pathname === '/projects' || location.pathname.startsWith('/project/') ? projectsRef.current :
         location.pathname === '/services' ? servicesRef.current :
+        location.pathname === '/blog' ? blogRef.current :
         location.pathname === '/contact' ? contactRef.current :
-        location.pathname.startsWith('/project/') ? projectsRef.current :
         null;
     }
 
@@ -457,9 +460,9 @@ const Header = () => {
             <NavItem>
               <NavLink
                 ref={aboutRef}
-                to="/#about"
-                active={window.location.hash === '#about' ? 'true' : 'false'}
-                onClick={(e) => handleNavigation(e, "/#about")}
+                to="/about"
+                active={location.pathname === '/about' ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/about")}
               >
                 <FaUser />
                 {t('header.about')}
@@ -469,9 +472,9 @@ const Header = () => {
             <NavItem>
               <NavLink
                 ref={skillsRef}
-                to="/#skills"
-                active={window.location.hash === '#skills' ? 'true' : 'false'}
-                onClick={(e) => handleNavigation(e, "/#skills")}
+                to="/skills"
+                active={location.pathname === '/skills' ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/skills")}
               >
                 <FaCode />
                 {t('header.skills')}
@@ -481,9 +484,9 @@ const Header = () => {
             <NavItem>
               <NavLink
                 ref={projectsRef}
-                to="/#projects"
-                active={window.location.hash === '#projects' || location.pathname.startsWith('/project/') ? 'true' : 'false'}
-                onClick={(e) => handleNavigation(e, "/#projects")}
+                to="/projects"
+                active={location.pathname === '/projects' || location.pathname.startsWith('/project/') ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/projects")}
               >
                 <FaLaptopCode />
                 {t('header.projects')}
@@ -505,9 +508,9 @@ const Header = () => {
             <NavItem>
               <NavLink
                 ref={blogRef}
-                to="/#blog"
-                active={window.location.hash === '#blog' ? 'true' : 'false'}
-                onClick={(e) => handleNavigation(e, "/#blog")}
+                to="/blog"
+                active={location.pathname === '/blog' ? 'true' : 'false'}
+                onClick={(e) => handleNavigation(e, "/blog")}
               >
                 <FaBlog />
                 {t('header.blog')}
