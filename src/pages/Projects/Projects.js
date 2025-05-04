@@ -118,49 +118,139 @@ const ProjectsPage = () => {
 
   const filterProjects = (category, term) => {
     let filtered = projectsData;
-    
+
     // Filter by category
     if (category !== 'all') {
       filtered = filtered.filter(project => project.category === category);
     }
-    
+
     // Filter by search term
     if (term) {
-      filtered = filtered.filter(project => 
-        project.title.toLowerCase().includes(term.toLowerCase()) || 
+      filtered = filtered.filter(project =>
+        project.title.toLowerCase().includes(term.toLowerCase()) ||
         project.description.toLowerCase().includes(term.toLowerCase())
       );
     }
-    
+
     setFilteredProjects(filtered);
   };
 
   return (
     <>
       <Header />
-      
+
       <ProjectsPageContainer>
         <ProjectsBanner>
+          {/* Grid overlay for cyberpunk/tech feel */}
+          <div className="grid-overlay"></div>
+
           <div className="container">
             <ProjectsBannerContent>
+              {/* Floating elements for visual interest */}
+              <motion.div
+                className="floating-element element-1"
+                animate={{
+                  y: [0, -20, 0],
+                  x: [0, 10, 0],
+                  rotate: [0, 5, 0]
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
+              <motion.div
+                className="floating-element element-2"
+                animate={{
+                  y: [0, 20, 0],
+                  x: [0, -15, 0],
+                  rotate: [0, -5, 0]
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100
+                }}
               >
                 My Projects
               </motion.h1>
+
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.3,
+                  type: "spring",
+                  stiffness: 50
+                }}
               >
                 Recent work I've done
               </motion.p>
+
+              {/* Animated code particles */}
+              <motion.div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "5%",
+                  color: "rgba(56, 189, 248, 0.4)",
+                  fontSize: "1.2rem",
+                  fontFamily: "monospace",
+                  zIndex: 5
+                }}
+                animate={{
+                  opacity: [0.2, 0.8, 0.2],
+                  y: [0, -30, 0]
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                &lt;projects&gt;
+              </motion.div>
+
+              <motion.div
+                style={{
+                  position: "absolute",
+                  bottom: "30%",
+                  right: "10%",
+                  color: "rgba(147, 51, 234, 0.4)",
+                  fontSize: "1.2rem",
+                  fontFamily: "monospace",
+                  zIndex: 5
+                }}
+                animate={{
+                  opacity: [0.2, 0.7, 0.2],
+                  y: [0, 20, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              >
+                &lt;/projects&gt;
+              </motion.div>
             </ProjectsBannerContent>
           </div>
         </ProjectsBanner>
-        
+
         <div className="container">
           <SearchContainer>
             <form onSubmit={handleSearch}>
@@ -175,7 +265,7 @@ const ProjectsPage = () => {
               </SearchButton>
             </form>
           </SearchContainer>
-          
+
           <ProjectsCategories>
             <h3>Categories</h3>
             <div className="categories-list">
@@ -190,7 +280,7 @@ const ProjectsPage = () => {
               ))}
             </div>
           </ProjectsCategories>
-          
+
           <ProjectsGrid>
             {filteredProjects.length > 0 ? (
               filteredProjects.map((project, index) => (
@@ -245,7 +335,7 @@ const ProjectsPage = () => {
           </ProjectsGrid>
         </div>
       </ProjectsPageContainer>
-      
+
       <Footer />
     </>
   );

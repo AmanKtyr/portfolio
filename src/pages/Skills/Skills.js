@@ -120,29 +120,119 @@ const Skills = () => {
   return (
     <>
       <Header />
-      
+
       <SkillsPageContainer>
         <SkillsBanner>
+          {/* Grid overlay for cyberpunk/tech feel */}
+          <div className="grid-overlay"></div>
+
           <div className="container">
             <SkillsBannerContent>
+              {/* Floating elements for visual interest */}
+              <motion.div
+                className="floating-element element-1"
+                animate={{
+                  y: [0, -20, 0],
+                  x: [0, 10, 0],
+                  rotate: [0, 5, 0]
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
+              <motion.div
+                className="floating-element element-2"
+                animate={{
+                  y: [0, 20, 0],
+                  x: [0, -15, 0],
+                  rotate: [0, -5, 0]
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100
+                }}
               >
                 My Skills
               </motion.h1>
+
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.3,
+                  type: "spring",
+                  stiffness: 50
+                }}
               >
                 What I can do for you
               </motion.p>
+
+              {/* Animated code particles */}
+              <motion.div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "5%",
+                  color: "rgba(56, 189, 248, 0.4)",
+                  fontSize: "1.2rem",
+                  fontFamily: "monospace",
+                  zIndex: 5
+                }}
+                animate={{
+                  opacity: [0.2, 0.8, 0.2],
+                  y: [0, -30, 0]
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                &lt;code&gt;
+              </motion.div>
+
+              <motion.div
+                style={{
+                  position: "absolute",
+                  bottom: "30%",
+                  right: "10%",
+                  color: "rgba(147, 51, 234, 0.4)",
+                  fontSize: "1.2rem",
+                  fontFamily: "monospace",
+                  zIndex: 5
+                }}
+                animate={{
+                  opacity: [0.2, 0.7, 0.2],
+                  y: [0, 20, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              >
+                &lt;/code&gt;
+              </motion.div>
             </SkillsBannerContent>
           </div>
         </SkillsBanner>
-        
+
         <div className="container">
           <SkillsContent>
             <div className="section-title">
@@ -163,7 +253,7 @@ const Skills = () => {
                 My expertise in various technologies
               </motion.p>
             </div>
-            
+
             <SkillsGrid>
               {skillsData.map((skill, index) => (
                 <motion.div
@@ -190,7 +280,7 @@ const Skills = () => {
               ))}
             </SkillsGrid>
           </SkillsContent>
-          
+
           <TechStackSection>
             <div className="section-title">
               <motion.h2
@@ -210,7 +300,7 @@ const Skills = () => {
                 Technologies I work with
               </motion.p>
             </div>
-            
+
             <TechStackGrid>
               {techItems.map((tech, index) => (
                 <motion.div
@@ -230,7 +320,7 @@ const Skills = () => {
               ))}
             </TechStackGrid>
           </TechStackSection>
-          
+
           <div className="section-title">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -249,7 +339,7 @@ const Skills = () => {
               How I developed my skills over time
             </motion.p>
           </div>
-          
+
           <SkillsTimeline>
             {learningPath.map((item, index) => (
               <TimelineItem key={item.id}>
@@ -259,9 +349,14 @@ const Skills = () => {
                 {index < learningPath.length - 1 && <TimelineConnector />}
                 <TimelineContent>
                   <motion.div
+                    className="timeline-animation"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{
+                      duration: 0.6,
+                      type: "spring",
+                      stiffness: 50
+                    }}
                     viewport={{ once: true }}
                   >
                     <h3>{item.title}</h3>
@@ -273,7 +368,7 @@ const Skills = () => {
           </SkillsTimeline>
         </div>
       </SkillsPageContainer>
-      
+
       <Footer />
     </>
   );

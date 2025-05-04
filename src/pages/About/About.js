@@ -11,29 +11,119 @@ const AboutPage = () => {
   return (
     <>
       <Header />
-      
+
       <AboutPageContainer>
         <AboutBanner>
+          {/* Grid overlay for cyberpunk/tech feel */}
+          <div className="grid-overlay"></div>
+
           <div className="container">
             <AboutBannerContent>
+              {/* Floating elements for visual interest */}
+              <motion.div
+                className="floating-element element-1"
+                animate={{
+                  y: [0, -20, 0],
+                  x: [0, 10, 0],
+                  rotate: [0, 5, 0]
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
+              <motion.div
+                className="floating-element element-2"
+                animate={{
+                  y: [0, 20, 0],
+                  x: [0, -15, 0],
+                  rotate: [0, -5, 0]
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100
+                }}
               >
                 About Me
               </motion.h1>
+
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.3,
+                  type: "spring",
+                  stiffness: 50
+                }}
               >
                 Get to know me better
               </motion.p>
+
+              {/* Animated code particles */}
+              <motion.div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "5%",
+                  color: "rgba(56, 189, 248, 0.4)",
+                  fontSize: "1.2rem",
+                  fontFamily: "monospace",
+                  zIndex: 5
+                }}
+                animate={{
+                  opacity: [0.2, 0.8, 0.2],
+                  y: [0, -30, 0]
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                &lt;about&gt;
+              </motion.div>
+
+              <motion.div
+                style={{
+                  position: "absolute",
+                  bottom: "30%",
+                  right: "10%",
+                  color: "rgba(147, 51, 234, 0.4)",
+                  fontSize: "1.2rem",
+                  fontFamily: "monospace",
+                  zIndex: 5
+                }}
+                animate={{
+                  opacity: [0.2, 0.7, 0.2],
+                  y: [0, 20, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              >
+                &lt;/about&gt;
+              </motion.div>
             </AboutBannerContent>
           </div>
         </AboutBanner>
-        
+
         <div className="container">
           <AboutContent>
             <AboutImage>
@@ -46,7 +136,7 @@ const AboutPage = () => {
                 <img src={aboutImg} alt="About Me" />
               </motion.div>
             </AboutImage>
-            
+
             <AboutText>
               <motion.h3
                 initial={{ opacity: 0, y: 20 }}
@@ -56,7 +146,7 @@ const AboutPage = () => {
               >
                 I'm a Web Developer from Lucknow, UP
               </motion.h3>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +155,7 @@ const AboutPage = () => {
               >
                 I create a unique and appealing website in line with your brand and vision. I seamlessly blend creativity in design with excellence in functionality to deliver exceptional user experiences.
               </motion.p>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +164,7 @@ const AboutPage = () => {
               >
                 My approach is client-focused, ensuring that every project meets the unique needs and goals of the businesses I work with. I'm dedicated to delivering high-quality solutions that help my clients achieve their online objectives.
               </motion.p>
-              
+
               <AboutInfo>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -86,7 +176,7 @@ const AboutPage = () => {
                     <strong>Name:</strong> AmAn-KtYr
                   </InfoItem>
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +187,7 @@ const AboutPage = () => {
                     <strong>Email:</strong> amanktyrrr@gmail.com
                   </InfoItem>
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +198,7 @@ const AboutPage = () => {
                     <strong>Location:</strong> Lucknow, UP, India
                   </InfoItem>
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +209,7 @@ const AboutPage = () => {
                     <strong>Freelance:</strong> Available
                   </InfoItem>
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +221,7 @@ const AboutPage = () => {
                   </ResumeButton>
                 </motion.div>
               </AboutInfo>
-              
+
               <AboutSkills>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -144,7 +234,7 @@ const AboutPage = () => {
                     <h4>Web Development</h4>
                   </SkillItem>
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -156,7 +246,7 @@ const AboutPage = () => {
                     <h4>App Development</h4>
                   </SkillItem>
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -168,7 +258,7 @@ const AboutPage = () => {
                     <h4>Photoshop</h4>
                   </SkillItem>
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -183,7 +273,7 @@ const AboutPage = () => {
               </AboutSkills>
             </AboutText>
           </AboutContent>
-          
+
           <AboutStats>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -196,7 +286,7 @@ const AboutPage = () => {
                 <p>Years of Experience</p>
               </StatItem>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -208,7 +298,7 @@ const AboutPage = () => {
                 <p>Projects Completed</p>
               </StatItem>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -220,7 +310,7 @@ const AboutPage = () => {
                 <p>Happy Clients</p>
               </StatItem>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -233,7 +323,7 @@ const AboutPage = () => {
               </StatItem>
             </motion.div>
           </AboutStats>
-          
+
           <div className="section-title">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -252,7 +342,7 @@ const AboutPage = () => {
               Education & Experience
             </motion.p>
           </div>
-          
+
           <AboutTimeline>
             <TimelineItem>
               <TimelineDot>
@@ -273,7 +363,7 @@ const AboutPage = () => {
                 </motion.div>
               </TimelineContent>
             </TimelineItem>
-            
+
             <TimelineItem>
               <TimelineDot>
                 <FaBriefcase />
@@ -293,7 +383,7 @@ const AboutPage = () => {
                 </motion.div>
               </TimelineContent>
             </TimelineItem>
-            
+
             <TimelineItem>
               <TimelineDot>
                 <FaBriefcase />
@@ -313,7 +403,7 @@ const AboutPage = () => {
                 </motion.div>
               </TimelineContent>
             </TimelineItem>
-            
+
             <TimelineItem>
               <TimelineDot>
                 <FaAward />
@@ -335,7 +425,7 @@ const AboutPage = () => {
           </AboutTimeline>
         </div>
       </AboutPageContainer>
-      
+
       <Footer />
     </>
   );

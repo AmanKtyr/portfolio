@@ -92,29 +92,119 @@ const BlogPage = () => {
   return (
     <>
       <Header />
-      
+
       <BlogPageContainer>
         <BlogBanner>
+          {/* Grid overlay for cyberpunk/tech feel */}
+          <div className="grid-overlay"></div>
+
           <div className="container">
             <BlogBannerContent>
+              {/* Floating elements for visual interest */}
+              <motion.div
+                className="floating-element element-1"
+                animate={{
+                  y: [0, -20, 0],
+                  x: [0, 10, 0],
+                  rotate: [0, 5, 0]
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
+              <motion.div
+                className="floating-element element-2"
+                animate={{
+                  y: [0, 20, 0],
+                  x: [0, -15, 0],
+                  rotate: [0, -5, 0]
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100
+                }}
               >
                 Blog
               </motion.h1>
+
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.3,
+                  type: "spring",
+                  stiffness: 50
+                }}
               >
                 Insights, tutorials, and thoughts on web development
               </motion.p>
+
+              {/* Animated code particles */}
+              <motion.div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "5%",
+                  color: "rgba(56, 189, 248, 0.4)",
+                  fontSize: "1.2rem",
+                  fontFamily: "monospace",
+                  zIndex: 5
+                }}
+                animate={{
+                  opacity: [0.2, 0.8, 0.2],
+                  y: [0, -30, 0]
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                &lt;blog&gt;
+              </motion.div>
+
+              <motion.div
+                style={{
+                  position: "absolute",
+                  bottom: "30%",
+                  right: "10%",
+                  color: "rgba(147, 51, 234, 0.4)",
+                  fontSize: "1.2rem",
+                  fontFamily: "monospace",
+                  zIndex: 5
+                }}
+                animate={{
+                  opacity: [0.2, 0.7, 0.2],
+                  y: [0, 20, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              >
+                &lt;/blog&gt;
+              </motion.div>
             </BlogBannerContent>
           </div>
         </BlogBanner>
-        
+
         <div className="container">
           <BlogContent>
             <motion.div
@@ -137,7 +227,7 @@ const BlogPage = () => {
                         <img src={blog.image} alt={blog.title} />
                         <div className="category">{blog.category}</div>
                       </BlogImage>
-                      
+
                       <BlogCardContent>
                         <BlogMeta>
                           <div>
@@ -147,13 +237,13 @@ const BlogPage = () => {
                             <FaUser /> {blog.author}
                           </div>
                         </BlogMeta>
-                        
+
                         <BlogTitle>
                           <Link to={`/blog/${blog.slug}`}>{blog.title}</Link>
                         </BlogTitle>
-                        
+
                         <BlogExcerpt>{blog.excerpt}</BlogExcerpt>
-                        
+
                         <BlogLink to={`/blog/${blog.slug}`}>
                           Read More <FaArrowRight />
                         </BlogLink>
@@ -163,7 +253,7 @@ const BlogPage = () => {
                 ))}
               </BlogGrid>
             </motion.div>
-            
+
             <motion.div
               className="blog-sidebar"
               initial={{ opacity: 0, x: 20 }}
@@ -180,7 +270,7 @@ const BlogPage = () => {
                     </SearchButton>
                   </SearchForm>
                 </SidebarWidget>
-                
+
                 <SidebarWidget>
                   <SidebarTitle>Categories</SidebarTitle>
                   <CategoryList>
@@ -194,7 +284,7 @@ const BlogPage = () => {
                     ))}
                   </CategoryList>
                 </SidebarWidget>
-                
+
                 <SidebarWidget>
                   <SidebarTitle>Tags</SidebarTitle>
                   <TagCloud>
@@ -207,7 +297,7 @@ const BlogPage = () => {
                     ))}
                   </TagCloud>
                 </SidebarWidget>
-                
+
                 <SidebarWidget>
                   <SidebarTitle>Recent Posts</SidebarTitle>
                   <div className="recent-posts">
@@ -229,7 +319,7 @@ const BlogPage = () => {
           </BlogContent>
         </div>
       </BlogPageContainer>
-      
+
       <Footer />
     </>
   );

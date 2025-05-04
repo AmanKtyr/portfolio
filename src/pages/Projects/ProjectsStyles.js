@@ -5,12 +5,12 @@ export const ProjectsPageContainer = styled.div`
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 2rem;
-    
+
     @media (max-width: 768px) {
       padding: 0 1rem;
     }
   }
-  
+
   .no-results {
     text-align: center;
     padding: 3rem;
@@ -20,18 +20,18 @@ export const ProjectsPageContainer = styled.div`
     box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
     backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
     grid-column: 1 / -1;
-    
+
     h3 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
       color: var(--primary-color);
     }
-    
+
     p {
       color: var(--gray-color);
     }
   }
-  
+
   .btn-text {
     display: inline-flex;
     align-items: center;
@@ -41,7 +41,7 @@ export const ProjectsPageContainer = styled.div`
     transition: all 0.3s ease;
     position: relative;
     padding: 0.5rem 0;
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -55,20 +55,20 @@ export const ProjectsPageContainer = styled.div`
       opacity: 0.5;
       transition: all 0.3s ease;
     }
-    
+
     svg {
       transition: all 0.3s ease;
     }
-    
+
     &:hover {
       color: var(--secondary-color);
       gap: 0.8rem;
-      
+
       &::before {
         transform: scaleX(1);
         opacity: 1;
       }
-      
+
       svg {
         transform: translateX(3px);
       }
@@ -77,12 +77,13 @@ export const ProjectsPageContainer = styled.div`
 `;
 
 export const ProjectsBanner = styled.div`
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  padding: 8rem 0 4rem;
+  background: #0F172A; /* Dark blue background for dark theme */
+  padding: 10rem 0 6rem;
   margin-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  
+
+  /* Animated gradient background */
   &::before {
     content: '';
     position: absolute;
@@ -90,8 +91,58 @@ export const ProjectsBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/path-to-pattern.svg') repeat;
-    opacity: 0.1;
+    background: linear-gradient(
+      125deg,
+      rgba(147, 51, 234, 0.15) 0%, /* Purple */
+      rgba(56, 189, 248, 0.15) 50%, /* Sky blue */
+      rgba(147, 51, 234, 0.15) 100% /* Purple */
+    );
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: 1;
+  }
+
+  /* Particle effect */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.3) 0, transparent 10px),
+      radial-gradient(circle at 80% 40%, rgba(147, 51, 234, 0.3) 0, transparent 10px),
+      radial-gradient(circle at 40% 80%, rgba(56, 189, 248, 0.3) 0, transparent 8px),
+      radial-gradient(circle at 60% 10%, rgba(147, 51, 234, 0.3) 0, transparent 12px),
+      radial-gradient(circle at 10% 60%, rgba(56, 189, 248, 0.3) 0, transparent 6px),
+      radial-gradient(circle at 90% 90%, rgba(147, 51, 234, 0.3) 0, transparent 8px);
+    z-index: 2;
+  }
+
+  /* Grid pattern overlay */
+  .grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 3;
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 `;
 
@@ -99,31 +150,91 @@ export const ProjectsBannerContent = styled.div`
   text-align: center;
   color: white;
   position: relative;
-  z-index: 1;
-  
+  z-index: 10;
+
   h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #38BDF8, #9333EA); /* Sky blue to purple gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    letter-spacing: -1px;
+
     @media (max-width: 768px) {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
-  
+
   p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     max-width: 600px;
     margin: 0 auto;
-    
+    color: #F1F5F9; /* Light gray */
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, #38BDF8, #9333EA);
+      margin: 1.5rem auto 0;
+      border-radius: 2px;
+    }
+
     @media (max-width: 768px) {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Floating elements for visual interest */
+  .floating-element {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(10px);
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  .element-1 {
+    width: 100px;
+    height: 100px;
+    background: #38BDF8; /* Sky blue */
+    top: -50px;
+    left: 20%;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .element-2 {
+    width: 150px;
+    height: 150px;
+    background: #9333EA; /* Purple */
+    bottom: -70px;
+    right: 15%;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
     }
   }
 `;
 
 export const SearchContainer = styled.div`
   margin-bottom: 2rem;
-  
+
   form {
     display: flex;
     max-width: 600px;
@@ -143,7 +254,7 @@ export const SearchInput = styled.input`
   box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
   font-size: 1rem;
   transition: all 0.3s ease;
-  
+
   &:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
@@ -161,7 +272,7 @@ export const SearchButton = styled.button`
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover {
     color: var(--secondary-color);
     transform: translateY(-50%) scale(1.1);
@@ -171,13 +282,13 @@ export const SearchButton = styled.button`
 export const ProjectsCategories = styled.div`
   margin-bottom: 3rem;
   text-align: center;
-  
+
   h3 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -189,7 +300,7 @@ export const ProjectsCategories = styled.div`
       background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     }
   }
-  
+
   .categories-list {
     display: flex;
     flex-wrap: wrap;
@@ -202,36 +313,36 @@ export const ProjectsCategories = styled.div`
 export const CategoryItem = styled.button`
   padding: 0.5rem 1.5rem;
   border: none;
-  background-color: ${({ active, theme }) => 
-    active === 'true' 
-      ? 'var(--primary-color)' 
+  background-color: ${({ active, theme }) =>
+    active === 'true'
+      ? 'var(--primary-color)'
       : theme.glassmorphism.background};
-  color: ${({ active }) => 
-    active === 'true' 
-      ? 'white' 
+  color: ${({ active }) =>
+    active === 'true'
+      ? 'white'
       : 'var(--gray-color)'};
   border-radius: var(--border-radius);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
-  border: ${({ active, theme }) => 
-    active === 'true' 
-      ? 'none' 
+  border: ${({ active, theme }) =>
+    active === 'true'
+      ? 'none'
       : theme.glassmorphism.border};
-  box-shadow: ${({ active, theme }) => 
-    active === 'true' 
-      ? '0 5px 15px rgba(56, 189, 248, 0.3)' 
+  box-shadow: ${({ active, theme }) =>
+    active === 'true'
+      ? '0 5px 15px rgba(56, 189, 248, 0.3)'
       : theme.glassmorphism.shadow};
-  
+
   &:hover {
-    background-color: ${({ active }) => 
-      active === 'true' 
-        ? 'var(--secondary-color)' 
+    background-color: ${({ active }) =>
+      active === 'true'
+        ? 'var(--secondary-color)'
         : 'rgba(56, 189, 248, 0.1)'};
-    color: ${({ active }) => 
-      active === 'true' 
-        ? 'white' 
+    color: ${({ active }) =>
+      active === 'true'
+        ? 'white'
         : 'var(--primary-color)'};
     transform: translateY(-3px);
   }

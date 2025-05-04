@@ -212,7 +212,7 @@ const faqData = [
 
 const Services = () => {
   const [activeAccordion, setActiveAccordion] = React.useState(null);
-  
+
   const toggleAccordion = (id) => {
     if (activeAccordion === id) {
       setActiveAccordion(null);
@@ -220,35 +220,125 @@ const Services = () => {
       setActiveAccordion(id);
     }
   };
-  
+
   return (
     <>
       <Header />
-      
+
       <ServicesPageContainer>
         <ServicesBanner>
+          {/* Grid overlay for cyberpunk/tech feel */}
+          <div className="grid-overlay"></div>
+
           <div className="container">
             <ServicesBannerContent>
+              {/* Floating elements for visual interest */}
+              <motion.div
+                className="floating-element element-1"
+                animate={{
+                  y: [0, -20, 0],
+                  x: [0, 10, 0],
+                  rotate: [0, 5, 0]
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
+              <motion.div
+                className="floating-element element-2"
+                animate={{
+                  y: [0, 20, 0],
+                  x: [0, -15, 0],
+                  rotate: [0, -5, 0]
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100
+                }}
               >
                 My Services
               </motion.h1>
+
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.3,
+                  type: "spring",
+                  stiffness: 50
+                }}
               >
                 Professional web development services to help your business grow online
               </motion.p>
+
+              {/* Animated code particles */}
+              <motion.div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "5%",
+                  color: "rgba(56, 189, 248, 0.4)",
+                  fontSize: "1.2rem",
+                  fontFamily: "monospace",
+                  zIndex: 5
+                }}
+                animate={{
+                  opacity: [0.2, 0.8, 0.2],
+                  y: [0, -30, 0]
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                &lt;services&gt;
+              </motion.div>
+
+              <motion.div
+                style={{
+                  position: "absolute",
+                  bottom: "30%",
+                  right: "10%",
+                  color: "rgba(147, 51, 234, 0.4)",
+                  fontSize: "1.2rem",
+                  fontFamily: "monospace",
+                  zIndex: 5
+                }}
+                animate={{
+                  opacity: [0.2, 0.7, 0.2],
+                  y: [0, 20, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              >
+                &lt;/services&gt;
+              </motion.div>
             </ServicesBannerContent>
           </div>
         </ServicesBanner>
-        
+
         <div className="container">
-          <motion.div 
+          <motion.div
             className="section-title"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -258,7 +348,7 @@ const Services = () => {
             <h2>What I Offer</h2>
             <p>Comprehensive web development services tailored to your needs</p>
           </motion.div>
-          
+
           <ServicesGrid>
             {servicesData.map((service, index) => (
               <motion.div
@@ -286,10 +376,10 @@ const Services = () => {
             ))}
           </ServicesGrid>
         </div>
-        
+
         <PricingSection>
           <div className="container">
-            <motion.div 
+            <motion.div
               className="section-title"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -299,7 +389,7 @@ const Services = () => {
               <h2>Pricing Plans</h2>
               <p>Affordable pricing for quality web development services</p>
             </motion.div>
-            
+
             <PricingContainer>
               {pricingData.map((plan, index) => (
                 <motion.div
@@ -335,10 +425,10 @@ const Services = () => {
             </PricingContainer>
           </div>
         </PricingSection>
-        
+
         <FAQSection>
           <div className="container">
-            <motion.div 
+            <motion.div
               className="section-title"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -348,7 +438,7 @@ const Services = () => {
               <h2>Frequently Asked Questions</h2>
               <p>Answers to common questions about my services</p>
             </motion.div>
-            
+
             <FAQContainer>
               {faqData.map((faq) => (
                 <motion.div
@@ -372,7 +462,7 @@ const Services = () => {
             </FAQContainer>
           </div>
         </FAQSection>
-        
+
         <CTASection>
           <div className="container">
             <CTAContent>
@@ -406,7 +496,7 @@ const Services = () => {
           </div>
         </CTASection>
       </ServicesPageContainer>
-      
+
       <Footer />
     </>
   );
