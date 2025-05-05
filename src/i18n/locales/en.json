@@ -1,0 +1,82 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "hireMe": "Hire Me"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "profession": "Web Developer",
+    "description": "I create modern and responsive websites with the latest technologies to help businesses grow online.",
+    "hireMe": "Hire Me",
+    "viewProjects": "View Projects",
+    "scrollDown": "Scroll Down"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "name": "Name:",
+    "email": "Email:",
+    "location": "Location:",
+    "freelance": "Freelance:",
+    "available": "Available",
+    "downloadCV": "Download CV"
+  },
+  "skills": {
+    "title": "My Skills",
+    "subtitle": "What I can do",
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "design": "UI/UX Design",
+    "other": "Other Skills"
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Recent work",
+    "all": "All",
+    "web": "Web",
+    "app": "App",
+    "design": "Design",
+    "viewDetails": "View Details",
+    "viewLive": "View Live"
+  },
+  "services": {
+    "title": "My Services",
+    "subtitle": "What I offer",
+    "learnMore": "Learn More"
+  },
+  "blog": {
+    "title": "My Blog",
+    "subtitle": "Latest articles",
+    "readMore": "Read More"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Get in touch",
+    "getInTouch": "Get In Touch",
+    "contactDesc": "Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "name": "Your Name",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Your message has been sent successfully!",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "copyright": "© 2024 AmAn-KtYr. All rights reserved.",
+    "designed": "Designed & Developed by AmAn-KtYr"
+  },
+  "theme": {
+    "switchToDark": "Switch to Dark Mode",
+    "switchToLight": "Switch to Light Mode"
+  }
+}
