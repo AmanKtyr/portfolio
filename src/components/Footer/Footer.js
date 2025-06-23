@@ -10,7 +10,7 @@ const Footer = () => {
         <FooterContent>
           <div>
             <FooterLogo to="/">
-              Dev<span>Portfolio</span>
+              Aman Ktyr <span>Portfolio</span>
             </FooterLogo>
             <FooterText>
               A professional web developer providing high-quality web development services. Let's work together to bring your ideas to life.
@@ -53,16 +53,16 @@ const Footer = () => {
           <div>
             <h3>Contact Info</h3>
             <FooterLinks>
-              <li>Your City, Country</li>
-              <li>your.email@example.com</li>
-              <li>+1 234 567 8900</li>
+              <li>Lucknow, India</li>
+              <li>ktyrpro@gmail.com</li>
+              <li>+91 6387343245</li>
             </FooterLinks>
           </div>
         </FooterContent>
         
         <FooterBottom>
           <p>
-            &copy; {new Date().getFullYear()} DevPortfolio. All rights reserved. Made with <FaHeart /> by Your Name
+            &copy; {new Date().getFullYear()} DevPortfolio. All rights reserved. Made with <FaHeart /> by Aman Ktyr
           </p>
         </FooterBottom>
       </div>
