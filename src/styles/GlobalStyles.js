@@ -41,20 +41,6 @@ const GlobalStyles = createGlobalStyle`
     cursor: none; /* Hide default cursor for custom cursor */
   }
 
-  .dark-mode {
-    --primary-color: ${({ theme }) => theme.isDarkMode ? theme.colors.primary : ''};
-    --secondary-color: ${({ theme }) => theme.isDarkMode ? theme.colors.secondary : ''};
-    --accent-color: ${({ theme }) => theme.isDarkMode ? theme.colors.accent : ''};
-    --dark-color: ${({ theme }) => theme.isDarkMode ? theme.colors.dark : ''};
-    --light-color: ${({ theme }) => theme.isDarkMode ? theme.colors.light : ''};
-    --gray-color: ${({ theme }) => theme.isDarkMode ? theme.colors.gray : ''};
-    --background-color: ${({ theme }) => theme.isDarkMode ? theme.colors.background : ''};
-    --card-bg-color: ${({ theme }) => theme.isDarkMode ? theme.colors.cardBg : ''};
-    --text-color: ${({ theme }) => theme.isDarkMode ? theme.colors.text : ''};
-    --text-secondary-color: ${({ theme }) => theme.isDarkMode ? theme.colors.textSecondary : ''};
-    --border-color: ${({ theme }) => theme.isDarkMode ? theme.colors.border : ''};
-  }
-
   a {
     text-decoration: none;
     color: var(--primary-color);

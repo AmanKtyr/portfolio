@@ -38,7 +38,7 @@ export const ServicesPageContainer = styled.div`
     }
 
     p {
-      color: #F1F5F9;
+      color: ${({ theme }) => theme.colors.textSecondary};
       max-width: 600px;
       margin: 0 auto;
       font-size: 1.2rem;
@@ -99,7 +99,7 @@ export const ServicesPageContainer = styled.div`
 `;
 
 export const ServicesBanner = styled.div`
-  background: #0F172A; /* Dark blue background for dark theme */
+  background: ${({ theme }) => theme.colors.background};
   padding: 10rem 0 6rem;
   margin-bottom: 6rem;
   position: relative;
@@ -170,7 +170,7 @@ export const ServicesBanner = styled.div`
 
 export const ServicesBannerContent = styled.div`
   text-align: center;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   position: relative;
   z-index: 10;
 
@@ -193,7 +193,7 @@ export const ServicesBannerContent = styled.div`
     font-size: 1.4rem;
     max-width: 600px;
     margin: 0 auto;
-    color: #F1F5F9; /* Light gray */
+    color: ${({ theme }) => theme.colors.textSecondary};
     font-weight: 300;
     letter-spacing: 0.5px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -254,16 +254,17 @@ export const ServicesGrid = styled.div`
 `;
 
 export const ServiceCard = styled.div`
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.cardBg};
   padding: 2rem;
   border-radius: var(--border-radius);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => theme.shadows.medium};
   transition: var(--transition);
   height: 100%;
+  border: 1px solid ${({ theme }) => theme.colors.border};
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: ${({ theme }) => theme.shadows.large};
   }
 `;
 
@@ -288,6 +289,7 @@ export const ServiceTitle = styled.h3`
   margin-bottom: 1rem;
   position: relative;
   padding-bottom: 0.5rem;
+  color: ${({ theme }) => theme.colors.text};
 
   &::after {
     content: '';
@@ -301,7 +303,7 @@ export const ServiceTitle = styled.h3`
 `;
 
 export const ServiceText = styled.p`
-  color: var(--gray-color);
+  color: ${({ theme }) => theme.colors.textSecondary};
   margin-bottom: 1.5rem;
 `;
 
@@ -313,6 +315,7 @@ export const ServiceFeature = styled.li`
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
+  color: ${({ theme }) => theme.colors.textSecondary};
 
   &::before {
     content: '•';
@@ -326,7 +329,7 @@ export const ServiceFeature = styled.li`
 
 export const PricingSection = styled.section`
   padding: 6rem 0;
-  background-color: #f1f5f9;
+  background-color: ${({ theme }) => theme.isDarkMode ? theme.colors.background : theme.colors.light};
 `;
 
 export const PricingContainer = styled.div`
@@ -342,19 +345,19 @@ export const PricingContainer = styled.div`
 `;
 
 export const PricingCard = styled.div`
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.cardBg};
   border-radius: var(--border-radius);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => theme.shadows.medium};
   padding: 2rem;
   transition: var(--transition);
   position: relative;
-  border: ${({ recommended }) => (recommended ? '2px solid var(--primary-color)' : '1px solid #e2e8f0')};
+  border: ${({ recommended }) => (recommended ? '2px solid var(--primary-color)' : '1px solid var(--border-color)')};
   transform: ${({ recommended }) => (recommended ? 'scale(1.05)' : 'scale(1)')};
   z-index: ${({ recommended }) => (recommended ? '1' : '0')};
 
   &:hover {
     transform: ${({ recommended }) => (recommended ? 'scale(1.08)' : 'scale(1.03)')};
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: ${({ theme }) => theme.shadows.large};
   }
 
   .recommended-badge {
@@ -386,10 +389,11 @@ export const PricingHeader = styled.div`
   h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: ${({ theme }) => theme.colors.text};
   }
 
   p {
-    color: var(--gray-color);
+    color: ${({ theme }) => theme.colors.textSecondary};
     font-size: 0.9rem;
   }
 `;
@@ -405,7 +409,7 @@ export const PricingPrice = styled.div`
   }
 
   p {
-    color: var(--gray-color);
+    color: ${({ theme }) => theme.colors.textSecondary};
     font-size: 0.9rem;
   }
 `;
@@ -418,6 +422,7 @@ export const PricingFeature = styled.li`
   margin-bottom: 0.8rem;
   display: flex;
   align-items: center;
+  color: ${({ theme }) => theme.colors.textSecondary};
 
   &::before {
     content: '✓';
@@ -433,7 +438,7 @@ export const PricingButton = styled(Link)`
   display: block;
   text-align: center;
   padding: 0.8rem 1.5rem;
-  background-color: ${({ recommended }) => (recommended ? 'var(--primary-color)' : 'white')};
+  background-color: ${({ recommended }) => (recommended ? 'var(--primary-color)' : 'transparent')};
   color: ${({ recommended }) => (recommended ? 'white' : 'var(--primary-color)')};
   border: 1px solid var(--primary-color);
   border-radius: var(--border-radius);
@@ -449,7 +454,7 @@ export const PricingButton = styled(Link)`
 
 export const FAQSection = styled.section`
   padding: 6rem 0;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.cardBg};
 `;
 
 export const FAQContainer = styled.div`
@@ -459,20 +464,20 @@ export const FAQContainer = styled.div`
 
 export const FAQItem = styled.div`
   margin-bottom: 1rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: var(--border-radius);
   overflow: hidden;
   transition: var(--transition);
 
   &:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: ${({ theme }) => theme.shadows.medium};
   }
 `;
 
 export const FAQQuestion = styled.div`
   padding: 1.5rem;
-  background-color: ${({ active }) => (active ? 'var(--primary-color)' : 'white')};
-  color: ${({ active }) => (active ? 'white' : 'var(--dark-color)')};
+  background-color: ${({ active, theme }) => (active ? 'var(--primary-color)' : theme.colors.cardBg)};
+  color: ${({ active, theme }) => (active ? 'white' : theme.colors.text)};
   font-weight: 500;
   cursor: pointer;
   display: flex;
@@ -486,7 +491,7 @@ export const FAQQuestion = styled.div`
   }
 
   &:hover {
-    background-color: ${({ active }) => (active ? 'var(--primary-color)' : 'rgba(37, 99, 235, 0.1)')};
+    background-color: ${({ active, theme }) => (active ? 'var(--primary-color)' : theme.colors.border)};
   }
 `;
 
@@ -496,7 +501,7 @@ export const FAQAnswer = styled.div`
   overflow: hidden;
   transition: all 0.3s ease;
   line-height: 1.8;
-  color: var(--gray-color);
+  color: ${({ theme }) => theme.colors.textSecondary};
 `;
 
 export const CTASection = styled.section`

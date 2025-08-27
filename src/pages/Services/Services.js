@@ -130,7 +130,8 @@ const pricingData = [
   {
     id: 1,
     title: 'Basic',
-    price: '$499',
+    priceUSD: '$499',
+    priceINR: '₹39,999',
     description: 'Perfect for small businesses and startups',
     features: [
       'Custom website design',
@@ -145,7 +146,8 @@ const pricingData = [
   {
     id: 2,
     title: 'Standard',
-    price: '$999',
+    priceUSD: '$999',
+    priceINR: '₹79,999',
     description: 'Ideal for growing businesses',
     features: [
       'Everything in Basic',
@@ -161,7 +163,8 @@ const pricingData = [
   {
     id: 3,
     title: 'Premium',
-    price: '$1999',
+    priceUSD: '$1999',
+    priceINR: '₹159,999',
     description: 'For established businesses with complex needs',
     features: [
       'Everything in Standard',
@@ -406,8 +409,17 @@ const Services = () => {
                       <p>{plan.description}</p>
                     </PricingHeader>
                     <PricingPrice>
-                      <h4>{plan.price}</h4>
-                      <p>One-time payment</p>
+                      <div className="price-container">
+                        <div className="price-usd">
+                          <h4>{plan.priceUSD}</h4>
+                          <p>USD</p>
+                        </div>
+                        <div className="price-inr">
+                          <h4>{plan.priceINR}</h4>
+                          <p>INR</p>
+                        </div>
+                      </div>
+                      <p className="payment-note">One-time payment</p>
                     </PricingPrice>
                     <PricingFeatures>
                       {plan.features.map((feature, idx) => (
