@@ -330,6 +330,38 @@ export const ServiceFeature = styled.li`
 export const PricingSection = styled.section`
   padding: 6rem 0;
   background-color: ${({ theme }) => theme.isDarkMode ? theme.colors.background : theme.colors.light};
+
+  .currency-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    gap: 0.5rem;
+  }
+
+  .currency-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    &.active {
+      background-color: var(--primary-color);
+      color: white;
+      box-shadow: ${({ theme }) => theme.shadows.medium};
+    }
+  }
 `;
 
 export const PricingContainer = styled.div`
@@ -411,6 +443,14 @@ export const PricingPrice = styled.div`
   p {
     color: ${({ theme }) => theme.colors.textSecondary};
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .other-currency {
+    color: ${({ theme }) => theme.colors.textSecondary};
+    font-size: 0.75rem;
+    opacity: 0.7;
+    font-style: italic;
   }
 `;
 

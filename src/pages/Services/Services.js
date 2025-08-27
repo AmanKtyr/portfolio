@@ -215,6 +215,7 @@ const faqData = [
 
 const Services = () => {
   const [activeAccordion, setActiveAccordion] = React.useState(null);
+  const [currency, setCurrency] = React.useState('USD'); // 'USD' or 'INR'
 
   const toggleAccordion = (id) => {
     if (activeAccordion === id) {
@@ -222,6 +223,10 @@ const Services = () => {
     } else {
       setActiveAccordion(id);
     }
+  };
+
+  const toggleCurrency = () => {
+    setCurrency(currency === 'USD' ? 'INR' : 'USD');
   };
 
   return (
@@ -393,6 +398,27 @@ const Services = () => {
               <p>Affordable pricing for quality web development services</p>
             </motion.div>
 
+            <motion.div
+              className="currency-toggle"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <button 
+                className={`currency-btn ${currency === 'USD' ? 'active' : ''}`}
+                onClick={() => setCurrency('USD')}
+              >
+                USD
+              </button>
+              <button 
+                className={`currency-btn ${currency === 'INR' ? 'active' : ''}`}
+                onClick={() => setCurrency('INR')}
+              >
+                INR
+              </button>
+            </motion.div>
+
             <PricingContainer>
               {pricingData.map((plan, index) => (
                 <motion.div
@@ -409,17 +435,11 @@ const Services = () => {
                       <p>{plan.description}</p>
                     </PricingHeader>
                     <PricingPrice>
-                      <div className="price-container">
-                        <div className="price-usd">
-                          <h4>{plan.priceUSD}</h4>
-                          <p>USD</p>
-                        </div>
-                        <div className="price-inr">
-                          <h4>{plan.priceINR}</h4>
-                          <p>INR</p>
-                        </div>
-                      </div>
-                      <p className="payment-note">One-time payment</p>
+                      <h4>{currency === 'USD' ? plan.priceUSD : plan.priceINR}</h4>
+                      <p>{currency} - One-time payment</p>
+                      <small className="other-currency">
+                        {currency === 'USD' ? `Also available in INR: ${plan.priceINR}` : `Also available in USD: ${plan.priceUSD}`}
+                      </small>
                     </PricingPrice>
                     <PricingFeatures>
                       {plan.features.map((feature, idx) => (
