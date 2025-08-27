@@ -6,22 +6,14 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { BlogPageContainer, BlogBanner, BlogBannerContent, BlogContent, BlogGrid, BlogCard, BlogImage, BlogCardContent, BlogMeta, BlogTitle, BlogExcerpt, BlogLink, BlogSidebar, SidebarWidget, SidebarTitle, SearchForm, SearchInput, SearchButton, CategoryList, CategoryItem, TagCloud, TagItem } from './BlogStyles';
 
-// Import blog images (you'll need to add these)
-import blog1 from '../../assets/blog1.jpg';
-import blog2 from '../../assets/blog2.jpg';
-import blog3 from '../../assets/blog3.jpg';
-import blog4 from '../../assets/blog1.jpg'; // Replace with actual image
-import blog5 from '../../assets/blog2.jpg'; // Replace with actual image
-import blog6 from '../../assets/blog3.jpg'; // Replace with actual image
-
 const blogData = [
   {
     id: 1,
     title: 'The Future of Web Development: Trends to Watch in 2023',
     excerpt: 'Explore the latest trends and technologies shaping the future of web development, from AI integration to serverless architecture.',
-    image: blog1,
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop&crop=center",
     date: 'June 15, 2023',
-    author: 'Aman Katiyar',
+    author: 'AmAn-KtYr',
     category: 'Web Development',
     tags: ['Web Development', 'Trends', 'Technology'],
     slug: 'future-web-development-trends'
@@ -30,9 +22,9 @@ const blogData = [
     id: 2,
     title: 'How to Optimize Your Website for Better Performance',
     excerpt: 'Learn practical tips and techniques to improve your website\'s loading speed, performance, and overall user experience.',
-    image: blog2,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center",
     date: 'July 22, 2023',
-    author: 'Aman Katiyar',
+    author: 'AmAn-KtYr',
     category: 'Performance',
     tags: ['Performance', 'Optimization', 'Web Development'],
     slug: 'optimize-website-performance'
@@ -41,9 +33,9 @@ const blogData = [
     id: 3,
     title: 'Building Responsive Websites: Best Practices and Common Mistakes',
     excerpt: 'Discover the essential principles of responsive web design and how to avoid common pitfalls that affect mobile usability.',
-    image: blog3,
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop&crop=center",
     date: 'August 10, 2023',
-    author: 'Aman Katiyar',
+    author: 'AmAn-KtYr',
     category: 'Design',
     tags: ['Responsive Design', 'Mobile', 'UI/UX'],
     slug: 'responsive-website-best-practices'
@@ -52,9 +44,9 @@ const blogData = [
     id: 4,
     title: 'Introduction to Three.js: Creating 3D Experiences on the Web',
     excerpt: 'Learn the basics of Three.js and how to create immersive 3D experiences for your web projects.',
-    image: blog4,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center",
     date: 'September 5, 2023',
-    author: 'Aman Katiyar',
+    author: 'AmAn-KtYr',
     category: '3D Graphics',
     tags: ['Three.js', '3D', 'WebGL', 'JavaScript'],
     slug: 'introduction-to-threejs'
@@ -63,9 +55,9 @@ const blogData = [
     id: 5,
     title: 'Modern CSS Techniques Every Developer Should Know',
     excerpt: 'Explore advanced CSS techniques like Grid, Flexbox, and CSS Variables that can transform your web development workflow.',
-    image: blog5,
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop&crop=center",
     date: 'October 12, 2023',
-    author: 'Aman Katiyar',
+    author: 'AmAn-KtYr',
     category: 'CSS',
     tags: ['CSS', 'Web Development', 'Design'],
     slug: 'modern-css-techniques'
@@ -74,9 +66,9 @@ const blogData = [
     id: 6,
     title: 'Getting Started with React: A Beginner\'s Guide',
     excerpt: 'A comprehensive guide to help beginners understand React concepts and start building their first React application.',
-    image: blog6,
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop&crop=center",
     date: 'November 8, 2023',
-    author: 'Aman Katiyar',
+    author: 'AmAn-KtYr',
     category: 'React',
     tags: ['React', 'JavaScript', 'Frontend'],
     slug: 'getting-started-with-react'

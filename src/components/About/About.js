@@ -46,7 +46,7 @@ const About = () => {
 
               <ScrollAnimation animation="fadeUp" delay={0.4}>
                 <InfoItem>
-                  <strong>{t('about.email')}</strong> amanktyrrr@gmail.com
+                  <strong>{t('about.email')}</strong> ktyrpro@gmail.com
                 </InfoItem>
               </ScrollAnimation>
 
@@ -64,7 +64,7 @@ const About = () => {
 
               <ScrollAnimation animation="fadeUp" delay={0.7}>
                 <ResumeButton href={resumePdf} download="aman-ktyr-resume.pdf">
-                  <FaDownload /> {t('about.downloadResume')}
+                  <FaDownload /> {t('Download_Resume')}
                 </ResumeButton>
               </ScrollAnimation>
             </AboutInfo>
@@ -80,14 +80,14 @@ const About = () => {
               <ScrollAnimation animation="zoom" delay={0.8}>
                 <SkillItem>
                   <FaLaptopCode />
-                  <h4>App Development</h4>
+                  <h4>CRM Development</h4>
                 </SkillItem>
               </ScrollAnimation>
 
               <ScrollAnimation animation="zoom" delay={0.9}>
                 <SkillItem>
                   <FaPhotoVideo />
-                  <h4>Photoshop</h4>
+                  <h4>Gen/Agentic AI</h4>
                 </SkillItem>
               </ScrollAnimation>
 

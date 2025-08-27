@@ -6,18 +6,10 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { ProjectDetailsContainer, ProjectDetailsContent, ProjectImage, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDescription, ProjectMeta, MetaItem, ProjectLinks, ProjectLink, BackButton } from './ProjectDetailsStyles';
 
-// Import project images
-import project1 from '../../assets/project1.jpg';
-import project2 from '../../assets/project2.jpg';
-import project3 from '../../assets/project3.jpg';
-import project4 from '../../assets/project4.jpg';
-import project5 from '../../assets/project5.jpg';
-import project6 from '../../assets/project6.jpg';
-
 const projectsData = [
   {
     id: 1,
-    image: project1,
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop&crop=center",
     title: 'E-commerce Website',
     category: 'Web Development',
     description: 'A fully responsive e-commerce website with product filtering, cart functionality, and payment integration. This project was built using React for the frontend, Node.js and Express for the backend, and MongoDB for the database. The website includes features such as user authentication, product search and filtering, shopping cart, checkout process, and payment integration with Stripe.',
@@ -29,7 +21,7 @@ const projectsData = [
   },
   {
     id: 2,
-    image: project2,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center",
     title: 'Portfolio Website',
     category: 'Web Development',
     description: 'A modern portfolio website for a photographer showcasing their work with a beautiful gallery. The website features a responsive design, smooth animations, image gallery with filtering options, and contact form. It was built using HTML, CSS, and JavaScript with a focus on performance and user experience.',
@@ -41,7 +33,7 @@ const projectsData = [
   },
   {
     id: 3,
-    image: project3,
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop&crop=center",
     title: 'Mobile Banking App',
     category: 'App Development',
     description: 'A mobile banking application with secure authentication, transaction history, and bill payments. The app was developed using React Native for cross-platform compatibility, with a Node.js backend and PostgreSQL database. It includes features such as biometric authentication, real-time transaction updates, bill payments, and fund transfers.',
@@ -53,7 +45,7 @@ const projectsData = [
   },
   {
     id: 4,
-    image: project4,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center",
     title: 'Task Management Dashboard',
     category: 'Web Development',
     description: 'A task management dashboard with drag-and-drop functionality, task assignments, and progress tracking. This project was built using React for the frontend, with Redux for state management, and Firebase for the backend. It includes features such as user authentication, task creation and assignment, drag-and-drop task management, progress tracking, and notifications.',
@@ -65,7 +57,7 @@ const projectsData = [
   },
   {
     id: 5,
-    image: project5,
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop&crop=center",
     title: 'Food Delivery App',
     category: 'App Development',
     description: 'A food delivery application with restaurant listings, menu browsing, and order tracking. The app was developed using Flutter for cross-platform compatibility, with a Node.js backend and MongoDB database. It includes features such as user authentication, restaurant search and filtering, menu browsing, cart management, order placement, and real-time order tracking.',
@@ -77,7 +69,7 @@ const projectsData = [
   },
   {
     id: 6,
-    image: project6,
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&crop=center",
     title: 'Real Estate Website',
     category: 'Web Development',
     description: 'A real estate website with property listings, advanced search filters, and virtual tours. This project was built using Next.js for server-side rendering and improved SEO, with a Node.js backend and MongoDB database. It includes features such as property listings, advanced search and filtering, virtual property tours, appointment scheduling, and user authentication.',

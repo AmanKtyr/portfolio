@@ -4,19 +4,14 @@ import { FaCalendarAlt, FaUser, FaArrowRight } from 'react-icons/fa';
 import { BlogContainer, BlogGrid, BlogCard, BlogImage, BlogContent, BlogMeta, BlogTitle, BlogExcerpt, BlogLink } from './BlogStyles';
 import ScrollAnimation from '../ScrollAnimation/ScrollAnimation';
 
-// Import blog images (you'll need to add these)
-import blog1 from '../../assets/blog1.jpg';
-import blog2 from '../../assets/blog2.jpg';
-import blog3 from '../../assets/blog3.jpg';
-
 const blogData = [
   {
     id: 1,
     title: 'The Future of Web Development: Trends to Watch in 2023',
     excerpt: 'Explore the latest trends and technologies shaping the future of web development, from AI integration to serverless architecture.',
-    image: blog1,
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop&crop=center",
     date: 'June 15, 2023',
-    author: 'Your Name',
+    author: 'AmAn-KtYr',
     category: 'Web Development',
     slug: 'future-web-development-trends'
   },
@@ -24,9 +19,9 @@ const blogData = [
     id: 2,
     title: 'How to Optimize Your Website for Better Performance',
     excerpt: 'Learn practical tips and techniques to improve your website\'s loading speed, performance, and overall user experience.',
-    image: blog2,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center",
     date: 'July 22, 2023',
-    author: 'Your Name',
+    author: 'AmAn-KtYr',
     category: 'Performance',
     slug: 'optimize-website-performance'
   },
@@ -34,9 +29,9 @@ const blogData = [
     id: 3,
     title: 'Building Responsive Websites: Best Practices and Common Mistakes',
     excerpt: 'Discover the essential principles of responsive web design and how to avoid common pitfalls that affect mobile usability.',
-    image: blog3,
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop&crop=center",
     date: 'August 10, 2023',
-    author: 'Your Name',
+    author: 'AmAn-KtYr',
     category: 'Design',
     slug: 'responsive-website-best-practices'
   }

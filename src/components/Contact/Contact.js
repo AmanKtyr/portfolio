@@ -112,7 +112,9 @@ const Contact = () => {
             <ContactInfo>
               <h3>{t('contact.getInTouch')}</h3>
               <p>
-                {t('contact.contactDesc')}
+                I'm a passionate Full-Stack Developer specializing in modern web technologies. 
+                Available for freelance projects, collaborations, and exciting opportunities. 
+                Let's discuss how I can help bring your ideas to life!
               </p>
 
               <ContactDetail>
@@ -141,21 +143,21 @@ const Contact = () => {
                 </div>
                 <div className="text">
                   <h4>{t('contact.location')}</h4>
-                  <p>Lucknow, UP, India</p>
+                  <p>Lucknow, Uttar Pradesh, India</p>
                 </div>
               </ContactDetail>
 
               <ContactSocial>
-                <SocialLink href="https://github.com/AmanKtyr" target="_blank" rel="noopener noreferrer">
+                <SocialLink href="https://github.com/AmanKtyr" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
                   <FaGithub />
                 </SocialLink>
-                <SocialLink href="https://www.linkedin.com/in/amanktyr" target="_blank" rel="noopener noreferrer">
+                <SocialLink href="https://www.linkedin.com/in/amanktyr" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
                   <FaLinkedin />
                 </SocialLink>
-                <SocialLink href="https://codepen.io/amanktyr" target="_blank" rel="noopener noreferrer">
+                <SocialLink href="https://codepen.io/amanktyr" target="_blank" rel="noopener noreferrer" title="CodePen Portfolio">
                   <FaCodepen />
                 </SocialLink>
-                <SocialLink href="https://www.quora.com/profile/AmAn-KtYr-1" target="_blank" rel="noopener noreferrer">
+                <SocialLink href="https://www.quora.com/profile/AmAn-KtYr-1" target="_blank" rel="noopener noreferrer" title="Quora Profile">
                   <FaQuora />
                 </SocialLink>
               </ContactSocial>
