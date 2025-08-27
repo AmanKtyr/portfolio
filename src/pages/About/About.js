@@ -184,7 +184,7 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                 >
                   <InfoItem>
-                    <strong>Email:</strong> amanktyrrr@gmail.com
+                    <strong>Email:</strong> ktyrpro@gmail.com
                   </InfoItem>
                 </motion.div>
 
