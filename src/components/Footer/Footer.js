@@ -16,10 +16,10 @@ const Footer = () => {
               A professional web developer providing high-quality web development services. Let's work together to bring your ideas to life.
             </FooterText>
             <FooterSocial>
-              <SocialLink href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <SocialLink href="https://github.com/amanktyr" target="_blank" rel="noopener noreferrer">
                 <FaGithub />
               </SocialLink>
-              <SocialLink href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <SocialLink href="https://linkedin.com/amanktyr" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </SocialLink>
               <SocialLink href="https://twitter.com" target="_blank" rel="noopener noreferrer">
@@ -62,7 +62,7 @@ const Footer = () => {
         
         <FooterBottom>
           <p>
-            &copy; {new Date().getFullYear()} DevPortfolio. All rights reserved. Made with <FaHeart /> by Aman Ktyr
+            &copy; {new Date().getFullYear()} AmanKtyr. All rights reserved. Made with <FaHeart /> by Aman Ktyr
           </p>
         </FooterBottom>
       </div>

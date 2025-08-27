@@ -223,7 +223,7 @@ const ContactPage = () => {
                   </div>
                   <div className="text">
                     <h4>Email</h4>
-                    <p>your.email@example.com</p>
+                    <p>ktyrpro@gmail.com</p>
                   </div>
                 </ContactDetail>
 
@@ -233,7 +233,7 @@ const ContactPage = () => {
                   </div>
                   <div className="text">
                     <h4>Phone</h4>
-                    <p>+1 234 567 8900</p>
+                    <p>+91 6387343245</p>
                   </div>
                 </ContactDetail>
 
@@ -243,15 +243,15 @@ const ContactPage = () => {
                   </div>
                   <div className="text">
                     <h4>Location</h4>
-                    <p>Your City, Country</p>
+                    <p>Lucknow, India</p>
                   </div>
                 </ContactDetail>
 
                 <ContactSocial>
-                  <SocialLink href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  <SocialLink href="https://github.com/amanktyr" target="_blank" rel="noopener noreferrer">
                     <FaGithub />
                   </SocialLink>
-                  <SocialLink href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <SocialLink href="https://linkedin.com/amanktyr" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin />
                   </SocialLink>
                   <SocialLink href="https://twitter.com" target="_blank" rel="noopener noreferrer">
@@ -335,7 +335,7 @@ const ContactPage = () => {
 
         <ContactMap>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986432970718!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1625671681679!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61293.561139084224!2d80.92496128294971!3d26.849391020942367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e1!3m2!1sen!2sin!4v1756317578118!5m2!1sen!2sin"
             width="100%"
             height="450"
             style={{ border: 0 }}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaCode, FaLaptopCode, FaMobileAlt, FaServer, FaDownload, FaPhotoVideo } from 'react-icons/fa';
 import { AboutContainer, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton } from './AboutStyles';
-import aboutImg from '../../assets/about-image.png'; // You'll need to add this image
+import aboutImg from '../../assets/aman-about.jpeg'; // You'll need to add this image
 import resumePdf from '../../assets/resume.pdf'; // Add your resume PDF
 import ScrollAnimation from '../ScrollAnimation/ScrollAnimation';
 import { useTranslation } from 'react-i18next';

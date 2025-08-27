@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaGithub, FaLinkedin, FaCodepen, FaQuora } from 'react-icons/fa';
 import { HeroContainer, HeroContent, HeroText, HeroImage, HeroBtns, SocialIcons, SocialIcon, ScrollDown } from './HeroStyles';
-import laptopImage from '../../assets/laptop-code.svg';
+// import laptopImage from '../../assets/laptop-code.svg';
+import laptopImage from '../../assets/hero-image.png';
 import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
@@ -124,7 +125,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            style={{ height: '100%' }}
+            style={{ height: '120%' } }
           >
             <img src={laptopImage} alt="Laptop with code" />
           </motion.div>
