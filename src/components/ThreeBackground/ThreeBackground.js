@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ThreeBackgroundContainer } from './ThreeBackgroundStyles';
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const ThreeBackground = () => {
