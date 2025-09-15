@@ -282,8 +282,8 @@ const AboutPage = () => {
               viewport={{ once: true }}
             >
               <StatItem>
-                <h3>5+</h3>
-                <p>Years of Experience</p>
+                <h3>3+</h3>
+                <p>Years Experience</p>
               </StatItem>
             </motion.div>
 
@@ -294,7 +294,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
             >
               <StatItem>
-                <h3>50+</h3>
+                <h3>25+</h3>
                 <p>Projects Completed</p>
               </StatItem>
             </motion.div>
@@ -356,10 +356,31 @@ const AboutPage = () => {
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <span className="date">2015 - 2019</span>
-                  <h3>Bachelor of Technology in Computer Science</h3>
-                  <p>University Name, City</p>
-                  <p>Graduated with honors, focusing on web development and software engineering.</p>
+
+                 <span className="date">2024 - Present</span>
+                  <h3>Full-Stack Web Developer</h3>
+                  <p>Sipher Web Pvt. Ltd.</p>
+                  <p>Developed scalable web apps using Python with Django/React.js, built REST APIs, and implemented security best practices for client projects.</p>
+                </motion.div>
+              </TimelineContent>
+            </TimelineItem>
+
+            <TimelineItem>
+              <TimelineDot>
+                <FaUserGraduate />
+              </TimelineDot>
+              <TimelineConnector />
+              <TimelineContent>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="date">2022 - 2025</span>
+                  <h3>B.Tech in Computer Science & Engineering</h3>
+                  <p>Sagar Group of Institute, Barabanki (AKTU)</p>
+                  <p>Currently pursuing degree with focus on full-stack development and software architecture.</p>
                 </motion.div>
               </TimelineContent>
             </TimelineItem>
@@ -373,13 +394,13 @@ const AboutPage = () => {
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <span className="date">2019 - 2021</span>
-                  <h3>Frontend Developer</h3>
-                  <p>Company Name, City</p>
-                  <p>Developed responsive websites and web applications using modern frontend technologies.</p>
+                  <span className="date">2020 - 2022</span>
+                  <h3>Diploma in Computer Science</h3>
+                  <p>JawaharLal Nehru Polytechnic, MMB, Sitapur</p>
+                  <p>Secured 74% marks with focus on programming fundamentals</p>
                 </motion.div>
               </TimelineContent>
             </TimelineItem>
@@ -396,10 +417,10 @@ const AboutPage = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <span className="date">2021 - 2022</span>
-                  <h3>Full Stack Developer</h3>
-                  <p>Company Name, City</p>
-                  <p>Worked on full stack development projects using React, Node.js, and MongoDB.</p>
+                  <span className="date">2022 (6 Months)</span>
+                  <h3>Apprenticeship Training,</h3>
+                  <p>Softpro India Computer Technologies,Lucknow </p>
+                  <p>Developed reporting portal using PHP/MySQL and created responsive UIs with Bootstrap.</p>
                 </motion.div>
               </TimelineContent>
             </TimelineItem>
@@ -415,10 +436,32 @@ const AboutPage = () => {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <span className="date">2022 - Present</span>
-                  <h3>Freelance Web Developer</h3>
-                  <p>Self-employed</p>
-                  <p>Working as a freelance web developer, creating custom websites and web applications for clients worldwide.</p>
+                  <span className="date">2021 (Summer)</span>
+                  <h3>Summer Training</h3>
+                  <p>Softpro India Computer Technologies, Lucknow</p>
+                  <p>Built E-Banking web application with Django/MySQL and secure authentication system.</p>
+                </motion.div>
+              </TimelineContent>
+            </TimelineItem>
+
+            <TimelineItem>
+              <TimelineDot>
+                <FaCode />
+              </TimelineDot>
+              <TimelineContent>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="date">2019 - Present</span>
+                  <h3>PROJECTS & ACHIEVEMENTS</h3>
+                  <p>Sipher Web Tech (React/Tailwind)</p>
+                  <p>Gurukul Setu (Django SaaS)</p>
+                  <p>Steamax Burner (WordPress)</p>
+                  <p>NASA Recognized JWST Model</p>
+                  <p>Published "Space Math" E-book</p>
                 </motion.div>
               </TimelineContent>
             </TimelineItem>
