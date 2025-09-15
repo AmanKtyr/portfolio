@@ -2,7 +2,7 @@ import React from 'react';
 import { FaCode, FaLaptopCode, FaMobileAlt, FaServer, FaDownload, FaPhotoVideo } from 'react-icons/fa';
 import { AboutContainer, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton } from './AboutStyles';
 import aboutImg from '../../assets/aman-about.jpeg'; // You'll need to add this image
-import resumePdf from '../../assets/resume.pdf'; // Add your resume PDF
+import resumePdf from '../../assets/Aman_Katiyar_Resume.pdf'; // Add your resume PDF
 import ScrollAnimation from '../ScrollAnimation/ScrollAnimation';
 import { useTranslation } from 'react-i18next';
 
@@ -46,7 +46,7 @@ const About = () => {
 
               <ScrollAnimation animation="fadeUp" delay={0.4}>
                 <InfoItem>
-                  <strong>{t('about.email')}</strong> ktyrpro@gmail.com
+                  <strong>{t('about.email')}</strong> amankatiyar.tech01@gmail.com
                 </InfoItem>
               </ScrollAnimation>
 
@@ -63,7 +63,7 @@ const About = () => {
               </ScrollAnimation>
 
               <ScrollAnimation animation="fadeUp" delay={0.7}>
-                <ResumeButton href={resumePdf} download="aman-ktyr-resume.pdf">
+                <ResumeButton href={resumePdf} download="Aman_Katiyar_Resume.pdf">
                   <FaDownload /> {t('Download_Resume')}
                 </ResumeButton>
               </ScrollAnimation>

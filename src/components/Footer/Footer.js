@@ -54,7 +54,7 @@ const Footer = () => {
             <h3>Contact Info</h3>
             <FooterLinks>
               <li>Lucknow, India</li>
-              <li>ktyrpro@gmail.com</li>
+              <li>amankatiyar.tech01@gmail.com</li>
               <li>+91 6387343245</li>
             </FooterLinks>
           </div>

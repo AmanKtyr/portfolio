@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { AboutPageContainer, AboutBanner, AboutBannerContent, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, AboutTimeline, TimelineItem, TimelineContent, TimelineDot, TimelineConnector, AboutStats, StatItem } from './AboutStyles';
 import aboutImg from '../../assets/aman-about.jpeg';
-import resumePdf from '../../assets/resume.pdf';
+import resumePdf from '../../assets/Aman_Katiyar_Resume.pdf';
 
 const AboutPage = () => {
   return (
@@ -184,7 +184,7 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                 >
                   <InfoItem>
-                    <strong>Email:</strong> ktyrpro@gmail.com
+                    <strong>Email:</strong> amankatiyar.tech01@gmail.com
                   </InfoItem>
                 </motion.div>
 
@@ -216,7 +216,7 @@ const AboutPage = () => {
                   transition={{ duration: 0.5, delay: 0.7 }}
                   viewport={{ once: true }}
                 >
-                  <ResumeButton href={resumePdf} download="aman-ktyr-resume.pdf">
+                  <ResumeButton href={resumePdf} download="Aman_Katiyar_Resume.pdf">
                     <FaDownload /> Download Resume
                   </ResumeButton>
                 </motion.div>
