@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaFigma } from 'react-icons/fa';
-import { SiThreedotjs, SiTypescript, SiMongodb } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaPhp, FaBootstrap, FaDocker, FaGitAlt, FaGithub } from 'react-icons/fa';
+import { SiDjango, SiTailwindcss, SiJquery, SiFlask, SiPostgresql, SiMysql, SiSqlite } from 'react-icons/si';
 import { TechStackContainer, TechStackTitle, TechStackGrid, TechItem, TechIcon, TechName, TechCube, CubeFace } from './TechStackStyles';
 
 const TechStack = () => {
@@ -38,16 +38,24 @@ const TechStack = () => {
   }, [controls]);
   
   const techItems = [
+    { icon: <FaPython />, name: 'Python', color: '#3776AB' },
+    { icon: <FaJava />, name: 'Java', color: '#007396' },
+    { icon: <FaJs />, name: 'JavaScript', color: '#F7DF1E' },
+    { icon: <FaPhp />, name: 'PHP', color: '#777BB4' },
+    { icon: <SiPostgresql />, name: 'SQL', color: '#336791' },
     { icon: <FaHtml5 />, name: 'HTML5', color: '#E44D26' },
     { icon: <FaCss3Alt />, name: 'CSS3', color: '#1572B6' },
-    { icon: <FaJs />, name: 'JavaScript', color: '#F7DF1E' },
-    { icon: <FaReact />, name: 'React', color: '#61DAFB' },
-    { icon: <FaNodeJs />, name: 'Node.js', color: '#339933' },
-    { icon: <SiTypescript />, name: 'TypeScript', color: '#3178C6' },
-    { icon: <SiMongodb />, name: 'MongoDB', color: '#47A248' },
-    { icon: <SiThreedotjs />, name: 'Three.js', color: '#000000' },
+    { icon: <SiDjango />, name: 'Django', color: '#092E20' },
+    { icon: <FaReact />, name: 'React.js', color: '#61DAFB' },
+    { icon: <FaBootstrap />, name: 'Bootstrap', color: '#7952B3' },
+    { icon: <SiTailwindcss />, name: 'Tailwind CSS', color: '#38B2AC' },
+    { icon: <SiJquery />, name: 'jQuery', color: '#0769AD' },
+    { icon: <SiFlask />, name: 'Flask', color: '#000000' },
+    { icon: <SiMysql />, name: 'MySQL', color: '#4479A1' },
     { icon: <FaGitAlt />, name: 'Git', color: '#F05032' },
-    { icon: <FaFigma />, name: 'Figma', color: '#F24E1E' }
+    { icon: <FaDocker />, name: 'Docker', color: '#2496ED' },
+    { icon: <FaGithub />, name: 'GitHub', color: '#181717' },
+    { icon: <SiSqlite />, name: 'SQLite', color: '#003B57' },
   ];
   
   return (

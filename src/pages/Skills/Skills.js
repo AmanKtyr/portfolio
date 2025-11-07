@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDatabase, FaFigma, FaGitAlt, FaServer, FaMobileAlt, FaDesktop, FaCode } from 'react-icons/fa';
-import { SiTypescript, SiMongodb, SiThreedotjs, SiRedux, SiNextdotjs, SiGraphql, SiFirebase, SiTailwindcss, SiWebpack, SiJest } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaPhp, FaBootstrap, FaDocker, FaGitAlt, FaGithub, FaDatabase, FaServer, FaNodeJs, FaMobileAlt, FaAws } from 'react-icons/fa';
+import { SiDjango, SiTailwindcss, SiJquery, SiFlask, SiPostgresql, SiMysql, SiSqlite, SiNextdotjs } from 'react-icons/si';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ProgressBar from '../../components/Skills/ProgressBar';
@@ -11,14 +11,22 @@ const Skills = () => {
   const skillsData = [
     {
       id: 1,
-      icon: <FaHtml5 />,
-      title: 'HTML/CSS',
-      text: 'Creating responsive, accessible, and semantically structured websites with modern CSS techniques.',
-      list: ['HTML5 Semantic Elements', 'CSS3 & Flexbox', 'CSS Grid', 'Responsive Design'],
-      percentage: 95
+      icon: <FaPython />,
+      title: 'Python',
+      text: 'Developing scalable and secure web applications and scripts.',
+      list: ['Django', 'Flask', 'REST API Development', 'Scripting'],
+      percentage: 90
     },
     {
       id: 2,
+      icon: <FaJava />,
+      title: 'Java',
+      text: 'Building robust and high-performance applications.',
+      list: ['Core Java', 'Spring (Basic)', 'Maven', 'OOP'],
+      percentage: 75
+    },
+    {
+      id: 3,
       icon: <FaJs />,
       title: 'JavaScript',
       text: 'Building interactive and dynamic web applications with modern JavaScript.',
@@ -26,56 +34,54 @@ const Skills = () => {
       percentage: 90
     },
     {
-      id: 3,
+      id: 4,
       icon: <FaReact />,
-      title: 'React',
+      title: 'React.js',
       text: 'Developing modern, efficient, and maintainable front-end applications with React.',
       list: ['React Hooks', 'Context API', 'Redux', 'React Router'],
       percentage: 85
-    },
-    {
-      id: 4,
-      icon: <FaNodeJs />,
-      title: 'Node.js',
-      text: 'Building scalable and efficient back-end services and APIs with Node.js.',
-      list: ['Express.js', 'RESTful APIs', 'Authentication', 'Server-side Rendering'],
-      percentage: 80
     },
     {
       id: 5,
       icon: <FaDatabase />,
       title: 'Databases',
       text: 'Designing and implementing database solutions for web applications.',
-      list: ['MongoDB', 'MySQL', 'Firebase', 'Data Modeling'],
-      percentage: 75
+      list: ['PostgreSQL', 'MySQL', 'SQLite', 'Data Modeling'],
+      percentage: 80
     },
     {
       id: 6,
       icon: <FaGitAlt />,
       title: 'Version Control',
       text: 'Managing code versions and collaborating with other developers using Git.',
-      list: ['Git', 'GitHub', 'Branching Strategies', 'Code Reviews'],
+      list: ['Git', 'GitHub', 'Bitbucket', 'Branching Strategies'],
       percentage: 85
     }
   ];
 
   const techItems = [
+    { icon: <FaPython />, name: 'Python', color: '#3776AB' },
+    { icon: <FaJava />, name: 'Java', color: '#007396' },
+    { icon: <FaJs />, name: 'JavaScript', color: '#F7DF1E' },
+    { icon: <FaPhp />, name: 'PHP', color: '#777BB4' },
+    { icon: <SiPostgresql />, name: 'SQL', color: '#336791' },
     { icon: <FaHtml5 />, name: 'HTML5', color: '#E44D26' },
     { icon: <FaCss3Alt />, name: 'CSS3', color: '#1572B6' },
-    { icon: <FaJs />, name: 'JavaScript', color: '#F7DF1E' },
-    { icon: <SiTypescript />, name: 'TypeScript', color: '#3178C6' },
-    { icon: <FaReact />, name: 'React', color: '#61DAFB' },
-    { icon: <SiRedux />, name: 'Redux', color: '#764ABC' },
+    { icon: <SiDjango />, name: 'Django', color: '#092E20' },
+    { icon: <FaReact />, name: 'React.js', color: '#61DAFB' },
+    { icon: <FaBootstrap />, name: 'Bootstrap', color: '#7952B3' },
+    { icon: <SiTailwindcss />, name: 'Tailwind CSS', color: '#38B2AC' },
+    { icon: <SiJquery />, name: 'jQuery', color: '#0769AD' },
+    { icon: <SiFlask />, name: 'Flask', color: '#000000' },
+    { icon: <SiMysql />, name: 'MySQL', color: '#4479A1' },
+    { icon: <FaGitAlt />, name: 'Git', color: '#F05032' },
+    { icon: <FaDocker />, name: 'Docker', color: '#2496ED' },
+    { icon: <FaGithub />, name: 'GitHub', color: '#181717' },
+
+    { icon: <FaDatabase />, name: 'SQL', color: '#336791' },
+    { icon: <SiPostgresql />, name: 'PostgreSQL', color: '#336791' },
     { icon: <SiNextdotjs />, name: 'Next.js', color: '#000000' },
-    { icon: <FaNodeJs />, name: 'Node.js', color: '#339933' },
-    { icon: <SiGraphql />, name: 'GraphQL', color: '#E10098' },
-    { icon: <SiMongodb />, name: 'MongoDB', color: '#47A248' },
-    { icon: <SiFirebase />, name: 'Firebase', color: '#FFCA28' },
-    { icon: <SiThreedotjs />, name: 'Three.js', color: '#000000' },
-    { icon: <SiTailwindcss />, name: 'Tailwind', color: '#06B6D4' },
-    { icon: <SiWebpack />, name: 'Webpack', color: '#8DD6F9' },
-    { icon: <SiJest />, name: 'Jest', color: '#C21325' },
-    { icon: <FaGitAlt />, name: 'Git', color: '#F05032' }
+    { icon: <FaAws />, name: 'AWS', color: '#516277ff' },
   ];
 
   const learningPath = [
