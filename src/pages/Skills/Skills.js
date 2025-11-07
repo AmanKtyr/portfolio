@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaPhp, FaBootstrap, FaDocker, FaGitAlt, FaGithub, FaDatabase, FaServer, FaNodeJs, FaMobileAlt, FaAws } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaPhp, FaBootstrap, FaDocker, FaGitAlt, FaGithub, FaDatabase, FaServer, FaNodeJs, FaAws, FaBrain, FaRobot, FaPlug } from 'react-icons/fa';
 import { SiDjango, SiTailwindcss, SiJquery, SiFlask, SiPostgresql, SiMysql, SiSqlite, SiNextdotjs } from 'react-icons/si';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -24,6 +24,14 @@ const Skills = () => {
       text: 'Building robust and high-performance applications.',
       list: ['Core Java', 'Spring (Basic)', 'Maven', 'OOP'],
       percentage: 75
+    },
+    {
+      id: 9,
+      icon: <SiDjango />,
+      title: 'Django',
+      text: 'Building powerful and secure web applications with Python and Django.',
+      list: ['Django REST Framework', 'Django ORM', 'Templates', 'Admin Interface'],
+      percentage: 85
     },
     {
       id: 3,
@@ -56,6 +64,14 @@ const Skills = () => {
       text: 'Managing code versions and collaborating with other developers using Git.',
       list: ['Git', 'GitHub', 'Bitbucket', 'Branching Strategies'],
       percentage: 85
+    },
+    {
+      id: 10,
+      icon: <FaNodeJs />,
+      title: 'Node.js',
+      text: 'Building scalable and efficient backend services.',
+      list: ['Express.js', 'REST APIs', 'npm', 'Asynchronous Programming'],
+      percentage: 80
     }
   ];
 
@@ -77,6 +93,7 @@ const Skills = () => {
     { icon: <FaGitAlt />, name: 'Git', color: '#F05032' },
     { icon: <FaDocker />, name: 'Docker', color: '#2496ED' },
     { icon: <FaGithub />, name: 'GitHub', color: '#181717' },
+    { icon: <FaNodeJs />, name: 'Node.js', color: '#339933' },
 
     { icon: <FaDatabase />, name: 'SQL', color: '#336791' },
     { icon: <SiPostgresql />, name: 'PostgreSQL', color: '#336791' },
@@ -105,21 +122,45 @@ const Skills = () => {
     },
     {
       id: 4,
+      icon: <FaPlug />,
+      title: 'API Development',
+      description: 'Building and integrating RESTful APIs for seamless data communication.'
+    },
+    {
+      id: 5,
       icon: <FaNodeJs />,
       title: 'Backend Development',
       description: 'Expanded skills to backend development with Node.js, Express, and database integration.'
     },
     {
-      id: 5,
+      id: 9,
+      icon: <SiDjango />,
+      title: 'Django Framework',
+      description: 'Mastered the Django framework for rapid and secure web development.'
+    },
+    {
+      id: 10,
+      icon: <FaNodeJs />,
+      title: 'Node.js Framework',
+      description: 'Mastered the Node.js framework for rapid and secure web development.'
+    },
+    {
+      id: 6,
       icon: <FaServer />,
       title: 'Full Stack Development',
       description: 'Combined frontend and backend skills to build complete web applications.'
     },
     {
-      id: 6,
-      icon: <FaMobileAlt />,
-      title: 'Mobile App Development',
-      description: 'Extended web development skills to mobile app development with React Native.'
+      id: 7,
+      icon: <FaBrain />,
+      title: 'AI & Machine Learning',
+      description: 'Exploring the world of AI and Machine Learning, and applying it to real-world problems.'
+    },
+    {
+      id: 8,
+      icon: <FaRobot />,
+      title: 'Gen and Agentic AI',
+      description: 'Building intelligent agents and generative models to solve complex problems.'
     }
   ];
 

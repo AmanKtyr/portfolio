@@ -102,17 +102,16 @@ const Skills = () => {
               <SkillIcon>
                 <FaNodeJs />
               </SkillIcon>
-              <SkillTitle>Node.js</SkillTitle>
+              <SkillTitle>Django</SkillTitle>
               <SkillText>
-                Building scalable and efficient back-end services and APIs with Node.js.
+                Building scalable and efficient back-end services and APIs with Django.
               </SkillText>
               <SkillList>
-                <li>Express.js</li>
                 <li>RESTful APIs</li>
                 <li>Authentication</li>
                 <li>Server-side Rendering</li>
               </SkillList>
-              <ProgressBar skill="Node.js" percentage={80} />
+              <ProgressBar skill="Django" percentage={80} />
             </SkillCard>
           </motion.div>
 
