@@ -70,22 +70,27 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitMessage('Your message has been sent successfully!');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
+    const whatsappNumber = '+916387343245';
+    const { name, email, subject, message } = formData;
+    const whatsappMessage = `Hello, you have a new message from your portfolio contact form:%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setSubmitMessage('');
-      }, 5000);
-    }, 1500);
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+
+    setIsSubmitting(false);
+    setSubmitMessage('Your message has been sent successfully!');
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
+
+    // Clear success message after 5 seconds
+    setTimeout(() => {
+      setSubmitMessage('');
+    }, 5000);
   };
 
   return (
