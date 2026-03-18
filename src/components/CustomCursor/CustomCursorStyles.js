@@ -60,3 +60,5 @@ export const CursorTrail = styled(motion.div)`
   opacity: 0.5;
   mix-blend-mode: difference;
 `;
+
+

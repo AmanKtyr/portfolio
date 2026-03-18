@@ -12,7 +12,6 @@ const TechStack = () => {
     const handleScroll = () => {
       if (!containerRef.current) return;
       
-      const scrollY = window.scrollY;
       const element = containerRef.current;
       const rect = element.getBoundingClientRect();
       
@@ -109,3 +108,4 @@ const TechStack = () => {
 };
 
 export default TechStack;
+

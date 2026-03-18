@@ -22,3 +22,4 @@ export const scrollToSection = (sectionId, offset = 80) => {
     });
   }
 };
+

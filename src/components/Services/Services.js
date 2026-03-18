@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaCode, FaMobileAlt, FaServer, FaShoppingCart, FaPalette, FaSearch, FaArrowRight, FaPhotoVideo, FaDesktop } from 'react-icons/fa';
+import { FaCode, FaMobileAlt, FaPalette, FaSearch, FaArrowRight, FaPhotoVideo, FaDesktop } from 'react-icons/fa';
 import { ServicesContainer, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText } from './ServicesStyles';
 import { useTranslation } from 'react-i18next';
 
@@ -102,3 +102,4 @@ const Services = () => {
 };
 
 export default Services;
+

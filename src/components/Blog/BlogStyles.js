@@ -14,10 +14,7 @@ export const BlogContainer = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'radial-gradient(ellipse at top left, rgba(30, 64, 175, 0.1), transparent 50%)'
-        : 'radial-gradient(ellipse at top left, rgba(219, 234, 254, 0.5), transparent 50%)'};
+    background: transparent;
     z-index: -1;
   }
 
@@ -28,19 +25,14 @@ export const BlogContainer = styled.section`
     right: 0;
     width: 100%;
     height: 100%;
-    background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'radial-gradient(ellipse at bottom right, rgba(147, 51, 234, 0.1), transparent 50%)'
-        : 'radial-gradient(ellipse at bottom right, rgba(243, 232, 255, 0.5), transparent 50%)'};
+    background: transparent;
     z-index: -1;
   }
 
   .btn-outline {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    border: 2px solid transparent;
-    border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    border-image-slice: 1;
+    border: 2px solid var(--primary-color);
     color: var(--primary-color);
     background: transparent;
     border-radius: var(--border-radius);
@@ -56,7 +48,7 @@ export const BlogContainer = styled.section`
       left: 0;
       width: 0;
       height: 100%;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      background: var(--primary-color);
       transition: width 0.3s ease;
       z-index: -1;
       border-radius: calc(var(--border-radius) - 2px);
@@ -74,11 +66,12 @@ export const BlogContainer = styled.section`
 
 export const BlogGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 `;
 
@@ -86,104 +79,57 @@ export const BlogCard = styled.div`
   backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
   background-color: ${({ theme }) => theme.glassmorphism.background};
   border: ${({ theme }) => theme.glassmorphism.border};
-  border-radius: var(--border-radius);
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0)
-    );
-    transform: rotate(30deg);
-    transition: transform 0.7s ease;
-    z-index: 1;
-    pointer-events: none;
-  }
-
   &:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-
-    &::before {
-      transform: rotate(30deg) translate(50%, 50%);
-    }
+    transform: translateY(-10px);
+    border-color: rgba(128, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
 `;
 
 export const BlogImage = styled.div`
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to bottom,
-      transparent 70%,
-      rgba(0, 0, 0, 0.7) 100%
-    );
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  ${BlogCard}:hover &::before {
-    opacity: 1;
-  }
+  height: 240px;
 
   img {
     width: 100%;
-    height: 220px;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 
-    ${BlogCard}:hover & {
-      transform: scale(1.1);
-    }
+  ${BlogCard}:hover img {
+    transform: scale(1.05);
   }
 
   .category {
     position: absolute;
-    bottom: 15px;
-    left: 15px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color);
     color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
     z-index: 2;
-    transform: translateY(10px);
-    opacity: 0;
-    transition: all 0.3s ease;
-
-    ${BlogCard}:hover & {
-      transform: translateY(0);
-      opacity: 1;
-    }
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 `;
 
 export const BlogContent = styled.div`
-  padding: 1.5rem;
+  padding: 2rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -192,9 +138,11 @@ export const BlogContent = styled.div`
 export const BlogMeta = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
   color: var(--gray-color);
+  opacity: 0.8;
+  font-weight: 500;
 
   div {
     display: flex;
@@ -204,44 +152,28 @@ export const BlogMeta = styled.div`
 `;
 
 export const BlogTitle = styled.h3`
-  font-size: 1.3rem;
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
   margin-bottom: 1rem;
   line-height: 1.4;
-  position: relative;
-  display: inline-block;
+  font-weight: 700;
 
   a {
     color: var(--text-color);
     transition: all 0.3s ease;
-    position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-      transition: width 0.3s ease;
-    }
 
     &:hover {
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      &::after {
-        width: 100%;
-      }
+      color: var(--primary-color);
     }
   }
 `;
 
 export const BlogExcerpt = styled.p`
-  color: var(--text-secondary-color);
-  margin-bottom: 1.5rem;
+  color: var(--gray-color);
+  margin-bottom: 2rem;
   flex-grow: 1;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  opacity: 0.9;
 `;
 
 export const BlogLink = styled(Link)`
@@ -249,41 +181,25 @@ export const BlogLink = styled(Link)`
   align-items: center;
   gap: 0.5rem;
   color: var(--primary-color);
-  font-weight: 500;
+  font-weight: 700;
   transition: all 0.3s ease;
   margin-top: auto;
-  position: relative;
-  padding: 0.5rem 0;
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, var(--primary-color), transparent);
-    transform: scaleX(0.3);
-    transform-origin: left;
-    opacity: 0.5;
-    transition: all 0.3s ease;
-  }
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
   svg {
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
   }
 
   &:hover {
     color: var(--secondary-color);
-    gap: 0.8rem;
-
-    &::before {
-      transform: scaleX(1);
-      opacity: 1;
-    }
+    gap: 0.75rem;
 
     svg {
       transform: translateX(3px);
     }
   }
 `;
+
+

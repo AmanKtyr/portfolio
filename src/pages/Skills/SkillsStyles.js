@@ -22,7 +22,7 @@ export const SkillsPageContainer = styled.div`
       position: relative;
       display: inline-block;
       margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #38BDF8, #9333EA);
+      background: var(--primary-color);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -1px;
@@ -36,9 +36,9 @@ export const SkillsPageContainer = styled.div`
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: linear-gradient(90deg, #38BDF8, #9333EA);
+        background: var(--primary-color);
         border-radius: 2px;
-        box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+        box-shadow: 0 0 15px rgba(128, 0, 0, 0.5);
       }
 
       @media (max-width: 768px) {
@@ -62,7 +62,8 @@ export const SkillsPageContainer = styled.div`
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+      background: var(--primary-color);
+      opacity: 0.1;
       filter: blur(5px);
       z-index: -1;
     }
@@ -88,7 +89,7 @@ export const SkillsBanner = styled.div`
   position: relative;
   overflow: hidden;
 
-  /* Animated gradient background */
+  /* Animated background */
   &::before {
     content: '';
     position: absolute;
@@ -96,14 +97,8 @@ export const SkillsBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      125deg,
-      rgba(147, 51, 234, 0.15) 0%, /* Purple */
-      rgba(56, 189, 248, 0.15) 50%, /* Sky blue */
-      rgba(147, 51, 234, 0.15) 100% /* Purple */
-    );
-    background-size: 200% 200%;
-    animation: gradientAnimation 15s ease infinite;
+    background: var(--primary-color);
+    opacity: 0.05;
     z-index: 1;
   }
 
@@ -115,27 +110,8 @@ export const SkillsBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image:
-      radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.3) 0, transparent 10px),
-      radial-gradient(circle at 80% 40%, rgba(147, 51, 234, 0.3) 0, transparent 10px),
-      radial-gradient(circle at 40% 80%, rgba(56, 189, 248, 0.3) 0, transparent 8px),
-      radial-gradient(circle at 60% 10%, rgba(147, 51, 234, 0.3) 0, transparent 12px),
-      radial-gradient(circle at 10% 60%, rgba(56, 189, 248, 0.3) 0, transparent 6px),
-      radial-gradient(circle at 90% 90%, rgba(147, 51, 234, 0.3) 0, transparent 8px);
+    background: transparent;
     z-index: 2;
-  }
-
-  /* Grid pattern overlay */
-  .grid-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-    z-index: 3;
   }
 
   @keyframes gradientAnimation {
@@ -161,10 +137,10 @@ export const SkillsBannerContent = styled.div`
     font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #38BDF8, #9333EA); /* Sky blue to purple gradient */
+    background: var(--primary-color); /* Sky blue to purple gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    text-shadow: 0 0 20px rgba(128, 0, 0, 0.3);
     letter-spacing: -1px;
 
     @media (max-width: 768px) {
@@ -187,7 +163,7 @@ export const SkillsBannerContent = styled.div`
       display: block;
       width: 80px;
       height: 4px;
-      background: linear-gradient(to right, #38BDF8, #9333EA);
+      background: var(--primary-color);
       margin: 1.5rem auto 0;
       border-radius: 2px;
     }
@@ -209,7 +185,7 @@ export const SkillsBannerContent = styled.div`
   .element-1 {
     width: 100px;
     height: 100px;
-    background: #38BDF8; /* Sky blue */
+    background: #800000; /* Sky blue */
     top: -50px;
     left: 20%;
     animation: float 8s ease-in-out infinite;
@@ -218,7 +194,7 @@ export const SkillsBannerContent = styled.div`
   .element-2 {
     width: 150px;
     height: 150px;
-    background: #9333EA; /* Purple */
+    background: #5a0000; /* Purple */
     bottom: -70px;
     right: 15%;
     animation: float 10s ease-in-out infinite reverse;
@@ -255,7 +231,7 @@ export const SkillCard = styled.div`
   background-color: rgba(15, 23, 42, 0.7); /* Dark blue with transparency */
   padding: 2.5rem;
   border-radius: 16px;
-  border: 1px solid rgba(56, 189, 248, 0.1); /* Subtle sky blue border */
+  border: 1px solid rgba(128, 0, 0, 0.1); /* Subtle sky blue border */
   backdrop-filter: blur(10px);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   height: 100%;
@@ -270,17 +246,10 @@ export const SkillCard = styled.div`
     inset: 0;
     border-radius: 16px;
     padding: 1px; /* Border width */
-    background: linear-gradient(
-      135deg,
-      rgba(56, 189, 248, 0.5), /* Sky blue */
-      rgba(147, 51, 234, 0.5), /* Purple */
-      rgba(56, 189, 248, 0.2)  /* Sky blue */
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    
+    
     opacity: 0;
     transition: opacity 0.4s ease;
   }
@@ -293,12 +262,7 @@ export const SkillCard = styled.div`
     left: -100%;
     width: 300%;
     height: 300%;
-    background: linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0)
-    );
+    background: var(--primary-color);
     transform: rotate(30deg);
     transition: transform 0.7s ease;
     z-index: 1;
@@ -334,10 +298,10 @@ export const SkillIcon = styled.div`
 
   /* Create a gradient text effect */
   svg {
-    background: linear-gradient(135deg, #38BDF8, #9333EA);
+    background: var(--primary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
+    filter: drop-shadow(0 0 8px rgba(128, 0, 0, 0.3));
   }
 
   /* Glowing circle background */
@@ -347,12 +311,8 @@ export const SkillIcon = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(56, 189, 248, 0.15) 0%,
-      rgba(147, 51, 234, 0.05) 70%,
-      transparent 100%
-    );
+    background: var(--primary-color);
+    opacity: 0.1;
     z-index: -1;
     transition: all 0.5s ease;
   }
@@ -364,8 +324,8 @@ export const SkillIcon = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+    border: 1px solid rgba(128, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(128, 0, 0, 0.2);
     z-index: -1;
     transition: all 0.5s ease;
     animation: pulseRing 3s infinite;
@@ -391,21 +351,17 @@ export const SkillIcon = styled.div`
 
     &::before {
       transform: scale(1.2);
-      background: radial-gradient(
-        circle,
-        rgba(56, 189, 248, 0.25) 0%,
-        rgba(147, 51, 234, 0.15) 70%,
-        transparent 100%
-      );
+      background: var(--primary-color);
+      opacity: 0.2;
     }
 
     &::after {
       animation-duration: 1.5s;
-      border-color: rgba(147, 51, 234, 0.5);
+      border-color: rgba(90, 0, 0, 0.5);
     }
 
     svg {
-      background: linear-gradient(135deg, #38BDF8, #9333EA, #38BDF8);
+      background: var(--primary-color);
       background-size: 200% 200%;
       animation: gradientShift 2s ease infinite;
     }
@@ -431,7 +387,7 @@ export const SkillTitle = styled.h3`
   padding-bottom: 0.8rem;
   font-weight: 700;
   text-align: center;
-  background: linear-gradient(135deg, #38BDF8, #9333EA);
+  background: var(--primary-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.4s ease;
@@ -445,10 +401,10 @@ export const SkillTitle = styled.h3`
     transform: translateX(-50%);
     width: 40px;
     height: 3px;
-    background: linear-gradient(90deg, #38BDF8, #9333EA);
+    background: var(--primary-color);
     border-radius: 3px;
     transition: all 0.4s ease;
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
   }
 
   ${SkillCard}:hover & {
@@ -457,8 +413,8 @@ export const SkillTitle = styled.h3`
 
     &::after {
       width: 60px;
-      background: linear-gradient(90deg, #9333EA, #38BDF8);
-      box-shadow: 0 0 15px rgba(147, 51, 234, 0.4);
+      background: var(--primary-color);
+      box-shadow: 0 0 15px rgba(90, 0, 0, 0.4);
     }
   }
 `;
@@ -491,7 +447,7 @@ export const SkillList = styled.ul`
     padding: 0.7rem 1rem;
     border-radius: 8px;
     background-color: rgba(15, 23, 42, 0.5);
-    border: 1px solid rgba(56, 189, 248, 0.05);
+    border: 1px solid rgba(128, 0, 0, 0.05);
     color: #F1F5F9;
     position: relative;
     overflow: hidden;
@@ -504,12 +460,8 @@ export const SkillList = styled.ul`
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(56, 189, 248, 0.05),
-        transparent
-      );
+      background: var(--primary-color);
+      opacity: 0.1;
       transform: translateX(-100%);
       transition: transform 0.6s ease;
     }
@@ -517,7 +469,7 @@ export const SkillList = styled.ul`
     &:hover {
       transform: translateY(-3px);
       background-color: rgba(15, 23, 42, 0.7);
-      border-color: rgba(56, 189, 248, 0.1);
+      border-color: rgba(128, 0, 0, 0.1);
       color: white;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
@@ -529,7 +481,7 @@ export const SkillList = styled.ul`
     /* Arrow icon */
     &::after {
       content: '→';
-      color: #38BDF8;
+      color: #800000;
       font-weight: bold;
       margin-left: 0.8rem;
       opacity: 0;
@@ -578,8 +530,8 @@ export const TechStackGrid = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 30% 40%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(147, 51, 234, 0.05) 0%, transparent 50%);
+    background: var(--primary-color);
+    opacity: 0.05;
     filter: blur(40px);
     z-index: -1;
   }
@@ -599,7 +551,7 @@ export const TechItem = styled.div`
   border-radius: 12px;
   background-color: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(128, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-align: center;
   position: relative;
@@ -612,16 +564,10 @@ export const TechItem = styled.div`
     inset: 0;
     border-radius: 12px;
     padding: 1px;
-    background: linear-gradient(
-      135deg,
-      rgba(56, 189, 248, 0.5),
-      rgba(147, 51, 234, 0.5)
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    
+    
     opacity: 0;
     transition: opacity 0.4s ease;
   }
@@ -634,12 +580,7 @@ export const TechItem = styled.div`
     left: -100%;
     width: 300%;
     height: 300%;
-    background: linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0)
-    );
+    background: var(--primary-color);
     transform: rotate(30deg);
     transition: transform 0.7s ease;
     z-index: 1;
@@ -670,10 +611,10 @@ export const TechIcon = styled.div`
 
   /* Create a gradient text effect */
   svg {
-    background: linear-gradient(135deg, #38BDF8, #9333EA);
+    background: var(--primary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.2));
+    filter: drop-shadow(0 0 5px rgba(128, 0, 0, 0.2));
     transition: all 0.5s ease;
   }
 
@@ -687,14 +628,9 @@ export const TechIcon = styled.div`
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(56, 189, 248, 0.1) 0%,
-      rgba(147, 51, 234, 0.05) 60%,
-      transparent 100%
-    );
+    background: var(--primary-color);
+    opacity: 0.1;
     z-index: -1;
-    opacity: 0.5;
     transition: all 0.5s ease;
   }
 
@@ -702,8 +638,8 @@ export const TechIcon = styled.div`
     transform: scale(1.2) translateY(-5px);
 
     svg {
-      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
-      background: linear-gradient(135deg, #38BDF8, #9333EA, #38BDF8);
+      filter: drop-shadow(0 0 8px rgba(128, 0, 0, 0.4));
+      background: var(--primary-color);
       background-size: 200% 200%;
       animation: gradientShift 2s ease infinite;
     }
@@ -711,13 +647,8 @@ export const TechIcon = styled.div`
     &::before {
       width: 70px;
       height: 70px;
-      opacity: 0.8;
-      background: radial-gradient(
-        circle,
-        rgba(56, 189, 248, 0.15) 0%,
-        rgba(147, 51, 234, 0.1) 60%,
-        transparent 100%
-      );
+      opacity: 0.2;
+      background: var(--primary-color);
     }
   }
 `;
@@ -738,7 +669,7 @@ export const TechName = styled.h4`
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #38BDF8, #9333EA);
+    background: var(--primary-color);
     transition: width 0.3s ease;
     opacity: 0;
   }
@@ -767,9 +698,9 @@ export const SkillsTimeline = styled.div`
     left: 20px;
     width: 3px;
     height: 100%;
-    background: linear-gradient(to bottom, #38BDF8, #9333EA);
+    background: var(--primary-color);
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
     opacity: 0.7;
   }
 
@@ -781,16 +712,8 @@ export const SkillsTimeline = styled.div`
     left: 20px;
     width: 100%;
     height: 100%;
-    background-image:
-      radial-gradient(circle at 20px 15%, rgba(56, 189, 248, 0.3) 0, transparent 8px),
-      radial-gradient(circle at 20px 35%, rgba(147, 51, 234, 0.3) 0, transparent 6px),
-      radial-gradient(circle at 20px 55%, rgba(56, 189, 248, 0.3) 0, transparent 10px),
-      radial-gradient(circle at 20px 75%, rgba(147, 51, 234, 0.3) 0, transparent 7px);
-    background-size: 100% 100px;
-    background-repeat: repeat-y;
-    animation: floatParticles 10s linear infinite;
-    opacity: 0.5;
-    pointer-events: none;
+    background: transparent;
+    z-index: 1;
   }
 
   @keyframes floatParticles {
@@ -852,13 +775,13 @@ export const TimelineDot = styled.div`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #38BDF8, #9333EA);
+  background: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   z-index: 2;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 15px rgba(128, 0, 0, 0.5);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   /* Pulsing animation */
@@ -896,7 +819,7 @@ export const TimelineDot = styled.div`
 
   ${TimelineItem}:hover & {
     transform: translateX(-50%) scale(1.1);
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.6);
+    box-shadow: 0 0 20px rgba(90, 0, 0, 0.6);
   }
 `;
 
@@ -907,7 +830,7 @@ export const TimelineConnector = styled.div`
   transform: translateX(-50%);
   width: 3px;
   height: calc(100% + 4rem);
-  background: linear-gradient(to bottom, rgba(56, 189, 248, 0.2), rgba(147, 51, 234, 0.2));
+  background: var(--primary-color);
   opacity: 0.3;
   border-radius: 3px;
 `;
@@ -918,7 +841,7 @@ export const TimelineContent = styled.div`
   padding: 2rem;
   border-radius: 16px;
   background-color: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(128, 0, 0, 0.1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   margin-left: 70px;
@@ -933,8 +856,8 @@ export const TimelineContent = styled.div`
     width: 24px;
     height: 24px;
     background-color: rgba(15, 23, 42, 0.7);
-    border-left: 1px solid rgba(56, 189, 248, 0.1);
-    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+    border-left: 1px solid rgba(128, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(128, 0, 0, 0.1);
     transform: rotate(45deg);
     backdrop-filter: blur(10px);
   }
@@ -946,16 +869,10 @@ export const TimelineContent = styled.div`
     inset: 0;
     border-radius: 16px;
     padding: 1px;
-    background: linear-gradient(
-      135deg,
-      rgba(56, 189, 248, 0.5),
-      rgba(147, 51, 234, 0.5)
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    
+    
     opacity: 0;
     transition: opacity 0.4s ease;
   }
@@ -972,7 +889,7 @@ export const TimelineContent = styled.div`
   h3 {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
-    background: linear-gradient(135deg, #38BDF8, #9333EA);
+    background: var(--primary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
@@ -987,3 +904,6 @@ export const TimelineContent = styled.div`
     }
   }
 `;
+
+
+

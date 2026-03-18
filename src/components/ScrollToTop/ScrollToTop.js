@@ -39,7 +39,7 @@ const ScrollToTop = () => {
     if (!location.hash) {
       window.scrollTo(0, 0);
     }
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
@@ -60,3 +60,4 @@ const ScrollToTop = () => {
 };
 
 export default ScrollToTop;
+

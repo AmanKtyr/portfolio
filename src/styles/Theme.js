@@ -1,9 +1,9 @@
 const lightTheme = {
   isDarkMode: false,
   colors: {
-    primary: '#2563eb',
-    secondary: '#1e40af',
-    accent: '#3b82f6',
+    primary: '#800000', // Maroon
+    secondary: '#5a0000', // Darker Maroon
+    accent: '#a52a2a', // Brownish Red
     dark: '#1e293b',
     light: '#f8fafc',
     gray: '#64748b',
@@ -34,13 +34,13 @@ const lightTheme = {
     background: 'rgba(255, 255, 255, 0.7)',
     border: '1px solid rgba(255, 255, 255, 0.18)',
     blur: '10px',
-    shadow: '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+    shadow: '0 8px 32px 0 rgba(128, 0, 0, 0.07)',
   },
   neumorphism: {
     background: '#f0f4f8',
-    shadow1: '10px 10px 20px #d1d9e6',
+    shadow1: '10px 10px 20px #e6d1d1',
     shadow2: '-10px -10px 20px #ffffff',
-    activeShadow1: 'inset 5px 5px 10px #d1d9e6',
+    activeShadow1: 'inset 5px 5px 10px #e6d1d1',
     activeShadow2: 'inset -5px -5px 10px #ffffff',
   },
   transitions: {
@@ -59,12 +59,12 @@ const lightTheme = {
 const darkTheme = {
   isDarkMode: true,
   colors: {
-    primary: '#3b82f6',
-    secondary: '#1e40af',
-    accent: '#60a5fa',
+    primary: '#800000', // Maroon
+    secondary: '#cc3d3d', // Lighter Maroon for better contrast
+    accent: '#ff4d4d',
     dark: '#f8fafc',
     light: '#0f172a',
-    gray: '#94a3b8',
+    gray: '#cbd5e1', // Lighter gray for dark mode
     success: '#10b981',
     warning: '#f59e0b',
     danger: '#ef4444',
@@ -117,3 +117,4 @@ const darkTheme = {
 const theme = (isDarkMode) => (isDarkMode ? darkTheme : lightTheme);
 
 export default theme;
+

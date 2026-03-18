@@ -29,6 +29,7 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    cursor: default;
   }
 
   body {
@@ -38,17 +39,17 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--background-color);
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: none; /* Hide default cursor for custom cursor */
+    cursor: auto;
   }
 
   a {
     text-decoration: none;
     color: var(--primary-color);
-    cursor: none; /* Hide default cursor for custom cursor */
+    cursor: pointer;
   }
 
   button {
-    cursor: none; /* Hide default cursor for custom cursor */
+    cursor: pointer;
   }
 
   ul {
@@ -68,9 +69,13 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 
     @media (max-width: 768px) {
+      padding: 0 1.25rem;
+    }
+
+    @media (max-width: 480px) {
       padding: 0 1rem;
     }
   }
@@ -85,14 +90,19 @@ const GlobalStyles = createGlobalStyle`
 
   .section-title {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 2.5rem;
+    }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 5vw, 2.5rem);
       font-weight: 700;
       position: relative;
       display: inline-block;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
 
       &::after {
         content: '';
@@ -100,20 +110,19 @@ const GlobalStyles = createGlobalStyle`
         bottom: -10px;
         left: 50%;
         transform: translateX(-50%);
-        width: 50px;
-        height: 3px;
-        background-color: var(--primary-color);
-      }
-
-      @media (max-width: 768px) {
-        font-size: 2rem;
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 2px;
       }
     }
 
     p {
       color: var(--gray-color);
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      opacity: 0.9;
     }
   }
 
@@ -176,3 +185,5 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default GlobalStyles;
+
+

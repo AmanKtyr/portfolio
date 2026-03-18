@@ -19,8 +19,8 @@ export const HeroContainer = styled.section`
     height: 500px;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent 70%)'
-        : 'radial-gradient(circle, rgba(219, 234, 254, 0.7), transparent 70%)'};
+        ? 'var(--primary-color), transparent 70%)'
+        : 'var(--primary-color), transparent 70%)'};
     border-radius: 50%;
     z-index: -1;
     animation: float 15s ease-in-out infinite alternate;
@@ -35,8 +35,8 @@ export const HeroContainer = styled.section`
     height: 400px;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(147, 51, 234, 0.1), transparent 70%)'
-        : 'radial-gradient(circle, rgba(243, 232, 255, 0.5), transparent 70%)'};
+        ? 'var(--primary-color), transparent 70%)'
+        : 'var(--primary-color), transparent 70%)'};
     border-radius: 50%;
     z-index: -1;
     animation: float 20s ease-in-out infinite alternate-reverse;
@@ -96,9 +96,7 @@ export const HeroText = styled.div`
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0),
+    background: var(--primary-color),
       rgba(255, 255, 255, 0.1),
       rgba(255, 255, 255, 0)
     );
@@ -118,10 +116,9 @@ export const HeroText = styled.div`
 
   h4 {
     font-size: 1.2rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary-color);
     margin-bottom: 1rem;
     display: inline-block;
     position: relative;
@@ -133,30 +130,27 @@ export const HeroText = styled.div`
       left: 0;
       width: 40px;
       height: 3px;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      background: var(--primary-color);
       animation: width 3s ease-in-out infinite alternate;
     }
 
     @keyframes width {
       0% {
-        width: 40px;
+        width: 30px;
       }
       100% {
-        width: 100px;
+        width: 70px;
       }
     }
   }
 
   h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 800;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient 5s linear infinite;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
 
     @keyframes gradient {
       0% {
@@ -166,50 +160,46 @@ export const HeroText = styled.div`
         background-position: 200% center;
       }
     }
-
-    @media (max-width: 768px) {
-      font-size: 2.5rem;
-    }
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--gray-color);
     position: relative;
     display: inline-block;
-
-    @media (max-width: 768px) {
-      font-size: 1.5rem;
-    }
+    line-height: 1.3;
 
     .highlight {
       color: var(--primary-color);
       position: relative;
+      display: inline-block;
+      z-index: 1;
 
       &::after {
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: 2px;
         left: 0;
         width: 100%;
-        height: 8px;
-        background-color: rgba(59, 130, 246, 0.2);
+        height: 6px;
+        background-color: rgba(128, 0, 0, 0.15);
         z-index: -1;
       }
     }
   }
 
   p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    margin-bottom: 2.5rem;
     max-width: 600px;
     color: var(--gray-color);
-    line-height: 1.8;
+    line-height: 1.7;
+    opacity: 0.9;
 
     @media (max-width: 992px) {
-      margin: 0 auto 2rem;
+      margin: 0 auto 2.5rem;
     }
   }
 `;
@@ -225,7 +215,14 @@ export const HeroBtns = styled.div`
 
   @media (max-width: 480px) {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
+    width: 100%;
+
+    .btn-primary, .btn-outline {
+      width: 100%;
+      justify-content: center;
+      padding: 0.9rem 1.5rem;
+    }
   }
 
   .btn-primary {
@@ -233,7 +230,7 @@ export const HeroBtns = styled.div`
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     border-radius: var(--border-radius);
     font-weight: 600;
@@ -241,7 +238,7 @@ export const HeroBtns = styled.div`
     position: relative;
     overflow: hidden;
     z-index: 1;
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
 
     &::before {
       content: '';
@@ -250,7 +247,7 @@ export const HeroBtns = styled.div`
       left: 0;
       width: 0;
       height: 100%;
-      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+      background: var(--secondary-color);
       transition: width 0.3s ease;
       z-index: -1;
     }
@@ -261,7 +258,7 @@ export const HeroBtns = styled.div`
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+      box-shadow: 0 15px 30px rgba(128, 0, 0, 0.3);
 
       &::before {
         width: 100%;
@@ -278,9 +275,8 @@ export const HeroBtns = styled.div`
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    border: 2px solid transparent;
-    background: linear-gradient(white, white) padding-box,
-               linear-gradient(90deg, var(--primary-color), var(--secondary-color)) border-box;
+    border: 2px solid var(--primary-color);
+    background: transparent;
     color: var(--primary-color);
     border-radius: var(--border-radius);
     font-weight: 600;
@@ -295,7 +291,7 @@ export const HeroBtns = styled.div`
       left: 0;
       width: 0;
       height: 100%;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      background: var(--primary-color);
       transition: width 0.3s ease;
       z-index: -1;
       opacity: 0.1;
@@ -386,8 +382,8 @@ export const HeroImage = styled.div`
     border-radius: 50%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%)'
-        : 'radial-gradient(circle, rgba(219, 234, 254, 0.8), transparent 70%)'};
+        ? 'var(--primary-color), transparent 70%)'
+        : 'var(--primary-color), transparent 70%)'};
     top: 10%;
     right: 10%;
     filter: blur(20px);
@@ -403,8 +399,8 @@ export const HeroImage = styled.div`
     border-radius: 50%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(147, 51, 234, 0.3), transparent 70%)'
-        : 'radial-gradient(circle, rgba(243, 232, 255, 0.8), transparent 70%)'};
+        ? 'var(--primary-color), transparent 70%)'
+        : 'var(--primary-color), transparent 70%)'};
     bottom: 10%;
     left: 10%;
     filter: blur(15px);
@@ -471,3 +467,5 @@ export const ScrollDown = styled(motion.div)`
     }
   }
 `;
+
+

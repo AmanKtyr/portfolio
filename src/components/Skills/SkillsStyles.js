@@ -15,8 +15,8 @@ export const SkillsContainer = styled.section`
     height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle at 30% 30%, rgba(30, 64, 175, 0.15), transparent 30%)'
-        : 'radial-gradient(circle at 30% 30%, rgba(219, 234, 254, 0.7), transparent 30%)'};
+        ? 'var(--primary-color), transparent 30%)'
+        : 'var(--primary-color), transparent 30%)'};
     z-index: -1;
   }
 
@@ -29,8 +29,8 @@ export const SkillsContainer = styled.section`
     height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle at 70% 70%, rgba(30, 64, 175, 0.15), transparent 30%)'
-        : 'radial-gradient(circle at 70% 70%, rgba(219, 234, 254, 0.7), transparent 30%)'};
+        ? 'var(--primary-color), transparent 30%)'
+        : 'var(--primary-color), transparent 30%)'};
     z-index: -1;
   }
 `;
@@ -62,9 +62,7 @@ export const SkillCard = styled.div`
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0),
+    background: var(--primary-color),
       rgba(255, 255, 255, 0.1),
       rgba(255, 255, 255, 0)
     );
@@ -106,8 +104,8 @@ export const SkillIcon = styled.div`
     height: 60px;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'rgba(59, 130, 246, 0.1)'
-        : 'rgba(219, 234, 254, 0.5)'};
+        ? 'rgba(128, 0, 0, 0.1)'
+        : 'rgba(128, 0, 0, 0.5)'};
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -124,8 +122,8 @@ export const SkillIcon = styled.div`
       height: 70px;
       background: ${({ theme }) =>
         theme.isDarkMode
-          ? 'rgba(59, 130, 246, 0.2)'
-          : 'rgba(219, 234, 254, 0.7)'};
+          ? 'rgba(128, 0, 0, 0.2)'
+          : 'rgba(128, 0, 0, 0.7)'};
     }
   }
 `;
@@ -135,7 +133,7 @@ export const SkillTitle = styled.h3`
   margin-bottom: 1rem;
   position: relative;
   padding-bottom: 0.5rem;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: var(--primary-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 0.3s ease;
@@ -147,7 +145,7 @@ export const SkillTitle = styled.h3`
     left: 0;
     width: 30px;
     height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     transition: width 0.3s ease;
   }
 
@@ -193,3 +191,5 @@ export const SkillList = styled.ul`
     }
   }
 `;
+
+

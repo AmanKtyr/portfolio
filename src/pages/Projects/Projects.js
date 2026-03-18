@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowRight, FaSearch } from 'react-icons/fa';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { ProjectsPageContainer, ProjectsBanner, ProjectsBannerContent, ProjectsFilter, FilterBtn, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLinks, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc, SearchContainer, SearchInput, SearchButton, ProjectsCategories, CategoryItem } from './ProjectsStyles';
+import { ProjectsPageContainer, ProjectsBanner, ProjectsBannerContent, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLinks, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc, SearchContainer, SearchInput, SearchButton, ProjectsCategories, CategoryItem } from './ProjectsStyles';
 
 const projectsData = [
   {
@@ -198,7 +198,7 @@ const ProjectsPage = () => {
                   position: "absolute",
                   top: "50%",
                   left: "5%",
-                  color: "rgba(56, 189, 248, 0.4)",
+                  color: "rgba(128, 0, 0, 0.4)",
                   fontSize: "1.2rem",
                   fontFamily: "monospace",
                   zIndex: 5
@@ -221,7 +221,7 @@ const ProjectsPage = () => {
                   position: "absolute",
                   bottom: "30%",
                   right: "10%",
-                  color: "rgba(147, 51, 234, 0.4)",
+                  color: "rgba(90, 0, 0, 0.4)",
                   fontSize: "1.2rem",
                   fontFamily: "monospace",
                   zIndex: 5
@@ -285,7 +285,7 @@ const ProjectsPage = () => {
                 >
                   <ProjectCard>
                     <ProjectImg>
-                      <img src={project.image} alt={project.title} />
+                      <img src={project.image} alt={project.title} loading="lazy" />
                       <ProjectOverlay>
                         <ProjectLinks>
                           <ProjectLink
@@ -334,3 +334,4 @@ const ProjectsPage = () => {
 };
 
 export default ProjectsPage;
+

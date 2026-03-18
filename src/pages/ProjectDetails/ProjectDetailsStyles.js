@@ -97,7 +97,7 @@ export const MetaItem = styled.div`
     gap: 0.5rem;
     
     span {
-      background-color: rgba(37, 99, 235, 0.1);
+      background-color: rgba(128, 0, 0, 0.1);
       color: var(--primary-color);
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
@@ -133,3 +133,5 @@ export const ProjectLink = styled.a`
     border-color: ${({ primary }) => (primary === 'true' ? 'var(--secondary-color)' : 'var(--primary-color)')};
   }
 `;
+
+

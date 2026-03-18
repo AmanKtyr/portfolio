@@ -56,15 +56,17 @@ export const LanguageOption = styled.div`
   background-color: ${({ active, theme }) => 
     active 
       ? theme.isDarkMode 
-        ? 'rgba(59, 130, 246, 0.2)' 
-        : 'rgba(59, 130, 246, 0.1)' 
+        ? 'rgba(128, 0, 0, 0.2)' 
+        : 'rgba(128, 0, 0, 0.1)' 
       : 'transparent'};
   color: ${({ active }) => active ? 'var(--primary-color)' : 'var(--text-color)'};
   
   &:hover {
     background-color: ${({ theme }) => 
       theme.isDarkMode 
-        ? 'rgba(59, 130, 246, 0.3)' 
-        : 'rgba(59, 130, 246, 0.2)'};
+        ? 'rgba(128, 0, 0, 0.3)' 
+        : 'rgba(128, 0, 0, 0.2)'};
   }
 `;
+
+

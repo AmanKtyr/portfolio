@@ -55,7 +55,7 @@ const Blog = () => {
             >
               <BlogCard>
                 <BlogImage>
-                  <img src={blog.image} alt={blog.title} />
+                  <img src={blog.image} alt={blog.title} loading="lazy" />
                   <div className="category">{blog.category}</div>
                 </BlogImage>
 
@@ -94,3 +94,4 @@ const Blog = () => {
 };
 
 export default Blog;
+

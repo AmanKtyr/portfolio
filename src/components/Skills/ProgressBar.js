@@ -22,7 +22,7 @@ const ProgressBarTrack = styled.div`
 
 const ProgressBarFill = styled(motion.div)`
   height: 100%;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: var(--primary-color);
   border-radius: 4px;
   position: absolute;
   top: 0;
@@ -85,3 +85,4 @@ const ProgressBar = ({ skill, percentage }) => {
 };
 
 export default ProgressBar;
+

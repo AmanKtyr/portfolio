@@ -35,3 +35,5 @@ export const ScrollButton = styled.button`
     font-size: 1rem;
   }
 `;
+
+

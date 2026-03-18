@@ -101,7 +101,7 @@ const Testimonials = () => {
                 </TestimonialText>
                 <TestimonialAuthor>
                   <AuthorImage>
-                    <img src={testimonial.image} alt={testimonial.name} />
+                    <img src={testimonial.image} alt={testimonial.name} loading="lazy" />
                   </AuthorImage>
                   <AuthorInfo>
                     <AuthorName>{testimonial.name}</AuthorName>
@@ -118,3 +118,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+

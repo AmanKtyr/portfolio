@@ -28,11 +28,9 @@ export const BlogBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      125deg,
-      rgba(147, 51, 234, 0.15) 0%, /* Purple */
-      rgba(56, 189, 248, 0.15) 50%, /* Sky blue */
-      rgba(147, 51, 234, 0.15) 100% /* Purple */
+    background: var(--primary-color) 0%, /* Purple */
+      rgba(128, 0, 0, 0.15) 50%, /* Sky blue */
+      rgba(90, 0, 0, 0.15) 100% /* Purple */
     );
     background-size: 200% 200%;
     animation: gradientAnimation 15s ease infinite;
@@ -48,12 +46,12 @@ export const BlogBanner = styled.div`
     width: 100%;
     height: 100%;
     background-image:
-      radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.3) 0, transparent 10px),
-      radial-gradient(circle at 80% 40%, rgba(147, 51, 234, 0.3) 0, transparent 10px),
-      radial-gradient(circle at 40% 80%, rgba(56, 189, 248, 0.3) 0, transparent 8px),
-      radial-gradient(circle at 60% 10%, rgba(147, 51, 234, 0.3) 0, transparent 12px),
-      radial-gradient(circle at 10% 60%, rgba(56, 189, 248, 0.3) 0, transparent 6px),
-      radial-gradient(circle at 90% 90%, rgba(147, 51, 234, 0.3) 0, transparent 8px);
+      var(--primary-color) 0, transparent 10px),
+      var(--primary-color) 0, transparent 10px),
+      var(--primary-color) 0, transparent 8px),
+      var(--primary-color) 0, transparent 12px),
+      var(--primary-color) 0, transparent 6px),
+      var(--primary-color) 0, transparent 8px);
     z-index: 2;
   }
 
@@ -64,8 +62,8 @@ export const BlogBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    background-image: var(--primary-color) 1px, transparent 1px),
+                      var(--primary-color) 1px, transparent 1px);
     background-size: 30px 30px;
     z-index: 3;
   }
@@ -93,10 +91,10 @@ export const BlogBannerContent = styled.div`
     font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #38BDF8, #9333EA); /* Sky blue to purple gradient */
+    background: var(--primary-color); /* Sky blue to purple gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    text-shadow: 0 0 20px rgba(128, 0, 0, 0.3);
     letter-spacing: -1px;
 
     @media (max-width: 768px) {
@@ -119,7 +117,7 @@ export const BlogBannerContent = styled.div`
       display: block;
       width: 80px;
       height: 4px;
-      background: linear-gradient(to right, #38BDF8, #9333EA);
+      background: var(--primary-color);
       margin: 1.5rem auto 0;
       border-radius: 2px;
     }
@@ -141,7 +139,7 @@ export const BlogBannerContent = styled.div`
   .element-1 {
     width: 100px;
     height: 100px;
-    background: #38BDF8; /* Sky blue */
+    background: #800000; /* Sky blue */
     top: -50px;
     left: 20%;
     animation: float 8s ease-in-out infinite;
@@ -150,7 +148,7 @@ export const BlogBannerContent = styled.div`
   .element-2 {
     width: 150px;
     height: 150px;
-    background: #9333EA; /* Purple */
+    background: #5a0000; /* Purple */
     bottom: -70px;
     right: 15%;
     animation: float 10s ease-in-out infinite reverse;
@@ -206,7 +204,7 @@ export const BlogCard = styled.div`
   &:hover {
     transform: translateY(-5px);
     box-shadow: ${({ theme }) => theme.isDarkMode
-      ? '0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(56, 189, 248, 0.1)'
+      ? '0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(128, 0, 0, 0.1)'
       : '0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(226, 232, 240, 0.8)'};
   }
 `;
@@ -230,7 +228,7 @@ export const BlogImage = styled.div`
     position: absolute;
     bottom: 15px;
     left: 15px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
@@ -278,12 +276,12 @@ export const BlogTitle = styled.h3`
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      background: var(--primary-color);
       transition: width 0.3s ease;
     }
 
     &:hover {
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      background: var(--primary-color);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
@@ -318,7 +316,7 @@ export const BlogLink = styled(Link)`
     left: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, var(--primary-color), transparent);
+    background: var(--primary-color), transparent);
     transform: scaleX(0.3);
     transform-origin: left;
     opacity: 0.5;
@@ -413,7 +411,7 @@ export const SidebarTitle = styled.h3`
     left: 0;
     width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
   }
 `;
 
@@ -434,7 +432,7 @@ export const SearchInput = styled.input`
   &:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    box-shadow: 0 0 0 2px rgba(128, 0, 0, 0.2);
   }
 `;
 
@@ -522,3 +520,5 @@ export const TagItem = styled.div`
     }
   }
 `;
+
+

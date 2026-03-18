@@ -127,7 +127,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             style={{ height: '120%' } }
           >
-            <img src={laptopImage} alt="Laptop with code" />
+            <img src={laptopImage} alt="Laptop with code" loading="lazy" />
           </motion.div>
         </HeroImage>
       </HeroContent>
@@ -149,3 +149,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

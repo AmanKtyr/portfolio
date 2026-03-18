@@ -225,10 +225,6 @@ const Services = () => {
     }
   };
 
-  const toggleCurrency = () => {
-    setCurrency(currency === 'USD' ? 'INR' : 'USD');
-  };
-
   return (
     <>
       <Header />
@@ -300,7 +296,7 @@ const Services = () => {
                   position: "absolute",
                   top: "50%",
                   left: "5%",
-                  color: "rgba(56, 189, 248, 0.4)",
+                  color: "rgba(128, 0, 0, 0.4)",
                   fontSize: "1.2rem",
                   fontFamily: "monospace",
                   zIndex: 5
@@ -323,7 +319,7 @@ const Services = () => {
                   position: "absolute",
                   bottom: "30%",
                   right: "10%",
-                  color: "rgba(147, 51, 234, 0.4)",
+                  color: "rgba(90, 0, 0, 0.4)",
                   fontSize: "1.2rem",
                   fontFamily: "monospace",
                   zIndex: 5
@@ -535,3 +531,4 @@ const Services = () => {
 };
 
 export default Services;
+

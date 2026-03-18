@@ -4,96 +4,65 @@ import { Link } from 'react-router-dom';
 export const ServicesPageContainer = styled.div`
   .section-title {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     position: relative;
+    padding: 0 1rem;
 
     h2 {
-      font-size: 3rem;
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
       font-weight: 800;
       position: relative;
       display: inline-block;
       margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #38BDF8, #9333EA);
+      background: var(--primary-color);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: -1px;
+      letter-spacing: -1.5px;
 
-      /* Glowing underline */
       &::after {
         content: '';
         position: absolute;
         bottom: -15px;
         left: 50%;
         transform: translateX(-50%);
-        width: 80px;
+        width: clamp(60px, 12vw, 100px);
         height: 4px;
-        background: linear-gradient(90deg, #38BDF8, #9333EA);
+        background: var(--primary-color);
         border-radius: 2px;
-        box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
-      }
-
-      @media (max-width: 768px) {
-        font-size: 2.5rem;
+        box-shadow: 0 0 15px rgba(128, 0, 0, 0.4);
       }
     }
 
     p {
-      color: ${({ theme }) => theme.colors.textSecondary};
-      max-width: 600px;
+      color: var(--gray-color);
+      max-width: 650px;
       margin: 0 auto;
-      font-size: 1.2rem;
-      font-weight: 300;
-      letter-spacing: 0.5px;
-    }
-
-    /* Decorative elements */
-    &::before, &::after {
-      content: '';
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
-      filter: blur(5px);
-      z-index: -1;
-    }
-
-    &::before {
-      top: -20px;
-      left: 30%;
-      animation: float 8s ease-in-out infinite;
-    }
-
-    &::after {
-      bottom: -20px;
-      right: 30%;
-      animation: float 10s ease-in-out infinite reverse;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 400;
+      line-height: 1.6;
+      opacity: 0.9;
     }
   }
 
   @keyframes float {
-    0% {
-      transform: translateY(0) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-20px) rotate(5deg);
-    }
-    100% {
-      transform: translateY(0) rotate(0deg);
-    }
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
   }
 
   .btn-primary {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    background: var(--primary-color);
     color: white;
-    border-radius: var(--border-radius);
-    font-weight: 500;
-    transition: var(--transition);
+    border-radius: 12px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
 
     &:hover {
-      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(128, 0, 0, 0.3);
     }
   }
 `;
@@ -113,11 +82,9 @@ export const ServicesBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      125deg,
-      rgba(147, 51, 234, 0.15) 0%, /* Purple */
-      rgba(56, 189, 248, 0.15) 50%, /* Sky blue */
-      rgba(147, 51, 234, 0.15) 100% /* Purple */
+    background: var(--primary-color) 0%, /* Purple */
+      rgba(128, 0, 0, 0.15) 50%, /* Sky blue */
+      rgba(90, 0, 0, 0.15) 100% /* Purple */
     );
     background-size: 200% 200%;
     animation: gradientAnimation 15s ease infinite;
@@ -133,12 +100,12 @@ export const ServicesBanner = styled.div`
     width: 100%;
     height: 100%;
     background-image:
-      radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.3) 0, transparent 10px),
-      radial-gradient(circle at 80% 40%, rgba(147, 51, 234, 0.3) 0, transparent 10px),
-      radial-gradient(circle at 40% 80%, rgba(56, 189, 248, 0.3) 0, transparent 8px),
-      radial-gradient(circle at 60% 10%, rgba(147, 51, 234, 0.3) 0, transparent 12px),
-      radial-gradient(circle at 10% 60%, rgba(56, 189, 248, 0.3) 0, transparent 6px),
-      radial-gradient(circle at 90% 90%, rgba(147, 51, 234, 0.3) 0, transparent 8px);
+      var(--primary-color) 0, transparent 10px),
+      var(--primary-color) 0, transparent 10px),
+      var(--primary-color) 0, transparent 8px),
+      var(--primary-color) 0, transparent 12px),
+      var(--primary-color) 0, transparent 6px),
+      var(--primary-color) 0, transparent 8px);
     z-index: 2;
   }
 
@@ -149,8 +116,8 @@ export const ServicesBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    background-image: var(--primary-color) 1px, transparent 1px),
+                      var(--primary-color) 1px, transparent 1px);
     background-size: 30px 30px;
     z-index: 3;
   }
@@ -178,10 +145,10 @@ export const ServicesBannerContent = styled.div`
     font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #38BDF8, #9333EA); /* Sky blue to purple gradient */
+    background: var(--primary-color); /* Sky blue to purple gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    text-shadow: 0 0 20px rgba(128, 0, 0, 0.3);
     letter-spacing: -1px;
 
     @media (max-width: 768px) {
@@ -204,7 +171,7 @@ export const ServicesBannerContent = styled.div`
       display: block;
       width: 80px;
       height: 4px;
-      background: linear-gradient(to right, #38BDF8, #9333EA);
+      background: var(--primary-color);
       margin: 1.5rem auto 0;
       border-radius: 2px;
     }
@@ -226,7 +193,7 @@ export const ServicesBannerContent = styled.div`
   .element-1 {
     width: 100px;
     height: 100px;
-    background: #38BDF8; /* Sky blue */
+    background: #800000; /* Sky blue */
     top: -50px;
     left: 20%;
     animation: float 8s ease-in-out infinite;
@@ -235,7 +202,7 @@ export const ServicesBannerContent = styled.div`
   .element-2 {
     width: 150px;
     height: 150px;
-    background: #9333EA; /* Purple */
+    background: #5a0000; /* Purple */
     bottom: -70px;
     right: 15%;
     animation: float 10s ease-in-out infinite reverse;
@@ -272,7 +239,7 @@ export const ServiceIcon = styled.div`
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: rgba(37, 99, 235, 0.1);
+  background-color: rgba(128, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -583,3 +550,5 @@ export const CTAContent = styled.div`
     }
   }
 `;
+
+

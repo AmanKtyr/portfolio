@@ -15,8 +15,8 @@ export const TestimonialsContainer = styled.section`
     height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.1), transparent 40%)'
-        : 'radial-gradient(circle at 20% 80%, rgba(219, 234, 254, 0.5), transparent 40%)'};
+        ? 'var(--primary-color), transparent 40%)'
+        : 'var(--primary-color), transparent 40%)'};
     z-index: -1;
   }
 
@@ -24,7 +24,7 @@ export const TestimonialsContainer = styled.section`
     padding-bottom: 4rem;
 
     .swiper-pagination-bullet {
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      background: var(--primary-color);
       opacity: 0.5;
       transition: all 0.3s ease;
 
@@ -61,101 +61,95 @@ export const TestimonialItem = styled.div`
   backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
   background-color: ${({ theme }) => theme.glassmorphism.background};
   border: ${({ theme }) => theme.glassmorphism.border};
-  padding: 2rem;
-  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  border-radius: 20px;
   box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100px;
+    top: -20px;
+    right: -20px;
+    width: 120px;
+    height: 120px;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent 70%)'
-        : 'radial-gradient(circle, rgba(219, 234, 254, 0.7), transparent 70%)'};
+        ? 'var(--primary-color), transparent 70%)'
+        : 'var(--primary-color), transparent 70%)'};
     border-radius: 50%;
     z-index: 0;
   }
 
   &:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    border-color: rgba(128, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
 `;
 
 export const QuoteIcon = styled.div`
   color: var(--primary-color);
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  opacity: 0.3;
-  transition: all 0.3s ease;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.2;
+  transition: all 0.4s ease;
   position: relative;
   z-index: 1;
 
   ${TestimonialItem}:hover & {
-    transform: scale(1.2) rotate(10deg);
-    opacity: 0.5;
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.4;
     color: var(--secondary-color);
   }
 `;
 
 export const TestimonialText = styled.p`
   color: var(--text-color);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   line-height: 1.8;
   flex-grow: 1;
   font-style: italic;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  opacity: 0.9;
+  z-index: 1;
 `;
 
 export const TestimonialAuthor = styled.div`
   display: flex;
   align-items: center;
   margin-top: auto;
+  z-index: 1;
 `;
 
 export const AuthorImage = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 1rem;
+  margin-right: 1.25rem;
   position: relative;
-  transition: all 0.3s ease;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    padding: 3px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--primary-color);
+  padding: 2px;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: transform 0.4s ease;
   }
 
   ${TestimonialItem}:hover & {
-    transform: scale(1.1);
-
+    transform: scale(1.1) rotate(5deg);
+    
     img {
       transform: scale(1.1);
     }
@@ -165,41 +159,25 @@ export const AuthorImage = styled.div`
 export const AuthorInfo = styled.div``;
 
 export const AuthorName = styled.h4`
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
   color: var(--text-color);
   transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    transition: width 0.3s ease;
-  }
-
+  
   ${TestimonialItem}:hover & {
-    transform: translateY(-2px);
-
-    &::after {
-      width: 100%;
-    }
+    color: var(--primary-color);
   }
 `;
 
 export const AuthorPosition = styled.p`
-  font-size: 0.9rem;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  font-size: 0.85rem;
+  background: var(--primary-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease;
-
-  ${TestimonialItem}:hover & {
-    transform: translateX(3px);
-  }
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 `;
+
+

@@ -13,10 +13,7 @@ export const ServicesContainer = styled.section`
     right: 0;
     width: 300px;
     height: 300px;
-    background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(147, 51, 234, 0.1), transparent 70%)'
-        : 'radial-gradient(circle, rgba(219, 234, 254, 0.7), transparent 70%)'};
+    background: transparent;
     border-radius: 50%;
     z-index: -1;
   }
@@ -24,7 +21,7 @@ export const ServicesContainer = styled.section`
   .btn-primary {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     border-radius: var(--border-radius);
     font-weight: 500;
@@ -40,7 +37,7 @@ export const ServicesContainer = styled.section`
       left: 0;
       width: 0;
       height: 100%;
-      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+      background: var(--secondary-color);
       transition: width 0.3s ease;
       z-index: -1;
     }
@@ -87,7 +84,7 @@ export const ServiceCard = styled.div`
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -149,12 +146,10 @@ export const ServiceIcon = styled.div`
     inset: 0;
     border-radius: 20px;
     padding: 2px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    
+    
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -184,9 +179,7 @@ export const ServiceTitle = styled.h3`
   margin-bottom: 1rem;
   position: relative;
   padding-bottom: 0.5rem;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary-color);
   transition: all 0.3s ease;
 
   &::after {
@@ -196,7 +189,7 @@ export const ServiceTitle = styled.h3`
     left: 0;
     width: 30px;
     height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     transition: width 0.3s ease;
   }
 
@@ -214,3 +207,5 @@ export const ServiceText = styled.p`
   margin-bottom: 1.5rem;
   flex-grow: 1;
 `;
+
+

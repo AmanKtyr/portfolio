@@ -3,9 +3,9 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import theme from './styles/Theme';
 import { ThemeProvider } from './context/ThemeContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ThemeContext } from './context/ThemeContext';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Pages
 import Home from './pages/Home/Home';
@@ -20,9 +20,9 @@ import ProjectsPage from './pages/Projects/Projects';
 // Components
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import ThreeBackground from './components/ThreeBackground/ThreeBackground';
-import CustomCursor from './components/CustomCursor/CustomCursor';
 import ParticleBackground from './components/ParticleBackground/ParticleBackground';
 import PageTransition from './components/PageTransition/PageTransition';
+import Loader from './components/Loader/Loader';
 
 function App() {
   return (
@@ -34,16 +34,31 @@ function App() {
 
 function AppWrapper() {
   const { isDarkMode } = useContext(ThemeContext);
+  const [loading, setLoading] = useState(true);
+
+  const handleLoading = () => setLoading(false);
 
   return (
     <StyledThemeProvider theme={theme(isDarkMode)}>
       <GlobalStyles />
-      <ThreeBackground />
-      <ParticleBackground />
-      <CustomCursor />
-      <Router>
-        <AppContent />
-      </Router>
+      <AnimatePresence mode="wait">
+        {loading ? (
+          <Loader key="loader" finishLoading={handleLoading} />
+        ) : (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <ThreeBackground />
+            <ParticleBackground />
+            <Router>
+              <AppContent />
+            </Router>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </StyledThemeProvider>
   );
 }
@@ -74,3 +89,4 @@ function AppContent() {
 }
 
 export default App;
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDatabase, FaFigma, FaGitAlt } from 'react-icons/fa';
+import { FaHtml5, FaJs, FaReact, FaNodeJs, FaDatabase, FaGitAlt } from 'react-icons/fa';
 import { SkillsContainer, SkillsContent, SkillCard, SkillIcon, SkillTitle, SkillText, SkillList } from './SkillsStyles';
 import ProgressBar from './ProgressBar';
 
@@ -169,3 +169,4 @@ const Skills = () => {
 };
 
 export default Skills;
+

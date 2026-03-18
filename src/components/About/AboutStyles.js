@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.section`
-  padding: 6rem 0;
+  padding: 8rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 5rem 0;
+  }
 `;
 
 export const AboutContent = styled.div`
@@ -94,11 +98,12 @@ export const AboutText = styled.div`
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 1rem;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    line-height: 1.3;
+    background: var(--primary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -109,7 +114,7 @@ export const AboutText = styled.div`
       left: 0;
       width: 50px;
       height: 3px;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      background: var(--primary-color);
     }
 
     @media (max-width: 768px) {
@@ -121,6 +126,8 @@ export const AboutText = styled.div`
     margin-bottom: 1.5rem;
     color: var(--gray-color);
     line-height: 1.8;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    opacity: 0.9;
   }
 `;
 
@@ -162,10 +169,11 @@ export const InfoItem = styled.div`
 export const AboutSkills = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 `;
 
@@ -211,7 +219,7 @@ export const ResumeButton = styled.a`
   align-items: center;
   gap: 0.5rem;
   padding: 0.8rem 1.5rem;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: var(--primary-color);
   color: white;
   border-radius: var(--border-radius);
   font-weight: 500;
@@ -230,7 +238,7 @@ export const ResumeButton = styled.a`
     left: 0;
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    background: var(--primary-color);
     transition: width 0.3s ease;
     z-index: -1;
   }
@@ -258,3 +266,5 @@ export const ResumeButton = styled.a`
     justify-content: center;
   }
 `;
+
+

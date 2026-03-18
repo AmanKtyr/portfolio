@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaPhp, FaBootstrap, FaDocker, FaGitAlt, FaGithub, FaDatabase, FaServer, FaNodeJs, FaAws, FaBrain, FaRobot, FaPlug } from 'react-icons/fa';
-import { SiDjango, SiTailwindcss, SiJquery, SiFlask, SiPostgresql, SiMysql, SiSqlite, SiNextdotjs } from 'react-icons/si';
+import { SiDjango, SiTailwindcss, SiJquery, SiFlask, SiPostgresql, SiMysql, SiNextdotjs } from 'react-icons/si';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ProgressBar from '../../components/Skills/ProgressBar';
@@ -235,7 +235,7 @@ const Skills = () => {
                   position: "absolute",
                   top: "50%",
                   left: "5%",
-                  color: "rgba(56, 189, 248, 0.4)",
+                  color: "rgba(128, 0, 0, 0.4)",
                   fontSize: "1.2rem",
                   fontFamily: "monospace",
                   zIndex: 5
@@ -258,7 +258,7 @@ const Skills = () => {
                   position: "absolute",
                   bottom: "30%",
                   right: "10%",
-                  color: "rgba(147, 51, 234, 0.4)",
+                  color: "rgba(90, 0, 0, 0.4)",
                   fontSize: "1.2rem",
                   fontFamily: "monospace",
                   zIndex: 5
@@ -422,3 +422,4 @@ const Skills = () => {
 };
 
 export default Skills;
+

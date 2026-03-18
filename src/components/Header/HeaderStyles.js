@@ -20,16 +20,16 @@ export const HeaderContainer = styled.header`
   border-bottom: ${({ scrolled, theme }) =>
     theme.isDarkMode
       ? scrolled
-        ? '1px solid rgba(56, 189, 248, 0.2)'
-        : '1px solid rgba(56, 189, 248, 0.1)'
+        ? '1px solid rgba(128, 0, 0, 0.2)'
+        : '1px solid rgba(128, 0, 0, 0.1)'
       : scrolled
         ? '1px solid rgba(226, 232, 240, 0.8)'
         : '1px solid rgba(226, 232, 240, 0.5)'};
   box-shadow: ${({ scrolled, theme }) =>
     scrolled
       ? theme.isDarkMode
-        ? '0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.1)'
-        : '0 10px 30px -10px rgba(0, 0, 0, 0.15), 0 0 15px rgba(56, 189, 248, 0.05)'
+        ? '0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(128, 0, 0, 0.1)'
+        : '0 10px 30px -10px rgba(0, 0, 0, 0.15), 0 0 15px rgba(128, 0, 0, 0.05)'
       : 'none'};
   transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
   padding: ${({ scrolled }) => (scrolled ? '0.3rem 0' : '0.5rem 0')};
@@ -41,14 +41,7 @@ export const HeaderContainer = styled.header`
     left: 0;
     width: 100%;
     height: 100%;
-    background: ${({ theme, scrolled }) =>
-      scrolled && theme.isDarkMode
-        ? 'radial-gradient(circle at top right, rgba(56, 189, 248, 0.2), transparent 60%), radial-gradient(circle at bottom left, rgba(147, 51, 234, 0.1), transparent 50%)'
-        : scrolled && !theme.isDarkMode
-          ? 'radial-gradient(circle at top right, rgba(56, 189, 248, 0.15), transparent 60%), radial-gradient(circle at bottom left, rgba(147, 51, 234, 0.05), transparent 50%)'
-          : theme.isDarkMode
-            ? 'radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 50%)'
-            : 'radial-gradient(circle at top right, rgba(56, 189, 248, 0.05), transparent 50%)'};
+    background: transparent;
     pointer-events: none;
     z-index: -1;
   }
@@ -84,16 +77,16 @@ export const Logo = styled(Link)`
   overflow: hidden;
   background: ${({ theme }) =>
     theme.isDarkMode
-      ? 'linear-gradient(90deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5))'
-      : 'linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5))'};
+      ? 'rgba(15, 23, 42, 0.7)'
+      : 'rgba(255, 255, 255, 0.7)'};
   backdrop-filter: blur(10px);
   border: ${({ theme }) =>
     theme.isDarkMode
-      ? '1px solid rgba(56, 189, 248, 0.15)'
+      ? '1px solid rgba(128, 0, 0, 0.15)'
       : '1px solid rgba(226, 232, 240, 0.8)'};
   box-shadow: ${({ theme }) =>
     theme.isDarkMode
-      ? '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(56, 189, 248, 0.05)'
+      ? '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(128, 0, 0, 0.05)'
       : '0 4px 20px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5)'};
   margin-right: 0;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -107,8 +100,8 @@ export const Logo = styled(Link)`
     height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(147, 51, 234, 0.15))'
-        : 'linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(147, 51, 234, 0.1))'};
+        ? 'rgba(128, 0, 0, 0.15)'
+        : 'rgba(128, 0, 0, 0.1)'};
     border-radius: 50px;
     opacity: 0;
     transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -119,7 +112,7 @@ export const Logo = styled(Link)`
     transform: translateY(-2px);
     box-shadow: ${({ theme }) =>
       theme.isDarkMode
-        ? '0 8px 25px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(56, 189, 248, 0.1)'
+        ? '0 8px 25px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(128, 0, 0, 0.1)'
         : '0 8px 25px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.6)'};
   }
 
@@ -131,7 +124,7 @@ export const Logo = styled(Link)`
     width: 26px;
     height: 26px;
     margin-right: 0.5rem;
-    background: linear-gradient(135deg, #38BDF8, #9333EA);
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -139,7 +132,7 @@ export const Logo = styled(Link)`
     color: white;
     font-weight: 900;
     font-size: 0.8rem;
-    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 4px 10px rgba(128, 0, 0, 0.3);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -149,15 +142,8 @@ export const Logo = styled(Link)`
 
   span {
     position: relative;
-    background: linear-gradient(90deg,
-      #38BDF8 0%,
-      #9333EA 50%,
-      #38BDF8 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+    color: var(--primary-color);
+    color: var(--primary-color);
     transition: all 0.5s ease;
     letter-spacing: 0.5px;
     font-size: 1.3rem;
@@ -186,7 +172,7 @@ export const Logo = styled(Link)`
         left: 0;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg, #38BDF8, #9333EA);
+        background: var(--primary-color);
         border-radius: 4px;
         transform: scaleX(0);
         transform-origin: right;
@@ -263,11 +249,11 @@ export const NavMenu = styled.ul`
     backdrop-filter: blur(10px);
     border: ${({ theme }) =>
       theme.isDarkMode
-        ? '1px solid rgba(56, 189, 248, 0.15)'
+        ? '1px solid rgba(128, 0, 0, 0.15)'
         : '1px solid rgba(226, 232, 240, 0.8)'};
     box-shadow: ${({ theme }) =>
       theme.isDarkMode
-        ? '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(56, 189, 248, 0.05)'
+        ? '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(128, 0, 0, 0.05)'
         : '0 4px 20px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5)'};
   }
 
@@ -287,14 +273,14 @@ export const NavMenu = styled.ul`
     border-radius: 20px;
     box-shadow: ${({ theme }) =>
       theme.isDarkMode
-        ? '0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(56, 189, 248, 0.1)'
-        : '0 10px 30px rgba(0, 0, 0, 0.15), 0 0 15px rgba(56, 189, 248, 0.05)'};
+        ? '0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(128, 0, 0, 0.1)'
+        : '0 10px 30px rgba(0, 0, 0, 0.15), 0 0 15px rgba(128, 0, 0, 0.05)'};
     z-index: 100;
     justify-content: center;
     align-items: center;
     border: ${({ theme }) =>
       theme.isDarkMode
-        ? '1px solid rgba(56, 189, 248, 0.2)'
+        ? '1px solid rgba(128, 0, 0, 0.2)'
         : '1px solid rgba(226, 232, 240, 0.8)'};
     overflow-y: auto;
     max-height: 80vh;
@@ -308,15 +294,15 @@ export const NavIndicator = styled(motion.div)`
   top: 0;
   background: ${({ theme }) =>
     theme.isDarkMode
-      ? 'linear-gradient(90deg, rgba(56, 189, 248, 0.2), rgba(147, 51, 234, 0.2))'
-      : 'linear-gradient(90deg, rgba(56, 189, 248, 0.15), rgba(147, 51, 234, 0.15))'};
+      ? 'rgba(128, 0, 0, 0.2)'
+      : 'rgba(128, 0, 0, 0.15)'};
   border-radius: 50px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 0;
   box-shadow: ${({ theme }) =>
     theme.isDarkMode
-      ? '0 0 15px rgba(56, 189, 248, 0.3), inset 0 0 0 1px rgba(56, 189, 248, 0.2)'
-      : '0 0 15px rgba(56, 189, 248, 0.15), inset 0 0 0 1px rgba(56, 189, 248, 0.1)'};
+      ? '0 0 15px rgba(128, 0, 0, 0.3), inset 0 0 0 1px rgba(128, 0, 0, 0.2)'
+      : '0 0 15px rgba(128, 0, 0, 0.15), inset 0 0 0 1px rgba(128, 0, 0, 0.1)'};
   backdrop-filter: blur(5px);
 
   &::before {
@@ -327,10 +313,7 @@ export const NavIndicator = styled(motion.div)`
     right: 0;
     bottom: 0;
     border-radius: 50px;
-    background: linear-gradient(90deg,
-      rgba(56, 189, 248, 0.3),
-      rgba(147, 51, 234, 0.3),
-      rgba(56, 189, 248, 0.3));
+    background: var(--primary-color);
     background-size: 200% 100%;
     animation: gradientMove 6s linear infinite;
     opacity: 0.5;
@@ -382,11 +365,7 @@ export const ScrollProgressContainer = styled.div`
 
 export const ScrollProgressBar = styled(motion.div)`
   height: 100%;
-  background: linear-gradient(90deg,
-    var(--primary-color),
-    var(--secondary-color),
-    var(--accent-color),
-    var(--primary-color));
+  background: var(--primary-color);
   background-size: 300% 100%;
   animation: gradientShift 5s linear infinite;
 
@@ -442,13 +421,13 @@ export const PrimaryButton = styled.div`
   .btn-primary {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: linear-gradient(90deg, #38BDF8, #9333EA);
+    background: var(--primary-color);
     color: white;
     border-radius: 30px;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(128, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -464,7 +443,7 @@ export const PrimaryButton = styled.div`
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, #9333EA, #38BDF8);
+      background: var(--secondary-color);
       z-index: -1;
       transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       opacity: 0;
@@ -477,12 +456,7 @@ export const PrimaryButton = styled.div`
       left: -50%;
       width: 200%;
       height: 200%;
-      background: linear-gradient(
-        60deg,
-        rgba(255, 255, 255, 0) 10%,
-        rgba(255, 255, 255, 0.1) 30%,
-        rgba(255, 255, 255, 0) 50%
-      );
+      background: rgba(255, 255, 255, 0.1);
       transform: rotate(45deg);
       transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
       z-index: 1;
@@ -491,7 +465,7 @@ export const PrimaryButton = styled.div`
 
     &:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 25px rgba(128, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.15);
 
       &::before {
         opacity: 1;
@@ -506,7 +480,7 @@ export const PrimaryButton = styled.div`
 
     &:active {
       transform: translateY(0) scale(0.98);
-      box-shadow: 0 4px 10px rgba(56, 189, 248, 0.4);
+      box-shadow: 0 4px 10px rgba(128, 0, 0, 0.4);
     }
   }
 
@@ -529,11 +503,11 @@ export const NavLink = styled(Link).attrs(props => ({
   color: ${({ active, theme }) =>
     active === 'true'
       ? theme.isDarkMode
-        ? '#38BDF8' // Sky blue for dark mode
-        : '#0F172A' // Dark blue for light mode
+        ? '#ff4d4d' // Lighter Maroon/Red for dark mode
+        : '#800000' // Maroon for light mode
       : theme.isDarkMode
-        ? '#f1f5f9' // Very light gray for dark mode
-        : '#0f172a'}; // Very dark blue for light mode
+        ? '#f1f5f9'
+        : '#0f172a'};
   font-weight: 600;
   position: relative;
   padding: 0.5rem 0.8rem;
@@ -549,7 +523,7 @@ export const NavLink = styled(Link).attrs(props => ({
   font-size: 0.9rem;
   text-shadow: ${({ theme, active }) =>
     active === 'true' && theme.isDarkMode
-      ? '0 0 10px rgba(56, 189, 248, 0.5)'
+      ? '0 0 10px rgba(128, 0, 0, 0.5)'
       : 'none'};
   white-space: nowrap;
 
@@ -560,16 +534,13 @@ export const NavLink = styled(Link).attrs(props => ({
   }
 
   &:hover {
-    color: ${({ theme }) =>
-      theme.isDarkMode
-        ? '#38BDF8' // Sky blue for dark mode
-        : '#0F172A'}; // Dark blue for light mode
+    color: var(--primary-color);
     transform: translateY(-1px);
 
     svg {
       transform: translateY(-1px) scale(1.1);
       opacity: 1;
-      filter: drop-shadow(0 2px 4px rgba(56, 189, 248, 0.3));
+      filter: drop-shadow(0 2px 4px rgba(128, 0, 0, 0.3));
     }
   }
 
@@ -583,8 +554,8 @@ export const NavLink = styled(Link).attrs(props => ({
     background: ${({ theme, active }) => {
       if (active === 'true') {
         return theme.isDarkMode
-          ? 'linear-gradient(90deg, rgba(56, 189, 248, 0.2), rgba(147, 51, 234, 0.2))'
-          : 'linear-gradient(90deg, rgba(56, 189, 248, 0.15), rgba(147, 51, 234, 0.15))';
+          ? 'rgba(128, 0, 0, 0.2)'
+          : 'rgba(128, 0, 0, 0.15)';
       }
       return theme.isDarkMode
         ? 'rgba(30, 41, 59, 0.5)'
@@ -593,14 +564,14 @@ export const NavLink = styled(Link).attrs(props => ({
     border: ${({ theme, active }) =>
       active === 'true'
         ? theme.isDarkMode
-          ? '1px solid rgba(56, 189, 248, 0.3)'
-          : '1px solid rgba(56, 189, 248, 0.2)'
+          ? '1px solid rgba(128, 0, 0, 0.3)'
+          : '1px solid rgba(128, 0, 0, 0.2)'
         : theme.isDarkMode
           ? '1px solid rgba(51, 65, 85, 0.5)'
           : '1px solid rgba(226, 232, 240, 0.8)'};
     box-shadow: ${({ active }) =>
       active === 'true'
-        ? '0 4px 12px rgba(56, 189, 248, 0.2)'
+        ? '0 4px 12px rgba(128, 0, 0, 0.2)'
         : 'none'};
     backdrop-filter: blur(5px);
     margin-bottom: 0.5rem;
@@ -609,8 +580,8 @@ export const NavLink = styled(Link).attrs(props => ({
       background: ${({ theme, active }) =>
         active === 'true'
           ? theme.isDarkMode
-            ? 'linear-gradient(90deg, rgba(56, 189, 248, 0.25), rgba(147, 51, 234, 0.25))'
-            : 'linear-gradient(90deg, rgba(56, 189, 248, 0.2), rgba(147, 51, 234, 0.2))'
+            ? 'rgba(128, 0, 0, 0.25)'
+            : 'rgba(128, 0, 0, 0.2)'
           : theme.isDarkMode
             ? 'rgba(30, 41, 59, 0.6)'
             : 'rgba(241, 245, 249, 0.6)'
@@ -636,22 +607,22 @@ export const MobileIcon = styled.div`
     border-radius: 50%;
     background: ${({ theme, isOpen }) =>
       isOpen
-        ? 'linear-gradient(90deg, #38BDF8, #9333EA)'
+        ? 'var(--primary-color)'
         : theme.isDarkMode
           ? 'rgba(15, 23, 42, 0.7)'
           : 'rgba(241, 245, 249, 0.7)'};
     box-shadow: ${({ isOpen, theme }) =>
       isOpen
-        ? '0 4px 20px rgba(56, 189, 248, 0.4), 0 0 0 1px rgba(56, 189, 248, 0.2)'
+        ? '0 4px 20px rgba(128, 0, 0, 0.4), 0 0 0 1px rgba(128, 0, 0, 0.2)'
         : theme.isDarkMode
-          ? '0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(56, 189, 248, 0.1)'
+          ? '0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(128, 0, 0, 0.1)'
           : '0 4px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(226, 232, 240, 0.8)'};
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     border: ${({ theme, isOpen }) =>
       isOpen
         ? '1px solid rgba(255, 255, 255, 0.3)'
         : theme.isDarkMode
-          ? '1px solid rgba(56, 189, 248, 0.15)'
+          ? '1px solid rgba(128, 0, 0, 0.15)'
           : '1px solid rgba(226, 232, 240, 0.8)'};
     backdrop-filter: blur(10px);
     position: relative;
@@ -664,10 +635,7 @@ export const MobileIcon = styled.div`
       left: 0;
       right: 0;
       bottom: 0;
-      background: ${({ isOpen }) =>
-        isOpen
-          ? 'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 50%)'
-          : 'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), transparent 50%)'};
+      background: transparent;
       opacity: 0.8;
       z-index: -1;
       border-radius: 50%;
@@ -691,15 +659,15 @@ export const MobileIcon = styled.div`
       transform: scale(1.05) translateY(-2px);
       background: ${({ theme, isOpen }) =>
         isOpen
-          ? 'linear-gradient(90deg, #9333EA, #38BDF8)'
+          ? 'var(--secondary-color)'
           : theme.isDarkMode
             ? 'rgba(15, 23, 42, 0.8)'
             : 'rgba(241, 245, 249, 0.8)'};
       box-shadow: ${({ isOpen, theme }) =>
         isOpen
-          ? '0 8px 25px rgba(56, 189, 248, 0.5), 0 0 0 1px rgba(56, 189, 248, 0.3)'
+          ? '0 8px 25px rgba(128, 0, 0, 0.5), 0 0 0 1px rgba(128, 0, 0, 0.3)'
           : theme.isDarkMode
-            ? '0 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(56, 189, 248, 0.15)'
+            ? '0 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(128, 0, 0, 0.15)'
             : '0 8px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(226, 232, 240, 0.9)'};
     }
   }
@@ -765,12 +733,12 @@ export const DropdownMenu = styled(motion.div)`
   margin-top: 0.8rem;
   box-shadow: ${({ theme }) =>
     theme.isDarkMode
-      ? '0 15px 35px -5px rgba(0, 0, 0, 0.3), 0 10px 15px -5px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(56, 189, 248, 0.1)'
+      ? '0 15px 35px -5px rgba(0, 0, 0, 0.3), 0 10px 15px -5px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(128, 0, 0, 0.1)'
       : '0 15px 35px -5px rgba(0, 0, 0, 0.1), 0 10px 15px -5px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(226, 232, 240, 0.8)'};
   backdrop-filter: blur(15px);
   border: ${({ theme }) =>
     theme.isDarkMode
-      ? '1px solid rgba(56, 189, 248, 0.15)'
+      ? '1px solid rgba(128, 0, 0, 0.15)'
       : '1px solid rgba(226, 232, 240, 0.8)'};
   z-index: 10;
   overflow: hidden;
@@ -789,11 +757,11 @@ export const DropdownMenu = styled(motion.div)`
         : 'rgba(255, 255, 255, 0.85)'};
     border-top: ${({ theme }) =>
       theme.isDarkMode
-        ? '1px solid rgba(56, 189, 248, 0.15)'
+        ? '1px solid rgba(128, 0, 0, 0.15)'
         : '1px solid rgba(226, 232, 240, 0.8)'};
     border-left: ${({ theme }) =>
       theme.isDarkMode
-        ? '1px solid rgba(56, 189, 248, 0.15)'
+        ? '1px solid rgba(128, 0, 0, 0.15)'
         : '1px solid rgba(226, 232, 240, 0.8)'};
     box-shadow: ${({ theme }) =>
       theme.isDarkMode
@@ -810,8 +778,8 @@ export const DropdownMenu = styled(motion.div)`
     bottom: 0;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 70%), radial-gradient(circle at bottom left, rgba(147, 51, 234, 0.05), transparent 70%)'
-        : 'radial-gradient(circle at top right, rgba(56, 189, 248, 0.05), transparent 70%), radial-gradient(circle at bottom left, rgba(147, 51, 234, 0.03), transparent 70%)'};
+        ? 'var(--primary-color), transparent 70%), var(--primary-color), transparent 70%)'
+        : 'var(--primary-color), transparent 70%), var(--primary-color), transparent 70%)'};
     z-index: -1;
     border-radius: 16px;
     opacity: 0.8;
@@ -849,12 +817,12 @@ export const DropdownItem = styled(motion.div)`
   &:hover {
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'rgba(56, 189, 248, 0.1)'
-        : 'rgba(56, 189, 248, 0.05)'};
+        ? 'rgba(128, 0, 0, 0.1)'
+        : 'rgba(128, 0, 0, 0.05)'};
     box-shadow: ${({ theme }) =>
       theme.isDarkMode
-        ? '0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(56, 189, 248, 0.1)'
-        : '0 4px 12px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(56, 189, 248, 0.05)'};
+        ? '0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(128, 0, 0, 0.1)'
+        : '0 4px 12px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(128, 0, 0, 0.05)'};
   }
 
   a {
@@ -874,7 +842,7 @@ export const DropdownItem = styled(motion.div)`
     &:hover {
       color: ${({ theme }) =>
         theme.isDarkMode
-          ? '#38BDF8'
+          ? '#800000'
           : '#0F172A'};
       transform: translateX(3px);
     }
@@ -890,9 +858,9 @@ export const DropdownItem = styled(motion.div)`
       transform: scale(1.1);
       color: ${({ theme }) =>
         theme.isDarkMode
-          ? '#38BDF8'
+          ? '#800000'
           : '#0F172A'};
-      filter: drop-shadow(0 2px 4px rgba(56, 189, 248, 0.3));
+      filter: drop-shadow(0 2px 4px rgba(128, 0, 0, 0.3));
     }
   }
 
@@ -924,10 +892,12 @@ export const FloatingElement = styled(motion.div)`
   border-radius: 50%;
   background: ${({ color, theme }) =>
     color || (theme.isDarkMode
-      ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))'
-      : 'linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(147, 51, 234, 0.05))')};
+      ? 'var(--primary-color), rgba(90, 0, 0, 0.1))'
+      : 'var(--primary-color), rgba(90, 0, 0, 0.05))')};
   filter: blur(${({ blur }) => blur || '0px'});
   opacity: ${({ opacity }) => opacity || '0.5'};
   z-index: -1;
   pointer-events: none;
 `;
+
+

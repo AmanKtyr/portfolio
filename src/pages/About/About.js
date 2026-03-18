@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaLaptopCode, FaMobileAlt, FaServer, FaDownload, FaPhotoVideo, FaUserGraduate, FaBriefcase, FaAward } from 'react-icons/fa';
+import { FaCode, FaLaptopCode, FaServer, FaDownload, FaPhotoVideo, FaUserGraduate, FaBriefcase, FaAward } from 'react-icons/fa';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { AboutPageContainer, AboutBanner, AboutBannerContent, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, AboutTimeline, TimelineItem, TimelineContent, TimelineDot, TimelineConnector, AboutStats, StatItem } from './AboutStyles';
@@ -79,7 +79,7 @@ const AboutPage = () => {
                   position: "absolute",
                   top: "50%",
                   left: "5%",
-                  color: "rgba(56, 189, 248, 0.4)",
+                  color: "rgba(128, 0, 0, 0.4)",
                   fontSize: "1.2rem",
                   fontFamily: "monospace",
                   zIndex: 5
@@ -102,7 +102,7 @@ const AboutPage = () => {
                   position: "absolute",
                   bottom: "30%",
                   right: "10%",
-                  color: "rgba(147, 51, 234, 0.4)",
+                  color: "rgba(90, 0, 0, 0.4)",
                   fontSize: "1.2rem",
                   fontFamily: "monospace",
                   zIndex: 5
@@ -133,7 +133,7 @@ const AboutPage = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <img src={aboutImg} alt="About Me" />
+                <img src={aboutImg} alt="About Me" loading="lazy" />
               </motion.div>
             </AboutImage>
 
@@ -475,3 +475,4 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+

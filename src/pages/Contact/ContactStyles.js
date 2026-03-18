@@ -17,11 +17,9 @@ export const ContactBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      125deg,
-      rgba(147, 51, 234, 0.15) 0%, /* Purple */
-      rgba(56, 189, 248, 0.15) 50%, /* Sky blue */
-      rgba(147, 51, 234, 0.15) 100% /* Purple */
+    background: var(--primary-color) 0%, /* Purple */
+      rgba(128, 0, 0, 0.15) 50%, /* Sky blue */
+      rgba(90, 0, 0, 0.15) 100% /* Purple */
     );
     background-size: 200% 200%;
     animation: gradientAnimation 15s ease infinite;
@@ -37,12 +35,12 @@ export const ContactBanner = styled.div`
     width: 100%;
     height: 100%;
     background-image:
-      radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.3) 0, transparent 10px),
-      radial-gradient(circle at 80% 40%, rgba(147, 51, 234, 0.3) 0, transparent 10px),
-      radial-gradient(circle at 40% 80%, rgba(56, 189, 248, 0.3) 0, transparent 8px),
-      radial-gradient(circle at 60% 10%, rgba(147, 51, 234, 0.3) 0, transparent 12px),
-      radial-gradient(circle at 10% 60%, rgba(56, 189, 248, 0.3) 0, transparent 6px),
-      radial-gradient(circle at 90% 90%, rgba(147, 51, 234, 0.3) 0, transparent 8px);
+      var(--primary-color) 0, transparent 10px),
+      var(--primary-color) 0, transparent 10px),
+      var(--primary-color) 0, transparent 8px),
+      var(--primary-color) 0, transparent 12px),
+      var(--primary-color) 0, transparent 6px),
+      var(--primary-color) 0, transparent 8px);
     z-index: 2;
   }
 
@@ -53,8 +51,8 @@ export const ContactBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    background-image: var(--primary-color) 1px, transparent 1px),
+                      var(--primary-color) 1px, transparent 1px);
     background-size: 30px 30px;
     z-index: 3;
   }
@@ -82,10 +80,10 @@ export const ContactBannerContent = styled.div`
     font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #38BDF8, #9333EA); /* Sky blue to purple gradient */
+    background: var(--primary-color); /* Sky blue to purple gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    text-shadow: 0 0 20px rgba(128, 0, 0, 0.3);
     letter-spacing: -1px;
 
     @media (max-width: 768px) {
@@ -108,7 +106,7 @@ export const ContactBannerContent = styled.div`
       display: block;
       width: 80px;
       height: 4px;
-      background: linear-gradient(to right, #38BDF8, #9333EA);
+      background: var(--primary-color);
       margin: 1.5rem auto 0;
       border-radius: 2px;
     }
@@ -130,7 +128,7 @@ export const ContactBannerContent = styled.div`
   .element-1 {
     width: 100px;
     height: 100px;
-    background: #38BDF8; /* Sky blue */
+    background: #800000; /* Sky blue */
     top: -50px;
     left: 20%;
     animation: float 8s ease-in-out infinite;
@@ -139,7 +137,7 @@ export const ContactBannerContent = styled.div`
   .element-2 {
     width: 150px;
     height: 150px;
-    background: #9333EA; /* Purple */
+    background: #5a0000; /* Purple */
     bottom: -70px;
     right: 15%;
     animation: float 10s ease-in-out infinite reverse;
@@ -208,7 +206,7 @@ export const ContactDetail = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgba(37, 99, 235, 0.1);
+    background-color: rgba(128, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -324,7 +322,7 @@ export const FormControl = styled.input`
   &:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.1);
   }
 
   &.error {
@@ -354,3 +352,5 @@ export const ContactMap = styled.div`
     border: 0;
   }
 `;
+
+

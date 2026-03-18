@@ -25,8 +25,8 @@ const TransitionLayer = styled(motion.div)`
   height: 100%;
   background: ${({ theme }) =>
     theme.isDarkMode
-      ? 'linear-gradient(135deg, #0F172A, #1E293B, #0F172A)'
-      : 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))'};
+      ? 'var(--primary-color)'
+      : 'var(--primary-color)'};
 
   &::before {
     content: '';
@@ -37,8 +37,8 @@ const TransitionLayer = styled(motion.div)`
     height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle at 20% 50%, rgba(56, 189, 248, 0.15), transparent 50%), radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.1), transparent 40%)'
-        : 'radial-gradient(circle at 20% 50%, rgba(219, 234, 254, 0.5), transparent 50%), radial-gradient(circle at 80% 80%, rgba(233, 213, 255, 0.3), transparent 40%)'};
+        ? 'var(--primary-color), transparent 50%), var(--primary-color), transparent 40%)'
+        : 'var(--primary-color), transparent 50%), var(--primary-color), transparent 40%)'};
   }
 
   /* Grid pattern overlay */
@@ -51,8 +51,8 @@ const TransitionLayer = styled(motion.div)`
     height: 100%;
     background-image: ${({ theme }) =>
       theme.isDarkMode
-        ? 'linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px)'
-        : 'linear-gradient(rgba(30, 64, 175, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 64, 175, 0.05) 1px, transparent 1px)'};
+        ? 'var(--primary-color) 1px, transparent 1px), var(--primary-color) 1px, transparent 1px)'
+        : 'var(--primary-color) 1px, transparent 1px), var(--primary-color) 1px, transparent 1px)'};
     background-size: 30px 30px;
     opacity: 0.5;
   }
@@ -64,8 +64,8 @@ const CircleElement = styled(motion.div)`
   border-radius: 50%;
   background: ${({ theme, color }) =>
     color === 'primary'
-      ? theme.isDarkMode ? 'rgba(56, 189, 248, 0.15)' : 'rgba(37, 99, 235, 0.1)'
-      : theme.isDarkMode ? 'rgba(147, 51, 234, 0.1)' : 'rgba(147, 51, 234, 0.05)'};
+      ? theme.isDarkMode ? 'rgba(128, 0, 0, 0.15)' : 'rgba(128, 0, 0, 0.1)'
+      : theme.isDarkMode ? 'rgba(90, 0, 0, 0.1)' : 'rgba(90, 0, 0, 0.05)'};
   filter: blur(${props => props.blur || '0px'});
   z-index: 1;
 `;
@@ -73,10 +73,7 @@ const CircleElement = styled(motion.div)`
 const GlowingLine = styled(motion.div)`
   position: absolute;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    ${({ theme }) => theme.isDarkMode ? 'rgba(56, 189, 248, 0.5)' : 'rgba(37, 99, 235, 0.5)'},
+  background: var(--primary-color) => theme.isDarkMode ? 'rgba(128, 0, 0, 0.5)' : 'rgba(128, 0, 0, 0.5)'},
     transparent
   );
   z-index: 1;
@@ -90,28 +87,28 @@ const TransitionLogo = styled(motion.div)`
   position: relative;
   text-shadow: ${({ theme }) =>
     theme.isDarkMode
-      ? '0 0 15px rgba(56, 189, 248, 0.5), 0 0 30px rgba(56, 189, 248, 0.3)'
-      : '0 0 15px rgba(37, 99, 235, 0.5), 0 0 30px rgba(37, 99, 235, 0.3)'};
+      ? '0 0 15px rgba(128, 0, 0, 0.5), 0 0 30px rgba(128, 0, 0, 0.3)'
+      : '0 0 15px rgba(128, 0, 0, 0.5), 0 0 30px rgba(128, 0, 0, 0.3)'};
   letter-spacing: 2px;
   background: ${({ theme }) =>
     theme.isDarkMode
-      ? 'linear-gradient(to right, #F1F5F9, #38BDF8, #F1F5F9)'
-      : 'linear-gradient(to right, white, #60A5FA, white)'};
+      ? 'var(--primary-color)'
+      : 'var(--primary-color)'};
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   span {
-    color: ${({ theme }) => theme.isDarkMode ? '#38BDF8' : 'white'};
+    color: ${({ theme }) => theme.isDarkMode ? '#800000' : 'white'};
     text-shadow: ${({ theme }) =>
       theme.isDarkMode
-        ? '0 0 15px rgba(56, 189, 248, 0.8), 0 0 30px rgba(56, 189, 248, 0.5)'
-        : '0 0 15px rgba(37, 99, 235, 0.5), 0 0 30px rgba(37, 99, 235, 0.3)'};
+        ? '0 0 15px rgba(128, 0, 0, 0.8), 0 0 30px rgba(128, 0, 0, 0.5)'
+        : '0 0 15px rgba(128, 0, 0, 0.5), 0 0 30px rgba(128, 0, 0, 0.3)'};
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'linear-gradient(to right, #38BDF8, #9333EA)'
-        : 'linear-gradient(to right, #3B82F6, #9333EA)'};
+        ? 'var(--primary-color)'
+        : 'var(--primary-color)'};
     background-size: 200% auto;
     background-clip: text;
     -webkit-background-clip: text;
@@ -136,8 +133,8 @@ const TransitionLogo = styled(motion.div)`
     opacity: 0.7;
     box-shadow: ${({ theme }) =>
       theme.isDarkMode
-        ? '0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 0 1px rgba(56, 189, 248, 0.1), inset 0 0 20px rgba(56, 189, 248, 0.1)'
-        : '0 8px 32px 0 rgba(31, 38, 135, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.4), inset 0 0 20px rgba(59, 130, 246, 0.1)'};
+        ? '0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 0 1px rgba(128, 0, 0, 0.1), inset 0 0 20px rgba(128, 0, 0, 0.1)'
+        : '0 8px 32px 0 rgba(31, 38, 135, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.4), inset 0 0 20px rgba(128, 0, 0, 0.1)'};
   }
 
   /* Glowing ring effect */
@@ -152,8 +149,8 @@ const TransitionLogo = styled(motion.div)`
     z-index: -2;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%)'
-        : 'radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)'};
+        ? 'var(--primary-color) 0%, transparent 70%)'
+        : 'var(--primary-color) 0%, transparent 70%)'};
     animation: pulse 4s ease-in-out infinite alternate;
   }
 
@@ -347,11 +344,11 @@ const PageTransition = ({ children }) => {
               height: `${particle.size}px`,
               borderRadius: '50%',
               background: isDarkMode
-                ? `rgba(${Math.random() > 0.5 ? '56, 189, 248' : '147, 51, 234'}, ${Math.random() * 0.3 + 0.2})`
-                : `rgba(${Math.random() > 0.5 ? '59, 130, 246' : '147, 51, 234'}, ${Math.random() * 0.3 + 0.2})`,
+                ? `rgba(${Math.random() > 0.5 ? '56, 189, 248' : '90, 0, 0'}, ${Math.random() * 0.3 + 0.2})`
+                : `rgba(${Math.random() > 0.5 ? '128, 0, 0' : '90, 0, 0'}, ${Math.random() * 0.3 + 0.2})`,
               boxShadow: isDarkMode
-                ? `0 0 ${Math.random() * 10 + 5}px rgba(56, 189, 248, 0.3)`
-                : `0 0 ${Math.random() * 10 + 5}px rgba(59, 130, 246, 0.3)`,
+                ? `0 0 ${Math.random() * 10 + 5}px rgba(128, 0, 0, 0.3)`
+                : `0 0 ${Math.random() * 10 + 5}px rgba(128, 0, 0, 0.3)`,
               opacity: 0.6,
               zIndex: 10001,
             }}
@@ -376,3 +373,4 @@ const PageTransition = ({ children }) => {
 };
 
 export default PageTransition;
+

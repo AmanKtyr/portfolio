@@ -24,18 +24,24 @@ export const FilterBtn = styled.button`
   transition: var(--transition);
 
   &:hover {
-    background-color: ${({ active }) => (active === 'true' ? 'var(--secondary-color)' : 'rgba(37, 99, 235, 0.1)')};
+    background-color: ${({ active }) => (active === 'true' ? 'var(--secondary-color)' : 'rgba(128, 0, 0, 0.1)')};
     color: ${({ active }) => (active === 'true' ? 'white' : 'var(--primary-color)')};
   }
 `;
 
 export const ProjectsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 `;
 
@@ -76,9 +82,7 @@ export const ProjectCard = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.05) 50%,
+    background: var(--primary-color) 50%,
       transparent 100%);
     transform: translateZ(10px);
     pointer-events: none;
@@ -102,11 +106,7 @@ export const ProjectImg = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      transparent 70%,
-      rgba(0, 0, 0, 0.7) 100%
+    background: var(--primary-color) 100%
     );
     z-index: 1;
     opacity: 0;
@@ -119,14 +119,18 @@ export const ProjectImg = styled.div`
 
   img {
     width: 100%;
-    height: 250px;
+    height: 240px;
     object-fit: cover;
-    transition: transform 0.7s ease, filter 0.5s ease;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+
+    @media (max-width: 768px) {
+      height: 200px;
+    }
   }
 
   ${ProjectCard}:hover & img {
-    transform: scale(1.1);
-    filter: brightness(1.1) contrast(1.1);
+    transform: scale(1.05);
+    filter: brightness(1.05) contrast(1.05);
   }
 `;
 
@@ -138,8 +142,8 @@ export const ProjectOverlay = styled.div`
   height: 100%;
   background-color: ${({ theme }) =>
     theme.isDarkMode
-      ? 'rgba(59, 130, 246, 0.8)'
-      : 'rgba(37, 99, 235, 0.8)'};
+      ? 'rgba(128, 0, 0, 0.8)'
+      : 'rgba(128, 0, 0, 0.8)'};
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
@@ -194,10 +198,7 @@ export const ProjectInfo = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      135deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.05) 50%,
+    background: var(--primary-color) 50%,
       transparent 100%
     );
     opacity: 0;
@@ -232,7 +233,7 @@ export const ProjectInfo = styled.div`
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      background: var(--primary-color);
       transition: width 0.3s ease;
     }
 
@@ -278,3 +279,5 @@ export const ProjectDesc = styled.p`
   font-size: 0.95rem;
   margin-bottom: 1rem;
 `;
+
+

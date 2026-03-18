@@ -23,7 +23,7 @@ const ThreeBackground = () => {
     const checkPerformance = () => {
       const canvas = document.createElement('canvas');
       const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-      
+
       if (!gl) {
         setIsLowPerformance(true);
         return;
@@ -71,7 +71,7 @@ const ThreeBackground = () => {
         powerPreference: "high-performance"
       });
       rendererRef.current.setSize(window.innerWidth, window.innerHeight);
-      rendererRef.current.setPixelRatio(Math.min(window.devicePixelRatio, 1)); // Limit pixel ratio
+      rendererRef.current.setPixelRatio(Math.min(window.devicePixelRatio, 0.8)); // Further limit pixel ratio
       containerRef.current.appendChild(rendererRef.current.domElement);
 
       // Create particles with reduced count
@@ -88,7 +88,7 @@ const ThreeBackground = () => {
     // Create particles with optimized count
     const createParticles = () => {
       // Reduce particle count based on performance
-      const particleCount = isLowPerformance ? 300 : 800; // Reduced from 1500
+      const particleCount = isLowPerformance ? 150 : 400; // Significantly reduced from 800/300
       const geometry = new THREE.BufferGeometry();
       const positions = new Float32Array(particleCount * 3);
       const colors = new Float32Array(particleCount * 3);
@@ -157,8 +157,8 @@ const ThreeBackground = () => {
     let mouseThrottle = 0;
     const handleMouseMove = (event) => {
       mouseThrottle++;
-      if (mouseThrottle % 3 !== 0) return; // Throttle to every 3rd event
-      
+      if (mouseThrottle % 5 !== 0) return; // Increased throttle to every 5th event
+
       mouseRef.current.x = (event.clientX / window.innerWidth) * 2 - 1;
       mouseRef.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
     };
@@ -195,9 +195,9 @@ const ThreeBackground = () => {
           const iz = i + 2;
 
           // Simplified wave effect
-          positions[ix] = originalPositions[ix] + Math.sin(time * speeds[i/3]) * 0.3;
-          positions[iy] = originalPositions[iy] + Math.cos(time * speeds[i/3]) * 0.3;
-          positions[iz] = originalPositions[iz] + Math.sin(time * speeds[i/3]) * 0.3;
+          positions[ix] = originalPositions[ix] + Math.sin(time * speeds[i / 3]) * 0.3;
+          positions[iy] = originalPositions[iy] + Math.cos(time * speeds[i / 3]) * 0.3;
+          positions[iz] = originalPositions[iz] + Math.sin(time * speeds[i / 3]) * 0.3;
         }
 
         particlesRef.current.geometry.attributes.position.needsUpdate = true;
@@ -211,7 +211,7 @@ const ThreeBackground = () => {
     // Simplified scroll animations
     const setupScrollAnimations = () => {
       if (!particlesRef.current || !cameraRef.current) return;
-      
+
       gsap.to(cameraRef.current.position, {
         z: 25,
         scrollTrigger: {
@@ -233,6 +233,8 @@ const ThreeBackground = () => {
       }
     }, 200);
 
+    const currentContainer = containerRef.current;
+
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -242,8 +244,8 @@ const ThreeBackground = () => {
         cancelAnimationFrame(frameIdRef.current);
       }
 
-      if (containerRef.current && rendererRef.current) {
-        containerRef.current.removeChild(rendererRef.current.domElement);
+      if (currentContainer && rendererRef.current) {
+        currentContainer.removeChild(rendererRef.current.domElement);
       }
 
       if (particlesRef.current) {
@@ -270,13 +272,14 @@ const ThreeBackground = () => {
       { threshold: 0.1 }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    const currentContainer = containerRef.current;
+    if (currentContainer) {
+      observer.observe(currentContainer);
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (currentContainer) {
+        observer.unobserve(currentContainer);
       }
     };
   }, []);
@@ -290,3 +293,4 @@ const ThreeBackground = () => {
 };
 
 export default ThreeBackground;
+

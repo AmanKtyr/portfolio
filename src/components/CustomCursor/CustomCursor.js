@@ -4,7 +4,6 @@ import { CursorContainer, CursorDot, CursorRing, CursorTrail } from './CustomCur
 
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [cursorText, setCursorText] = useState('');
   const [cursorVariant, setCursorVariant] = useState('default');
@@ -27,8 +26,6 @@ const CustomCursor = () => {
           target.closest('a') ||
           target.closest('button') ||
           target.classList.contains('clickable')) {
-        setIsHovering(true);
-
         // Check for data attributes for custom cursor text and variant
         if (target.dataset.cursorText) {
           setCursorText(target.dataset.cursorText);
@@ -46,7 +43,6 @@ const CustomCursor = () => {
           setCursorVariant('hover');
         }
       } else {
-        setIsHovering(false);
         setCursorText('');
         setCursorVariant('default');
       }
@@ -175,3 +171,4 @@ const CustomCursor = () => {
 };
 
 export default CustomCursor;
+
