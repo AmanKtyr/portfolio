@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from 'react-icons/fa';
-import { FooterContainer, FooterContent, FooterLogo, FooterText, FooterLinks, FooterSocial, SocialLink, FooterBottom } from './FooterStyles';
+import { FooterContainer, FooterContent, FooterText, FooterLinks, FooterSocial, SocialLink, FooterBottom } from './FooterStyles';
+import Logo from '../Logo/Logo';
 
 const Footer = () => {
   return (
@@ -9,9 +10,7 @@ const Footer = () => {
       <div className="container">
         <FooterContent>
           <div>
-            <FooterLogo to="/">
-              Aman Ktyr <span>Portfolio</span>
-            </FooterLogo>
+            <Logo isFooter size="large" />
             <FooterText>
               A professional web developer providing high-quality web development services. Let's work together to bring your ideas to life.
             </FooterText>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.section`
-  padding: 8rem 0;
+  padding: 8rem 0 2rem;
   background-color: transparent;
   position: relative;
   overflow: hidden;

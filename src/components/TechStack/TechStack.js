@@ -5,37 +5,7 @@ import { SiDjango, SiTailwindcss, SiJquery, SiFlask, SiPostgresql, SiMysql, SiSq
 import { TechStackContainer, TechStackTitle, TechStackGrid, TechItem, TechIcon, TechName, TechCube, CubeFace } from './TechStackStyles';
 
 const TechStack = () => {
-  const controls = useAnimation();
-  const containerRef = useRef(null);
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      
-      const element = containerRef.current;
-      const rect = element.getBoundingClientRect();
-      
-      // Check if element is in viewport
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-        const clampedProgress = Math.min(Math.max(scrollProgress, 0), 1);
-        
-        // Animate based on scroll position
-        controls.start({
-          opacity: clampedProgress,
-          y: (1 - clampedProgress) * 50,
-        });
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [controls]);
-  
+
   const techItems = [
     { icon: <FaPython />, name: 'Python', color: '#3776AB' },
     { icon: <FaJava />, name: 'Java', color: '#007396' },
@@ -58,8 +28,13 @@ const TechStack = () => {
   ];
   
   return (
-    <TechStackContainer ref={containerRef}>
-      <motion.div animate={controls} initial={{ opacity: 0, y: 50 }}>
+    <TechStackContainer>
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }} 
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-50px" }}
+      >
         <TechStackTitle>
           <h2>Tech Stack</h2>
           <p>Technologies I work with</p>

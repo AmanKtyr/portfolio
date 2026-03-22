@@ -11,7 +11,7 @@ const blogData = [
     excerpt: 'Explore the latest trends and technologies shaping the future of web development, from AI integration to serverless architecture.',
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop&crop=center",
     date: 'June 15, 2023',
-    author: 'AmAn-KtYr',
+    author: 'Aman Katiyar',
     category: 'Web Development',
     slug: 'future-web-development-trends'
   },
@@ -21,7 +21,7 @@ const blogData = [
     excerpt: 'Learn practical tips and techniques to improve your website\'s loading speed, performance, and overall user experience.',
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center",
     date: 'July 22, 2023',
-    author: 'AmAn-KtYr',
+    author: 'Aman Katiyar',
     category: 'Performance',
     slug: 'optimize-website-performance'
   },
@@ -31,7 +31,7 @@ const blogData = [
     excerpt: 'Discover the essential principles of responsive web design and how to avoid common pitfalls that affect mobile usability.',
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop&crop=center",
     date: 'August 10, 2023',
-    author: 'AmAn-KtYr',
+    author: 'Aman Katiyar',
     category: 'Design',
     slug: 'responsive-website-best-practices'
   }

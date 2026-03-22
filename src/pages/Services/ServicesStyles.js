@@ -14,9 +14,6 @@ export const ServicesPageContainer = styled.div`
       position: relative;
       display: inline-block;
       margin-bottom: 1.5rem;
-      background: var(--primary-color);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       letter-spacing: -1.5px;
 
       &::after {
@@ -82,10 +79,7 @@ export const ServicesBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-color) 0%, /* Purple */
-      rgba(128, 0, 0, 0.15) 50%, /* Sky blue */
-      rgba(90, 0, 0, 0.15) 100% /* Purple */
-    );
+    background: linear-gradient(-45deg, var(--primary-color) 0%, rgba(128, 0, 0, 0.15) 50%, rgba(90, 0, 0, 0.15) 100%);
     background-size: 200% 200%;
     animation: gradientAnimation 15s ease infinite;
     z-index: 1;
@@ -100,12 +94,10 @@ export const ServicesBanner = styled.div`
     width: 100%;
     height: 100%;
     background-image:
-      var(--primary-color) 0, transparent 10px),
-      var(--primary-color) 0, transparent 10px),
-      var(--primary-color) 0, transparent 8px),
-      var(--primary-color) 0, transparent 12px),
-      var(--primary-color) 0, transparent 6px),
-      var(--primary-color) 0, transparent 8px);
+      radial-gradient(var(--primary-color) 1px, transparent 1px),
+      radial-gradient(var(--primary-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
     z-index: 2;
   }
 
@@ -116,8 +108,8 @@ export const ServicesBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: var(--primary-color) 1px, transparent 1px),
-                      var(--primary-color) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(128,0,0,0.2) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(128,0,0,0.2) 1px, transparent 1px);
     background-size: 30px 30px;
     z-index: 3;
   }

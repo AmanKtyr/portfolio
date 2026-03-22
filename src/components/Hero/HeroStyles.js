@@ -15,31 +15,33 @@ export const HeroContainer = styled.section`
     position: absolute;
     top: -10%;
     right: -10%;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color), transparent 70%)'
-        : 'var(--primary-color), transparent 70%)'};
+        ? 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 70%)'
+        : 'radial-gradient(circle, rgba(128, 0, 0, 0.1) 0%, transparent 70%)'};
     border-radius: 50%;
     z-index: -1;
-    animation: float 15s ease-in-out infinite alternate;
+    animation: float 20s ease-in-out infinite alternate;
+    filter: blur(40px);
   }
 
   &::after {
     content: '';
     position: absolute;
-    bottom: -10%;
+    bottom: -15%;
     left: -10%;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color), transparent 70%)'
-        : 'var(--primary-color), transparent 70%)'};
+        ? 'radial-gradient(circle, rgba(255, 77, 77, 0.1) 0%, transparent 70%)'
+        : 'radial-gradient(circle, rgba(128, 0, 0, 0.05) 0%, transparent 70%)'};
     border-radius: 50%;
     z-index: -1;
-    animation: float 20s ease-in-out infinite alternate-reverse;
+    animation: float 25s ease-in-out infinite alternate-reverse;
+    filter: blur(50px);
   }
 
   @keyframes float {
@@ -96,9 +98,10 @@ export const HeroText = styled.div`
     left: -50%;
     width: 200%;
     height: 200%;
-    background: var(--primary-color),
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0)
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.1) 0%, 
+      rgba(255, 255, 255, 0) 50%, 
+      rgba(128, 0, 0, 0.05) 100%
     );
     transform: rotate(30deg);
     animation: shimmer 7s linear infinite;
@@ -150,9 +153,13 @@ export const HeroText = styled.div`
     margin-bottom: 1rem;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: var(--primary-color);
+    background: linear-gradient(120deg, var(--primary-color), #ff4d4d, var(--primary-color));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShine 5s linear infinite;
 
-    @keyframes gradient {
+    @keyframes textShine {
       0% {
         background-position: 0% center;
       }
@@ -382,8 +389,8 @@ export const HeroImage = styled.div`
     border-radius: 50%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color), transparent 70%)'
-        : 'var(--primary-color), transparent 70%)'};
+        ? 'radial-gradient(circle, rgba(128, 0, 0, 0.4) 0%, transparent 70%)'
+        : 'radial-gradient(circle, rgba(128, 0, 0, 0.2) 0%, transparent 70%)'};
     top: 10%;
     right: 10%;
     filter: blur(20px);
@@ -399,8 +406,8 @@ export const HeroImage = styled.div`
     border-radius: 50%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color), transparent 70%)'
-        : 'var(--primary-color), transparent 70%)'};
+        ? 'radial-gradient(circle, rgba(255, 77, 77, 0.3) 0%, transparent 70%)'
+        : 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 70%)'};
     bottom: 10%;
     left: 10%;
     filter: blur(15px);

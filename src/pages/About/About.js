@@ -173,7 +173,7 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                 >
                   <InfoItem>
-                    <strong>Name:</strong> AmAn-KtYr
+                    <strong>Name:</strong> Aman Katiyar
                   </InfoItem>
                 </motion.div>
 

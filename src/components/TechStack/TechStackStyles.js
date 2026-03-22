@@ -18,9 +18,6 @@ export const TechStackTitle = styled.div`
     position: relative;
     display: inline-block;
     margin-bottom: 1.5rem;
-    background: var(--primary-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     
     &::after {
       content: '';

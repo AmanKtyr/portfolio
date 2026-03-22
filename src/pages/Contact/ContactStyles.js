@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ContactPageContainer = styled.div``;
 
 export const ContactBanner = styled.div`
-  background: #0F172A; /* Dark blue background for dark theme */
+  background: ${({ theme }) => theme.colors.background};
   padding: 10rem 0 6rem;
   margin-bottom: 6rem;
   position: relative;
@@ -17,10 +17,7 @@ export const ContactBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-color) 0%, /* Purple */
-      rgba(128, 0, 0, 0.15) 50%, /* Sky blue */
-      rgba(90, 0, 0, 0.15) 100% /* Purple */
-    );
+    background: linear-gradient(-45deg, var(--primary-color) 0%, rgba(128, 0, 0, 0.15) 50%, rgba(90, 0, 0, 0.15) 100%);
     background-size: 200% 200%;
     animation: gradientAnimation 15s ease infinite;
     z-index: 1;
@@ -35,12 +32,10 @@ export const ContactBanner = styled.div`
     width: 100%;
     height: 100%;
     background-image:
-      var(--primary-color) 0, transparent 10px),
-      var(--primary-color) 0, transparent 10px),
-      var(--primary-color) 0, transparent 8px),
-      var(--primary-color) 0, transparent 12px),
-      var(--primary-color) 0, transparent 6px),
-      var(--primary-color) 0, transparent 8px);
+      radial-gradient(var(--primary-color) 1px, transparent 1px),
+      radial-gradient(var(--primary-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
     z-index: 2;
   }
 
@@ -51,8 +46,8 @@ export const ContactBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: var(--primary-color) 1px, transparent 1px),
-                      var(--primary-color) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(128,0,0,0.2) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(128,0,0,0.2) 1px, transparent 1px);
     background-size: 30px 30px;
     z-index: 3;
   }
@@ -72,7 +67,7 @@ export const ContactBanner = styled.div`
 
 export const ContactBannerContent = styled.div`
   text-align: center;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   position: relative;
   z-index: 10;
 
@@ -95,7 +90,7 @@ export const ContactBannerContent = styled.div`
     font-size: 1.4rem;
     max-width: 600px;
     margin: 0 auto;
-    color: #F1F5F9; /* Light gray */
+    color: var(--text-color);
     font-weight: 300;
     letter-spacing: 0.5px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -343,14 +338,30 @@ export const ErrorMessage = styled.small`
 `;
 
 export const ContactMap = styled.div`
-  height: 450px;
-  width: 100%;
+  margin: 0 0 4rem;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
+  border: ${({ theme }) => theme.glassmorphism.border};
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(128, 0, 0, 0.03);
+    pointer-events: none;
+    border-radius: 24px;
+  }
 
   iframe {
     width: 100%;
-    height: 100%;
+    height: 420px;
     border: 0;
+    display: block;
+    filter: ${({ theme }) => theme.isDarkMode ? 'invert(90%) hue-rotate(180deg)' : 'none'};
   }
 `;
+
 
 

@@ -60,24 +60,7 @@ export const FooterContent = styled.div`
   }
 `;
 
-export const FooterLogo = styled(Link)`
-  font-size: 2rem;
-  font-weight: 800;
-  color: white;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  transition: all 0.3s ease;
-  letter-spacing: -1px;
-
-  &:hover {
-    transform: translateY(-2px);
-    text-shadow: 0 5px 15px rgba(128, 0, 0, 0.4);
-  }
-
-  span {
-    color: var(--primary-color);
-  }
-`;
+// FooterLogo removed as it is now using the centralized Logo component
 
 export const FooterText = styled.p`
   color: rgba(255, 255, 255, 0.7);

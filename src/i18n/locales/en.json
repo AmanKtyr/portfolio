@@ -1,4 +1,7 @@
 {
+  "logo": {
+    "tagline": "Tech Expert"
+  },
   "header": {
     "home": "Home",
     "about": "About",
@@ -72,8 +75,8 @@
     "error": "Something went wrong. Please try again."
   },
   "footer": {
-    "copyright": "© 2024 AmAn-KtYr. All rights reserved.",
-    "designed": "Designed & Developed by AmAn-KtYr"
+    "copyright": "© 2024 Aman Katiyar. All rights reserved.",
+    "designed": "Designed & Developed by Aman Katiyar"
   },
   "theme": {
     "switchToDark": "Switch to Dark Mode",

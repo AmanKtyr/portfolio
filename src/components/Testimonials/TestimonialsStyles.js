@@ -12,11 +12,10 @@ export const TestimonialsContainer = styled.section`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color), transparent 40%)'
-        : 'var(--primary-color), transparent 40%)'};
+        ? 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 40%)'
+        : 'radial-gradient(circle, rgba(128, 0, 0, 0.1) 0%, transparent 40%)'};
     z-index: -1;
   }
 
@@ -77,11 +76,10 @@ export const TestimonialItem = styled.div`
     top: -20px;
     right: -20px;
     width: 120px;
-    height: 120px;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color), transparent 70%)'
-        : 'var(--primary-color), transparent 70%)'};
+        ? 'radial-gradient(circle, rgba(128, 0, 0, 0.2) 0%, transparent 70%)'
+        : 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 70%)'};
     border-radius: 50%;
     z-index: 0;
   }

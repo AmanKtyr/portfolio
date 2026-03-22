@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SkillsContainer = styled.section`
-  padding: 6rem 0;
+  padding: 2rem 0 6rem;
   background-color: transparent;
   position: relative;
   overflow: hidden;
@@ -15,8 +15,8 @@ export const SkillsContainer = styled.section`
     height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color), transparent 30%)'
-        : 'var(--primary-color), transparent 30%)'};
+        ? 'radial-gradient(circle at 0% 0%, rgba(128, 0, 0, 0.15) 0%, transparent 40%)'
+        : 'radial-gradient(circle at 0% 0%, rgba(128, 0, 0, 0.1) 0%, transparent 40%)'};
     z-index: -1;
   }
 
@@ -29,167 +29,89 @@ export const SkillsContainer = styled.section`
     height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color), transparent 30%)'
-        : 'var(--primary-color), transparent 30%)'};
+        ? 'radial-gradient(circle at 100% 100%, rgba(128, 0, 0, 0.15) 0%, transparent 40%)'
+        : 'radial-gradient(circle at 100% 100%, rgba(128, 0, 0, 0.1) 0%, transparent 40%)'};
     z-index: -1;
   }
 `;
 
-export const SkillsContent = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-export const SkillCard = styled.div`
-  background-color: ${({ theme }) => theme.neumorphism.background};
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: ${({ theme }) => theme.neumorphism.shadow1}, ${({ theme }) => theme.neumorphism.shadow2};
-  transition: all 0.3s ease;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: var(--primary-color),
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0)
-    );
-    transform: rotate(30deg);
-    transition: transform 0.7s ease;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: ${({ theme }) => theme.neumorphism.shadow1.replace('10px', '15px')},
-                ${({ theme }) => theme.neumorphism.shadow2.replace('-10px', '-15px')};
-
-    &::before {
-      transform: rotate(30deg) translate(100%, 100%);
-    }
-  }
-
-  &:active {
-    box-shadow: ${({ theme }) => theme.neumorphism.activeShadow1},
-                ${({ theme }) => theme.neumorphism.activeShadow2};
-  }
-`;
-
-export const SkillIcon = styled.div`
-  font-size: 3rem;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease;
-  display: inline-block;
+export const SummaryWrapper = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
   position: relative;
   z-index: 2;
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'rgba(128, 0, 0, 0.1)'
-        : 'rgba(128, 0, 0, 0.5)'};
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    transition: all 0.3s ease;
-  }
-
-  ${SkillCard}:hover & {
-    transform: scale(1.1) rotate(5deg);
-
-    &::after {
-      width: 70px;
-      height: 70px;
-      background: ${({ theme }) =>
-        theme.isDarkMode
-          ? 'rgba(128, 0, 0, 0.2)'
-          : 'rgba(128, 0, 0, 0.7)'};
-    }
+  
+  p {
+    color: var(--text-secondary-color);
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    line-height: 1.8;
+    margin-bottom: 3rem;
   }
 `;
 
-export const SkillTitle = styled.h3`
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-  padding-bottom: 0.5rem;
-  background: var(--primary-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: transform 0.3s ease;
+export const TechIconsGrid = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 4rem;
+`;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: 2px;
+export const TechIconCircle = styled.div`
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.glassmorphism.background};
+  border: ${({ theme }) => theme.glassmorphism.border};
+  box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
+  backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 15px 30px rgba(128, 0, 0, 0.2);
+    border-color: rgba(128, 0, 0, 0.3);
+    color: white;
     background: var(--primary-color);
-    transition: width 0.3s ease;
-  }
-
-  ${SkillCard}:hover &::after {
-    width: 50px;
   }
 `;
 
-export const SkillText = styled.p`
-  color: var(--gray-color);
-  margin-bottom: 1.5rem;
-`;
-
-export const SkillList = styled.ul`
-  li {
-    margin-bottom: 0.8rem;
-    display: flex;
+export const ActionButton = styled.div`
+  display: inline-block;
+  
+  a {
+    display: inline-flex;
     align-items: center;
-    transition: transform 0.3s ease;
-    padding: 0.5rem;
-    border-radius: ${({ theme }) => theme.borderRadius.small};
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(128, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    text-decoration: none;
 
-    &:hover {
-      transform: translateX(5px);
-      background-color: ${({ theme }) =>
-        theme.isDarkMode
-          ? 'rgba(30, 41, 59, 0.3)'
-          : 'rgba(255, 255, 255, 0.5)'};
-    }
-
-    &::before {
-      content: '→';
-      color: var(--primary-color);
-      font-weight: bold;
-      display: inline-block;
-      width: 1.5em;
-      margin-right: 0.5rem;
+    svg {
       transition: transform 0.3s ease;
     }
 
-    &:hover::before {
-      transform: translateX(3px);
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(128, 0, 0, 0.4);
+      background: var(--secondary-color);
+
+      svg {
+        transform: translateX(5px);
+      }
     }
   }
 `;
-
-

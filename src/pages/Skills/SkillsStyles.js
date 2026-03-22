@@ -22,9 +22,6 @@ export const SkillsPageContainer = styled.div`
       position: relative;
       display: inline-block;
       margin-bottom: 1.5rem;
-      background: var(--primary-color);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       letter-spacing: -1px;
 
       /* Glowing underline */
@@ -83,13 +80,13 @@ export const SkillsPageContainer = styled.div`
 `;
 
 export const SkillsBanner = styled.div`
-  background: #0F172A; /* Dark blue background for dark theme */
+  background: ${({ theme }) => theme.colors.background};
   padding: 10rem 0 6rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
   position: relative;
   overflow: hidden;
 
-  /* Animated background */
+  /* Animated gradient background */
   &::before {
     content: '';
     position: absolute;
@@ -97,8 +94,9 @@ export const SkillsBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-color);
-    opacity: 0.05;
+    background: linear-gradient(-45deg, var(--primary-color) 0%, rgba(128, 0, 0, 0.15) 50%, rgba(90, 0, 0, 0.15) 100%);
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
     z-index: 1;
   }
 
@@ -110,8 +108,25 @@ export const SkillsBanner = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent;
+    background-image:
+      radial-gradient(var(--primary-color) 1px, transparent 1px),
+      radial-gradient(var(--primary-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
     z-index: 2;
+  }
+
+  /* Grid pattern overlay */
+  .grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(128,0,0,0.2) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(128,0,0,0.2) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 3;
   }
 
   @keyframes gradientAnimation {
@@ -129,7 +144,7 @@ export const SkillsBanner = styled.div`
 
 export const SkillsBannerContent = styled.div`
   text-align: center;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   position: relative;
   z-index: 10;
 
@@ -152,7 +167,7 @@ export const SkillsBannerContent = styled.div`
     font-size: 1.4rem;
     max-width: 600px;
     margin: 0 auto;
-    color: #F1F5F9; /* Light gray */
+    color: var(--text-color);
     font-weight: 300;
     letter-spacing: 0.5px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -228,7 +243,7 @@ export const SkillsGrid = styled.div`
 `;
 
 export const SkillCard = styled.div`
-  background-color: rgba(15, 23, 42, 0.7); /* Dark blue with transparency */
+  background-color: ${({ theme }) => theme.neumorphism.background};
   padding: 2.5rem;
   border-radius: 16px;
   border: 1px solid rgba(128, 0, 0, 0.1); /* Subtle sky blue border */
@@ -272,7 +287,7 @@ export const SkillCard = styled.div`
   &:hover {
     transform: translateY(-15px) scale(1.02);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    background-color: rgba(15, 23, 42, 0.8);
+    background-color: ${({ theme }) => theme.neumorphism.background};
 
     &::before {
       opacity: 1;

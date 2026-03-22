@@ -13,7 +13,7 @@ const blogData = [
     excerpt: 'Explore the latest trends and technologies shaping the future of web development, from AI integration to serverless architecture.',
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop&crop=center",
     date: 'June 15, 2023',
-    author: 'AmAn-KtYr',
+    author: 'Aman Katiyar',
     category: 'Web Development',
     tags: ['Web Development', 'Trends', 'Technology'],
     slug: 'future-web-development-trends'
@@ -24,7 +24,7 @@ const blogData = [
     excerpt: 'Learn practical tips and techniques to improve your website\'s loading speed, performance, and overall user experience.',
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center",
     date: 'July 22, 2023',
-    author: 'AmAn-KtYr',
+    author: 'Aman Katiyar',
     category: 'Performance',
     tags: ['Performance', 'Optimization', 'Web Development'],
     slug: 'optimize-website-performance'
@@ -35,7 +35,7 @@ const blogData = [
     excerpt: 'Discover the essential principles of responsive web design and how to avoid common pitfalls that affect mobile usability.',
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop&crop=center",
     date: 'August 10, 2023',
-    author: 'AmAn-KtYr',
+    author: 'Aman Katiyar',
     category: 'Design',
     tags: ['Responsive Design', 'Mobile', 'UI/UX'],
     slug: 'responsive-website-best-practices'
@@ -46,7 +46,7 @@ const blogData = [
     excerpt: 'Learn the basics of Three.js and how to create immersive 3D experiences for your web projects.',
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center",
     date: 'September 5, 2023',
-    author: 'AmAn-KtYr',
+    author: 'Aman Katiyar',
     category: '3D Graphics',
     tags: ['Three.js', '3D', 'WebGL', 'JavaScript'],
     slug: 'introduction-to-threejs'
@@ -57,7 +57,7 @@ const blogData = [
     excerpt: 'Explore advanced CSS techniques like Grid, Flexbox, and CSS Variables that can transform your web development workflow.',
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop&crop=center",
     date: 'October 12, 2023',
-    author: 'AmAn-KtYr',
+    author: 'Aman Katiyar',
     category: 'CSS',
     tags: ['CSS', 'Web Development', 'Design'],
     slug: 'modern-css-techniques'
@@ -68,7 +68,7 @@ const blogData = [
     excerpt: 'A comprehensive guide to help beginners understand React concepts and start building their first React application.',
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop&crop=center",
     date: 'November 8, 2023',
-    author: 'AmAn-KtYr',
+    author: 'Aman Katiyar',
     category: 'React',
     tags: ['React', 'JavaScript', 'Frontend'],
     slug: 'getting-started-with-react'

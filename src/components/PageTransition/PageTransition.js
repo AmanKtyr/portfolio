@@ -23,6 +23,7 @@ const TransitionLayer = styled(motion.div)`
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 10;
   background: ${({ theme }) =>
     theme.isDarkMode
       ? 'var(--primary-color)'
@@ -37,8 +38,8 @@ const TransitionLayer = styled(motion.div)`
     height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color), transparent 50%), var(--primary-color), transparent 40%)'
-        : 'var(--primary-color), transparent 50%), var(--primary-color), transparent 40%)'};
+        ? 'radial-gradient(circle at 50% 50%, rgba(128, 0, 0, 0.4), transparent 50%), radial-gradient(circle at 100% 0%, rgba(128, 0, 0, 0.8), transparent 40%)'
+        : 'radial-gradient(circle at 50% 50%, rgba(128, 0, 0, 0.3), transparent 50%), radial-gradient(circle at 100% 0%, rgba(128, 0, 0, 0.6), transparent 40%)'};
   }
 
   /* Grid pattern overlay */
@@ -51,8 +52,8 @@ const TransitionLayer = styled(motion.div)`
     height: 100%;
     background-image: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color) 1px, transparent 1px), var(--primary-color) 1px, transparent 1px)'
-        : 'var(--primary-color) 1px, transparent 1px), var(--primary-color) 1px, transparent 1px)'};
+        ? 'linear-gradient(rgba(128, 0, 0, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(128, 0, 0, 0.3) 1px, transparent 1px)'
+        : 'linear-gradient(rgba(128, 0, 0, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(128, 0, 0, 0.2) 1px, transparent 1px)'};
     background-size: 30px 30px;
     opacity: 0.5;
   }
@@ -73,46 +74,25 @@ const CircleElement = styled(motion.div)`
 const GlowingLine = styled(motion.div)`
   position: absolute;
   height: 2px;
-  background: var(--primary-color) => theme.isDarkMode ? 'rgba(128, 0, 0, 0.5)' : 'rgba(128, 0, 0, 0.5)'},
-    transparent
-  );
+  background: ${({ theme }) => 
+    theme.isDarkMode 
+      ? 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent)' 
+      : 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent)'};
   z-index: 1;
 `;
 
 const TransitionLogo = styled(motion.div)`
   font-size: 4.5rem;
   font-weight: 800;
-  color: ${({ theme }) => theme.isDarkMode ? '#F1F5F9' : 'white'};
-  z-index: 10000;
+  color: #ffffff;
+  z-index: 100;
   position: relative;
-  text-shadow: ${({ theme }) =>
-    theme.isDarkMode
-      ? '0 0 15px rgba(128, 0, 0, 0.5), 0 0 30px rgba(128, 0, 0, 0.3)'
-      : '0 0 15px rgba(128, 0, 0, 0.5), 0 0 30px rgba(128, 0, 0, 0.3)'};
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(128, 0, 0, 0.8);
   letter-spacing: 2px;
-  background: ${({ theme }) =>
-    theme.isDarkMode
-      ? 'var(--primary-color)'
-      : 'var(--primary-color)'};
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 
   span {
-    color: ${({ theme }) => theme.isDarkMode ? '#800000' : 'white'};
-    text-shadow: ${({ theme }) =>
-      theme.isDarkMode
-        ? '0 0 15px rgba(128, 0, 0, 0.8), 0 0 30px rgba(128, 0, 0, 0.5)'
-        : '0 0 15px rgba(128, 0, 0, 0.5), 0 0 30px rgba(128, 0, 0, 0.3)'};
-    background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'var(--primary-color)'
-        : 'var(--primary-color)'};
-    background-size: 200% auto;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ff4d4d;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 77, 77, 0.8);
   }
 
   /* Glassmorphism effect */
@@ -149,8 +129,8 @@ const TransitionLogo = styled(motion.div)`
     z-index: -2;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color) 0%, transparent 70%)'
-        : 'var(--primary-color) 0%, transparent 70%)'};
+        ? 'radial-gradient(circle, rgba(128, 0, 0, 0.2) 0%, transparent 70%)'
+        : 'radial-gradient(circle, rgba(128, 0, 0, 0.2) 0%, transparent 70%)'};
     animation: pulse 4s ease-in-out infinite alternate;
   }
 
@@ -316,10 +296,11 @@ const PageTransition = ({ children }) => {
           />
         ))}
 
+        <TransitionLayer variants={layerVariants} />
+
         <TransitionLogo
           variants={logoVariants}
           animate={{
-            backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
             transition: {
               duration: 8,
               repeat: Infinity,
@@ -327,10 +308,8 @@ const PageTransition = ({ children }) => {
             }
           }}
         >
-          AmAn-KtYr<span>.</span>
+          Aman Katiyar<span>.</span>
         </TransitionLogo>
-
-        <TransitionLayer variants={layerVariants} />
 
         {/* Animated particles */}
         {particles.map((particle) => (

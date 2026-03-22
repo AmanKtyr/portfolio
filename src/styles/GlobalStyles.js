@@ -98,11 +98,22 @@ const GlobalStyles = createGlobalStyle`
 
     h2 {
       font-size: clamp(2rem, 5vw, 2.5rem);
-      font-weight: 700;
+      font-weight: 800;
       position: relative;
       display: inline-block;
       margin-bottom: 1.5rem;
       letter-spacing: -0.02em;
+
+      background: linear-gradient(120deg, var(--primary-color), #ff4d4d, var(--primary-color));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gShine 5s linear infinite;
+
+      @keyframes gShine {
+        0% { background-position: 0% center; }
+        100% { background-position: 200% center; }
+      }
 
       &::after {
         content: '';
@@ -110,10 +121,11 @@ const GlobalStyles = createGlobalStyle`
         bottom: -10px;
         left: 50%;
         transform: translateX(-50%);
-        width: 60px;
+        width: 80px;
         height: 4px;
         background: var(--primary-color);
         border-radius: 2px;
+        box-shadow: 0 0 10px rgba(128, 0, 0, 0.4);
       }
     }
 

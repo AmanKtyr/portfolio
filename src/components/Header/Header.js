@@ -7,7 +7,6 @@ import { scrollToSection } from '../../utils/scrollUtils';
 import {
   HeaderContainer,
   Nav,
-  Logo,
   NavMenu,
   NavItem,
   NavLink,
@@ -20,6 +19,7 @@ import {
   FloatingElement,
   PrimaryButton
 } from './HeaderStyles';
+import Logo from '../Logo/Logo';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 import { ThemeContext } from '../../context/ThemeContext';
 
@@ -103,18 +103,7 @@ const Header = () => {
     document.body.style.overflow = 'auto';
   }, [location]);
 
-  // Animation variants
-  const logoVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.6, -0.05, 0.01, 0.99]
-      }
-    }
-  };
+  // Removed logoVariants as they are now internal to the Logo component
 
 
 
@@ -164,27 +153,7 @@ const Header = () => {
 
       <Nav>
         {/* Logo on the left */}
-        <Logo to="/">
-          <motion.div
-            className="logo-icon"
-            variants={logoVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover={{ rotate: 10 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            A
-          </motion.div>
-          <motion.span
-            variants={logoVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Aman<span>Katiyar</span>
-          </motion.span>
-        </Logo>
+        <Logo />
 
         {/* Mobile Menu Toggle */}
         <MobileIcon onClick={toggleMenu} isOpen={isOpen}>

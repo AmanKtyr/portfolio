@@ -63,155 +63,7 @@ export const Nav = styled.nav`
   }
 `;
 
-export const Logo = styled(Link)`
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--primary-color);
-  position: relative;
-  z-index: 2;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 0.8rem;
-  border-radius: 50px;
-  overflow: hidden;
-  background: ${({ theme }) =>
-    theme.isDarkMode
-      ? 'rgba(15, 23, 42, 0.7)'
-      : 'rgba(255, 255, 255, 0.7)'};
-  backdrop-filter: blur(10px);
-  border: ${({ theme }) =>
-    theme.isDarkMode
-      ? '1px solid rgba(128, 0, 0, 0.15)'
-      : '1px solid rgba(226, 232, 240, 0.8)'};
-  box-shadow: ${({ theme }) =>
-    theme.isDarkMode
-      ? '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(128, 0, 0, 0.05)'
-      : '0 4px 20px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5)'};
-  margin-right: 0;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'rgba(128, 0, 0, 0.15)'
-        : 'rgba(128, 0, 0, 0.1)'};
-    border-radius: 50px;
-    opacity: 0;
-    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: -1;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: ${({ theme }) =>
-      theme.isDarkMode
-        ? '0 8px 25px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(128, 0, 0, 0.1)'
-        : '0 8px 25px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.6)'};
-  }
-
-  &:hover::before {
-    opacity: 1;
-  }
-
-  .logo-icon {
-    width: 26px;
-    height: 26px;
-    margin-right: 0.5rem;
-    background: var(--primary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 900;
-    font-size: 0.8rem;
-    box-shadow: 0 4px 10px rgba(128, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  &:hover .logo-icon {
-    transform: rotate(10deg) scale(1.1);
-  }
-
-  span {
-    position: relative;
-    color: var(--primary-color);
-    color: var(--primary-color);
-    transition: all 0.5s ease;
-    letter-spacing: 0.5px;
-    font-size: 1.3rem;
-
-    &:hover {
-      background-position: right center;
-    }
-
-    span {
-      color: ${({ theme }) =>
-        theme.isDarkMode
-          ? '#f1f5f9'
-          : '#0f172a'};
-      background: none;
-      -webkit-text-fill-color: currentColor;
-      text-fill-color: currentColor;
-      font-weight: 600;
-      opacity: 0.8;
-      transition: all 0.3s ease;
-      font-size: 1rem;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: var(--primary-color);
-        border-radius: 4px;
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-    }
-
-    &:hover span {
-      opacity: 1;
-    }
-
-    &:hover span::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-  }
-
-  @media (max-width: 768px) {
-    padding: 0.4rem 0.6rem;
-    font-size: 1.2rem;
-    border-radius: 12px;
-    margin-right: 0;
-
-    .logo-icon {
-      width: 22px;
-      height: 22px;
-      margin-right: 0.4rem;
-      font-size: 0.7rem;
-    }
-
-    span {
-      font-size: 1.1rem;
-
-      span {
-        font-size: 0.8rem;
-      }
-    }
-  }
-`;
+// Old Logo styled component removed as it is now a separate component
 
 export const NavMenuWrapper = styled.div`
   position: relative;
@@ -778,8 +630,8 @@ export const DropdownMenu = styled(motion.div)`
     bottom: 0;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'var(--primary-color), transparent 70%), var(--primary-color), transparent 70%)'
-        : 'var(--primary-color), transparent 70%), var(--primary-color), transparent 70%)'};
+        ? 'radial-gradient(circle at top left, rgba(128, 0, 0, 0.15) 0%, transparent 70%), radial-gradient(circle at bottom right, rgba(128, 0, 0, 0.1) 0%, transparent 70%)'
+        : 'radial-gradient(circle at top left, rgba(128, 0, 0, 0.1) 0%, transparent 70%), radial-gradient(circle at bottom right, rgba(128, 0, 0, 0.05) 0%, transparent 70%)'};
     z-index: -1;
     border-radius: 16px;
     opacity: 0.8;

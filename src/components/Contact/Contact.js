@@ -1,96 +1,79 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaCodepen, FaQuora } from 'react-icons/fa';
-import { ContactContainer, ContactContent, ContactInfo, ContactDetail, ContactSocial, SocialLink, ContactForm, FormGroup, FormControl, ErrorMessage } from './ContactStyles';
+import {
+  FaEnvelope, FaPhone, FaMapMarkerAlt,
+  FaGithub, FaLinkedin, FaCodepen, FaQuora,
+  FaPaperPlane, FaCheckCircle, FaExclamationCircle,
+  FaWhatsapp
+} from 'react-icons/fa';
+import {
+  ContactContainer, ContactContent, ContactInfo,
+  ContactDetail, ContactSocial, SocialLink,
+  ContactForm, FormGroup, FormControl, ErrorMessage
+} from './ContactStyles';
 import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const { t } = useTranslation();
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors({
-        ...errors,
-        [name]: '',
-      });
-    }
+    setFormData({ ...formData, [name]: value });
+    if (errors[name]) setErrors({ ...errors, [name]: '' });
   };
 
   const validateForm = () => {
     const newErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
-      newErrors.email = 'Invalid email address';
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
-
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) newErrors.email = 'Invalid email address';
+    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
     return newErrors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const newErrors = validateForm();
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
+    if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
     setIsSubmitting(true);
-
     const whatsappNumber = '+916387343245';
     const { name, email, subject, message } = formData;
     const whatsappMessage = `Hello, you have a new message from your portfolio contact form:%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-    // Open WhatsApp in a new tab
-    window.open(whatsappUrl, '_blank');
-
+    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
     setIsSubmitting(false);
     setSubmitMessage('Your message has been sent successfully!');
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setTimeout(() => setSubmitMessage(''), 5000);
+  };
 
-    // Clear success message after 5 seconds
-    setTimeout(() => {
-      setSubmitMessage('');
-    }, 5000);
+  const contactDetails = [
+    { icon: <FaEnvelope />, label: t('contact.email'), value: 'amankatiyar.tech01@gmail.com', href: 'mailto:amankatiyar.tech01@gmail.com' },
+    { icon: <FaPhone />, label: t('contact.phone'), value: '+91 6387343245', href: 'tel:+916387343245' },
+    { icon: <FaWhatsapp />, label: 'WhatsApp', value: '+91 6387343245', href: 'https://wa.me/916387343245' },
+    { icon: <FaMapMarkerAlt />, label: t('contact.location'), value: 'Lucknow, Uttar Pradesh, India', href: null },
+  ];
+
+  const socials = [
+    { icon: <FaGithub />, href: 'https://github.com/AmanKtyr', label: 'GitHub' },
+    { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/amanktyr', label: 'LinkedIn' },
+    { icon: <FaCodepen />, href: 'https://codepen.io/amanktyr', label: 'CodePen' },
+    { icon: <FaQuora />, href: 'https://www.quora.com/profile/AmAn-KtYr-1', label: 'Quora' },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
   };
 
   return (
@@ -98,141 +81,152 @@ const Contact = () => {
       <div className="container">
         <motion.div
           className="section-title"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true, margin: '-50px' }}
         >
           <h2>{t('contact.title')}</h2>
           <p>{t('contact.subtitle')}</p>
         </motion.div>
 
         <ContactContent>
+          {/* ---- Left: Info Panel ---- */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
           >
             <ContactInfo>
-              <h3>{t('contact.getInTouch')}</h3>
-              <p>
+              <motion.h3 variants={itemVariants}>{t('contact.getInTouch')}</motion.h3>
+              <motion.p variants={itemVariants}>
                 I'm a passionate Full-Stack Developer specializing in modern web technologies. 
                 Available for freelance projects, collaborations, and exciting opportunities. 
                 Let's discuss how I can help bring your ideas to life!
-              </p>
+              </motion.p>
 
-              <ContactDetail>
-                <div className="icon">
-                  <FaEnvelope />
-                </div>
-                <div className="text">
-                  <h4>{t('contact.email')}</h4>
-                  <p>amankatiyar.tech01@gmail.com</p>
-                </div>
-              </ContactDetail>
+              {contactDetails.map((detail, i) => (
+                <motion.div key={i} variants={itemVariants}>
+                  <ContactDetail as={detail.href ? 'a' : 'div'} href={detail.href || undefined} target={detail.href && !detail.href.startsWith('tel') && !detail.href.startsWith('mailto') ? '_blank' : undefined} rel="noopener noreferrer">
+                    <div className="icon">{detail.icon}</div>
+                    <div className="text">
+                      <h4>{detail.label}</h4>
+                      <p>{detail.value}</p>
+                    </div>
+                    <div className="arrow">→</div>
+                  </ContactDetail>
+                </motion.div>
+              ))}
 
-              <ContactDetail>
-                <div className="icon">
-                  <FaPhone />
-                </div>
-                <div className="text">
-                  <h4>{t('contact.phone')}</h4>
-                  <p>+91 6387343245</p>
-                </div>
-              </ContactDetail>
+              <motion.div variants={itemVariants}>
+                <ContactSocial>
+                  {socials.map((s, i) => (
+                    <SocialLink key={i} href={s.href} target="_blank" rel="noopener noreferrer" title={s.label}>
+                      {s.icon}
+                    </SocialLink>
+                  ))}
+                </ContactSocial>
+              </motion.div>
 
-              <ContactDetail>
-                <div className="icon">
-                  <FaMapMarkerAlt />
+              {/* Availability Badge */}
+              <motion.div variants={itemVariants} style={{ marginTop: '2rem' }}>
+                <div className="availability-badge">
+                  <span className="dot"></span>
+                  Available for new projects
                 </div>
-                <div className="text">
-                  <h4>{t('contact.location')}</h4>
-                  <p>Lucknow, Uttar Pradesh, India</p>
-                </div>
-              </ContactDetail>
-
-              <ContactSocial>
-                <SocialLink href="https://github.com/AmanKtyr" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
-                  <FaGithub />
-                </SocialLink>
-                <SocialLink href="https://www.linkedin.com/in/amanktyr" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
-                  <FaLinkedin />
-                </SocialLink>
-                <SocialLink href="https://codepen.io/amanktyr" target="_blank" rel="noopener noreferrer" title="CodePen Portfolio">
-                  <FaCodepen />
-                </SocialLink>
-                <SocialLink href="https://www.quora.com/profile/AmAn-KtYr-1" target="_blank" rel="noopener noreferrer" title="Quora Profile">
-                  <FaQuora />
-                </SocialLink>
-              </ContactSocial>
+              </motion.div>
             </ContactInfo>
           </motion.div>
 
+          {/* ---- Right: Form ---- */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true, margin: '-50px' }}
           >
             <ContactForm onSubmit={handleSubmit}>
+              <div className="form-header">
+                <h3>Send a Message</h3>
+                <p>Fill out the form and I'll get back to you within 24 hours.</p>
+              </div>
+
               {submitMessage && (
-                <div className="success-message">
+                <motion.div
+                  className="success-message"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
+                  <FaCheckCircle />
                   {submitMessage}
-                </div>
+                </motion.div>
               )}
 
-              <FormGroup>
-                <FormControl
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={errors.name ? 'error' : ''}
-                />
-                {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
-              </FormGroup>
+              <div className="form-row">
+                <FormGroup>
+                  <label>Your Name</label>
+                  <FormControl
+                    type="text"
+                    name="name"
+                    placeholder="Aman Katiyar"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className={errors.name ? 'error' : ''}
+                  />
+                  {errors.name && <ErrorMessage><FaExclamationCircle /> {errors.name}</ErrorMessage>}
+                </FormGroup>
+
+                <FormGroup>
+                  <label>Email Address</label>
+                  <FormControl
+                    type="email"
+                    name="email"
+                    placeholder="hello@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={errors.email ? 'error' : ''}
+                  />
+                  {errors.email && <ErrorMessage><FaExclamationCircle /> {errors.email}</ErrorMessage>}
+                </FormGroup>
+              </div>
 
               <FormGroup>
-                <FormControl
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={errors.email ? 'error' : ''}
-                />
-                {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
-              </FormGroup>
-
-              <FormGroup>
+                <label>Subject</label>
                 <FormControl
                   type="text"
                   name="subject"
-                  placeholder="Subject"
+                  placeholder="Project Collaboration / Freelance Work..."
                   value={formData.subject}
                   onChange={handleChange}
                   className={errors.subject ? 'error' : ''}
                 />
-                {errors.subject && <ErrorMessage>{errors.subject}</ErrorMessage>}
+                {errors.subject && <ErrorMessage><FaExclamationCircle /> {errors.subject}</ErrorMessage>}
               </FormGroup>
 
               <FormGroup>
+                <label>Message</label>
                 <FormControl
                   as="textarea"
                   name="message"
-                  placeholder="Your Message"
+                  placeholder="Tell me about your project, goals, and timeline..."
                   value={formData.message}
                   onChange={handleChange}
                   className={errors.message ? 'error' : ''}
-                  rows="5"
+                  rows="6"
                 />
-                {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
+                {errors.message && <ErrorMessage><FaExclamationCircle /> {errors.message}</ErrorMessage>}
               </FormGroup>
 
-              <button type="submit" className="btn-primary" disabled={isSubmitting}>
-                {isSubmitting ? t('contact.sending') : t('contact.send')}
+              <button type="submit" className="btn-primary" disabled={isSubmitting} id="contact-submit-btn">
+                {isSubmitting ? (
+                  <span className="loading-text">Sending...</span>
+                ) : (
+                  <>
+                    {t('contact.send')}
+                    <FaPaperPlane />
+                  </>
+                )}
               </button>
             </ContactForm>
           </motion.div>
@@ -243,4 +237,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

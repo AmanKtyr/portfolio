@@ -1,4 +1,7 @@
 {
+  "logo": {
+    "tagline": "टेक एक्सपर्ट"
+  },
   "header": {
     "home": "होम",
     "about": "परिचय",
@@ -72,8 +75,8 @@
     "error": "कुछ गलत हो गया। कृपया पुनः प्रयास करें।"
   },
   "footer": {
-    "copyright": "© 2024 AmAn-KtYr. सर्वाधिकार सुरक्षित।",
-    "designed": "AmAn-KtYr द्वारा डिज़ाइन और विकसित"
+    "copyright": "© 2024 Aman Katiyar. सर्वाधिकार सुरक्षित।",
+    "designed": "Aman Katiyar द्वारा डिज़ाइन और विकसित"
   },
   "theme": {
     "switchToDark": "डार्क मोड में बदलें",

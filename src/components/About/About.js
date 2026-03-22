@@ -40,7 +40,7 @@ const About = () => {
             <AboutInfo>
               <ScrollAnimation animation="fadeUp" delay={0.3}>
                 <InfoItem>
-                  <strong>{t('about.name')}</strong> AmAn-KtYr
+                  <strong>{t('about.name')}</strong> Aman Katiyar
                 </InfoItem>
               </ScrollAnimation>
 
