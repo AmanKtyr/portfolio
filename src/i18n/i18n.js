@@ -5,6 +5,10 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // Import translations
 import enTranslation from './locales/en.json';
 import hiTranslation from './locales/hi.json';
+import jaTranslation from './locales/ja.json';
+import frTranslation from './locales/fr.json';
+import esTranslation from './locales/es.json';
+import ruTranslation from './locales/ru.json';
 
 // Configure i18next
 i18n
@@ -26,6 +30,18 @@ i18n
       hi: {
         translation: hiTranslation,
       },
+      ja: {
+        translation: jaTranslation,
+      },
+      fr: {
+        translation: frTranslation,
+      },
+      es: {
+        translation: esTranslation,
+      },
+      ru: {
+        translation: ruTranslation,
+      },
     },
     detection: {
       order: ['localStorage', 'navigator'],
@@ -34,4 +50,3 @@ i18n
   });
 
 export default i18n;
-

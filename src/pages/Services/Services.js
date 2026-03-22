@@ -7,224 +7,25 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { ServicesPageContainer, ServicesBanner, ServicesBannerContent, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText, ServiceFeatures, ServiceFeature, PricingSection, PricingContainer, PricingCard, PricingHeader, PricingPrice, PricingFeatures, PricingFeature, PricingButton, FAQSection, FAQContainer, FAQItem, FAQQuestion, FAQAnswer, CTASection, CTAContent } from './ServicesStyles';
 
-const servicesData = [
-  {
-    id: 1,
-    icon: <FaCode />,
-    title: 'Web Development',
-    description: 'Custom website development using modern technologies like React, Vue, and Angular to create responsive and user-friendly web applications.',
-    features: [
-      'Custom website design and development',
-      'Responsive design for all devices',
-      'Interactive UI/UX design',
-      'Cross-browser compatibility',
-      'Performance optimization'
-    ]
-  },
-  {
-    id: 2,
-    icon: <FaMobileAlt />,
-    title: 'Mobile App Development',
-    description: 'Creating cross-platform mobile applications using React Native and Flutter that work seamlessly on both iOS and Android devices.',
-    features: [
-      'Cross-platform app development',
-      'Native app development',
-      'UI/UX design for mobile',
-      'App testing and deployment',
-      'App maintenance and updates'
-    ]
-  },
-  {
-    id: 3,
-    icon: <FaServer />,
-    title: 'API Development',
-    description: 'Building robust and scalable APIs using Node.js, Express, and other backend technologies to power your web and mobile applications.',
-    features: [
-      'RESTful API development',
-      'GraphQL API development',
-      'API documentation',
-      'API testing and optimization',
-      'Third-party API integration'
-    ]
-  },
-  {
-    id: 4,
-    icon: <FaShoppingCart />,
-    title: 'E-commerce Solutions',
-    description: 'Developing online stores with secure payment gateways, product management systems, and user-friendly interfaces to boost your online sales.',
-    features: [
-      'Custom e-commerce website development',
-      'Shopping cart and checkout functionality',
-      'Payment gateway integration',
-      'Inventory management system',
-      'Order tracking and management'
-    ]
-  },
-  {
-    id: 5,
-    icon: <FaPalette />,
-    title: 'UI/UX Design',
-    description: 'Creating intuitive and visually appealing user interfaces that enhance user experience and engagement with your digital products.',
-    features: [
-      'User interface design',
-      'User experience design',
-      'Wireframing and prototyping',
-      'Design system creation',
-      'Usability testing'
-    ]
-  },
-  {
-    id: 6,
-    icon: <FaSearch />,
-    title: 'SEO Optimization',
-    description: 'Implementing best practices for search engine optimization to improve your website\'s visibility and ranking in search results.',
-    features: [
-      'On-page SEO optimization',
-      'Technical SEO audit',
-      'Content optimization',
-      'Performance optimization',
-      'SEO reporting and analytics'
-    ]
-  },
-  {
-    id: 7,
-    icon: <FaDatabase />,
-    title: 'Database Design',
-    description: 'Designing and implementing efficient database structures for your applications using SQL and NoSQL databases.',
-    features: [
-      'Database architecture design',
-      'SQL database implementation',
-      'NoSQL database implementation',
-      'Data migration and integration',
-      'Database performance optimization'
-    ]
-  },
-  {
-    id: 8,
-    icon: <FaLaptopCode />,
-    title: 'Web Maintenance',
-    description: 'Providing ongoing maintenance and support for your websites and web applications to ensure they remain secure and up-to-date.',
-    features: [
-      'Regular website updates',
-      'Security monitoring and updates',
-      'Performance optimization',
-      'Content updates',
-      'Technical support'
-    ]
-  },
-  {
-    id: 9,
-    icon: <FaTools />,
-    title: 'Consulting Services',
-    description: 'Offering expert advice and guidance on web development, technology stack selection, and digital strategy.',
-    features: [
-      'Technology stack consultation',
-      'Digital transformation strategy',
-      'Project planning and management',
-      'Code review and optimization',
-      'Team training and workshops'
-    ]
-  }
-];
-
-const pricingData = [
-  {
-    id: 1,
-    title: 'Startup Launch',
-    priceUSD: '$499',
-    priceINR: '₹39,999',
-    description: 'Perfect for small businesses and rapid MVPs',
-    features: [
-      'Strategic UI/UX Design',
-      'High-Performance Core (5 Pages)',
-      'Fully Responsive Ecosystem',
-      'Advanced Lead Generation Form',
-      'Foundational SEO Optimization',
-      '1 Month Expert Support'
-    ],
-    recommended: false
-  },
-  {
-    id: 2,
-    title: 'Enterprise Growth',
-    priceUSD: '$999',
-    priceINR: '₹79,999',
-    description: 'Ideal for scaling businesses and dynamic platforms',
-    features: [
-      'Everything in Startup Launch',
-      'Extended Architecture (10 Pages)',
-      'Custom Content Management',
-      'Integrated Strategic Blog',
-      'Social Ecosystem Sync',
-      'Full E-commerce Suite (20 SKUs)',
-      '3 Months Priority Support'
-    ],
-    recommended: true
-  },
-  {
-    id: 3,
-    title: 'Global Dominance',
-    priceUSD: '$1999',
-    priceINR: '₹159,999',
-    description: 'For established enterprises requiring complex architectural excellence',
-    features: [
-      'Everything in Enterprise Growth',
-      'Unified Digital Ecosystems',
-      'Complex API & Data Orchestration',
-      'Custom Strategic Logic Development',
-      'Advanced Professional SEO',
-      'High-Performance Optmization',
-      'Military Grade Security Sync',
-      '6 Months Elite Support'
-    ],
-    recommended: false
-  }
-];
-
-const faqData = [
-  {
-    id: 1,
-    question: 'What is your development process?',
-    answer: 'My development process typically includes the following steps: requirement gathering, planning, design, development, testing, deployment, and maintenance. I believe in an iterative approach with regular client feedback to ensure the final product meets all requirements and expectations.'
-  },
-  {
-    id: 2,
-    question: 'How long does it take to complete a website?',
-    answer: 'The timeline for website development varies depending on the complexity and requirements of the project. A simple website might take 2-4 weeks, while more complex projects with custom functionality could take 2-3 months or more. I\'ll provide a detailed timeline during our initial consultation based on your specific needs.'
-  },
-  {
-    id: 3,
-    question: 'Do you provide website maintenance services?',
-    answer: 'Yes, I offer website maintenance services to ensure your website remains secure, up-to-date, and performing optimally. This includes regular updates, security monitoring, performance optimization, content updates, and technical support.'
-  },
-  {
-    id: 4,
-    question: 'What technologies do you work with?',
-    answer: 'I work with a wide range of modern web technologies including HTML, CSS, JavaScript, React, Vue.js, Node.js, Express, MongoDB, MySQL, and more. I stay up-to-date with the latest trends and best practices in web development to deliver high-quality solutions.'
-  },
-  {
-    id: 5,
-    question: 'How do we get started with a project?',
-    answer: 'To get started, simply contact me through the contact form or email. We\'ll schedule an initial consultation to discuss your project requirements, goals, timeline, and budget. After gathering all necessary information, I\'ll provide a detailed proposal and quote for your project.'
-  },
-  {
-    id: 6,
-    question: 'Do you offer custom designs or use templates?',
-    answer: 'I primarily create custom designs tailored to your brand and specific requirements. However, if you prefer, I can also work with premium templates that can be customized to match your brand identity, which can be a more cost-effective option for some projects.'
-  }
-];
+const serviceIcons = [<FaCode />, <FaMobileAlt />, <FaServer />, <FaShoppingCart />, <FaPalette />, <FaSearch />, <FaDatabase />, <FaLaptopCode />, <FaTools />];
 
 const Services = () => {
   const { t } = useTranslation();
   const [activeAccordion, setActiveAccordion] = React.useState(null);
-  const [currency, setCurrency] = React.useState('USD'); // 'USD' or 'INR'
+  const [currency, setCurrency] = React.useState('USD');
+
+  const priceData = [
+    { priceUSD: '$499', priceINR: '₹39,999', recommended: false },
+    { priceUSD: '$999', priceINR: '₹79,999', recommended: true },
+    { priceUSD: '$1999', priceINR: '₹159,999', recommended: false }
+  ];
+
+  const cards = t('services.cards', { returnObjects: true }) || [];
+  const pricing = t('services.pricing', { returnObjects: true }) || [];
+  const faq = t('services.faq', { returnObjects: true }) || [];
 
   const toggleAccordion = (id) => {
-    if (activeAccordion === id) {
-      setActiveAccordion(null);
-    } else {
-      setActiveAccordion(id);
-    }
+    setActiveAccordion(activeAccordion === id ? null : id);
   };
 
   return (
@@ -233,110 +34,23 @@ const Services = () => {
 
       <ServicesPageContainer>
         <ServicesBanner>
-          {/* Grid overlay for cyberpunk/tech feel */}
           <div className="grid-overlay"></div>
-
           <div className="container">
             <ServicesBannerContent>
-              {/* Floating elements for visual interest */}
-              <motion.div
-                className="floating-element element-1"
-                animate={{
-                  y: [0, -20, 0],
-                  x: [0, 10, 0],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
+              <motion.div className="floating-element element-1" animate={{ y: [0, -20, 0], x: [0, 10, 0], rotate: [0, 5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} />
+              <motion.div className="floating-element element-2" animate={{ y: [0, 20, 0], x: [0, -15, 0], rotate: [0, -5, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} />
 
-              <motion.div
-                className="floating-element element-2"
-                animate={{
-                  y: [0, 20, 0],
-                  x: [0, -15, 0],
-                  rotate: [0, -5, 0]
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-
-              <motion.h1
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 100
-                }}
-              >
+              <motion.h1 initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, type: "spring", stiffness: 100 }}>
                 {t('services.title')}
               </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.3,
-                  type: "spring",
-                  stiffness: 50
-                }}
-              >
+              <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 50 }}>
                 {t('services.servicesSubtext')}
               </motion.p>
 
-              {/* Animated code particles */}
-              <motion.div
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "5%",
-                  color: "rgba(128, 0, 0, 0.4)",
-                  fontSize: "1.2rem",
-                  fontFamily: "monospace",
-                  zIndex: 5
-                }}
-                animate={{
-                  opacity: [0.2, 0.8, 0.2],
-                  y: [0, -30, 0]
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
+              <motion.div style={{ position: "absolute", top: "50%", left: "5%", color: "rgba(128, 0, 0, 0.4)", fontSize: "1.2rem", fontFamily: "monospace", zIndex: 5 }} animate={{ opacity: [0.2, 0.8, 0.2], y: [0, -30, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
                 &lt;services&gt;
               </motion.div>
-
-              <motion.div
-                style={{
-                  position: "absolute",
-                  bottom: "30%",
-                  right: "10%",
-                  color: "rgba(90, 0, 0, 0.4)",
-                  fontSize: "1.2rem",
-                  fontFamily: "monospace",
-                  zIndex: 5
-                }}
-                animate={{
-                  opacity: [0.2, 0.7, 0.2],
-                  y: [0, 20, 0]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
-              >
+              <motion.div style={{ position: "absolute", bottom: "30%", right: "10%", color: "rgba(90, 0, 0, 0.4)", fontSize: "1.2rem", fontFamily: "monospace", zIndex: 5 }} animate={{ opacity: [0.2, 0.7, 0.2], y: [0, 20, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
                 &lt;/services&gt;
               </motion.div>
             </ServicesBannerContent>
@@ -344,37 +58,21 @@ const Services = () => {
         </ServicesBanner>
 
         <div className="container">
-          <motion.div
-            className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
             <h2>{t('services.title')}</h2>
             <p>{t('services.subtitle')}</p>
           </motion.div>
 
           <ServicesGrid>
-            {servicesData.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
+            {Array.isArray(cards) && cards.map((card, index) => (
+              <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }}>
                 <ServiceCard>
-                  <ServiceIcon>
-                    {service.icon}
-                  </ServiceIcon>
-                  <ServiceTitle>{service.title}</ServiceTitle>
-                  <ServiceText>{service.description}</ServiceText>
+                  <ServiceIcon>{serviceIcons[index]}</ServiceIcon>
+                  <ServiceTitle>{card.title}</ServiceTitle>
+                  <ServiceText>{card.desc}</ServiceText>
                   <ServiceFeatures>
-                    {service.features.map((feature, idx) => (
-                      <ServiceFeature key={idx}>
-                        {feature}
-                      </ServiceFeature>
+                    {card.features && card.features.map((feature, idx) => (
+                      <ServiceFeature key={idx}>{feature}</ServiceFeature>
                     ))}
                   </ServiceFeatures>
                 </ServiceCard>
@@ -385,69 +83,39 @@ const Services = () => {
 
         <PricingSection>
           <div className="container">
-            <motion.div
-              className="section-title"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
               <h2>{t('services.pricingTitle')}</h2>
               <p>{t('services.pricingSubtitle')}</p>
             </motion.div>
 
-            <motion.div
-              className="currency-toggle"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <button
-                className={`currency-btn ${currency === 'USD' ? 'active' : ''}`}
-                onClick={() => setCurrency('USD')}
-              >
-                USD
-              </button>
-              <button
-                className={`currency-btn ${currency === 'INR' ? 'active' : ''}`}
-                onClick={() => setCurrency('INR')}
-              >
-                INR
-              </button>
+            <motion.div className="currency-toggle" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
+              <button className={`currency-btn ${currency === 'USD' ? 'active' : ''}`} onClick={() => setCurrency('USD')}>USD</button>
+              <button className={`currency-btn ${currency === 'INR' ? 'active' : ''}`} onClick={() => setCurrency('INR')}>INR</button>
             </motion.div>
 
             <PricingContainer>
-              {pricingData.map((plan, index) => (
-                <motion.div
-                  key={plan.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <PricingCard recommended={plan.recommended}>
-                    {plan.recommended && <span className="recommended-badge">Recommended</span>}
+              {Array.isArray(pricing) && pricing.map((plan, index) => (
+                <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }}>
+                  <PricingCard recommended={priceData[index]?.recommended}>
+                    {priceData[index]?.recommended && <span className="recommended-badge">{t('services.recommended')}</span>}
                     <PricingHeader>
                       <h3>{plan.title}</h3>
-                      <p>{plan.description}</p>
+                      <p>{plan.desc}</p>
                     </PricingHeader>
                     <PricingPrice>
-                      <h4>{currency === 'USD' ? plan.priceUSD : plan.priceINR}</h4>
-                      <p>{currency} - One-time payment</p>
+                      <h4>{currency === 'USD' ? priceData[index]?.priceUSD : priceData[index]?.priceINR}</h4>
+                      <p>{currency} - {t('services.oneTimePayment')}</p>
                       <small className="other-currency">
-                        {currency === 'USD' ? `Also available in INR: ${plan.priceINR}` : `Also available in USD: ${plan.priceUSD}`}
+                        {t('services.alsoAvailable')} {currency === 'USD' ? `INR: ${priceData[index]?.priceINR}` : `USD: ${priceData[index]?.priceUSD}`}
                       </small>
                     </PricingPrice>
                     <PricingFeatures>
-                      {plan.features.map((feature, idx) => (
-                        <PricingFeature key={idx}>
-                          {feature}
-                        </PricingFeature>
+                      {plan.features && plan.features.map((feature, idx) => (
+                        <PricingFeature key={idx}>{feature}</PricingFeature>
                       ))}
                     </PricingFeatures>
-                    <PricingButton to="/contact" recommended={plan.recommended}>
-                      {t('services.getStarted') || "Get Started"}
+                    <PricingButton to="/contact" recommended={priceData[index]?.recommended}>
+                      {t('services.getStarted')}
                     </PricingButton>
                   </PricingCard>
                 </motion.div>
@@ -458,33 +126,21 @@ const Services = () => {
 
         <FAQSection>
           <div className="container">
-            <motion.div
-              className="section-title"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h2>Frequently Asked Questions</h2>
-              <p>Answers to common questions about my services</p>
+            <motion.div className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
+              <h2>{t('services.faqTitle')}</h2>
+              <p>{t('services.faqSubtitle')}</p>
             </motion.div>
 
             <FAQContainer>
-              {faqData.map((faq) => (
-                <motion.div
-                  key={faq.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <FAQItem active={activeAccordion === faq.id}>
-                    <FAQQuestion onClick={() => toggleAccordion(faq.id)}>
-                      {faq.question}
-                      <span className="icon">{activeAccordion === faq.id ? '-' : '+'}</span>
+              {Array.isArray(faq) && faq.map((item, index) => (
+                <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
+                  <FAQItem active={activeAccordion === index}>
+                    <FAQQuestion onClick={() => toggleAccordion(index)}>
+                      {item.q}
+                      <span className="icon">{activeAccordion === index ? '-' : '+'}</span>
                     </FAQQuestion>
-                    <FAQAnswer active={activeAccordion === faq.id}>
-                      {faq.answer}
+                    <FAQAnswer active={activeAccordion === index}>
+                      {item.a}
                     </FAQAnswer>
                   </FAQItem>
                 </motion.div>
@@ -496,30 +152,15 @@ const Services = () => {
         <CTASection>
           <div className="container">
             <CTAContent>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                Ready to start your project?
+              <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
+                {t('services.ctaTitle')}
               </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                Let's work together to create something amazing
+              <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
+                {t('services.ctaSubtext')}
               </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
                 <Link to="/contact" className="btn-primary">
-                  Contact Me
+                  {t('services.ctaButton')}
                 </Link>
               </motion.div>
             </CTAContent>
@@ -533,4 +174,3 @@ const Services = () => {
 };
 
 export default Services;
-

@@ -1,107 +1,107 @@
 {
   "logo": {
-    "tagline": "Full-Stack Architect"
+    "tagline": "Architecte Full-Stack"
   },
   "header": {
-    "home": "Home",
+    "home": "Accueil",
     "about": "Expertise",
-    "skills": "Tech Stack",
+    "skills": "Technologies",
     "projects": "Portfolio",
     "services": "Solutions",
     "blog": "Insights",
     "contact": "Contact",
-    "hireMe": "Get in Touch"
+    "hireMe": "Me Contacter"
   },
   "hero": {
-    "greeting": "Expert Craftsmanship Meets",
-    "profession": "Innovative Solutions",
-    "description": "I build high-performance, scalable web ecosystems for recruiters seeking elite talent and businesses looking for a competitive edge. Let's turn your vision into a digital reality.",
-    "hireMe": "Start a Project",
-    "viewProjects": "Explore Portfolio",
-    "scrollDown": "Dive In"
+    "greeting": "L'Excellence Technique Rencontre",
+    "profession": "Des Solutions Innovantes",
+    "description": "Je construis des écosystèmes web haute performance et évolutifs pour les recruteurs à la recherche de talents d'élite et les entreprises en quête d'avantage concurrentiel. Transformons votre vision en réalité numérique.",
+    "hireMe": "Démarrer un Projet",
+    "viewProjects": "Explorer le Portfolio",
+    "scrollDown": "Découvrir"
   },
   "about": {
-    "title": "Strategic Expertise",
-    "subtitle": "Bridging Innovation with Reliability",
-    "name": "Professional Name:",
-    "email": "Official Email:",
-    "location": "Global Presence:",
-    "freelance": "Strategic Partner Availability:",
-    "available": "Open for New Challenges",
-    "downloadCV": "Download my Credentials",
-    "aboutMeHeader": "Full-Stack Engineer specialized in Scalable Systems",
-    "aboutMeText": "I'm a Full-Stack Engineer who views code as a tool for business growth. Whether you're an HR looking for a technical lead or a business owner needing a robust MVP, I deliver quality that exceeds industry standards. I specialize in crafting high-impact digital experiences that drive measurable results.",
+    "title": "Expertise Stratégique",
+    "subtitle": "Allier Innovation et Fiabilité",
+    "name": "Nom Professionnel :",
+    "email": "Email Officiel :",
+    "location": "Présence Mondiale :",
+    "freelance": "Disponibilité Partenariat :",
+    "available": "Ouvert aux Nouveaux Défis",
+    "downloadCV": "Télécharger mes Références",
+    "aboutMeHeader": "Ingénieur Full-Stack spécialisé en Systèmes Évolutifs",
+    "aboutMeText": "Je suis un ingénieur Full-Stack qui considère le code comme un outil de croissance business. Que vous soyez un RH à la recherche d'un lead technique ou un entrepreneur ayant besoin d'un MVP robuste, je livre une qualité qui dépasse les standards de l'industrie.",
     "stats": {
-      "experience": "Years Experience",
-      "projects": "Projects Completed",
-      "clients": "Happy Clients",
-      "awards": "Awards Received"
+      "experience": "Années d'Expérience",
+      "projects": "Projets Réalisés",
+      "clients": "Clients Satisfaits",
+      "awards": "Prix Reçus"
     },
     "skillItems": {
-      "webDev": "Web Development",
-      "crmDev": "CRM Development",
-      "genAI": "Gen/Agentic AI",
-      "seo": "SEO Marketing"
+      "webDev": "Développement Web",
+      "crmDev": "Développement CRM",
+      "genAI": "IA Générative/Agentique",
+      "seo": "Marketing SEO"
     },
     "journey": {
-      "title": "Professional Evolution",
-      "subtitle": "Education & Industry Experience",
+      "title": "Évolution Professionnelle",
+      "subtitle": "Formation & Expérience Industrielle",
       "currentRole": {
-        "date": "Oct 2025 - Present",
-        "title": "Full-Stack Software Engineer",
+        "date": "Oct. 2025 - Présent",
+        "title": "Ingénieur Logiciel Full-Stack",
         "company": "Bhatt Square Pvt. Ltd.",
-        "desc": "Leading backend architecture with Python/Django and building high-performance frontend systems using Nest.js. Developing strategic Gym Management Software and complex E-commerce ecosystems."
+        "desc": "Direction de l'architecture backend avec Python/Django et construction de systèmes frontend haute performance avec Nest.js. Développement de logiciels de gestion de salle de sport et d'écosystèmes e-commerce complexes."
       },
       "previousRole": {
-        "date": "2024 - Oct 2025",
-        "title": "Full-Stack Web Developer",
+        "date": "2024 - Oct. 2025",
+        "title": "Développeur Web Full-Stack",
         "company": "Sipher Web Pvt. Ltd.",
-        "desc": "Engineered scalable web applications and high-end RESTful APIs with Python/Django and React.js."
+        "desc": "Conception d'applications web évolutives et d'APIs RESTful haut de gamme avec Python/Django et React.js."
       },
       "apprenticeship": {
-        "date": "2022 (6 Months)",
-        "title": "Technical Apprenticeship",
+        "date": "2022 (6 Mois)",
+        "title": "Apprentissage Technique",
         "company": "Softpro India",
-        "desc": "Architected production-ready portals and responsive UI/UX systems using PHP and modern CSS."
+        "desc": "Création de portails prêts pour la production et de systèmes UI/UX réactifs avec PHP et CSS moderne."
       },
       "training": {
-        "date": "2021 (Summer)",
-        "title": "Advanced Strategic Training",
+        "date": "2021 (Été)",
+        "title": "Formation Stratégique Avancée",
         "company": "Softpro India",
-        "desc": "Developed secure financial architectures and enterprise-level Django applications."
+        "desc": "Développement d'architectures financières sécurisées et d'applications Django de niveau entreprise."
       },
       "degree": {
         "date": "2022 - 2025",
-        "title": "B.Tech in CSE",
-        "company": "AKTU (Sagar Group)",
-        "desc": "Academic excellence in Software Architecture and Computer Science Engineering."
+        "title": "B.Tech en Informatique",
+        "company": "AKTU (Groupe Sagar)",
+        "desc": "Excellence académique en Architecture Logicielle et Ingénierie Informatique."
       },
       "diploma": {
         "date": "2019 - 2022",
-        "title": "Diploma in CS",
+        "title": "Diplôme en Informatique",
         "company": "JN Polytechnic",
-        "desc": "Foundation in Computing, Data Structures, and Algorithmic Logic."
+        "desc": "Fondations en Informatique, Structures de Données et Logique Algorithmique."
       },
       "school": {
         "date": "2019",
-        "title": "Secondary Education",
+        "title": "Éducation Secondaire",
         "company": "S.V.M. Inter College",
-        "desc": "Completed Higher Secondary with a focus on logic and science."
+        "desc": "Études secondaires complétées avec un focus sur la logique et les sciences."
       }
     }
   },
   "skills": {
-    "title": "Technical Arsenal",
-    "subtitle": "Cutting-edge technologies I master to deliver success",
-    "frontend": "Modern UI Engineering",
-    "backend": "Scalable Infrastructure",
-    "design": "Human-Centric UX/UI",
-    "other": "Production Ecosystem",
-    "skillsDescription": "My tech stack is handpicked for speed, reliability, and security. I don't just use tools; I architect solutions that provide a superior competitive advantage.",
-    "techStackTitle": "Tech Stack",
-    "techStackSubtitle": "Technologies I work with",
-    "learningPathTitle": "My Learning Path",
-    "learningPathSubtitle": "How I developed my skills over time",
+    "title": "Arsenal Technique",
+    "subtitle": "Technologies de pointe maîtrisées pour garantir le succès",
+    "frontend": "Ingénierie UI Moderne",
+    "backend": "Infrastructure Évolutive",
+    "design": "UX/UI Centrée sur l'Humain",
+    "other": "Écosystème de Production",
+    "skillsDescription": "Mon stack technique est sélectionné pour la vitesse, la fiabilité et la sécurité. Je n'utilise pas simplement des outils ; j'architecte des solutions qui offrent un avantage concurrentiel supérieur.",
+    "techStackTitle": "Stack Technique",
+    "techStackSubtitle": "Technologies avec lesquelles je travaille",
+    "learningPathTitle": "Mon Parcours d'Apprentissage",
+    "learningPathSubtitle": "Comment j'ai développé mes compétences au fil du temps",
     "skillCards": [
       {
         "title": "Python",
@@ -216,32 +216,32 @@
     ]
   },
   "projects": {
-    "title": "Impact-Driven Portfolio",
-    "subtitle": "Transforming complex challenges into elegant digital solutions",
-    "all": "All Ecosystems",
-    "web": "Enterprise Web",
-    "app": "Scalable Mobile Apps",
-    "design": "Visual Identity & UX",
-    "viewDetails": "Insight & Strategy",
-    "viewLive": "Launch Demo",
-    "searchPlaceholder": "Search Case Studies...",
-    "filterTitle": "Strategic Portfolios",
-    "projectsDescription": "A curated collection of production-grade projects demonstrating architectural excellence, seamless user experience, and real-world impact.",
-    "noResults": "No projects found",
-    "noResultsDesc": "Try changing your search criteria or filter selection."
+    "title": "Portfolio à Impact",
+    "subtitle": "Transformer des défis complexes en solutions numériques élégantes",
+    "all": "Tous les Écosystèmes",
+    "web": "Web Entreprise",
+    "app": "Apps Mobiles Évolutives",
+    "design": "Identité Visuelle & UX",
+    "viewDetails": "Analyse & Stratégie",
+    "viewLive": "Voir la Démo",
+    "searchPlaceholder": "Rechercher des Études de Cas...",
+    "filterTitle": "Portfolios Stratégiques",
+    "projectsDescription": "Une collection curatée de projets de qualité production démontrant l'excellence architecturale, une expérience utilisateur fluide et un impact réel.",
+    "noResults": "Aucun projet trouvé",
+    "noResultsDesc": "Modifiez vos critères de recherche."
   },
   "services": {
-    "title": "Elite Digital Solutions",
-    "subtitle": "Accelerating your business journey with technical excellence",
-    "learnMore": "Scale your Business",
-    "servicesHero": "High-Impact IT Solutions for the Modern Era",
-    "servicesSubtext": "Providing end-to-end technical leadership and execution for startups, enterprises, and ambitious recruiters.",
-    "pricingTitle": "Strategic Investment Plans",
-    "pricingSubtitle": "Professional investment options for high-performance digital products",
-    "startupTitle": "Startup Launch",
-    "enterpriseTitle": "Enterprise Growth",
-    "premiumTitle": "Global Dominance",
-    "getStarted": "Initialize Project",
+    "title": "Solutions Numériques d'Élite",
+    "subtitle": "Accélérer votre parcours business avec l'excellence technique",
+    "learnMore": "Développez votre Business",
+    "servicesHero": "Solutions IT à Fort Impact pour l'Ère Moderne",
+    "servicesSubtext": "Leadership technique et exécution de bout en bout pour startups, entreprises et recruteurs ambitieux.",
+    "pricingTitle": "Plans d'Investissement Stratégiques",
+    "pricingSubtitle": "Options d'investissement professionnelles pour des produits numériques haute performance",
+    "startupTitle": "Lancement Startup",
+    "enterpriseTitle": "Croissance Entreprise",
+    "premiumTitle": "Domination Mondiale",
+    "getStarted": "Initialiser le Projet",
     "cards": [
       {
         "title": "Web Development",
@@ -384,11 +384,6 @@
         ]
       }
     ],
-    "recommended": "Recommended",
-    "oneTimePayment": "One-time payment",
-    "alsoAvailable": "Also available in",
-    "faqTitle": "Frequently Asked Questions",
-    "faqSubtitle": "Answers to common questions about my services",
     "faq": [
       {
         "q": "What is your development process?",
@@ -415,10 +410,6 @@
         "a": "I primarily create custom designs tailored to your brand. However, I can also work with premium templates for a more cost-effective option."
       }
     ],
-    "ctaTitle": "Ready to start your project?",
-    "ctaSubtext": "Let us work together to create something amazing",
-    "ctaButton": "Contact Me",
-    "scaleVision": "Let us Scale Your Vision Together",
     "homeCards": [
       {
         "title": "Enterprise Web Solutions",
@@ -444,62 +435,71 @@
         "title": "Strategic Digital Growth",
         "desc": "Driving measurable ROI through data-driven social media and SEO marketing strategies."
       }
-    ]
+    ],
+    "recommended": "Recommandé",
+    "oneTimePayment": "Paiement unique",
+    "alsoAvailable": "Aussi disponible en",
+    "faqTitle": "Questions Fréquentes",
+    "faqSubtitle": "Réponses aux questions courantes",
+    "ctaTitle": "Prêt à démarrer votre projet ?",
+    "ctaSubtext": "Travaillons ensemble",
+    "ctaButton": "Contactez-moi",
+    "scaleVision": "Développons votre vision"
   },
   "blog": {
-    "title": "Technical Insights",
-    "subtitle": "Exploring the frontiers of technology and share industry best practices",
-    "readMore": "Read full insight",
-    "blogHero": "The Developer's Journal",
-    "blogSubtext": "Deep dives into architecture, clean code, and emerging technologies that define the modern web.",
-    "search": "Search",
-    "searchPlaceholder": "Search...",
-    "categories": "Categories",
-    "tags": "Tags",
-    "recentPosts": "Recent Posts"
+    "title": "Insights Techniques",
+    "subtitle": "Explorer les frontières de la technologie et partager les meilleures pratiques",
+    "readMore": "Lire l'insight complet",
+    "blogHero": "Le Journal du Développeur",
+    "blogSubtext": "Plongées profondes dans l'architecture, le code propre et les technologies émergentes qui définissent le web moderne.",
+    "search": "Recherche",
+    "searchPlaceholder": "Rechercher...",
+    "categories": "Catégories",
+    "tags": "Étiquettes",
+    "recentPosts": "Articles récents"
   },
   "contact": {
-    "title": "Strategic Collaboration",
-    "subtitle": "Ready to discuss your next big milestone?",
-    "getInTouch": "Priority Support",
-    "contactDesc": "Available for full-time engineering roles, strategic freelance partnerships, and technical consultancy. Let's optimize your digital presence together.",
+    "title": "Collaboration Stratégique",
+    "subtitle": "Prêt à discuter de votre prochain grand jalon ?",
+    "getInTouch": "Support Prioritaire",
+    "contactDesc": "Disponible pour des postes d'ingénieur à temps plein, des partenariats freelance stratégiques et du conseil technique. Optimisons ensemble votre présence numérique.",
     "email": "Email",
-    "phone": "Direct Mobile",
-    "location": "Location",
-    "name": "Full Name / Organization",
-    "subject": "Case Reference / Inquiry Type",
-    "message": "Project Strategy / Proposal Details",
-    "send": "Initialize Connection",
-    "sending": "Establishing Link...",
-    "success": "Connection established! I'll secure a response within 24 hours.",
-    "error": "Transmission failed. Let's try again.",
-    "contactHero": "Let's Connect for a Strategy Session",
-    "contactSubtext": "No project is too small for big thinking. Reach out for a consultation, job offer, or technical talk."
+    "phone": "Mobile Direct",
+    "location": "Localisation",
+    "name": "Nom Complet / Organisation",
+    "subject": "Référence / Type de Demande",
+    "message": "Stratégie Projet / Détails de la Proposition",
+    "send": "Initialiser la Connexion",
+    "sending": "Établissement du Lien...",
+    "success": "Connexion établie ! Je vous répondrai sous 24 heures.",
+    "error": "Transmission échouée. Réessayons.",
+    "contactHero": "Connectons-nous pour une Session Stratégique",
+    "contactSubtext": "Aucun projet n'est trop petit pour penser grand. Contactez-moi pour une consultation, une offre d'emploi ou une discussion technique."
   },
   "footer": {
-    "copyright": "© {{year}} Aman Katiyar. All rights reserved.",
-    "madeWith": "Engineered with",
-    "passion": "precision & passion",
-    "ctaTitle": "Ready to build something exceptional?",
-    "ctaSubtext": "Let's discuss your project and create digital solutions that drive real business impact.",
-    "ctaButton": "Start a Conversation",
-    "brandText": "Engineering high-performance, scalable web ecosystems that transform ambitious ideas into production-grade digital realities.",
-    "available": "Available for opportunities",
+    "copyright": "© {{year}} Aman Katiyar. Tous droits réservés.",
+    "madeWith": "Conçu avec",
+    "passion": "précision & passion",
+    "ctaTitle": "Prêt à construire quelque chose d'exceptionnel ?",
+    "ctaSubtext": "Discutons de votre projet et créons des solutions numériques qui génèrent un véritable impact business.",
+    "ctaButton": "Démarrer une Conversation",
+    "brandText": "Conception d'écosystèmes web haute performance et évolutifs qui transforment des idées ambitieuses en réalités numériques de qualité production.",
+    "available": "Disponible pour les opportunités",
     "navigation": "Navigation",
     "solutions": "Solutions",
-    "getInTouch": "Get in Touch",
-    "webDev": "Web Development",
-    "apiArch": "API Architecture",
-    "responsiveDesign": "Responsive Design",
+    "getInTouch": "Nous Contacter",
+    "webDev": "Développement Web",
+    "apiArch": "Architecture API",
+    "responsiveDesign": "Design Réactif",
     "ecommerce": "E-commerce",
-    "uiux": "UI/UX Design",
-    "follow": "Professional Network"
+    "uiux": "Design UI/UX",
+    "follow": "Réseau Professionnel"
   },
   "theme": {
-    "switchToDark": "Dark Mode (Power User)",
-    "switchToLight": "Light Mode (Clarity)"
+    "switchToDark": "Mode Sombre",
+    "switchToLight": "Mode Clair"
   },
   "language": {
-    "label": "English"
+    "label": "Français"
   }
 }

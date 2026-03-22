@@ -18,9 +18,9 @@ export const HeroContainer = styled.section`
     width: 600px;
     height: 600px;
     background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 70%)'
-        : 'radial-gradient(circle, rgba(128, 0, 0, 0.1) 0%, transparent 70%)'};
+    theme.isDarkMode
+      ? 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 70%)'
+      : 'radial-gradient(circle, rgba(128, 0, 0, 0.1) 0%, transparent 70%)'};
     border-radius: 50%;
     z-index: -1;
     animation: float 20s ease-in-out infinite alternate;
@@ -35,9 +35,9 @@ export const HeroContainer = styled.section`
     width: 500px;
     height: 500px;
     background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(255, 77, 77, 0.1) 0%, transparent 70%)'
-        : 'radial-gradient(circle, rgba(128, 0, 0, 0.05) 0%, transparent 70%)'};
+    theme.isDarkMode
+      ? 'radial-gradient(circle, rgba(255, 77, 77, 0.1) 0%, transparent 70%)'
+      : 'radial-gradient(circle, rgba(128, 0, 0, 0.05) 0%, transparent 70%)'};
     border-radius: 50%;
     z-index: -1;
     animation: float 25s ease-in-out infinite alternate-reverse;
@@ -388,9 +388,9 @@ export const HeroImage = styled.div`
     height: 150px;
     border-radius: 50%;
     background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(128, 0, 0, 0.4) 0%, transparent 70%)'
-        : 'radial-gradient(circle, rgba(128, 0, 0, 0.2) 0%, transparent 70%)'};
+    theme.isDarkMode
+      ? 'radial-gradient(circle, rgba(128, 0, 0, 0.4) 0%, transparent 70%)'
+      : 'radial-gradient(circle, rgba(128, 0, 0, 0.2) 0%, transparent 70%)'};
     top: 10%;
     right: 10%;
     filter: blur(20px);
@@ -405,9 +405,9 @@ export const HeroImage = styled.div`
     height: 100px;
     border-radius: 50%;
     background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(255, 77, 77, 0.3) 0%, transparent 70%)'
-        : 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 70%)'};
+    theme.isDarkMode
+      ? 'radial-gradient(circle, rgba(255, 77, 77, 0.3) 0%, transparent 70%)'
+      : 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 70%)'};
     bottom: 10%;
     left: 10%;
     filter: blur(15px);

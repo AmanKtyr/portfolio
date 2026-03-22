@@ -60,7 +60,7 @@ const About = () => {
 
               <ScrollAnimation animation="fadeUp" delay={0.7}>
                 <ResumeButton href={resumePdf} download="Aman_Katiyar_Resume.pdf">
-                  <FaDownload /> {t('Download_Resume')}
+                  <FaDownload /> {t('about.downloadCV')}
                 </ResumeButton>
               </ScrollAnimation>
             </AboutInfo>
@@ -69,28 +69,28 @@ const About = () => {
               <ScrollAnimation animation="zoom" delay={0.7}>
                 <SkillItem>
                   <FaCode />
-                  <h4>Web Development</h4>
+                  <h4>{t('about.skillItems.webDev')}</h4>
                 </SkillItem>
               </ScrollAnimation>
 
               <ScrollAnimation animation="zoom" delay={0.8}>
                 <SkillItem>
                   <FaLaptopCode />
-                  <h4>CRM Development</h4>
+                  <h4>{t('about.skillItems.crmDev')}</h4>
                 </SkillItem>
               </ScrollAnimation>
 
               <ScrollAnimation animation="zoom" delay={0.9}>
                 <SkillItem>
                   <FaPhotoVideo />
-                  <h4>Gen/Agentic AI</h4>
+                  <h4>{t('about.skillItems.genAI')}</h4>
                 </SkillItem>
               </ScrollAnimation>
 
               <ScrollAnimation animation="zoom" delay={1.0}>
                 <SkillItem>
                   <FaServer />
-                  <h4>SEO Marketing</h4>
+                  <h4>{t('about.skillItems.seo')}</h4>
                 </SkillItem>
               </ScrollAnimation>
             </AboutSkills>

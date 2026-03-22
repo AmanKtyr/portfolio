@@ -322,8 +322,8 @@ const ProjectsPage = () => {
               ))
             ) : (
               <div className="no-results">
-                <h3>No projects found</h3>
-                <p>Try changing your search criteria or filter selection.</p>
+                <h3>{t('projects.noResults')}</h3>
+                <p>{t('projects.noResultsDesc')}</p>
               </div>
             )}
           </ProjectsGrid>

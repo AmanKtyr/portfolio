@@ -1,107 +1,107 @@
 {
   "logo": {
-    "tagline": "Full-Stack Architect"
+    "tagline": "フルスタックアーキテクト"
   },
   "header": {
-    "home": "Home",
-    "about": "Expertise",
-    "skills": "Tech Stack",
-    "projects": "Portfolio",
-    "services": "Solutions",
-    "blog": "Insights",
-    "contact": "Contact",
-    "hireMe": "Get in Touch"
+    "home": "ホーム",
+    "about": "専門知識",
+    "skills": "技術スタック",
+    "projects": "ポートフォリオ",
+    "services": "ソリューション",
+    "blog": "インサイト",
+    "contact": "お問い合わせ",
+    "hireMe": "ご連絡ください"
   },
   "hero": {
-    "greeting": "Expert Craftsmanship Meets",
-    "profession": "Innovative Solutions",
-    "description": "I build high-performance, scalable web ecosystems for recruiters seeking elite talent and businesses looking for a competitive edge. Let's turn your vision into a digital reality.",
-    "hireMe": "Start a Project",
-    "viewProjects": "Explore Portfolio",
-    "scrollDown": "Dive In"
+    "greeting": "卓越した技術と",
+    "profession": "革新的なソリューション",
+    "description": "優秀な人材を求めるリクルーターや競争力を求める企業のために、高性能でスケーラブルなWebエコシステムを構築します。あなたのビジョンをデジタルの現実に変えましょう。",
+    "hireMe": "プロジェクトを始める",
+    "viewProjects": "ポートフォリオを見る",
+    "scrollDown": "詳しく見る"
   },
   "about": {
-    "title": "Strategic Expertise",
-    "subtitle": "Bridging Innovation with Reliability",
-    "name": "Professional Name:",
-    "email": "Official Email:",
-    "location": "Global Presence:",
-    "freelance": "Strategic Partner Availability:",
-    "available": "Open for New Challenges",
-    "downloadCV": "Download my Credentials",
-    "aboutMeHeader": "Full-Stack Engineer specialized in Scalable Systems",
-    "aboutMeText": "I'm a Full-Stack Engineer who views code as a tool for business growth. Whether you're an HR looking for a technical lead or a business owner needing a robust MVP, I deliver quality that exceeds industry standards. I specialize in crafting high-impact digital experiences that drive measurable results.",
+    "title": "戦略的専門知識",
+    "subtitle": "イノベーションと信頼性の融合",
+    "name": "正式名称：",
+    "email": "公式メール：",
+    "location": "グローバル拠点：",
+    "freelance": "パートナー可用性：",
+    "available": "新しい挑戦を受け付けています",
+    "downloadCV": "経歴をダウンロード",
+    "aboutMeHeader": "スケーラブルシステム専門のフルスタックエンジニア",
+    "aboutMeText": "コードをビジネス成長のツールと捉えるフルスタックエンジニアです。テクニカルリードを探すHRの方も、堅牢なMVPを必要とするビジネスオーナーの方も、業界基準を超える品質をお届けします。",
     "stats": {
-      "experience": "Years Experience",
-      "projects": "Projects Completed",
-      "clients": "Happy Clients",
-      "awards": "Awards Received"
+      "experience": "年の経験",
+      "projects": "完了プロジェクト",
+      "clients": "満足したクライアント",
+      "awards": "受賞歴"
     },
     "skillItems": {
-      "webDev": "Web Development",
-      "crmDev": "CRM Development",
-      "genAI": "Gen/Agentic AI",
-      "seo": "SEO Marketing"
+      "webDev": "Web開発",
+      "crmDev": "CRM開発",
+      "genAI": "生成AI/エージェントAI",
+      "seo": "SEOマーケティング"
     },
     "journey": {
-      "title": "Professional Evolution",
-      "subtitle": "Education & Industry Experience",
+      "title": "プロフェッショナルな進化",
+      "subtitle": "教育と業界経験",
       "currentRole": {
-        "date": "Oct 2025 - Present",
-        "title": "Full-Stack Software Engineer",
+        "date": "2025年10月 - 現在",
+        "title": "フルスタックソフトウェアエンジニア",
         "company": "Bhatt Square Pvt. Ltd.",
-        "desc": "Leading backend architecture with Python/Django and building high-performance frontend systems using Nest.js. Developing strategic Gym Management Software and complex E-commerce ecosystems."
+        "desc": "Python/Djangoによるバックエンドアーキテクチャのリード、Nest.jsを使用した高性能フロントエンドシステムの構築。ジム管理ソフトウェアと複雑なEコマースエコシステムの開発。"
       },
       "previousRole": {
-        "date": "2024 - Oct 2025",
-        "title": "Full-Stack Web Developer",
+        "date": "2024年 - 2025年10月",
+        "title": "フルスタックWebデベロッパー",
         "company": "Sipher Web Pvt. Ltd.",
-        "desc": "Engineered scalable web applications and high-end RESTful APIs with Python/Django and React.js."
+        "desc": "Python/DjangoとReact.jsでスケーラブルなWebアプリケーションとハイエンドRESTful APIを構築。"
       },
       "apprenticeship": {
-        "date": "2022 (6 Months)",
-        "title": "Technical Apprenticeship",
+        "date": "2022年（6ヶ月）",
+        "title": "テクニカルアプレンティスシップ",
         "company": "Softpro India",
-        "desc": "Architected production-ready portals and responsive UI/UX systems using PHP and modern CSS."
+        "desc": "PHPとモダンCSSを使用して本番対応のポータルとレスポンシブUI/UXシステムを構築。"
       },
       "training": {
-        "date": "2021 (Summer)",
-        "title": "Advanced Strategic Training",
+        "date": "2021年（夏季）",
+        "title": "アドバンスド戦略トレーニング",
         "company": "Softpro India",
-        "desc": "Developed secure financial architectures and enterprise-level Django applications."
+        "desc": "セキュアな金融アーキテクチャとエンタープライズレベルのDjangoアプリケーションを開発。"
       },
       "degree": {
-        "date": "2022 - 2025",
-        "title": "B.Tech in CSE",
+        "date": "2022年 - 2025年",
+        "title": "コンピュータサイエンス工学学士",
         "company": "AKTU (Sagar Group)",
-        "desc": "Academic excellence in Software Architecture and Computer Science Engineering."
+        "desc": "ソフトウェアアーキテクチャとコンピュータサイエンス工学における学術的卓越性。"
       },
       "diploma": {
-        "date": "2019 - 2022",
-        "title": "Diploma in CS",
+        "date": "2019年 - 2022年",
+        "title": "コンピュータサイエンスディプロマ",
         "company": "JN Polytechnic",
-        "desc": "Foundation in Computing, Data Structures, and Algorithmic Logic."
+        "desc": "コンピューティング、データ構造、アルゴリズムロジックの基礎。"
       },
       "school": {
-        "date": "2019",
-        "title": "Secondary Education",
+        "date": "2019年",
+        "title": "中等教育",
         "company": "S.V.M. Inter College",
-        "desc": "Completed Higher Secondary with a focus on logic and science."
+        "desc": "論理と科学に焦点を当てた高等教育を修了。"
       }
     }
   },
   "skills": {
-    "title": "Technical Arsenal",
-    "subtitle": "Cutting-edge technologies I master to deliver success",
-    "frontend": "Modern UI Engineering",
-    "backend": "Scalable Infrastructure",
-    "design": "Human-Centric UX/UI",
-    "other": "Production Ecosystem",
-    "skillsDescription": "My tech stack is handpicked for speed, reliability, and security. I don't just use tools; I architect solutions that provide a superior competitive advantage.",
-    "techStackTitle": "Tech Stack",
-    "techStackSubtitle": "Technologies I work with",
-    "learningPathTitle": "My Learning Path",
-    "learningPathSubtitle": "How I developed my skills over time",
+    "title": "テクニカルアーセナル",
+    "subtitle": "成功を実現するために習得した最先端技術",
+    "frontend": "モダンUIエンジニアリング",
+    "backend": "スケーラブルインフラ",
+    "design": "ヒューマンセントリックUX/UI",
+    "other": "プロダクションエコシステム",
+    "skillsDescription": "私のテックスタックは、速度、信頼性、セキュリティのために厳選されています。ツールを使うだけでなく、優れた競争優位性を提供するソリューションを構築します。",
+    "techStackTitle": "技術スタック",
+    "techStackSubtitle": "使用している技術",
+    "learningPathTitle": "学習の軌跡",
+    "learningPathSubtitle": "スキルを発展させてきた過程",
     "skillCards": [
       {
         "title": "Python",
@@ -216,32 +216,32 @@
     ]
   },
   "projects": {
-    "title": "Impact-Driven Portfolio",
-    "subtitle": "Transforming complex challenges into elegant digital solutions",
-    "all": "All Ecosystems",
-    "web": "Enterprise Web",
-    "app": "Scalable Mobile Apps",
-    "design": "Visual Identity & UX",
-    "viewDetails": "Insight & Strategy",
-    "viewLive": "Launch Demo",
-    "searchPlaceholder": "Search Case Studies...",
-    "filterTitle": "Strategic Portfolios",
-    "projectsDescription": "A curated collection of production-grade projects demonstrating architectural excellence, seamless user experience, and real-world impact.",
-    "noResults": "No projects found",
-    "noResultsDesc": "Try changing your search criteria or filter selection."
+    "title": "インパクト重視のポートフォリオ",
+    "subtitle": "複雑な課題をエレガントなデジタルソリューションに変換",
+    "all": "すべてのエコシステム",
+    "web": "エンタープライズWeb",
+    "app": "スケーラブルモバイルアプリ",
+    "design": "ビジュアルアイデンティティ＆UX",
+    "viewDetails": "インサイト＆戦略",
+    "viewLive": "デモを見る",
+    "searchPlaceholder": "ケーススタディを検索...",
+    "filterTitle": "戦略的ポートフォリオ",
+    "projectsDescription": "アーキテクチャの卓越性、シームレスなユーザー体験、実世界への影響を示す、厳選されたプロダクショングレードプロジェクトのコレクション。",
+    "noResults": "プロジェクトが見つかりません",
+    "noResultsDesc": "検索条件を変更してみてください。"
   },
   "services": {
-    "title": "Elite Digital Solutions",
-    "subtitle": "Accelerating your business journey with technical excellence",
-    "learnMore": "Scale your Business",
-    "servicesHero": "High-Impact IT Solutions for the Modern Era",
-    "servicesSubtext": "Providing end-to-end technical leadership and execution for startups, enterprises, and ambitious recruiters.",
-    "pricingTitle": "Strategic Investment Plans",
-    "pricingSubtitle": "Professional investment options for high-performance digital products",
-    "startupTitle": "Startup Launch",
-    "enterpriseTitle": "Enterprise Growth",
-    "premiumTitle": "Global Dominance",
-    "getStarted": "Initialize Project",
+    "title": "エリートデジタルソリューション",
+    "subtitle": "技術的卓越性でビジネスジャーニーを加速",
+    "learnMore": "ビジネスをスケール",
+    "servicesHero": "現代のためのハイインパクトITソリューション",
+    "servicesSubtext": "スタートアップ、エンタープライズ、野心的なリクルーターのためのエンドツーエンドの技術リーダーシップと実行。",
+    "pricingTitle": "戦略的投資プラン",
+    "pricingSubtitle": "高性能デジタル製品のためのプロフェッショナルな投資オプション",
+    "startupTitle": "スタートアップローンチ",
+    "enterpriseTitle": "エンタープライズ成長",
+    "premiumTitle": "グローバルドミナンス",
+    "getStarted": "プロジェクト開始",
     "cards": [
       {
         "title": "Web Development",
@@ -384,11 +384,6 @@
         ]
       }
     ],
-    "recommended": "Recommended",
-    "oneTimePayment": "One-time payment",
-    "alsoAvailable": "Also available in",
-    "faqTitle": "Frequently Asked Questions",
-    "faqSubtitle": "Answers to common questions about my services",
     "faq": [
       {
         "q": "What is your development process?",
@@ -415,10 +410,6 @@
         "a": "I primarily create custom designs tailored to your brand. However, I can also work with premium templates for a more cost-effective option."
       }
     ],
-    "ctaTitle": "Ready to start your project?",
-    "ctaSubtext": "Let us work together to create something amazing",
-    "ctaButton": "Contact Me",
-    "scaleVision": "Let us Scale Your Vision Together",
     "homeCards": [
       {
         "title": "Enterprise Web Solutions",
@@ -444,62 +435,71 @@
         "title": "Strategic Digital Growth",
         "desc": "Driving measurable ROI through data-driven social media and SEO marketing strategies."
       }
-    ]
+    ],
+    "recommended": "おすすめ",
+    "oneTimePayment": "一回払い",
+    "alsoAvailable": "でも利用可能",
+    "faqTitle": "よくある質問",
+    "faqSubtitle": "サービスに関するよくある質問",
+    "ctaTitle": "プロジェクトを始めますか？",
+    "ctaSubtext": "一緒に素晴らしいものを作りましょう",
+    "ctaButton": "お問い合わせ",
+    "scaleVision": "ビジョンを拡大しましょう"
   },
   "blog": {
-    "title": "Technical Insights",
-    "subtitle": "Exploring the frontiers of technology and share industry best practices",
-    "readMore": "Read full insight",
-    "blogHero": "The Developer's Journal",
-    "blogSubtext": "Deep dives into architecture, clean code, and emerging technologies that define the modern web.",
-    "search": "Search",
-    "searchPlaceholder": "Search...",
-    "categories": "Categories",
-    "tags": "Tags",
-    "recentPosts": "Recent Posts"
+    "title": "テクニカルインサイト",
+    "subtitle": "テクノロジーのフロンティアを探求し、業界のベストプラクティスを共有",
+    "readMore": "インサイト全文を読む",
+    "blogHero": "デベロッパーのジャーナル",
+    "blogSubtext": "モダンWebを定義するアーキテクチャ、クリーンコード、新興技術への深い洞察。",
+    "search": "検索",
+    "searchPlaceholder": "検索...",
+    "categories": "カテゴリ",
+    "tags": "タグ",
+    "recentPosts": "最近の投稿"
   },
   "contact": {
-    "title": "Strategic Collaboration",
-    "subtitle": "Ready to discuss your next big milestone?",
-    "getInTouch": "Priority Support",
-    "contactDesc": "Available for full-time engineering roles, strategic freelance partnerships, and technical consultancy. Let's optimize your digital presence together.",
-    "email": "Email",
-    "phone": "Direct Mobile",
-    "location": "Location",
-    "name": "Full Name / Organization",
-    "subject": "Case Reference / Inquiry Type",
-    "message": "Project Strategy / Proposal Details",
-    "send": "Initialize Connection",
-    "sending": "Establishing Link...",
-    "success": "Connection established! I'll secure a response within 24 hours.",
-    "error": "Transmission failed. Let's try again.",
-    "contactHero": "Let's Connect for a Strategy Session",
-    "contactSubtext": "No project is too small for big thinking. Reach out for a consultation, job offer, or technical talk."
+    "title": "戦略的コラボレーション",
+    "subtitle": "次の大きなマイルストーンについて話し合いませんか？",
+    "getInTouch": "プライオリティサポート",
+    "contactDesc": "フルタイムエンジニアリングポジション、戦略的フリーランスパートナーシップ、技術コンサルティングに対応可能。一緒にデジタルプレゼンスを最適化しましょう。",
+    "email": "メール",
+    "phone": "直通電話",
+    "location": "所在地",
+    "name": "氏名 / 組織名",
+    "subject": "ケースリファレンス / お問い合わせ種別",
+    "message": "プロジェクト戦略 / 提案内容",
+    "send": "接続を開始",
+    "sending": "リンクを確立中...",
+    "success": "接続が確立されました！24時間以内にご返信いたします。",
+    "error": "送信に失敗しました。もう一度お試しください。",
+    "contactHero": "戦略セッションのためにつながりましょう",
+    "contactSubtext": "どんなプロジェクトも大きく考えるには小さすぎません。コンサルティング、求人、技術的な対話のためにご連絡ください。"
   },
   "footer": {
-    "copyright": "© {{year}} Aman Katiyar. All rights reserved.",
-    "madeWith": "Engineered with",
-    "passion": "precision & passion",
-    "ctaTitle": "Ready to build something exceptional?",
-    "ctaSubtext": "Let's discuss your project and create digital solutions that drive real business impact.",
-    "ctaButton": "Start a Conversation",
-    "brandText": "Engineering high-performance, scalable web ecosystems that transform ambitious ideas into production-grade digital realities.",
-    "available": "Available for opportunities",
-    "navigation": "Navigation",
-    "solutions": "Solutions",
-    "getInTouch": "Get in Touch",
-    "webDev": "Web Development",
-    "apiArch": "API Architecture",
-    "responsiveDesign": "Responsive Design",
-    "ecommerce": "E-commerce",
-    "uiux": "UI/UX Design",
-    "follow": "Professional Network"
+    "copyright": "© {{year}} Aman Katiyar. 全著作権所有。",
+    "madeWith": "構築された",
+    "passion": "精密さと情熱で",
+    "ctaTitle": "何か特別なものを作る準備はできていますか？",
+    "ctaSubtext": "プロジェクトについて話し合い、実際のビジネスインパクトを生み出すデジタルソリューションを作りましょう。",
+    "ctaButton": "会話を始める",
+    "brandText": "野心的なアイデアをプロダクショングレードのデジタル現実に変える、高性能でスケーラブルなWebエコシステムを構築。",
+    "available": "機会を受付中",
+    "navigation": "ナビゲーション",
+    "solutions": "ソリューション",
+    "getInTouch": "お問い合わせ",
+    "webDev": "Web開発",
+    "apiArch": "APIアーキテクチャ",
+    "responsiveDesign": "レスポンシブデザイン",
+    "ecommerce": "Eコマース",
+    "uiux": "UI/UXデザイン",
+    "follow": "プロフェッショナルネットワーク"
   },
   "theme": {
-    "switchToDark": "Dark Mode (Power User)",
-    "switchToLight": "Light Mode (Clarity)"
+    "switchToDark": "ダークモード",
+    "switchToLight": "ライトモード"
   },
   "language": {
-    "label": "English"
+    "label": "日本語"
   }
 }

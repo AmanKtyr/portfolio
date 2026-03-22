@@ -1,0 +1,505 @@
+{
+  "logo": {
+    "tagline": "Фулстек-Архитектор"
+  },
+  "header": {
+    "home": "Главная",
+    "about": "Экспертиза",
+    "skills": "Технологии",
+    "projects": "Портфолио",
+    "services": "Решения",
+    "blog": "Инсайты",
+    "contact": "Контакты",
+    "hireMe": "Связаться"
+  },
+  "hero": {
+    "greeting": "Мастерство инженерии сочетается с",
+    "profession": "Инновационными решениями",
+    "description": "Я создаю высокопроизводительные масштабируемые веб-экосистемы для рекрутеров, ищущих элитные таланты, и бизнесов, стремящихся к конкурентному преимуществу. Давайте превратим ваше видение в цифровую реальность.",
+    "hireMe": "Начать проект",
+    "viewProjects": "Изучить портфолио",
+    "scrollDown": "Узнать больше"
+  },
+  "about": {
+    "title": "Стратегическая экспертиза",
+    "subtitle": "Объединяя инновации и надёжность",
+    "name": "Профессиональное имя:",
+    "email": "Официальная почта:",
+    "location": "Глобальное присутствие:",
+    "freelance": "Доступность партнёрства:",
+    "available": "Открыт для новых вызовов",
+    "downloadCV": "Скачать резюме",
+    "aboutMeHeader": "Фулстек-инженер, специализирующийся на масштабируемых системах",
+    "aboutMeText": "Я фулстек-инженер, который рассматривает код как инструмент роста бизнеса. Независимо от того, являетесь ли вы HR в поиске технического лидера или бизнесменом, которому нужен надёжный MVP — я доставляю качество, превышающее стандарты индустрии.",
+    "stats": {
+      "experience": "Лет опыта",
+      "projects": "Завершённых проектов",
+      "clients": "Довольных клиентов",
+      "awards": "Полученных наград"
+    },
+    "skillItems": {
+      "webDev": "Веб-разработка",
+      "crmDev": "CRM-разработка",
+      "genAI": "Генеративный/Агентный ИИ",
+      "seo": "SEO-маркетинг"
+    },
+    "journey": {
+      "title": "Профессиональная эволюция",
+      "subtitle": "Образование и опыт в индустрии",
+      "currentRole": {
+        "date": "Окт. 2025 — Настоящее время",
+        "title": "Фулстек-инженер ПО",
+        "company": "Bhatt Square Pvt. Ltd.",
+        "desc": "Руководство бэкенд-архитектурой на Python/Django и создание высокопроизводительных фронтенд-систем на Nest.js. Разработка ПО для управления фитнес-центрами и сложных экосистем электронной коммерции."
+      },
+      "previousRole": {
+        "date": "2024 — Окт. 2025",
+        "title": "Фулстек веб-разработчик",
+        "company": "Sipher Web Pvt. Ltd.",
+        "desc": "Проектирование масштабируемых веб-приложений и премиальных RESTful API на Python/Django и React.js."
+      },
+      "apprenticeship": {
+        "date": "2022 (6 месяцев)",
+        "title": "Техническая стажировка",
+        "company": "Softpro India",
+        "desc": "Создание готовых к продакшену порталов и адаптивных UI/UX систем на PHP и современном CSS."
+      },
+      "training": {
+        "date": "2021 (Лето)",
+        "title": "Продвинутое стратегическое обучение",
+        "company": "Softpro India",
+        "desc": "Разработка безопасных финансовых архитектур и приложений Django корпоративного уровня."
+      },
+      "degree": {
+        "date": "2022 — 2025",
+        "title": "Бакалавр в области информатики",
+        "company": "AKTU (Группа Sagar)",
+        "desc": "Академическое превосходство в архитектуре ПО и компьютерных науках."
+      },
+      "diploma": {
+        "date": "2019 — 2022",
+        "title": "Диплом по информатике",
+        "company": "JN Polytechnic",
+        "desc": "Основы вычислительной техники, структур данных и алгоритмической логики."
+      },
+      "school": {
+        "date": "2019",
+        "title": "Среднее образование",
+        "company": "S.V.M. Inter College",
+        "desc": "Окончание средней школы с акцентом на логику и естественные науки."
+      }
+    }
+  },
+  "skills": {
+    "title": "Технический арсенал",
+    "subtitle": "Передовые технологии, которыми я владею для достижения успеха",
+    "frontend": "Современная UI-инженерия",
+    "backend": "Масштабируемая инфраструктура",
+    "design": "Человекоцентричный UX/UI",
+    "other": "Продакшен-экосистема",
+    "skillsDescription": "Мой технологический стек тщательно подобран для скорости, надёжности и безопасности. Я не просто использую инструменты — я архитектурирую решения, обеспечивающие превосходное конкурентное преимущество.",
+    "techStackTitle": "Технологический стек",
+    "techStackSubtitle": "Технологии, с которыми я работаю",
+    "learningPathTitle": "Мой путь обучения",
+    "learningPathSubtitle": "Как я развивал свои навыки со временем",
+    "skillCards": [
+      {
+        "title": "Python",
+        "desc": "Developing scalable and secure web applications and scripts.",
+        "list": [
+          "Django",
+          "Flask",
+          "REST API Development",
+          "Scripting"
+        ]
+      },
+      {
+        "title": "Java",
+        "desc": "Building robust and high-performance applications.",
+        "list": [
+          "Core Java",
+          "Spring (Basic)",
+          "Maven",
+          "OOP"
+        ]
+      },
+      {
+        "title": "Django",
+        "desc": "Building powerful and secure web applications with Python and Django.",
+        "list": [
+          "Django REST Framework",
+          "Django ORM",
+          "Templates",
+          "Admin Interface"
+        ]
+      },
+      {
+        "title": "JavaScript",
+        "desc": "Building interactive and dynamic web applications with modern JavaScript.",
+        "list": [
+          "ES6+ Features",
+          "DOM Manipulation",
+          "Asynchronous JS",
+          "API Integration"
+        ]
+      },
+      {
+        "title": "React.js",
+        "desc": "Developing modern, efficient, and maintainable front-end applications with React.",
+        "list": [
+          "React Hooks",
+          "Context API",
+          "Redux",
+          "React Router"
+        ]
+      },
+      {
+        "title": "Databases",
+        "desc": "Designing and implementing database solutions for web applications.",
+        "list": [
+          "PostgreSQL",
+          "MySQL",
+          "SQLite",
+          "Data Modeling"
+        ]
+      },
+      {
+        "title": "Version Control",
+        "desc": "Managing code versions and collaborating with other developers using Git.",
+        "list": [
+          "Git",
+          "GitHub",
+          "Bitbucket",
+          "Branching Strategies"
+        ]
+      },
+      {
+        "title": "Node.js",
+        "desc": "Building scalable and efficient backend services.",
+        "list": [
+          "Express.js",
+          "REST APIs",
+          "npm",
+          "Asynchronous Programming"
+        ]
+      }
+    ],
+    "learningPath": [
+      {
+        "title": "Architectural Foundations",
+        "desc": "Built a rock-solid foundation in semantic HTML and advanced CSS architectures for high-end web systems."
+      },
+      {
+        "title": "Advanced Engineering",
+        "desc": "Mastery over JavaScript engine, asynchronous patterns, and complex DOM transformations."
+      },
+      {
+        "title": "Frontend Ecosystems",
+        "desc": "Engineering complex React architectures with optimized state management and reusable component systems."
+      },
+      {
+        "title": "API & Middleware",
+        "desc": "Designing high-traffic RESTful interfaces and robust service layers for seamless data flow."
+      },
+      {
+        "title": "Backend Mastery",
+        "desc": "Specializing in Node.js and Django for building secure, scalable, and high-performance server-side logic."
+      },
+      {
+        "title": "Full-Stack Orchestration",
+        "desc": "Successfully managing complete lifecycles of production-grade applications from design to deployment."
+      },
+      {
+        "title": "AI & Data Intelligence",
+        "desc": "Integrating Generative AI and Machine Learning models to build intelligent, self-evolving digital products."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Портфолио с импактом",
+    "subtitle": "Превращение сложных задач в элегантные цифровые решения",
+    "all": "Все экосистемы",
+    "web": "Корпоративный веб",
+    "app": "Масштабируемые мобильные приложения",
+    "design": "Визуальная идентичность и UX",
+    "viewDetails": "Анализ и стратегия",
+    "viewLive": "Демо",
+    "searchPlaceholder": "Поиск кейсов...",
+    "filterTitle": "Стратегические портфолио",
+    "projectsDescription": "Курированная коллекция проектов продакшен-качества, демонстрирующих архитектурное превосходство, бесшовный пользовательский опыт и реальное влияние.",
+    "noResults": "Проекты не найдены",
+    "noResultsDesc": "Попробуйте изменить критерии поиска."
+  },
+  "services": {
+    "title": "Элитные цифровые решения",
+    "subtitle": "Ускорение вашего бизнес-пути с технической экспертизой",
+    "learnMore": "Масштабируйте бизнес",
+    "servicesHero": "Высокоэффективные IT-решения для современной эпохи",
+    "servicesSubtext": "Комплексное техническое лидерство и реализация для стартапов, предприятий и амбициозных рекрутеров.",
+    "pricingTitle": "Стратегические инвестиционные планы",
+    "pricingSubtitle": "Профессиональные инвестиционные варианты для высокопроизводительных цифровых продуктов",
+    "startupTitle": "Запуск стартапа",
+    "enterpriseTitle": "Корпоративный рост",
+    "premiumTitle": "Глобальное доминирование",
+    "getStarted": "Инициализация проекта",
+    "cards": [
+      {
+        "title": "Web Development",
+        "desc": "Custom website development using modern technologies like React, Vue, and Angular to create responsive and user-friendly web applications.",
+        "features": [
+          "Custom website design and development",
+          "Responsive design for all devices",
+          "Interactive UI/UX design",
+          "Cross-browser compatibility",
+          "Performance optimization"
+        ]
+      },
+      {
+        "title": "Mobile App Development",
+        "desc": "Creating cross-platform mobile applications using React Native and Flutter that work seamlessly on both iOS and Android devices.",
+        "features": [
+          "Cross-platform app development",
+          "Native app development",
+          "UI/UX design for mobile",
+          "App testing and deployment",
+          "App maintenance and updates"
+        ]
+      },
+      {
+        "title": "API Development",
+        "desc": "Building robust and scalable APIs using Node.js, Express, and other backend technologies to power your web and mobile applications.",
+        "features": [
+          "RESTful API development",
+          "GraphQL API development",
+          "API documentation",
+          "API testing and optimization",
+          "Third-party API integration"
+        ]
+      },
+      {
+        "title": "E-commerce Solutions",
+        "desc": "Developing online stores with secure payment gateways, product management systems, and user-friendly interfaces to boost your online sales.",
+        "features": [
+          "Custom e-commerce website development",
+          "Shopping cart and checkout functionality",
+          "Payment gateway integration",
+          "Inventory management system",
+          "Order tracking and management"
+        ]
+      },
+      {
+        "title": "UI/UX Design",
+        "desc": "Creating intuitive and visually appealing user interfaces that enhance user experience and engagement with your digital products.",
+        "features": [
+          "User interface design",
+          "User experience design",
+          "Wireframing and prototyping",
+          "Design system creation",
+          "Usability testing"
+        ]
+      },
+      {
+        "title": "SEO Optimization",
+        "desc": "Implementing best practices for search engine optimization to improve your website visibility and ranking in search results.",
+        "features": [
+          "On-page SEO optimization",
+          "Technical SEO audit",
+          "Content optimization",
+          "Performance optimization",
+          "SEO reporting and analytics"
+        ]
+      },
+      {
+        "title": "Database Design",
+        "desc": "Designing and implementing efficient database structures for your applications using SQL and NoSQL databases.",
+        "features": [
+          "Database architecture design",
+          "SQL database implementation",
+          "NoSQL database implementation",
+          "Data migration and integration",
+          "Database performance optimization"
+        ]
+      },
+      {
+        "title": "Web Maintenance",
+        "desc": "Providing ongoing maintenance and support for your websites and web applications to ensure they remain secure and up-to-date.",
+        "features": [
+          "Regular website updates",
+          "Security monitoring and updates",
+          "Performance optimization",
+          "Content updates",
+          "Technical support"
+        ]
+      },
+      {
+        "title": "Consulting Services",
+        "desc": "Offering expert advice and guidance on web development, technology stack selection, and digital strategy.",
+        "features": [
+          "Technology stack consultation",
+          "Digital transformation strategy",
+          "Project planning and management",
+          "Code review and optimization",
+          "Team training and workshops"
+        ]
+      }
+    ],
+    "pricing": [
+      {
+        "title": "Startup Launch",
+        "desc": "Perfect for small businesses and rapid MVPs",
+        "features": [
+          "Strategic UI/UX Design",
+          "High-Performance Core (5 Pages)",
+          "Fully Responsive Ecosystem",
+          "Advanced Lead Generation Form",
+          "Foundational SEO Optimization",
+          "1 Month Expert Support"
+        ]
+      },
+      {
+        "title": "Enterprise Growth",
+        "desc": "Ideal for scaling businesses and dynamic platforms",
+        "features": [
+          "Everything in Startup Launch",
+          "Extended Architecture (10 Pages)",
+          "Custom Content Management",
+          "Integrated Strategic Blog",
+          "Social Ecosystem Sync",
+          "Full E-commerce Suite (20 SKUs)",
+          "3 Months Priority Support"
+        ]
+      },
+      {
+        "title": "Global Dominance",
+        "desc": "For established enterprises requiring complex architectural excellence",
+        "features": [
+          "Everything in Enterprise Growth",
+          "Unified Digital Ecosystems",
+          "Complex API & Data Orchestration",
+          "Custom Strategic Logic Development",
+          "Advanced Professional SEO",
+          "High-Performance Optimization",
+          "Military Grade Security Sync",
+          "6 Months Elite Support"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is your development process?",
+        "a": "My development process typically includes: requirement gathering, planning, design, development, testing, deployment, and maintenance. I believe in an iterative approach with regular client feedback."
+      },
+      {
+        "q": "How long does it take to complete a website?",
+        "a": "The timeline varies depending on complexity. A simple website takes 2-4 weeks, while complex projects could take 2-3 months or more."
+      },
+      {
+        "q": "Do you provide website maintenance services?",
+        "a": "Yes, I offer maintenance services including regular updates, security monitoring, performance optimization, and technical support."
+      },
+      {
+        "q": "What technologies do you work with?",
+        "a": "I work with HTML, CSS, JavaScript, React, Vue.js, Node.js, Express, MongoDB, MySQL, Python, Django and more."
+      },
+      {
+        "q": "How do we get started with a project?",
+        "a": "Simply contact me through the contact form or email. We will schedule an initial consultation to discuss your requirements, goals, timeline, and budget."
+      },
+      {
+        "q": "Do you offer custom designs or use templates?",
+        "a": "I primarily create custom designs tailored to your brand. However, I can also work with premium templates for a more cost-effective option."
+      }
+    ],
+    "homeCards": [
+      {
+        "title": "Enterprise Web Solutions",
+        "desc": "Transforming brands with high-performance, SEO-optimized web ecosystems built for scale and reliability using modern stacks like React, Node.js, and Python."
+      },
+      {
+        "title": "Scalable App Architecture",
+        "desc": "Developing high-impact iOS and Android applications that provide seamless user experiences while maintaining code efficiency and cross-platform performance."
+      },
+      {
+        "title": "Photoshop",
+        "desc": "Enhance your visuals with our expert Photoshop services. We specialize in transforming ordinary images into extraordinary works of art."
+      },
+      {
+        "title": "SEO Marketing",
+        "desc": "Boost online visibility and audience reach with tailored SEO strategies. Optimize keywords, content, and links."
+      },
+      {
+        "title": "Responsive Design",
+        "desc": "To provide a seamless experience for your audience, we make your website responsive on all devices."
+      },
+      {
+        "title": "Strategic Digital Growth",
+        "desc": "Driving measurable ROI through data-driven social media and SEO marketing strategies."
+      }
+    ],
+    "recommended": "Рекомендовано",
+    "oneTimePayment": "Единовременный платёж",
+    "alsoAvailable": "Также доступно в",
+    "faqTitle": "Часто задаваемые вопросы",
+    "faqSubtitle": "Ответы на распространённые вопросы",
+    "ctaTitle": "Готовы начать проект?",
+    "ctaSubtext": "Давайте создадим что-то удивительное",
+    "ctaButton": "Свяжитесь со мной",
+    "scaleVision": "Масштабируем ваше видение"
+  },
+  "blog": {
+    "title": "Технические инсайты",
+    "subtitle": "Изучение границ технологий и лучших практик индустрии",
+    "readMore": "Читать полный инсайт",
+    "blogHero": "Журнал разработчика",
+    "blogSubtext": "Глубокие погружения в архитектуру, чистый код и новые технологии, определяющие современный веб.",
+    "search": "Поиск",
+    "searchPlaceholder": "Искать...",
+    "categories": "Категории",
+    "tags": "Теги",
+    "recentPosts": "Последние записи"
+  },
+  "contact": {
+    "title": "Стратегическое сотрудничество",
+    "subtitle": "Готовы обсудить ваш следующий большой проект?",
+    "getInTouch": "Приоритетная поддержка",
+    "contactDesc": "Доступен для штатных инженерных позиций, стратегических фриланс-партнёрств и технического консалтинга. Давайте вместе оптимизируем ваше цифровое присутствие.",
+    "email": "Email",
+    "phone": "Прямой мобильный",
+    "location": "Местоположение",
+    "name": "Полное имя / Организация",
+    "subject": "Тема / Тип запроса",
+    "message": "Стратегия проекта / Детали предложения",
+    "send": "Инициализация связи",
+    "sending": "Установка соединения...",
+    "success": "Соединение установлено! Ответ в течение 24 часов.",
+    "error": "Передача не удалась. Попробуем снова.",
+    "contactHero": "Давайте свяжемся для стратегической сессии",
+    "contactSubtext": "Ни один проект не слишком мал для большого мышления. Обратитесь для консультации, предложения работы или технической беседы."
+  },
+  "footer": {
+    "copyright": "© {{year}} Аман Катияр. Все права защищены.",
+    "madeWith": "Создано с",
+    "passion": "точностью и страстью",
+    "ctaTitle": "Готовы создать что-то исключительное?",
+    "ctaSubtext": "Давайте обсудим ваш проект и создадим цифровые решения, которые окажут реальное бизнес-влияние.",
+    "ctaButton": "Начать разговор",
+    "brandText": "Проектирование высокопроизводительных масштабируемых веб-экосистем, превращающих амбициозные идеи в продакшен-реалии.",
+    "available": "Открыт для возможностей",
+    "navigation": "Навигация",
+    "solutions": "Решения",
+    "getInTouch": "Связаться",
+    "webDev": "Веб-разработка",
+    "apiArch": "Архитектура API",
+    "responsiveDesign": "Адаптивный дизайн",
+    "ecommerce": "Электронная коммерция",
+    "uiux": "Дизайн UI/UX",
+    "follow": "Профессиональная сеть"
+  },
+  "theme": {
+    "switchToDark": "Тёмная тема",
+    "switchToLight": "Светлая тема"
+  },
+  "language": {
+    "label": "Русский"
+  }
+}

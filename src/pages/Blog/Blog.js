@@ -256,9 +256,9 @@ const BlogPage = () => {
             >
               <BlogSidebar>
                 <SidebarWidget>
-                  <SidebarTitle>Search</SidebarTitle>
+                  <SidebarTitle>{t('blog.search')}</SidebarTitle>
                   <SearchForm>
-                    <SearchInput type="text" placeholder="Search..." />
+                    <SearchInput type="text" placeholder={t('blog.searchPlaceholder')} />
                     <SearchButton type="submit">
                       <FaSearch />
                     </SearchButton>
@@ -266,7 +266,7 @@ const BlogPage = () => {
                 </SidebarWidget>
 
                 <SidebarWidget>
-                  <SidebarTitle>Categories</SidebarTitle>
+                  <SidebarTitle>{t('blog.categories')}</SidebarTitle>
                   <CategoryList>
                     {categories.map((category, index) => (
                       <CategoryItem key={index}>
@@ -280,7 +280,7 @@ const BlogPage = () => {
                 </SidebarWidget>
 
                 <SidebarWidget>
-                  <SidebarTitle>Tags</SidebarTitle>
+                  <SidebarTitle>{t('blog.tags')}</SidebarTitle>
                   <TagCloud>
                     {uniqueTags.map((tag, index) => (
                       <TagItem key={index}>
@@ -293,7 +293,7 @@ const BlogPage = () => {
                 </SidebarWidget>
 
                 <SidebarWidget>
-                  <SidebarTitle>Recent Posts</SidebarTitle>
+                  <SidebarTitle>{t('blog.recentPosts')}</SidebarTitle>
                   <div className="recent-posts">
                     {blogData.slice(0, 3).map((blog, index) => (
                       <div className="recent-post" key={index}>

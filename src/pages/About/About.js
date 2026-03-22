@@ -276,7 +276,7 @@ const AboutPage = () => {
             >
               <StatItem>
                 <h3>3+</h3>
-                <p>Years Experience</p>
+                <p>{t('about.stats.experience')}</p>
               </StatItem>
             </motion.div>
 
@@ -288,7 +288,7 @@ const AboutPage = () => {
             >
               <StatItem>
                 <h3>25+</h3>
-                <p>Projects Completed</p>
+                <p>{t('about.stats.projects')}</p>
               </StatItem>
             </motion.div>
 
@@ -300,7 +300,7 @@ const AboutPage = () => {
             >
               <StatItem>
                 <h3>30+</h3>
-                <p>Happy Clients</p>
+                <p>{t('about.stats.clients')}</p>
               </StatItem>
             </motion.div>
 
@@ -312,7 +312,7 @@ const AboutPage = () => {
             >
               <StatItem>
                 <h3>10+</h3>
-                <p>Awards Received</p>
+                <p>{t('about.stats.awards')}</p>
               </StatItem>
             </motion.div>
           </AboutStats>
