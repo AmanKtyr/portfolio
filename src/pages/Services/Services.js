@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCode, FaMobileAlt, FaServer, FaShoppingCart, FaPalette, FaSearch, FaDatabase, FaLaptopCode, FaTools } from 'react-icons/fa';
@@ -129,52 +130,52 @@ const servicesData = [
 const pricingData = [
   {
     id: 1,
-    title: 'Basic',
+    title: 'Startup Launch',
     priceUSD: '$499',
     priceINR: '₹39,999',
-    description: 'Perfect for small businesses and startups',
+    description: 'Perfect for small businesses and rapid MVPs',
     features: [
-      'Custom website design',
-      'Up to 5 pages',
-      'Mobile responsive design',
-      'Contact form',
-      'Basic SEO setup',
-      '1 month of support'
+      'Strategic UI/UX Design',
+      'High-Performance Core (5 Pages)',
+      'Fully Responsive Ecosystem',
+      'Advanced Lead Generation Form',
+      'Foundational SEO Optimization',
+      '1 Month Expert Support'
     ],
     recommended: false
   },
   {
     id: 2,
-    title: 'Standard',
+    title: 'Enterprise Growth',
     priceUSD: '$999',
     priceINR: '₹79,999',
-    description: 'Ideal for growing businesses',
+    description: 'Ideal for scaling businesses and dynamic platforms',
     features: [
-      'Everything in Basic',
-      'Up to 10 pages',
-      'Content management system',
-      'Blog setup',
-      'Social media integration',
-      'E-commerce functionality (up to 20 products)',
-      '3 months of support'
+      'Everything in Startup Launch',
+      'Extended Architecture (10 Pages)',
+      'Custom Content Management',
+      'Integrated Strategic Blog',
+      'Social Ecosystem Sync',
+      'Full E-commerce Suite (20 SKUs)',
+      '3 Months Priority Support'
     ],
     recommended: true
   },
   {
     id: 3,
-    title: 'Premium',
+    title: 'Global Dominance',
     priceUSD: '$1999',
     priceINR: '₹159,999',
-    description: 'For established businesses with complex needs',
+    description: 'For established enterprises requiring complex architectural excellence',
     features: [
-      'Everything in Standard',
-      'Unlimited pages',
-      'Advanced e-commerce functionality',
-      'Custom functionality development',
-      'Advanced SEO optimization',
-      'Performance optimization',
-      'Security enhancements',
-      '6 months of support'
+      'Everything in Enterprise Growth',
+      'Unified Digital Ecosystems',
+      'Complex API & Data Orchestration',
+      'Custom Strategic Logic Development',
+      'Advanced Professional SEO',
+      'High-Performance Optmization',
+      'Military Grade Security Sync',
+      '6 Months Elite Support'
     ],
     recommended: false
   }
@@ -214,6 +215,7 @@ const faqData = [
 ];
 
 const Services = () => {
+  const { t } = useTranslation();
   const [activeAccordion, setActiveAccordion] = React.useState(null);
   const [currency, setCurrency] = React.useState('USD'); // 'USD' or 'INR'
 
@@ -274,7 +276,7 @@ const Services = () => {
                   stiffness: 100
                 }}
               >
-                My Services
+                {t('services.title')}
               </motion.h1>
 
               <motion.p
@@ -287,7 +289,7 @@ const Services = () => {
                   stiffness: 50
                 }}
               >
-                Professional web development services to help your business grow online
+                {t('services.servicesSubtext')}
               </motion.p>
 
               {/* Animated code particles */}
@@ -349,8 +351,8 @@ const Services = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2>What I Offer</h2>
-            <p>Comprehensive web development services tailored to your needs</p>
+            <h2>{t('services.title')}</h2>
+            <p>{t('services.subtitle')}</p>
           </motion.div>
 
           <ServicesGrid>
@@ -390,8 +392,8 @@ const Services = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2>Pricing Plans</h2>
-              <p>Affordable pricing for quality web development services</p>
+              <h2>{t('services.pricingTitle')}</h2>
+              <p>{t('services.pricingSubtitle')}</p>
             </motion.div>
 
             <motion.div
@@ -401,13 +403,13 @@ const Services = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <button 
+              <button
                 className={`currency-btn ${currency === 'USD' ? 'active' : ''}`}
                 onClick={() => setCurrency('USD')}
               >
                 USD
               </button>
-              <button 
+              <button
                 className={`currency-btn ${currency === 'INR' ? 'active' : ''}`}
                 onClick={() => setCurrency('INR')}
               >
@@ -445,7 +447,7 @@ const Services = () => {
                       ))}
                     </PricingFeatures>
                     <PricingButton to="/contact" recommended={plan.recommended}>
-                      Get Started
+                      {t('services.getStarted') || "Get Started"}
                     </PricingButton>
                   </PricingCard>
                 </motion.div>

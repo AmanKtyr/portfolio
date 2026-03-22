@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaUser, FaArrowRight, FaSearch, FaTags, FaFolder } from 'react-icons/fa';
@@ -81,6 +82,7 @@ const allTags = blogData.flatMap(blog => blog.tags);
 const uniqueTags = [...new Set(allTags)];
 
 const BlogPage = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Header />
@@ -130,7 +132,7 @@ const BlogPage = () => {
                   stiffness: 100
                 }}
               >
-                Blog
+                {t('blog.blogHero')}
               </motion.h1>
 
               <motion.p
@@ -143,7 +145,7 @@ const BlogPage = () => {
                   stiffness: 50
                 }}
               >
-                Insights, tutorials, and thoughts on web development
+                {t('blog.blogSubtext')}
               </motion.p>
 
               {/* Animated code particles */}
@@ -237,7 +239,7 @@ const BlogPage = () => {
                         <BlogExcerpt>{blog.excerpt}</BlogExcerpt>
 
                         <BlogLink to={`/blog/${blog.slug}`}>
-                          Read More <FaArrowRight />
+                          {t('blog.readMore')} <FaArrowRight />
                         </BlogLink>
                       </BlogCardContent>
                     </BlogCard>

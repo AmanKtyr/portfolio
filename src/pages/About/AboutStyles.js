@@ -322,9 +322,12 @@ export const AboutText = styled.div`
   }
 
   p {
-    margin-bottom: 1.5rem;
-    color: var(--gray-color);
-    line-height: 1.8;
+    color: ${({ theme }) => theme.isDarkMode ? '#e2e8f0' : '#4b5563'};
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
   }
 `;
 
@@ -639,16 +642,15 @@ export const TimelineContent = styled.div`
   h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    color: ${({ theme }) => theme.isDarkMode ? '#ffffff' : 'var(--primary-color)'};
+    font-weight: 700;
   }
-
   p {
-    color: var(--gray-color);
+    color: ${({ theme }) => theme.isDarkMode ? '#cbd5e1' : '#475569'};
     margin-bottom: 0.5rem;
-
-    &:last-child {
-      margin-bottom: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
     }
   }
 `;
-
 

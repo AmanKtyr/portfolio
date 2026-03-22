@@ -1,85 +1,150 @@
 {
   "logo": {
-    "tagline": "Tech Expert"
+    "tagline": "Full-Stack Architect"
   },
   "header": {
     "home": "Home",
-    "about": "About",
-    "skills": "Skills",
-    "projects": "Projects",
-    "services": "Services",
-    "blog": "Blog",
+    "about": "Expertise",
+    "skills": "Tech Stack",
+    "projects": "Portfolio",
+    "services": "Solutions",
+    "blog": "Insights",
     "contact": "Contact",
-    "hireMe": "Hire Me"
+    "hireMe": "Get in Touch"
   },
   "hero": {
-    "greeting": "Hello, I'm",
-    "profession": "Web Developer",
-    "description": "I create modern and responsive websites with the latest technologies to help businesses grow online.",
-    "hireMe": "Hire Me",
-    "viewProjects": "View Projects",
-    "scrollDown": "Scroll Down"
+    "greeting": "Expert Craftsmanship Meets",
+    "profession": "Innovative Solutions",
+    "description": "I build high-performance, scalable web ecosystems for recruiters seeking elite talent and businesses looking for a competitive edge. Let's turn your vision into a digital reality.",
+    "hireMe": "Start a Project",
+    "viewProjects": "Explore Portfolio",
+    "scrollDown": "Dive In"
   },
   "about": {
-    "title": "About Me",
-    "subtitle": "Get to know me better",
-    "name": "Name:",
-    "email": "Email:",
-    "location": "Location:",
-    "freelance": "Freelance:",
-    "available": "Available",
-    "downloadCV": "Download CV"
+    "title": "Strategic Expertise",
+    "subtitle": "Bridging Innovation with Reliability",
+    "name": "Professional Name:",
+    "email": "Official Email:",
+    "location": "Global Presence:",
+    "freelance": "Strategic Partner Availability:",
+    "available": "Open for New Challenges",
+    "downloadCV": "Download my Credentials",
+    "aboutMeHeader": "Full-Stack Engineer specialized in Scalable Systems",
+    "aboutMeText": "I'm a Full-Stack Engineer who views code as a tool for business growth. Whether you're an HR looking for a technical lead or a business owner needing a robust MVP, I deliver quality that exceeds industry standards. I specialize in crafting high-impact digital experiences that drive measurable results.",
+    "journey": {
+      "title": "Professional Evolution",
+      "subtitle": "Education & Industry Experience",
+      "currentRole": {
+        "date": "Oct 2025 - Present",
+        "title": "Full-Stack Software Engineer",
+        "company": "Bhatt Square Pvt. Ltd.",
+        "desc": "Leading backend architecture with Python/Django and building high-performance frontend systems using Nest.js. Developing strategic Gym Management Software and complex E-commerce ecosystems."
+      },
+      "previousRole": {
+        "date": "2024 - Oct 2025",
+        "title": "Full-Stack Web Developer",
+        "company": "Sipher Web Pvt. Ltd.",
+        "desc": "Engineered scalable web applications and high-end RESTful APIs with Python/Django and React.js."
+      },
+      "apprenticeship": {
+        "date": "2022 (6 Months)",
+        "title": "Technical Apprenticeship",
+        "company": "Softpro India",
+        "desc": "Architected production-ready portals and responsive UI/UX systems using PHP and modern CSS."
+      },
+      "training": {
+        "date": "2021 (Summer)",
+        "title": "Advanced Strategic Training",
+        "company": "Softpro India",
+        "desc": "Developed secure financial architectures and enterprise-level Django applications."
+      },
+      "degree": {
+        "date": "2022 - 2025",
+        "title": "B.Tech in CSE",
+        "company": "AKTU (Sagar Group)",
+        "desc": "Academic excellence in Software Architecture and Computer Science Engineering."
+      },
+      "diploma": {
+        "date": "2019 - 2022",
+        "title": "Diploma in CS",
+        "company": "JN Polytechnic",
+        "desc": "Foundation in Computing, Data Structures, and Algorithmic Logic."
+      },
+      "school": {
+        "date": "2019",
+        "title": "Secondary Education",
+        "company": "S.V.M. Inter College",
+        "desc": "Completed Higher Secondary with a focus on logic and science."
+      }
+    }
   },
   "skills": {
-    "title": "My Skills",
-    "subtitle": "What I can do",
-    "frontend": "Frontend Development",
-    "backend": "Backend Development",
-    "design": "UI/UX Design",
-    "other": "Other Skills"
+    "title": "Technical Arsenal",
+    "subtitle": "Cutting-edge technologies I master to deliver success",
+    "frontend": "Modern UI Engineering",
+    "backend": "Scalable Infrastructure",
+    "design": "Human-Centric UX/UI",
+    "other": "Production Ecosystem",
+    "skillsDescription": "My tech stack is handpicked for speed, reliability, and security. I don't just use tools; I architect solutions that provide a superior competitive advantage."
   },
   "projects": {
-    "title": "My Projects",
-    "subtitle": "Recent work",
-    "all": "All",
-    "web": "Web",
-    "app": "App",
-    "design": "Design",
-    "viewDetails": "View Details",
-    "viewLive": "View Live"
+    "title": "Impact-Driven Portfolio",
+    "subtitle": "Transforming complex challenges into elegant digital solutions",
+    "all": "All Ecosystems",
+    "web": "Enterprise Web",
+    "app": "Scalable Mobile Apps",
+    "design": "Visual Identity & UX",
+    "viewDetails": "Insight & Strategy",
+    "viewLive": "Launch Demo",
+    "searchPlaceholder": "Search Case Studies...",
+    "filterTitle": "Strategic Portfolios",
+    "projectsDescription": "A curated collection of production-grade projects demonstrating architectural excellence, seamless user experience, and real-world impact."
   },
   "services": {
-    "title": "My Services",
-    "subtitle": "What I offer",
-    "learnMore": "Learn More"
+    "title": "Elite Digital Solutions",
+    "subtitle": "Accelerating your business journey with technical excellence",
+    "learnMore": "Scale your Business",
+    "servicesHero": "High-Impact IT Solutions for the Modern Era",
+    "servicesSubtext": "Providing end-to-end technical leadership and execution for startups, enterprises, and ambitious recruiters.",
+    "pricingTitle": "Strategic Investment Plans",
+    "pricingSubtitle": "Professional investment options for high-performance digital products",
+    "startupTitle": "Startup Launch",
+    "enterpriseTitle": "Enterprise Growth",
+    "premiumTitle": "Global Dominance",
+    "getStarted": "Initialize Project"
   },
   "blog": {
-    "title": "My Blog",
-    "subtitle": "Latest articles",
-    "readMore": "Read More"
+    "title": "Technical Insights",
+    "subtitle": "Exploring the frontiers of technology and share industry best practices",
+    "readMore": "Read full insight",
+    "blogHero": "The Developer's Journal",
+    "blogSubtext": "Deep dives into architecture, clean code, and emerging technologies that define the modern web."
   },
   "contact": {
-    "title": "Contact Me",
-    "subtitle": "Get in touch",
-    "getInTouch": "Get In Touch",
-    "contactDesc": "Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible.",
+    "title": "Strategic Collaboration",
+    "subtitle": "Ready to discuss your next big milestone?",
+    "getInTouch": "Priority Support",
+    "contactDesc": "Available for full-time engineering roles, strategic freelance partnerships, and technical consultancy. Let's optimize your digital presence together.",
     "email": "Email",
-    "phone": "Phone",
+    "phone": "Direct Mobile",
     "location": "Location",
-    "name": "Your Name",
-    "subject": "Subject",
-    "message": "Your Message",
-    "send": "Send Message",
-    "sending": "Sending...",
-    "success": "Your message has been sent successfully!",
-    "error": "Something went wrong. Please try again."
+    "name": "Full Name / Organization",
+    "subject": "Case Reference / Inquiry Type",
+    "message": "Project Strategy / Proposal Details",
+    "send": "Initialize Connection",
+    "sending": "Establishing Link...",
+    "success": "Connection established! I'll secure a response within 24 hours.",
+    "error": "Transmission failed. Let's try again.",
+    "contactHero": "Let's Connect for a Strategy Session",
+    "contactSubtext": "No project is too small for big thinking. Reach out for a consultation, job offer, or technical talk."
   },
   "footer": {
-    "copyright": "© 2024 Aman Katiyar. All rights reserved.",
-    "designed": "Designed & Developed by Aman Katiyar"
+    "copyright": "© 2024-2025 Aman Katiyar. Engineered for Excellence.",
+    "designed": "A premium production by Aman Katiyar",
+    "follow": "Professional Network"
   },
   "theme": {
-    "switchToDark": "Switch to Dark Mode",
-    "switchToLight": "Switch to Light Mode"
+    "switchToDark": "Dark Mode (Power User)",
+    "switchToLight": "Light Mode (Clarity)"
   }
 }

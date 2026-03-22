@@ -9,14 +9,14 @@ const servicesData = [
   {
     id: 1,
     icon: <FaCode />,
-    title: 'Web Development',
-    description: 'We create a unique and appealing website in line with your brand and vision. We seamlessly blend creativity in design with excellence in functionality.',
+    title: 'Enterprise Web Solutions',
+    description: 'Transforming brands with high-performance, SEO-optimized web ecosystems built for scale and reliability using modern stacks like React, Node.js, and Python.',
   },
   {
     id: 2,
     icon: <FaMobileAlt />,
-    title: 'App Development',
-    description: 'Cross-platform Development: We leverage leading frameworks to develop apps that work seamlessly on both iOS and Android devices, reducing time and cost.',
+    title: 'Scalable App Architecture',
+    description: 'Developing high-impact iOS and Android applications that provide seamless user experiences while maintaining code efficiency and cross-platform performance.',
   },
   {
     id: 3,
@@ -39,8 +39,8 @@ const servicesData = [
   {
     id: 6,
     icon: <FaPalette />,
-    title: 'Social Media Marketing',
-    description: 'Enhance brand presence with our Social Media Marketing. Tailored strategies, engaging content, platform optimization, ad management, and performance insights for success.',
+    title: 'Strategic Digital Growth',
+    description: 'Driving measurable ROI through data-driven social media and SEO marketing strategies. I help businesses gain market visibility and convert clicks into long-term clients.',
   },
 ];
 
@@ -93,7 +93,7 @@ const Services = () => {
           style={{ marginTop: '3rem' }}
         >
           <Link to="/contact" className="btn-primary" data-cursor-text="Contact" data-cursor-variant="button">
-            Hire Me For Your Project
+            Let's Scale Your Vision Together
           </Link>
         </motion.div>
       </div>

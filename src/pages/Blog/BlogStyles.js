@@ -199,8 +199,8 @@ export const BlogCard = styled.div`
   &:hover {
     transform: translateY(-5px);
     box-shadow: ${({ theme }) => theme.isDarkMode
-      ? '0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(128, 0, 0, 0.1)'
-      : '0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(226, 232, 240, 0.8)'};
+    ? '0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(128, 0, 0, 0.1)'
+    : '0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(226, 232, 240, 0.8)'};
   }
 `;
 

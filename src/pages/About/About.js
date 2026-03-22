@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { FaCode, FaLaptopCode, FaServer, FaDownload, FaPhotoVideo, FaUserGraduate, FaBriefcase, FaAward } from 'react-icons/fa';
 import Header from '../../components/Header/Header';
@@ -8,6 +9,7 @@ import aboutImg from '../../assets/aman-about.jpeg';
 import resumePdf from '../../assets/Aman_Katiyar_Resume.pdf';
 
 const AboutPage = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Header />
@@ -57,7 +59,7 @@ const AboutPage = () => {
                   stiffness: 100
                 }}
               >
-                About Me
+                {t('about.title')}
               </motion.h1>
 
               <motion.p
@@ -70,7 +72,7 @@ const AboutPage = () => {
                   stiffness: 50
                 }}
               >
-                Get to know me better
+                {t('about.subtitle')}
               </motion.p>
 
               {/* Animated code particles */}
@@ -144,7 +146,7 @@ const AboutPage = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                I'm a Web Developer from Lucknow, UP
+                {t('about.aboutMeHeader')}
               </motion.h3>
 
               <motion.p
@@ -153,16 +155,7 @@ const AboutPage = () => {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                I create a unique and appealing website in line with your brand and vision. I seamlessly blend creativity in design with excellence in functionality to deliver exceptional user experiences.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                My approach is client-focused, ensuring that every project meets the unique needs and goals of the businesses I work with. I'm dedicated to delivering high-quality solutions that help my clients achieve their online objectives.
+                {t('about.aboutMeText')}
               </motion.p>
 
               <AboutInfo>
@@ -173,7 +166,7 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                 >
                   <InfoItem>
-                    <strong>Name:</strong> Aman Katiyar
+                    <strong>{t('about.name')}</strong> Aman Katiyar
                   </InfoItem>
                 </motion.div>
 
@@ -184,7 +177,7 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                 >
                   <InfoItem>
-                    <strong>Email:</strong> amankatiyar.tech01@gmail.com
+                    <strong>{t('about.email')}</strong> amankatiyar.tech01@gmail.com
                   </InfoItem>
                 </motion.div>
 
@@ -195,7 +188,7 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                 >
                   <InfoItem>
-                    <strong>Location:</strong> Lucknow, UP, India
+                    <strong>{t('about.location')}</strong> Lucknow, UP, India
                   </InfoItem>
                 </motion.div>
 
@@ -206,7 +199,7 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                 >
                   <InfoItem>
-                    <strong>Freelance:</strong> Available
+                    <strong>{t('about.freelance')}</strong> {t('about.available')}
                   </InfoItem>
                 </motion.div>
 
@@ -217,7 +210,7 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                 >
                   <ResumeButton href={resumePdf} download="Aman_Katiyar_Resume.pdf">
-                    <FaDownload /> Download Resume
+                    <FaDownload /> {t('about.downloadCV')}
                   </ResumeButton>
                 </motion.div>
               </AboutInfo>
@@ -231,7 +224,7 @@ const AboutPage = () => {
                 >
                   <SkillItem>
                     <FaCode />
-                    <h4>Web Development</h4>
+                    <h4>{t('skills.frontend')}</h4>
                   </SkillItem>
                 </motion.div>
 
@@ -243,7 +236,7 @@ const AboutPage = () => {
                 >
                   <SkillItem>
                     <FaLaptopCode />
-                    <h4>App Development</h4>
+                    <h4>{t('skills.backend')}</h4>
                   </SkillItem>
                 </motion.div>
 
@@ -255,7 +248,7 @@ const AboutPage = () => {
                 >
                   <SkillItem>
                     <FaPhotoVideo />
-                    <h4>Photoshop</h4>
+                    <h4>{t('skills.design')}</h4>
                   </SkillItem>
                 </motion.div>
 
@@ -267,7 +260,7 @@ const AboutPage = () => {
                 >
                   <SkillItem>
                     <FaServer />
-                    <h4>SEO Marketing</h4>
+                    <h4>{t('skills.other')}</h4>
                   </SkillItem>
                 </motion.div>
               </AboutSkills>
@@ -331,7 +324,7 @@ const AboutPage = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              My Journey
+              {t('about.journey.title')}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -339,14 +332,14 @@ const AboutPage = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Education & Experience
+              {t('about.journey.subtitle')}
             </motion.p>
           </div>
 
           <AboutTimeline>
             <TimelineItem>
               <TimelineDot>
-                <FaUserGraduate />
+                <FaBriefcase />
               </TimelineDot>
               <TimelineConnector />
               <TimelineContent>
@@ -356,11 +349,30 @@ const AboutPage = () => {
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                 >
+                  <span className="date">{t('about.journey.currentRole.date')}</span>
+                  <h3>{t('about.journey.currentRole.title')}</h3>
+                  <p>{t('about.journey.currentRole.company')}</p>
+                  <p>{t('about.journey.currentRole.desc')}</p>
+                </motion.div>
+              </TimelineContent>
+            </TimelineItem>
 
-                 <span className="date">2024 - Present</span>
-                  <h3>Full-Stack Web Developer</h3>
-                  <p>Sipher Web Pvt. Ltd.</p>
-                  <p>Developed scalable web apps using Python with Django/React.js, built REST APIs, and implemented security best practices for client projects.</p>
+            <TimelineItem>
+              <TimelineDot>
+                <FaBriefcase />
+              </TimelineDot>
+              <TimelineConnector />
+              <TimelineContent>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="date">{t('about.journey.previousRole.date')}</span>
+                  <h3>{t('about.journey.previousRole.title')}</h3>
+                  <p>{t('about.journey.previousRole.company')}</p>
+                  <p>{t('about.journey.previousRole.desc')}</p>
                 </motion.div>
               </TimelineContent>
             </TimelineItem>
@@ -374,13 +386,13 @@ const AboutPage = () => {
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <span className="date">2022 - 2025</span>
-                  <h3>B.Tech in Computer Science & Engineering</h3>
-                  <p>Sagar Group of Institute, Barabanki (AKTU)</p>
-                  <p>Currently pursuing degree with focus on full-stack development and software architecture.</p>
+                  <span className="date">{t('about.journey.degree.date')}</span>
+                  <h3>{t('about.journey.degree.title')}</h3>
+                  <p>{t('about.journey.degree.company')}</p>
+                  <p>{t('about.journey.degree.desc')}</p>
                 </motion.div>
               </TimelineContent>
             </TimelineItem>
@@ -388,6 +400,46 @@ const AboutPage = () => {
             <TimelineItem>
               <TimelineDot>
                 <FaBriefcase />
+              </TimelineDot>
+              <TimelineConnector />
+              <TimelineContent>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="date">{t('about.journey.apprenticeship.date')}</span>
+                  <h3>{t('about.journey.apprenticeship.title')}</h3>
+                  <p>{t('about.journey.apprenticeship.company')}</p>
+                  <p>{t('about.journey.apprenticeship.desc')}</p>
+                </motion.div>
+              </TimelineContent>
+            </TimelineItem>
+
+            <TimelineItem>
+              <TimelineDot>
+                <FaAward />
+              </TimelineDot>
+              <TimelineConnector />
+              <TimelineContent>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="date">{t('about.journey.training.date')}</span>
+                  <h3>{t('about.journey.training.title')}</h3>
+                  <p>{t('about.journey.training.company')}</p>
+                  <p>{t('about.journey.training.desc')}</p>
+                </motion.div>
+              </TimelineContent>
+            </TimelineItem>
+
+            <TimelineItem>
+              <TimelineDot>
+                <FaUserGraduate />
               </TimelineDot>
               <TimelineConnector />
               <TimelineContent>
@@ -397,71 +449,29 @@ const AboutPage = () => {
                   transition={{ duration: 0.5, delay: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <span className="date">2020 - 2022</span>
-                  <h3>Diploma in Computer Science</h3>
-                  <p>JawaharLal Nehru Polytechnic, MMB, Sitapur</p>
-                  <p>Secured 74% marks with focus on programming fundamentals</p>
+                  <span className="date">{t('about.journey.diploma.date')}</span>
+                  <h3>{t('about.journey.diploma.title')}</h3>
+                  <p>{t('about.journey.diploma.company')}</p>
+                  <p>{t('about.journey.diploma.desc')}</p>
                 </motion.div>
               </TimelineContent>
             </TimelineItem>
 
             <TimelineItem>
               <TimelineDot>
-                <FaBriefcase />
-              </TimelineDot>
-              <TimelineConnector />
-              <TimelineContent>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="date">2022 (6 Months)</span>
-                  <h3>Apprenticeship Training,</h3>
-                  <p>Softpro India Computer Technologies,Lucknow </p>
-                  <p>Developed reporting portal using PHP/MySQL and created responsive UIs with Bootstrap.</p>
-                </motion.div>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineDot>
-                <FaAward />
+                <FaUserGraduate />
               </TimelineDot>
               <TimelineContent>
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <span className="date">2021 (Summer)</span>
-                  <h3>Summer Training</h3>
-                  <p>Softpro India Computer Technologies, Lucknow</p>
-                  <p>Built E-Banking web application with Django/MySQL and secure authentication system.</p>
-                </motion.div>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineDot>
-                <FaCode />
-              </TimelineDot>
-              <TimelineContent>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="date">2019 - Present</span>
-                  <h3>PROJECTS & ACHIEVEMENTS</h3>
-                  <p>Sipher Web Tech (React/Tailwind)</p>
-                  <p>Gurukul Setu (Django SaaS)</p>
-                  <p>Steamax Burner (WordPress)</p>
-                  <p>NASA Recognized JWST Model</p>
-                  <p>Published "Space Math" E-book</p>
+                  <span className="date">{t('about.journey.school.date')}</span>
+                  <h3>{t('about.journey.school.title')}</h3>
+                  <p>{t('about.journey.school.company')}</p>
+                  <p>{t('about.journey.school.desc')}</p>
                 </motion.div>
               </TimelineContent>
             </TimelineItem>

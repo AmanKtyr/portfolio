@@ -17,10 +17,14 @@ import {
   ScrollProgressContainer,
   ScrollProgressBar,
   FloatingElement,
-  PrimaryButton
+  PrimaryButton,
+  LanguageToggleWrapper,
+  ActionGroup,
+  MobileNavLink
 } from './HeaderStyles';
 import Logo from '../Logo/Logo';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { ThemeContext } from '../../context/ThemeContext';
 
 const Header = () => {
@@ -114,57 +118,13 @@ const Header = () => {
         <ScrollProgressBar style={{ scaleX }} />
       </ScrollProgressContainer>
 
-      {/* Floating Elements */}
-      <FloatingElement
-        size="100px"
-        blur="20px"
-        opacity="0.3"
-        color={isDarkMode ? 'rgba(128, 0, 0, 0.15)' : 'rgba(128, 0, 0, 0.08)'}
-        style={{ top: '20%', left: '5%' }}
-        animate={{
-          y: [0, 15, 0],
-          x: [0, 5, 0],
-          scale: [1, 1.05, 1],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
-      />
-
-      <FloatingElement
-        size="70px"
-        blur="15px"
-        opacity="0.2"
-        color={isDarkMode ? 'rgba(90, 0, 0, 0.15)' : 'rgba(90, 0, 0, 0.08)'}
-        style={{ top: '60%', right: '10%' }}
-        animate={{
-          y: [0, -20, 0],
-          x: [0, -10, 0],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
-      />
-
       <Nav>
         {/* Logo on the left */}
-        <Logo />
+        <Logo size={scrolled ? 'small' : 'medium'} showTagline={!scrolled} />
 
-        {/* Mobile Menu Toggle */}
-        <MobileIcon onClick={toggleMenu} isOpen={isOpen}>
-          <AnimatePresence mode="wait">
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </AnimatePresence>
-        </MobileIcon>
-
-        {/* Navigation Menu */}
-        <NavMenuWrapper isOpen={isOpen}>
-          <NavMenu isOpen={isOpen}>
+        {/* Navigation Menu (Center) */}
+        <NavMenuWrapper>
+          <NavMenu>
             <NavItem>
               <NavLink
                 to="/"
@@ -212,7 +172,7 @@ const Header = () => {
             <NavItem>
               <NavLink
                 to="/services"
-                active={location.pathname === '/services' || window.location.hash === '#services' ? 'true' : 'false'}
+                active={location.pathname === '/services' ? 'true' : 'false'}
                 onClick={(e) => handleNavigation(e, "/services")}
               >
                 <FaCogs />
@@ -234,38 +194,88 @@ const Header = () => {
             <NavItem>
               <NavLink
                 to="/contact"
-                active={location.pathname === '/contact' || window.location.hash === '#contact' ? 'true' : 'false'}
+                active={location.pathname === '/contact' ? 'true' : 'false'}
                 onClick={(e) => handleNavigation(e, "/contact")}
               >
                 <FaEnvelope />
                 {t('header.contact')}
               </NavLink>
             </NavItem>
-
-            <NavItem>
-              <PrimaryButton>
-                <Link to="/contact" className="btn-primary" onClick={(e) => handleNavigation(e, "/contact")}>
-                  {t('header.hireMe')}
-                </Link>
-              </PrimaryButton>
-            </NavItem>
-
-            <NavItem>
-              <ThemeToggleWrapper>
-                <ThemeSwitcher />
-              </ThemeToggleWrapper>
-            </NavItem>
           </NavMenu>
         </NavMenuWrapper>
 
-        {/* Mobile Menu Overlay */}
+        {/* Actions (Right) */}
+        <ActionGroup>
+          <LanguageSwitcher />
+          <ThemeSwitcher />
+          <PrimaryButton>
+            <Link to="/contact" className="btn-primary" onClick={(e) => handleNavigation(e, "/contact")}>
+              {t('header.hireMe')}
+            </Link>
+          </PrimaryButton>
+        </ActionGroup>
+
+        {/* Mobile Toggle */}
+        <MobileIcon onClick={toggleMenu}>
+          <FaBars />
+        </MobileIcon>
+      </Nav>
+
+      {/* Mobile Menu Backdrop (Full Screen) */}
+      <AnimatePresence>
         {isOpen && (
           <MobileMenuBackdrop
-            isOpen={isOpen}
-            onClick={() => setIsOpen(false)}
-          />
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+          >
+            <div className="mobile-header">
+              <Logo size="medium" />
+              <MobileIcon onClick={toggleMenu}>
+                <FaTimes />
+              </MobileIcon>
+            </div>
+
+            <div className="mobile-links">
+              <MobileNavLink to="/" active={location.pathname === '/' ? 'true' : 'false'} onClick={(e) => handleNavigation(e, "/")}>
+                <FaHome /> {t('header.home')}
+              </MobileNavLink>
+              <MobileNavLink to="/about" active={location.pathname === '/about' ? 'true' : 'false'} onClick={(e) => handleNavigation(e, "/about")}>
+                <FaUser /> {t('header.about')}
+              </MobileNavLink>
+              <MobileNavLink to="/skills" active={location.pathname === '/skills' ? 'true' : 'false'} onClick={(e) => handleNavigation(e, "/skills")}>
+                <FaCode /> {t('header.skills')}
+              </MobileNavLink>
+              <MobileNavLink to="/projects" active={location.pathname === '/projects' ? 'true' : 'false'} onClick={(e) => handleNavigation(e, "/projects")}>
+                <FaLaptopCode /> {t('header.projects')}
+              </MobileNavLink>
+              <MobileNavLink to="/services" active={location.pathname === '/services' ? 'true' : 'false'} onClick={(e) => handleNavigation(e, "/services")}>
+                <FaCogs /> {t('header.services')}
+              </MobileNavLink>
+              <MobileNavLink to="/blog" active={location.pathname === '/blog' ? 'true' : 'false'} onClick={(e) => handleNavigation(e, "/blog")}>
+                <FaBlog /> {t('header.blog')}
+              </MobileNavLink>
+              <MobileNavLink to="/contact" active={location.pathname === '/contact' ? 'true' : 'false'} onClick={(e) => handleNavigation(e, "/contact")}>
+                <FaEnvelope /> {t('header.contact')}
+              </MobileNavLink>
+            </div>
+
+            <div className="mobile-actions">
+              <LanguageSwitcher />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <ThemeSwitcher />
+                <span>{isDarkMode ? t('theme.switchToLight') : t('theme.switchToDark')}</span>
+              </div>
+              <PrimaryButton>
+                <Link to="/contact" className="btn-primary" style={{ width: '100%', textAlign: 'center' }} onClick={(e) => handleNavigation(e, "/contact")}>
+                  {t('header.hireMe')}
+                </Link>
+              </PrimaryButton>
+            </div>
+          </MobileMenuBackdrop>
         )}
-      </Nav>
+      </AnimatePresence>
     </HeaderContainer>
   );
 };

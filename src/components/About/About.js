@@ -26,15 +26,11 @@ const About = () => {
 
           <AboutText>
             <ScrollAnimation animation="fadeRight">
-              <h3>I'm a Web Developer from Lucknow, UP</h3>
+              <h3>{t('about.aboutMeHeader')}</h3>
             </ScrollAnimation>
 
             <ScrollAnimation animation="fadeRight" delay={0.1}>
-              <p>I create a unique and appealing website in line with your brand and vision. I seamlessly blend creativity in design with excellence in functionality to deliver exceptional user experiences.</p>
-            </ScrollAnimation>
-
-            <ScrollAnimation animation="fadeRight" delay={0.2}>
-              <p>My approach is client-focused, ensuring that every project meets the unique needs and goals of the businesses I work with. I'm dedicated to delivering high-quality solutions that help my clients achieve their online objectives.</p>
+              <p>{t('about.aboutMeText')}</p>
             </ScrollAnimation>
 
             <AboutInfo>

@@ -53,6 +53,7 @@ export const LogoText = styled.div`
   display: flex;
   flex-direction: column;
   line-height: 1;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
   .name {
     font-size: 1.4rem;

@@ -331,13 +331,13 @@ export const CategoryItem = styled.button`
 
   &:hover {
     background-color: ${({ active }) =>
-      active === 'true'
-        ? 'var(--secondary-color)'
-        : 'rgba(128, 0, 0, 0.1)'};
+    active === 'true'
+      ? 'var(--secondary-color)'
+      : 'rgba(128, 0, 0, 0.1)'};
     color: ${({ active }) =>
-      active === 'true'
-        ? 'white'
-        : 'var(--primary-color)'};
+    active === 'true'
+      ? 'white'
+      : 'var(--primary-color)'};
     transform: translateY(-3px);
   }
 `;

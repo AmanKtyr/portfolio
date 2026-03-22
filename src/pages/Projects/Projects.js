@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowRight, FaSearch } from 'react-icons/fa';
@@ -94,6 +95,7 @@ const projectsData = [
 const categories = ['all', ...new Set(projectsData.map(project => project.category))];
 
 const ProjectsPage = () => {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState('all');
   const [filteredProjects, setFilteredProjects] = useState(projectsData);
   const [searchTerm, setSearchTerm] = useState('');
@@ -176,7 +178,7 @@ const ProjectsPage = () => {
                   stiffness: 100
                 }}
               >
-                My Projects
+                {t('projects.title')}
               </motion.h1>
 
               <motion.p
@@ -189,7 +191,7 @@ const ProjectsPage = () => {
                   stiffness: 50
                 }}
               >
-                Recent work I've done
+                {t('projects.subtitle')}
               </motion.p>
 
               {/* Animated code particles */}
@@ -248,7 +250,7 @@ const ProjectsPage = () => {
             <form onSubmit={handleSearch}>
               <SearchInput
                 type="text"
-                placeholder="Search projects..."
+                placeholder={t('projects.searchPlaceholder') || "Search Case Studies..."}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -259,7 +261,7 @@ const ProjectsPage = () => {
           </SearchContainer>
 
           <ProjectsCategories>
-            <h3>Categories</h3>
+            <h3>{t('projects.filterTitle') || "Strategic Portfolios"}</h3>
             <div className="categories-list">
               {categories.map((category, index) => (
                 <CategoryItem
@@ -267,7 +269,7 @@ const ProjectsPage = () => {
                   active={activeFilter === category ? 'true' : 'false'}
                   onClick={() => handleFilter(category)}
                 >
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                  {t(`projects.${category}`)}
                 </CategoryItem>
               ))}
             </div>
@@ -312,7 +314,7 @@ const ProjectsPage = () => {
                       </ProjectTitle>
                       <ProjectDesc>{project.description}</ProjectDesc>
                       <Link to={`/project/${project.id}`} className="btn-text">
-                        View Details <FaArrowRight />
+                        {t('projects.viewDetails')} <FaArrowRight />
                       </Link>
                     </ProjectInfo>
                   </ProjectCard>

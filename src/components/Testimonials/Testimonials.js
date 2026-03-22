@@ -69,7 +69,7 @@ const Testimonials = () => {
           <h2>Client Testimonials</h2>
           <p>What my clients say about my work</p>
         </ScrollAnimation>
-        
+
         <Swiper
           modules={[Pagination, Navigation, Autoplay]}
           spaceBetween={30}

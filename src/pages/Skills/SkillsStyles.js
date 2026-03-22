@@ -152,9 +152,7 @@ export const SkillsBannerContent = styled.div`
     font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    background: var(--primary-color); /* Sky blue to purple gradient */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary-color);
     text-shadow: 0 0 20px rgba(128, 0, 0, 0.3);
     letter-spacing: -1px;
 
@@ -243,286 +241,93 @@ export const SkillsGrid = styled.div`
 `;
 
 export const SkillCard = styled.div`
-  background-color: ${({ theme }) => theme.neumorphism.background};
-  padding: 2.5rem;
-  border-radius: 16px;
-  border: 1px solid rgba(128, 0, 0, 0.1); /* Subtle sky blue border */
-  backdrop-filter: blur(10px);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: ${({ theme }) => theme.colors.cardBg};
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: ${({ theme }) => theme.shadows.medium};
+  transition: var(--transition);
   height: 100%;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
-  /* Gradient border effect */
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    padding: 1px; /* Border width */
-    background: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    
-    
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  /* Shine effect */
-  &::after {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: var(--primary-color);
-    transform: rotate(30deg);
-    transition: transform 0.7s ease;
-    z-index: 1;
-    pointer-events: none;
-  }
 
   &:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    background-color: ${({ theme }) => theme.neumorphism.background};
-
-    &::before {
-      opacity: 1;
-    }
-
-    &::after {
-      transform: rotate(30deg) translate(50%, 50%);
-    }
+    transform: translateY(-10px);
+    box-shadow: ${({ theme }) => theme.shadows.large};
   }
 `;
 
 export const SkillIcon = styled.div`
-  font-size: 3.5rem;
-  margin-bottom: 2rem;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  display: inline-flex;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(128, 0, 0, 0.1);
+  display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 2;
-  width: 80px;
-  height: 80px;
+  margin-bottom: 1.5rem;
 
-  /* Create a gradient text effect */
   svg {
-    background: var(--primary-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 8px rgba(128, 0, 0, 0.3));
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
   }
 
-  /* Glowing circle background */
-  &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: var(--primary-color);
-    opacity: 0.1;
-    z-index: -1;
-    transition: all 0.5s ease;
-  }
-
-  /* Animated ring */
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 1px solid rgba(128, 0, 0, 0.3);
-    box-shadow: 0 0 15px rgba(128, 0, 0, 0.2);
-    z-index: -1;
-    transition: all 0.5s ease;
-    animation: pulseRing 3s infinite;
-  }
-
-  @keyframes pulseRing {
-    0% {
-      transform: scale(0.95);
-      opacity: 0.7;
-    }
-    50% {
-      transform: scale(1.05);
-      opacity: 0.3;
-    }
-    100% {
-      transform: scale(0.95);
-      opacity: 0.7;
-    }
-  }
-
-  ${SkillCard}:hover & {
-    transform: scale(1.15) translateY(-5px);
-
-    &::before {
-      transform: scale(1.2);
-      background: var(--primary-color);
-      opacity: 0.2;
-    }
-
-    &::after {
-      animation-duration: 1.5s;
-      border-color: rgba(90, 0, 0, 0.5);
-    }
-
-    svg {
-      background: var(--primary-color);
-      background-size: 200% 200%;
-      animation: gradientShift 2s ease infinite;
-    }
-  }
-
-  @keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  ${SkillCard}:hover svg {
+    transform: scale(1.1);
   }
 `;
 
 export const SkillTitle = styled.h3`
-  font-size: 1.6rem;
-  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
   position: relative;
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  color: ${({ theme }) => theme.colors.text};
   font-weight: 700;
-  text-align: center;
-  background: var(--primary-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.4s ease;
-  letter-spacing: -0.5px;
 
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 3px;
-    background: var(--primary-color);
-    border-radius: 3px;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
   }
 
-  ${SkillCard}:hover & {
-    transform: scale(1.05);
-    letter-spacing: 0;
-
-    &::after {
-      width: 60px;
-      background: var(--primary-color);
-      box-shadow: 0 0 15px rgba(90, 0, 0, 0.4);
-    }
+  ${SkillCard}:hover &::after {
+    width: 50px;
   }
 `;
 
 export const SkillText = styled.p`
-  color: #F1F5F9; /* Light gray */
-  margin-bottom: 1.8rem;
-  text-align: center;
-  line-height: 1.7;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-
-  ${SkillCard}:hover & {
-    color: white;
-  }
+  color: ${({ theme }) => theme.colors.textSecondary};
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 `;
 
 export const SkillList = styled.ul`
-  margin-bottom: 2rem;
-  list-style: none;
-  padding: 0;
-  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 
   li {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    padding: 0.7rem 1rem;
-    border-radius: 8px;
-    background-color: rgba(15, 23, 42, 0.5);
-    border: 1px solid rgba(128, 0, 0, 0.05);
-    color: #F1F5F9;
-    position: relative;
-    overflow: hidden;
+    color: ${({ theme }) => theme.colors.textSecondary};
+    font-size: 0.95rem;
 
-    /* Subtle glow effect on hover */
     &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--primary-color);
-      opacity: 0.1;
-      transform: translateX(-100%);
-      transition: transform 0.6s ease;
-    }
-
-    &:hover {
-      transform: translateY(-3px);
-      background-color: rgba(15, 23, 42, 0.7);
-      border-color: rgba(128, 0, 0, 0.1);
-      color: white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-      &::before {
-        transform: translateX(100%);
-      }
-    }
-
-    /* Arrow icon */
-    &::after {
-      content: '→';
-      color: #800000;
+      content: '•';
+      color: var(--primary-color);
       font-weight: bold;
-      margin-left: 0.8rem;
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: all 0.3s ease;
-    }
-
-    &:hover::after {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  /* Staggered animation for list items */
-  ${SkillCard}:hover & li {
-    &:nth-child(1) {
-      transition-delay: 0.05s;
-    }
-    &:nth-child(2) {
-      transition-delay: 0.1s;
-    }
-    &:nth-child(3) {
-      transition-delay: 0.15s;
-    }
-    &:nth-child(4) {
-      transition-delay: 0.2s;
+      display: inline-block;
+      width: 1em;
+      margin-right: 0.5rem;
     }
   }
 `;
@@ -562,142 +367,37 @@ export const TechItem = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.8rem 1rem;
-  border-radius: 12px;
-  background-color: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(128, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 1.5rem 1rem;
+  border-radius: var(--border-radius);
+  background-color: ${({ theme }) => theme.colors.cardBg};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  transition: var(--transition);
   text-align: center;
-  position: relative;
-  overflow: hidden;
-
-  /* Gradient border on hover */
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 12px;
-    padding: 1px;
-    background: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    
-    
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  /* Shine effect */
-  &::after {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: var(--primary-color);
-    transform: rotate(30deg);
-    transition: transform 0.7s ease;
-    z-index: 1;
-    pointer-events: none;
-  }
+  box-shadow: ${({ theme }) => theme.shadows.small};
 
   &:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    background-color: rgba(15, 23, 42, 0.8);
-
-    &::before {
-      opacity: 1;
-    }
-
-    &::after {
-      transform: rotate(30deg) translate(50%, 50%);
-    }
+    transform: translateY(-5px);
+    box-shadow: ${({ theme }) => theme.shadows.medium};
+    border-color: var(--primary-color);
   }
 `;
 
 export const TechIcon = styled.div`
-  font-size: 2.8rem;
-  margin-bottom: 1.2rem;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  z-index: 2;
-
-  /* Create a gradient text effect */
-  svg {
-    background: var(--primary-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 5px rgba(128, 0, 0, 0.2));
-    transition: all 0.5s ease;
-  }
-
-  /* Glowing circle */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    opacity: 0.1;
-    z-index: -1;
-    transition: all 0.5s ease;
-  }
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  color: var(--primary-color);
 
   ${TechItem}:hover & {
-    transform: scale(1.2) translateY(-5px);
-
-    svg {
-      filter: drop-shadow(0 0 8px rgba(128, 0, 0, 0.4));
-      background: var(--primary-color);
-      background-size: 200% 200%;
-      animation: gradientShift 2s ease infinite;
-    }
-
-    &::before {
-      width: 70px;
-      height: 70px;
-      opacity: 0.2;
-      background: var(--primary-color);
-    }
+    transform: scale(1.1);
   }
 `;
 
 export const TechName = styled.h4`
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  color: #F1F5F9;
-  transition: all 0.3s ease;
-  position: relative;
-
-  /* Underline effect */
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: width 0.3s ease;
-    opacity: 0;
-  }
-
-  ${TechItem}:hover & {
-    color: white;
-    transform: translateY(-2px);
-
-    &::after {
-      width: 70%;
-      opacity: 1;
-    }
-  }
+  color: ${({ theme }) => theme.colors.text};
+  transition: var(--transition);
 `;
 
 export const SkillsTimeline = styled.div`
@@ -854,64 +554,27 @@ export const TimelineContent = styled.div`
   position: relative;
   width: calc(100% - 70px);
   padding: 2rem;
-  border-radius: 16px;
-  background-color: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(128, 0, 0, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  background-color: ${({ theme }) => theme.colors.cardBg};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  box-shadow: ${({ theme }) => theme.shadows.medium};
   margin-left: 70px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: var(--transition);
 
-  /* Arrow pointer */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 15px;
-    left: -12px;
-    width: 24px;
-    height: 24px;
-    background-color: rgba(15, 23, 42, 0.7);
-    border-left: 1px solid rgba(128, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(128, 0, 0, 0.1);
-    transform: rotate(45deg);
-    backdrop-filter: blur(10px);
-  }
-
-  /* Gradient border on hover */
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    padding: 1px;
-    background: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    
-    
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  ${TimelineItem}:hover & {
-    transform: translateY(-5px) translateX(5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-
-    &::after {
-      opacity: 1;
-    }
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: ${({ theme }) => theme.shadows.large};
   }
 
   h3 {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
-    background: var(--primary-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary-color);
     font-weight: 700;
   }
 
   p {
-    color: #F1F5F9;
+    color: ${({ theme }) => theme.colors.textSecondary};
     line-height: 1.7;
 
     &:last-child {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -6,6 +7,7 @@ import Contact from '../../components/Contact/Contact';
 import { ContactPageContainer, ContactBanner, ContactBannerContent, ContactMap } from './ContactStyles';
 
 const ContactPage = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Header />
@@ -49,7 +51,7 @@ const ContactPage = () => {
                   stiffness: 100
                 }}
               >
-                Contact Me
+                {t('contact.contactHero')}
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
@@ -61,7 +63,7 @@ const ContactPage = () => {
                   stiffness: 50
                 }}
               >
-                Let's discuss your project and bring your ideas to life
+                {t('contact.contactSubtext')}
               </motion.p>
             </ContactBannerContent>
           </div>

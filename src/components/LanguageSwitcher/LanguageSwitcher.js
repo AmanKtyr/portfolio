@@ -1,70 +1,75 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaGlobe, FaChevronDown } from 'react-icons/fa';
-import { LanguageSwitcherContainer, LanguageButton, LanguageDropdown, LanguageOption } from './LanguageSwitcherStyles';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { FaGlobe } from 'react-icons/fa';
 
-const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'hi', name: 'हिंदी' }
-];
+const SwitcherContainer = styled(motion.button)`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.7rem;
+  background: ${({ theme }) => 
+    theme.isDarkMode 
+      ? 'rgba(128, 0, 0, 0.12)' 
+      : 'rgba(128, 0, 0, 0.05)'};
+  border: 1px solid ${({ theme }) => 
+    theme.isDarkMode 
+      ? 'rgba(128, 0, 0, 0.2)' 
+      : 'rgba(128, 0, 0, 0.1)'};
+  border-radius: 50px;
+  color: ${({ theme }) => 
+    theme.isDarkMode 
+      ? '#f1f5f9' 
+      : '#0f172a'};
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+
+  svg {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+  }
+
+  &:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+
+    svg {
+      color: white;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem;
+  }
+`;
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'hi' : 'en';
+    i18n.changeLanguage(newLang);
   };
-
-  const changeLanguage = (code) => {
-    i18n.changeLanguage(code);
-    setIsOpen(false);
-    // Save language preference
-    localStorage.setItem('language', code);
-  };
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  // Get current language
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
 
   return (
-    <LanguageSwitcherContainer ref={dropdownRef}>
-      <LanguageButton onClick={toggleDropdown}>
-        <FaGlobe />
-        <span>{currentLanguage.name}</span>
-        <FaChevronDown className={isOpen ? 'rotate' : ''} />
-      </LanguageButton>
-      
-      {isOpen && (
-        <LanguageDropdown>
-          {languages.map((language) => (
-            <LanguageOption
-              key={language.code}
-              onClick={() => changeLanguage(language.code)}
-              active={i18n.language === language.code}
-            >
-              {language.name}
-            </LanguageOption>
-          ))}
-        </LanguageDropdown>
-      )}
-    </LanguageSwitcherContainer>
+    <SwitcherContainer
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={toggleLanguage}
+    >
+      <FaGlobe />
+      <span>{i18n.language === 'en' ? 'हिन्दी' : 'English'}</span>
+    </SwitcherContainer>
   );
 };
 
 export default LanguageSwitcher;
-

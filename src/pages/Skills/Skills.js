@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaPhp, FaBootstrap, FaDocker, FaGitAlt, FaGithub, FaDatabase, FaServer, FaNodeJs, FaAws, FaBrain, FaRobot, FaPlug } from 'react-icons/fa';
 import { SiDjango, SiTailwindcss, SiJquery, SiFlask, SiPostgresql, SiMysql, SiNextdotjs } from 'react-icons/si';
+import { useTranslation } from 'react-i18next';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ProgressBar from '../../components/Skills/ProgressBar';
@@ -105,65 +106,48 @@ const Skills = () => {
     {
       id: 1,
       icon: <FaHtml5 />,
-      title: 'HTML & CSS Fundamentals',
-      description: 'Started with the basics of web development, learning HTML structure and CSS styling.'
+      title: 'Architectural Foundations',
+      description: 'Built a rock-solid foundation in semantic HTML and advanced CSS architectures for high-end web systems.'
     },
     {
       id: 2,
       icon: <FaJs />,
-      title: 'JavaScript Programming',
-      description: 'Learned JavaScript fundamentals, DOM manipulation, and asynchronous programming.'
+      title: 'Advanced Engineering',
+      description: 'Mastery over JavaScript engine, asynchronous patterns, and complex DOM transformations.'
     },
     {
       id: 3,
       icon: <FaReact />,
-      title: 'Frontend Frameworks',
-      description: 'Mastered React.js and explored other frontend frameworks like Vue and Angular.'
+      title: 'Frontend Ecosystems',
+      description: 'Engineering complex React architectures with optimized state management and reusable component systems.'
     },
     {
       id: 4,
       icon: <FaPlug />,
-      title: 'API Development',
-      description: 'Building and integrating RESTful APIs for seamless data communication.'
+      title: 'API & Middleware',
+      description: 'Designing high-traffic RESTful interfaces and robust service layers for seamless data flow.'
     },
     {
       id: 5,
       icon: <FaNodeJs />,
-      title: 'Backend Development',
-      description: 'Expanded skills to backend development with Node.js, Express, and database integration.'
-    },
-    {
-      id: 9,
-      icon: <SiDjango />,
-      title: 'Django Framework',
-      description: 'Mastered the Django framework for rapid and secure web development.'
-    },
-    {
-      id: 10,
-      icon: <FaNodeJs />,
-      title: 'Node.js Framework',
-      description: 'Mastered the Node.js framework for rapid and secure web development.'
+      title: 'Backend Mastery',
+      description: 'Specializing in Node.js and Django for building secure, scalable, and high-performance server-side logic.'
     },
     {
       id: 6,
       icon: <FaServer />,
-      title: 'Full Stack Development',
-      description: 'Combined frontend and backend skills to build complete web applications.'
+      title: 'Full-Stack Orchestration',
+      description: 'Successfully managing complete lifecycles of production-grade applications from design to deployment.'
     },
     {
       id: 7,
       icon: <FaBrain />,
-      title: 'AI & Machine Learning',
-      description: 'Exploring the world of AI and Machine Learning, and applying it to real-world problems.'
-    },
-    {
-      id: 8,
-      icon: <FaRobot />,
-      title: 'Gen and Agentic AI',
-      description: 'Building intelligent agents and generative models to solve complex problems.'
+      title: 'AI & Data Intelligence',
+      description: 'Integrating Generative AI and Machine Learning models to build intelligent, self-evolving digital products.'
     }
   ];
 
+  const { t } = useTranslation();
   return (
     <>
       <Header />
@@ -213,7 +197,7 @@ const Skills = () => {
                   stiffness: 100
                 }}
               >
-                My Skills
+                {t('skills.title')}
               </motion.h1>
 
               <motion.p
@@ -226,7 +210,7 @@ const Skills = () => {
                   stiffness: 50
                 }}
               >
-                What I can do for you
+                {t('skills.subtitle')}
               </motion.p>
 
               {/* Animated code particles */}
@@ -289,7 +273,7 @@ const Skills = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                Technical Skills
+                {t('skills.title')}
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -297,7 +281,7 @@ const Skills = () => {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                My expertise in various technologies
+                {t('skills.skillsDescription')}
               </motion.p>
             </div>
 
