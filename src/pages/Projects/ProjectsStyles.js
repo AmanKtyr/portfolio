@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const shimmer = keyframes`
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+`;
 
 export const ProjectsPageContainer = styled.div`
   .container {
@@ -37,38 +42,22 @@ export const ProjectsPageContainer = styled.div`
     align-items: center;
     gap: 0.5rem;
     color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
     position: relative;
-    padding: 0.5rem 0;
-
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--primary-color);
-      transform: scaleX(0.3);
-      transform-origin: left;
-      opacity: 0.1;
-      transition: all 0.3s ease;
-      z-index: -1;
-    }
+    padding: 0.4rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 
     svg {
+      font-size: 0.75rem;
       transition: all 0.3s ease;
     }
 
     &:hover {
       color: var(--secondary-color);
       gap: 0.8rem;
-
-      &::before {
-        transform: scaleX(1);
-        opacity: 1;
-      }
 
       svg {
         transform: translateX(3px);
@@ -84,7 +73,6 @@ export const ProjectsBanner = styled.div`
   position: relative;
   overflow: hidden;
 
-  /* Animated gradient background */
   &::before {
     content: '';
     position: absolute;
@@ -98,7 +86,6 @@ export const ProjectsBanner = styled.div`
     z-index: 1;
   }
 
-  /* Particle effect */
   &::after {
     content: '';
     position: absolute;
@@ -114,7 +101,6 @@ export const ProjectsBanner = styled.div`
     z-index: 2;
   }
 
-  /* Grid pattern overlay */
   .grid-overlay {
     position: absolute;
     top: 0;
@@ -128,15 +114,9 @@ export const ProjectsBanner = styled.div`
   }
 
   @keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 `;
 
@@ -150,7 +130,7 @@ export const ProjectsBannerContent = styled.div`
     font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    background: var(--primary-color); /* Sky blue to purple gradient */
+    background: var(--primary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 20px rgba(128, 0, 0, 0.3);
@@ -186,7 +166,6 @@ export const ProjectsBannerContent = styled.div`
     }
   }
 
-  /* Floating elements for visual interest */
   .floating-element {
     position: absolute;
     border-radius: 50%;
@@ -198,7 +177,7 @@ export const ProjectsBannerContent = styled.div`
   .element-1 {
     width: 100px;
     height: 100px;
-    background: #800000; /* Sky blue */
+    background: #800000;
     top: -50px;
     left: 20%;
     animation: float 8s ease-in-out infinite;
@@ -207,28 +186,21 @@ export const ProjectsBannerContent = styled.div`
   .element-2 {
     width: 150px;
     height: 150px;
-    background: #5a0000; /* Purple */
+    background: #5a0000;
     bottom: -70px;
     right: 15%;
     animation: float 10s ease-in-out infinite reverse;
   }
 
   @keyframes float {
-    0% {
-      transform: translateY(0) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-20px) rotate(5deg);
-    }
-    100% {
-      transform: translateY(0) rotate(0deg);
-    }
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
   }
 `;
 
 export const SearchContainer = styled.div`
   margin-bottom: 2rem;
-
   form {
     display: flex;
     max-width: 600px;
@@ -354,85 +326,42 @@ export const ProjectsGrid = styled.div`
 `;
 
 export const ProjectCard = styled.div`
-  border-radius: var(--border-radius);
+  border-radius: 16px;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   height: 100%;
   position: relative;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-
-  /* Neumorphism effect */
-  background-color: ${({ theme }) => theme.neumorphism.background};
-  box-shadow: ${({ theme }) => `${theme.neumorphism.shadow1}, ${theme.neumorphism.shadow2}`};
+  background: ${({ theme }) =>
+    theme.isDarkMode
+      ? 'rgba(15, 23, 42, 0.6)'
+      : 'rgba(255, 255, 255, 0.9)'};
+  border: 1px solid ${({ theme }) =>
+    theme.isDarkMode
+      ? 'rgba(128, 0, 0, 0.12)'
+      : 'rgba(128, 0, 0, 0.08)'};
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 
   &:hover {
-    transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
-    box-shadow: ${({ theme }) => `${theme.neumorphism.shadow1.replace('10px', '20px')}, ${theme.neumorphism.shadow2.replace('-10px', '-20px')}`};
-
-    .project-content {
-      transform: translateZ(20px);
-    }
-
-    .project-img img {
-      transform: scale(1.1);
-    }
-  }
-
-  &:active {
-    box-shadow: ${({ theme }) => `${theme.neumorphism.activeShadow1}, ${theme.neumorphism.activeShadow2}`};
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--primary-color);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  &:hover::before {
-    opacity: 1;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(128, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: rgba(128, 0, 0, 0.2);
   }
 `;
 
 export const ProjectImg = styled.div`
   position: relative;
   overflow: hidden;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-
-  ${ProjectCard}:hover &::after {
-    opacity: 1;
-  }
+  height: 220px;
 
   img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.7s ease, filter 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   ${ProjectCard}:hover & img {
-    transform: scale(1.1);
-    filter: brightness(1.1) contrast(1.1);
+    transform: scale(1.08);
   }
 `;
 
@@ -442,16 +371,18 @@ export const ProjectOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) =>
-    theme.isDarkMode
-      ? 'rgba(128, 0, 0, 0.8)'
-      : 'rgba(128, 0, 0, 0.8)'};
-  backdrop-filter: blur(5px);
+  background: linear-gradient(
+    to bottom,
+    rgba(128, 0, 0, 0.0) 0%,
+    rgba(128, 0, 0, 0.4) 50%,
+    rgba(60, 0, 0, 0.85) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: var(--transition);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
 
   ${ProjectCard}:hover & {
     opacity: 1;
@@ -460,64 +391,85 @@ export const ProjectOverlay = styled.div`
 
 export const ProjectLinks = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
 `;
 
 export const ProjectLink = styled.a`
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--primary-color);
-  transition: var(--transition);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(15px);
+  opacity: 0;
+  position: relative;
+  z-index: 5;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  ${ProjectCard}:hover & {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &:nth-child(1) {
+    transition-delay: 0.05s;
+  }
+  &:nth-child(2) {
+    transition-delay: 0.1s;
+  }
 
   &:hover {
-    background-color: var(--dark-color);
+    background: var(--primary-color);
     color: white;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(128, 0, 0, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.95);
   }
 `;
 
 export const ProjectInfo = styled.div`
-  padding: 1.5rem;
-  backdrop-filter: blur(10px);
-  background-color: ${({ theme }) =>
-    theme.isDarkMode
-      ? 'rgba(30, 41, 59, 0.8)'
-      : 'rgba(255, 255, 255, 0.8)'};
-  border-top: ${({ theme }) => theme.glassmorphism.border};
-  transition: transform 0.5s ease;
-  transform: translateZ(0);
+  padding: 1.25rem 1.5rem 1.5rem;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 
   &::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-  }
-
-  ${ProjectCard}:hover &::before {
-    opacity: 1;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent,
+      rgba(128, 0, 0, 0.15),
+      transparent
+    );
   }
 `;
 
 export const ProjectTitle = styled.h3`
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
+  line-height: 1.4;
 
   a {
-    color: var(--dark-color);
-    transition: var(--transition);
+    color: ${({ theme }) =>
+      theme.isDarkMode
+        ? '#f1f5f9'
+        : '#1e293b'};
+    transition: color 0.3s ease;
+    text-decoration: none;
 
     &:hover {
       color: var(--primary-color);
@@ -527,16 +479,27 @@ export const ProjectTitle = styled.h3`
 
 export const ProjectCategory = styled.span`
   color: var(--primary-color);
-  font-weight: 500;
-  font-size: 0.9rem;
-  display: block;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: ${({ theme }) =>
+    theme.isDarkMode
+      ? 'rgba(128, 0, 0, 0.15)'
+      : 'rgba(128, 0, 0, 0.08)'};
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
 `;
 
 export const ProjectDesc = styled.p`
   color: var(--gray-color);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-bottom: 1rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
-
-

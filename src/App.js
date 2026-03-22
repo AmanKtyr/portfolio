@@ -12,7 +12,6 @@ import Home from './pages/Home/Home';
 import ProjectDetails from './pages/ProjectDetails/ProjectDetails';
 import Services from './pages/Services/Services';
 import ContactPage from './pages/Contact/Contact';
-import BlogPage from './pages/Blog/Blog';
 import AboutPage from './pages/About/About';
 import SkillsPage from './pages/Skills/Skills';
 import ProjectsPage from './pages/Projects/Projects';
@@ -78,7 +77,6 @@ function AppContent() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/project/:id" element={<ProjectDetails />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/blog" element={<BlogPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </PageTransition>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaLaptopCode, FaCogs, FaBlog, FaEnvelope } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaLaptopCode, FaCogs, FaEnvelope } from 'react-icons/fa';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { scrollToSection } from '../../utils/scrollUtils';
@@ -180,16 +180,6 @@ const Header = () => {
               </NavLink>
             </NavItem>
 
-            <NavItem>
-              <NavLink
-                to="/blog"
-                active={location.pathname === '/blog' ? 'true' : 'false'}
-                onClick={(e) => handleNavigation(e, "/blog")}
-              >
-                <FaBlog />
-                {t('header.blog')}
-              </NavLink>
-            </NavItem>
 
             <NavItem>
               <NavLink
@@ -252,9 +242,6 @@ const Header = () => {
               </MobileNavLink>
               <MobileNavLink to="/services" active={location.pathname === '/services' ? 'true' : 'false'} onClick={(e) => handleNavigation(e, "/services")}>
                 <FaCogs /> {t('header.services')}
-              </MobileNavLink>
-              <MobileNavLink to="/blog" active={location.pathname === '/blog' ? 'true' : 'false'} onClick={(e) => handleNavigation(e, "/blog")}>
-                <FaBlog /> {t('header.blog')}
               </MobileNavLink>
               <MobileNavLink to="/contact" active={location.pathname === '/contact' ? 'true' : 'false'} onClick={(e) => handleNavigation(e, "/contact")}>
                 <FaEnvelope /> {t('header.contact')}
