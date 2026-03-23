@@ -44,7 +44,7 @@ export const SkillsPageContainer = styled.div`
     }
 
     p {
-      color: #F1F5F9;
+      color: #334155;
       max-width: 600px;
       margin: 0 auto;
       font-size: 1.2rem;

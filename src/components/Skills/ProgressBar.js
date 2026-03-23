@@ -89,7 +89,6 @@ const ProgressBar = ({ skill, percentage }) => {
     <ProgressBarContainer ref={ref}>
       <ProgressBarLabel>
         <span className="skill-name">{skill}</span>
-        <span className="percentage">{percentage}%</span>
       </ProgressBarLabel>
       <ProgressBarTrack>
         <ProgressBarFill 

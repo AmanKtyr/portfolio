@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaNodeJs, FaDatabase, FaGitAlt, FaArrowRight } from 'react-icons/fa';
-import { SiDjango, SiTailwindcss, SiPostgresql } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaNodeJs, FaDatabase, FaGitAlt, FaArrowRight, FaBrain } from 'react-icons/fa';
+import { SiDjango, SiTailwindcss, SiPostgresql, SiNestjs } from 'react-icons/si';
 import {
   SkillsContainer,
   SummaryWrapper,
@@ -21,7 +21,9 @@ const Skills = () => {
     { id: 'python', icon: <FaPython />, name: 'Python' },
     { id: 'django', icon: <SiDjango />, name: 'Django' },
     { id: 'db', icon: <FaDatabase />, name: 'Databases' },
-    { id: 'git', icon: <FaGitAlt />, name: 'Git' }
+    { id: 'git', icon: <FaGitAlt />, name: 'Git' },
+    { id: 'ai', icon: <FaBrain />, name: 'AI' },
+    { id: 'nestjs', icon: <SiNestjs />, name: 'Nest.js' }
   ];
 
   return (

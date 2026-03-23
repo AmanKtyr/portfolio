@@ -287,7 +287,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
             >
               <StatItem>
-                <h3>25+</h3>
+                <h3>35+</h3>
                 <p>{t('about.stats.projects')}</p>
               </StatItem>
             </motion.div>
@@ -299,7 +299,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
             >
               <StatItem>
-                <h3>30+</h3>
+                <h3>20+</h3>
                 <p>{t('about.stats.clients')}</p>
               </StatItem>
             </motion.div>

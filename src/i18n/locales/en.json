@@ -23,12 +23,12 @@
   "about": {
     "title": "Strategic Expertise",
     "subtitle": "Bridging Innovation with Reliability",
-    "name": "Professional Name:",
-    "email": "Official Email:",
+    "name": "Name:",
+    "email": "Email:",
     "location": "Global Presence:",
     "freelance": "Strategic Partner Availability:",
     "available": "Open for New Challenges",
-    "downloadCV": "Download my Credentials",
+    "downloadCV": "Download CV",
     "aboutMeHeader": "Full-Stack Engineer specialized in Scalable Systems",
     "aboutMeText": "I'm a Full-Stack Engineer who views code as a tool for business growth. Whether you're an HR looking for a technical lead or a business owner needing a robust MVP, I deliver quality that exceeds industry standards. I specialize in crafting high-impact digital experiences that drive measurable results.",
     "stats": {
@@ -73,19 +73,19 @@
       "degree": {
         "date": "2022 - 2025",
         "title": "B.Tech in CSE",
-        "company": "AKTU (Sagar Group)",
+        "company": "Abdul Kalam Technical University Lucknow",
         "desc": "Academic excellence in Software Architecture and Computer Science Engineering."
       },
       "diploma": {
         "date": "2019 - 2022",
         "title": "Diploma in CS",
-        "company": "JN Polytechnic",
+        "company": "Jawaharlal Nehru Polytechnic, MMB, Sitapur, UP",
         "desc": "Foundation in Computing, Data Structures, and Algorithmic Logic."
       },
       "school": {
         "date": "2019",
         "title": "Secondary Education",
-        "company": "S.V.M. Inter College",
+        "company": "M.D. Inter College Kannauj",
         "desc": "Completed Higher Secondary with a focus on logic and science."
       }
     }
@@ -104,84 +104,58 @@
     "learningPathSubtitle": "How I developed my skills over time",
     "skillCards": [
       {
-        "title": "Python",
-        "desc": "Developing scalable and secure web applications and scripts.",
-        "list": [
-          "Django",
-          "Flask",
-          "REST API Development",
-          "Scripting"
-        ]
+        "category": "core",
+        "title": "Core Specialization",
+        "desc": "Foundational programming languages and frameworks that form the backbone of my technical expertise.",
+        "list": ["Python", "Django", "Next.js / React.js", "JavaScript (ES6+)", "HTML5 / CSS3"]
       },
       {
-        "title": "Java",
-        "desc": "Building robust and high-performance applications.",
-        "list": [
-          "Core Java",
-          "Spring (Basic)",
-          "Maven",
-          "OOP"
-        ]
+        "category": "frameworks",
+        "title": "Frameworks & Libraries",
+        "desc": "Modern tools and libraries I use to build high-performance, interactive, and visually stunning user interfaces.",
+        "list": ["Tailwind CSS", "Framer Motion", "Bootstrap", "Three.js"]
       },
       {
-        "title": "Django",
-        "desc": "Building powerful and secure web applications with Python and Django.",
-        "list": [
-          "Django REST Framework",
-          "Django ORM",
-          "Templates",
-          "Admin Interface"
-        ]
+        "category": "backend",
+        "title": "Backend Engineering",
+        "desc": "Architecting secure and scalable server-side systems, specializing in AI integration and complex data flow.",
+        "list": ["REST API Development", "Authentication Systems", "Database Design", "Generative AI Integration"]
       },
       {
-        "title": "JavaScript",
-        "desc": "Building interactive and dynamic web applications with modern JavaScript.",
-        "list": [
-          "ES6+ Features",
-          "DOM Manipulation",
-          "Asynchronous JS",
-          "API Integration"
-        ]
+        "category": "database",
+        "title": "Data Management",
+        "desc": "Expertise in both relational and non-relational database systems for reliable and efficient data storage.",
+        "list": ["PostgreSQL", "MySQL", "SQLite", "Supabase / Firebase"]
       },
       {
-        "title": "React.js",
-        "desc": "Developing modern, efficient, and maintainable front-end applications with React.",
-        "list": [
-          "React Hooks",
-          "Context API",
-          "Redux",
-          "React Router"
-        ]
+        "category": "security",
+        "title": "Authentication & Security",
+        "desc": "Implementing robust security protocols and modern authentication solutions for user data protection.",
+        "list": ["JWT (JSON Web Tokens)", "OAuth 2.0", "Clerk Authentication"]
       },
       {
-        "title": "Databases",
-        "desc": "Designing and implementing database solutions for web applications.",
-        "list": [
-          "PostgreSQL",
-          "MySQL",
-          "SQLite",
-          "Data Modeling"
-        ]
+        "category": "tools",
+        "title": "Engineering Tools",
+        "desc": "Professional tools and environments used for version control, containerization, and API testing.",
+        "list": ["Git & GitHub", "Docker (Basic)", "Postman", "Linux (Ubuntu/Debian)"]
       },
       {
-        "title": "Version Control",
-        "desc": "Managing code versions and collaborating with other developers using Git.",
-        "list": [
-          "Git",
-          "GitHub",
-          "Bitbucket",
-          "Branching Strategies"
-        ]
+        "category": "deployment",
+        "title": "Cloud & Deployment",
+        "desc": "Provisioning and managing cloud infrastructure, CI/CD pipelines, and secure web server configurations.",
+        "list": ["VPS (Virtual Private Server)", "GitHub Actions CI/CD", "Nginx / Gunicorn / PM2", "SSL & Domain Configuration"]
       },
       {
-        "title": "Node.js",
-        "desc": "Building scalable and efficient backend services.",
-        "list": [
-          "Express.js",
-          "REST APIs",
-          "npm",
-          "Asynchronous Programming"
-        ]
+        "category": "ai",
+        "title": "AI & Intelligent Systems",
+        "desc": "Integrating cutting-edge Generative AI and Agentic patterns to build self-evolving and intelligent digital products.",
+        "list": ["Generative AI Integration", "OpenAI & LLM APIs", "Agentic Workflows", "Prompt Engineering"]
+      },
+      {
+        "category": "strategy",
+        "title": "Technical Strategy",
+        "desc": "Providing high-level architectural consultancy and strategic technology selection for scalable business growth.",
+        "list": ["System Architecture", "Scalability Planning", "Technical Documentation", "Performance Optimization"]
       }
     ],
     "learningPath": [
