@@ -224,7 +224,7 @@
     "design": "Identidad Visual y UX",
     "viewDetails": "Análisis y Estrategia",
     "viewLive": "Ver Demo",
-    "searchPlaceholder": "Buscar Casos de Estudio...",
+    "searchPlaceholder": "Buscar Proyectos Estratégicos...",
     "filterTitle": "Portafolios Estratégicos",
     "projectsDescription": "Una colección curada de proyectos de calidad producción que demuestran excelencia arquitectónica, experiencia de usuario fluida e impacto en el mundo real.",
     "noResults": "No se encontraron proyectos",
@@ -453,7 +453,7 @@
     "blogHero": "El Diario del Desarrollador",
     "blogSubtext": "Análisis profundos sobre arquitectura, código limpio y tecnologías emergentes que definen la web moderna.",
     "search": "Buscar",
-    "searchPlaceholder": "Buscar...",
+    "searchPlaceholder": "Buscar Proyectos...",
     "categories": "Categorías",
     "tags": "Etiquetas",
     "recentPosts": "Publicaciones recientes"

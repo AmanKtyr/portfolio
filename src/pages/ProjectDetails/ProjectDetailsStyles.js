@@ -134,4 +134,105 @@ export const ProjectLink = styled.a`
   }
 `;
 
+export const FeatureList = styled.div`
+  margin: 2.5rem 0;
+  
+  h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    &::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: var(--primary-color);
+      border-radius: 2px;
+    }
+  }
+  
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+    
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: var(--gray-color);
+      font-size: 1rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+      background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)'};
+      border: 1px solid ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)'};
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateX(5px);
+        border-color: var(--primary-color);
+        background: ${({ theme }) => theme.isDarkMode ? 'rgba(128, 0, 0, 0.1)' : 'rgba(128, 0, 0, 0.05)'};
+      }
+      
+      svg {
+        color: var(--primary-color);
+        flex-shrink: 0;
+      }
+    }
+  }
+`;
 
+export const ProjectHeader = styled.div`
+  text-align: center;
+  margin-bottom: 4rem;
+  
+  ${ProjectCategory} {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  ${ProjectTitle} {
+    display: inline-block;
+    padding-bottom: 0;
+    
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+    }
+  }
+`;
+
+export const SectionContainer = styled.div`
+  background-color: ${({ theme }) => theme.isDarkMode ? '#0f172a' : '#ffffff'};
+  color: ${({ theme }) => theme.isDarkMode ? '#f8fafc' : '#1e293b'};
+  min-height: 100vh;
+  transition: all 0.3s ease;
+`;
+
+export const ImageGallery = styled.div`
+  margin-bottom: 4rem;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: ${({ theme }) => theme.neumorphism.shadow1}, ${({ theme }) => theme.neumorphism.shadow2};
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  &:hover img {
+    transform: scale(1.02);
+  }
+`;

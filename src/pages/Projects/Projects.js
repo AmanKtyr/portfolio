@@ -2,97 +2,15 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaArrowRight, FaSearch } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaArrowRight, FaSearch, FaPython, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { ProjectsPageContainer, ProjectsBanner, ProjectsBannerContent, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLinks, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc, SearchContainer, SearchInput, SearchButton, ProjectsCategories, CategoryItem } from './ProjectsStyles';
+import { ProjectsPageContainer, ProjectsBanner, ProjectsBannerContent, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLinks, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc, SearchContainer, SearchInput, SearchButton, ProjectsCategories, CategoryItem, VisualEngine, VisualNode, GridCoordinates, WatermarkText, TechBadge, RotatingRing } from './ProjectsStyles';
 
-const projectsData = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=300&fit=crop&crop=center",
-    title: 'E-commerce Website',
-    category: 'web',
-    description: 'A fully responsive e-commerce website with product filtering, cart functionality, and payment integration.',
-    github: 'https://github.com',
-    demo: 'https://example.com',
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&crop=center",
-    title: 'Portfolio Website',
-    category: 'web',
-    description: 'A modern portfolio website for a photographer showcasing their work with a beautiful gallery.',
-    github: 'https://github.com',
-    demo: 'https://example.com',
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&crop=center",
-    title: 'Mobile Banking App',
-    category: 'app',
-    description: 'A mobile banking application with secure authentication, transaction history, and bill payments.',
-    github: 'https://github.com',
-    demo: 'https://example.com',
-  },
-  {
-    id: 4,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&crop=center",
-    title: 'Task Management Dashboard',
-    category: 'web',
-    description: 'A task management dashboard with drag-and-drop functionality, task assignments, and progress tracking.',
-    github: 'https://github.com',
-    demo: 'https://example.com',
-  },
-  {
-    id: 5,
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop&crop=center",
-    title: 'Food Delivery App',
-    category: 'app',
-    description: 'A food delivery application with restaurant listings, menu browsing, and order tracking.',
-    github: 'https://github.com',
-    demo: 'https://example.com',
-  },
-  {
-    id: 6,
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop&crop=center",
-    title: 'Real Estate Website',
-    category: 'web',
-    description: 'A real estate website with property listings, advanced search filters, and virtual tours.',
-    github: 'https://github.com',
-    demo: 'https://example.com',
-  },
-  {
-    id: 7,
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop&crop=center",
-    title: 'Social Media Dashboard',
-    category: 'web',
-    description: 'A social media dashboard for managing multiple accounts and tracking engagement metrics.',
-    github: 'https://github.com',
-    demo: 'https://example.com',
-  },
-  {
-    id: 8,
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=300&fit=crop&crop=center",
-    title: 'Weather App',
-    category: 'app',
-    description: 'A weather application with real-time forecasts, location-based weather data, and interactive maps.',
-    github: 'https://github.com',
-    demo: 'https://example.com',
-  },
-  {
-    id: 9,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center",
-    title: 'Fitness Tracker',
-    category: 'app',
-    description: 'A fitness tracking application for monitoring workouts, nutrition, and progress over time.',
-    github: 'https://github.com',
-    demo: 'https://example.com',
-  }
-];
+import { projectsData } from '../../data/projectsData';
 
 // Extract unique categories
-const categories = ['all', ...new Set(projectsData.map(project => project.category))];
+const categories = ['all', ...new Set(projectsData.map(project => project.category.toLowerCase()))];
 
 const ProjectsPage = () => {
   const { t } = useTranslation();
@@ -115,7 +33,7 @@ const ProjectsPage = () => {
 
     // Filter by category
     if (category !== 'all') {
-      filtered = filtered.filter(project => project.category === category);
+      filtered = filtered.filter(project => project.category.toLowerCase() === category.toLowerCase());
     }
 
     // Filter by search term
@@ -135,112 +53,68 @@ const ProjectsPage = () => {
 
       <ProjectsPageContainer>
         <ProjectsBanner>
-          {/* Grid overlay for cyberpunk/tech feel */}
-          <div className="grid-overlay"></div>
+          <WatermarkText>PROJECTS</WatermarkText>
+          
+          <TechBadge style={{ top: '15%', right: '10%' }}>SYSTEM_STATUS: ACTIVE</TechBadge>
+          <TechBadge style={{ bottom: '15%', left: '10%' }}>V_BUILD: 2.0.26</TechBadge>
+          
+          <GridCoordinates style={{ top: '10%', left: '5%' }}>
+            <span>LAT: 28.6139</span>
+            <span>LON: 77.2090</span>
+          </GridCoordinates>
+          <GridCoordinates style={{ bottom: '10%', right: '5%' }}>
+            <span>SCALE: 1:2500</span>
+            <span>UNIT: METERS</span>
+          </GridCoordinates>
 
           <div className="container">
             <ProjectsBannerContent>
-              {/* Floating elements for visual interest */}
-              <motion.div
-                className="floating-element element-1"
-                animate={{
-                  y: [0, -20, 0],
-                  x: [0, 10, 0],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
+              <div className="banner-text">
+                <motion.h1
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  {t('projects.title').split(' ').map((word, i) => (
+                    <span key={i} data-text={word}>{word} </span>
+                  ))}
+                </motion.h1>
+                
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                >
+                  {t('projects.projectsDescription')}
+                </motion.p>
+              </div>
 
-              <motion.div
-                className="floating-element element-2"
-                animate={{
-                  y: [0, 20, 0],
-                  x: [0, -15, 0],
-                  rotate: [0, -5, 0]
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
+              <VisualEngine>
+                {/* Compact Orbital System */}
+                <RotatingRing size={350} duration={40} />
+                <RotatingRing size={270} duration={25} reverse={true} color="rgba(128, 0, 0, 0.2)" />
+                <RotatingRing size={190} duration={15} color="rgba(128, 0, 0, 0.3)" />
 
-              <motion.h1
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 100
-                }}
-              >
-                {t('projects.title')}
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.3,
-                  type: "spring",
-                  stiffness: 50
-                }}
-              >
-                {t('projects.subtitle')}
-              </motion.p>
-
-              {/* Animated code particles */}
-              <motion.div
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "5%",
-                  color: "rgba(128, 0, 0, 0.4)",
-                  fontSize: "1.2rem",
-                  fontFamily: "monospace",
-                  zIndex: 5
-                }}
-                animate={{
-                  opacity: [0.2, 0.8, 0.2],
-                  y: [0, -30, 0]
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                &lt;projects&gt;
-              </motion.div>
-
-              <motion.div
-                style={{
-                  position: "absolute",
-                  bottom: "30%",
-                  right: "10%",
-                  color: "rgba(90, 0, 0, 0.4)",
-                  fontSize: "1.2rem",
-                  fontFamily: "monospace",
-                  zIndex: 5
-                }}
-                animate={{
-                  opacity: [0.2, 0.7, 0.2],
-                  y: [0, 20, 0]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
-              >
-                &lt;/projects&gt;
-              </motion.div>
+                <VisualNode style={{ transform: 'translate(110px, -110px)', width: '60px', height: '60px', fontSize: '1.5rem' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaPython />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, 110px)', width: '60px', height: '60px', fontSize: '1.5rem' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaNodeJs />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(110px, 110px)', width: '60px', height: '60px', fontSize: '1.5rem' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaReact />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, -110px)', width: '60px', height: '60px', fontSize: '1.5rem' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaDatabase />
+                </VisualNode>
+                
+                {/* Central Power Core */}
+                <motion.div 
+                  style={{ width: '80px', height: '80px', background: 'var(--primary-color)', borderRadius: '50%', filter: 'blur(40px)', opacity: 0.2 }}
+                  animate={{ opacity: [0.2, 0.4, 0.2] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                />
+              </VisualEngine>
             </ProjectsBannerContent>
           </div>
         </ProjectsBanner>
@@ -250,7 +124,7 @@ const ProjectsPage = () => {
             <form onSubmit={handleSearch}>
               <SearchInput
                 type="text"
-                placeholder={t('projects.searchPlaceholder') || "Search Case Studies..."}
+                placeholder={t('projects.searchPlaceholder') || "SEARCH_DATABASE_..."}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -261,7 +135,7 @@ const ProjectsPage = () => {
           </SearchContainer>
 
           <ProjectsCategories>
-            <h3>{t('projects.filterTitle') || "Strategic Portfolios"}</h3>
+            <h3>{t('projects.filterTitle') || "FILTER_BY_ECOSYSTEM"}</h3>
             <div className="categories-list">
               {categories.map((category, index) => (
                 <CategoryItem
@@ -275,50 +149,64 @@ const ProjectsPage = () => {
             </div>
           </ProjectsCategories>
 
-          <ProjectsGrid>
+          <ProjectsGrid
+            as={motion.div}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+          >
             {filteredProjects.length > 0 ? (
               filteredProjects.map((project, index) => (
-                <motion.div
+                <ProjectCard
+                  as={motion.div}
                   key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  featured={project.id === 1 || project.id === 3}
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <ProjectCard>
-                    <ProjectImg>
-                      <img src={project.image} alt={project.title} loading="lazy" />
-                      <ProjectOverlay>
-                        <ProjectLinks>
-                          <ProjectLink
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <FaGithub />
-                          </ProjectLink>
-                          <ProjectLink
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <FaExternalLinkAlt />
-                          </ProjectLink>
-                        </ProjectLinks>
-                      </ProjectOverlay>
-                    </ProjectImg>
-                    <ProjectInfo>
-                      <ProjectCategory>{project.category === 'web' ? 'Web Development' : 'App Development'}</ProjectCategory>
-                      <ProjectTitle>
-                        <Link to={`/project/${project.id}`}>{project.title}</Link>
-                      </ProjectTitle>
-                      <ProjectDesc>{project.description}</ProjectDesc>
-                      <Link to={`/project/${project.id}`} className="btn-text">
-                        {t('projects.viewDetails')} <FaArrowRight />
-                      </Link>
-                    </ProjectInfo>
-                  </ProjectCard>
-                </motion.div>
+                  <ProjectImg className="project-img">
+                    <div className="scanning-line" />
+                    <span className="card-id">{index + 1 < 10 ? `0${index + 1}` : index + 1}</span>
+                    <img src={project.previewImage} alt={project.title} loading="lazy" />
+                    <ProjectOverlay className="project-overlay">
+                      <ProjectLinks>
+                        <ProjectLink
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <FaGithub />
+                        </ProjectLink>
+                        <ProjectLink
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <FaExternalLinkAlt />
+                        </ProjectLink>
+                      </ProjectLinks>
+                    </ProjectOverlay>
+                  </ProjectImg>
+                  <ProjectInfo>
+                    <ProjectCategory>{project.category}</ProjectCategory>
+                    <ProjectTitle>
+                      <Link to={`/project/${project.id}`}>{project.title}</Link>
+                    </ProjectTitle>
+                    <ProjectDesc>{project.description}</ProjectDesc>
+                    <Link to={`/project/${project.id}`} className="btn-text">
+                      {t('projects.viewDetails')} <FaArrowRight />
+                    </Link>
+                  </ProjectInfo>
+                </ProjectCard>
               ))
             ) : (
               <div className="no-results">
@@ -336,4 +224,3 @@ const ProjectsPage = () => {
 };
 
 export default ProjectsPage;
-
