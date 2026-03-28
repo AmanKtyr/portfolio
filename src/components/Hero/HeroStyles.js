@@ -2,13 +2,19 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const HeroContainer = styled.section`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   background-color: transparent;
   overflow: hidden;
+  padding: 80px 0;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+    height: auto;
+  }
 
   &::before {
     content: '';
@@ -72,16 +78,17 @@ export const HeroContent = styled.div`
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 2rem;
+    gap: 3rem;
   }
 
   @media (max-width: 768px) {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
+    gap: 2.5rem;
   }
 `;
 
 export const HeroText = styled.div`
-  padding: 2.5rem;
+  padding: 3rem;
   border-radius: ${({ theme }) => theme.borderRadius.large};
   backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
   background-color: ${({ theme }) => theme.glassmorphism.background};
@@ -90,6 +97,10 @@ export const HeroText = styled.div`
   position: relative;
   overflow: hidden;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
 
   &::before {
     content: '';
@@ -148,7 +159,7 @@ export const HeroText = styled.div`
   }
 
   h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(2.8rem, 10vw, 4.5rem);
     font-weight: 800;
     margin-bottom: 1rem;
     line-height: 1.1;
@@ -427,9 +438,19 @@ export const HeroImage = styled.div`
   }
 
   @media (max-width: 992px) {
-    max-width: 500px;
+    max-width: 450px;
     margin: 0 auto;
-    height: 300px;
+    height: 350px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 320px;
+    height: 280px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 280px;
+    height: 240px;
   }
 `;
 

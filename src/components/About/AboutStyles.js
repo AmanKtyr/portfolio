@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.section`
-  padding: 8rem 0 2rem;
+  padding: 8rem 0 4rem;
   background-color: transparent;
   position: relative;
   overflow: hidden;
 
+  @media (max-width: 992px) {
+    padding: 6rem 0 3rem;
+  }
+
   @media (max-width: 768px) {
-    padding: 5rem 0;
+    padding: 4rem 0 2rem;
   }
 `;
 
@@ -78,19 +82,35 @@ export const AboutImage = styled.div`
   }
 
   @media (max-width: 992px) {
-    max-width: 500px;
+    max-width: 450px;
     margin: 0 auto;
+    
+    img {
+      transform: none !important;
+    }
+    
+    &::before, &::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    max-width: 320px;
   }
 `;
 
 export const AboutText = styled.div`
-  padding: 2rem;
+  padding: 3rem;
   border-radius: ${({ theme }) => theme.borderRadius.large};
   backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
   background-color: ${({ theme }) => theme.glassmorphism.background};
   border: ${({ theme }) => theme.glassmorphism.border};
   box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
 
   &:hover {
     transform: translateY(-5px);

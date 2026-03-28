@@ -5,7 +5,7 @@ import { FaCode, FaLaptopCode, FaServer, FaDownload, FaPhotoVideo, FaUserGraduat
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { AboutPageContainer, AboutBanner, AboutBannerContent, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, AboutTimeline, TimelineItem, TimelineContent, TimelineDot, TimelineConnector, AboutStats, StatItem } from './AboutStyles';
-import aboutImg from '../../assets/aman-about.jpeg';
+import aboutImg from '../../assets/aman-about.png';
 import resumePdf from '../../assets/Aman_Katiyar_Resume.pdf';
 
 const AboutPage = () => {
