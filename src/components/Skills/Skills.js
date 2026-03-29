@@ -7,8 +7,10 @@ import {
   SkillsContainer,
   SummaryWrapper,
   TechIconsGrid,
-  TechIconCircle,
-  ActionButton
+  TechIconNode,
+  ActionButton,
+  WatermarkText,
+  TechBadge
 } from './SkillsStyles';
 
 const Skills = () => {
@@ -28,13 +30,14 @@ const Skills = () => {
 
   return (
     <SkillsContainer id="skills">
+      <WatermarkText>EXPERTISE</WatermarkText>
       <div className="container">
         <motion.div
           className="section-title"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true }}
         >
           <h2>My Skills Overview</h2>
         </motion.div>
@@ -43,30 +46,28 @@ const Skills = () => {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
           >
-            I specialize in crafting high-performance, responsive web applications with an emphasis on clean architecture and seamless user experiences. My expertise bridges the gap between scalable backends utilizing Python and Node.js, and intuitive frontends powered by React and modern JavaScript. Check out my full skills page for a detailed breakdown of my tech stack and learning path.
+            I specialize in crafting high-performance, responsive web applications with an emphasis on clean architecture and seamless user experiences. My expertise bridges the gap between scalable backends utilizing Python and Node.js, and intuitive frontends powered by React and modern JavaScript.
           </motion.p>
           
           <TechIconsGrid>
             {techStack.map((tech, index) => (
               <motion.div
                 key={tech.id}
-                initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ 
-                  duration: 0.6, 
-                  delay: 0.3 + (index * 0.1),
-                  type: "spring",
-                  stiffness: 150
+                  duration: 0.5, 
+                  delay: index * 0.05
                 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true }}
                 title={tech.name}
               >
-                <TechIconCircle>
+                <TechIconNode>
                   {tech.icon}
-                </TechIconCircle>
+                </TechIconNode>
               </motion.div>
             ))}
           </TechIconsGrid>

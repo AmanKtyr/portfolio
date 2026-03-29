@@ -1,7 +1,17 @@
 import styled from 'styled-components';
 
 export const SkillsContainer = styled.section`
-  padding: 2rem 0 6rem;
+  @keyframes scan {
+    0% { top: -100%; }
+    100% { top: 100%; }
+  }
+
+  @keyframes gridDrift {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+  }
+
+  padding: 4.5rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;
@@ -9,29 +19,61 @@ export const SkillsContainer = styled.section`
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'radial-gradient(circle at 0% 0%, rgba(128, 0, 0, 0.15) 0%, transparent 40%)'
-        : 'radial-gradient(circle at 0% 0%, rgba(128, 0, 0, 0.1) 0%, transparent 40%)'};
-    z-index: -1;
+    inset: 0;
+    background-image: 
+      radial-gradient(var(--primary-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.05;
+    animation: gridDrift 20s linear infinite;
+    z-index: 0;
+  }
+`;
+
+export const WatermarkText = styled.div`
+  position: absolute;
+  font-size: clamp(8rem, 20vw, 22rem);
+  font-weight: 900;
+  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)'};
+  letter-spacing: -15px;
+  text-transform: uppercase;
+  z-index: 0;
+  right: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: 'monospace';
+  writing-mode: vertical-lr;
+`;
+
+export const TechBadge = styled.div`
+  position: absolute;
+  padding: 0.4rem 0.8rem;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(15, 23, 42, 0.8)' : 'rgba(255, 255, 255, 0.8)'};
+  border: 1px solid var(--primary-color);
+  font-family: 'monospace';
+  font-size: 0.6rem;
+  color: var(--primary-color);
+  border-radius: 2px;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: blink 1.5s infinite;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'radial-gradient(circle at 100% 100%, rgba(128, 0, 0, 0.15) 0%, transparent 40%)'
-        : 'radial-gradient(circle at 100% 100%, rgba(128, 0, 0, 0.1) 0%, transparent 40%)'};
-    z-index: -1;
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
   }
 `;
 
@@ -59,27 +101,56 @@ export const TechIconsGrid = styled.div`
   margin-bottom: 4rem;
 `;
 
-export const TechIconCircle = styled.div`
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: ${({ theme }) => theme.glassmorphism.background};
-  border: ${({ theme }) => theme.glassmorphism.border};
-  box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
-  backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
+export const TechIconNode = styled.div`
+  width: 90px;
+  height: 90px;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(15, 23, 42, 0.6)' : 'rgba(255, 255, 255, 0.6)'};
+  border: 1px solid ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'};
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  color: var(--primary-color);
+  font-size: 2.2rem;
+  color: var(--gray-color);
+  position: relative;
+  overflow: hidden;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
-  &:hover {
-    transform: translateY(-8px) scale(1.1);
-    box-shadow: 0 15px 30px rgba(128, 0, 0, 0.2);
-    border-color: rgba(128, 0, 0, 0.3);
-    color: white;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
     background: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+    &::before {
+      display: block;
+      animation: scan 2s linear infinite;
+    }
+
+    &::after {
+      border-color: var(--primary-color);
+      inset: -5px;
+      opacity: 0.1;
+    }
   }
 `;
 
@@ -89,25 +160,24 @@ export const ActionButton = styled.div`
   a {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    padding: 1rem 2.5rem;
+    gap: 1rem;
+    padding: 1rem 2.8rem;
     background: var(--primary-color);
     color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    box-shadow: 0 8px 20px rgba(128, 0, 0, 0.3);
+    font-weight: 800;
+    font-size: 1rem;
+    font-family: 'monospace';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.4s ease;
     text-decoration: none;
-
-    svg {
-      transition: transform 0.3s ease;
-    }
+    position: relative;
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(128, 0, 0, 0.4);
-      background: var(--secondary-color);
+      box-shadow: 0 12px 25px rgba(128, 0, 0, 0.3);
+      filter: brightness(1.1);
 
       svg {
         transform: translateX(5px);

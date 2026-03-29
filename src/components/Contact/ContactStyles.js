@@ -1,107 +1,77 @@
 import styled from 'styled-components';
 
 export const ContactContainer = styled.section`
-  padding: 6rem 0;
+  @keyframes scan {
+    0% { top: -100%; }
+    100% { top: 100%; }
+  }
+
+  @keyframes gridDrift {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+  }
+
+  padding: 4.5rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;
 
-  /* Subtle background grid */
   &::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background-image: linear-gradient(rgba(128,0,0,0.04) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(128,0,0,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-    z-index: -2;
-    transform: rotate(-10deg);
-  }
-
-  /* Glow blob */
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -10%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 70%)'
-        : 'radial-gradient(circle, rgba(128, 0, 0, 0.07) 0%, transparent 70%)'};
-    z-index: -1;
-    pointer-events: none;
+    inset: 0;
+    background-image: 
+      radial-gradient(var(--primary-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.05;
+    animation: gridDrift 20s linear infinite;
+    z-index: 0;
   }
 
   .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.65rem;
-    padding: 1rem 2.2rem;
+    gap: 1rem;
+    padding: 1.2rem 2.5rem;
     background: var(--primary-color);
     color: white;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
+    font-family: 'monospace';
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
     border: none;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s ease;
     width: 100%;
     position: relative;
     overflow: hidden;
-    z-index: 1;
-    letter-spacing: 0.5px;
 
     &::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    svg {
-      transition: transform 0.4s ease;
-      font-size: 0.9rem;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      filter: blur(2px);
     }
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(128, 0, 0, 0.4);
+      box-shadow: 0 10px 25px rgba(128, 0, 0, 0.3);
 
-      &::before { opacity: 1; }
-      svg { transform: translateX(4px) rotate(-45deg); }
+      &::before {
+        animation: scan 2s linear infinite;
+      }
     }
 
     &:disabled {
       background: var(--gray-color);
+      opacity: 0.6;
       cursor: not-allowed;
-      box-shadow: none;
-      transform: none;
     }
-
-    .loading-text {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      &::after {
-        content: '';
-        width: 12px; height: 12px;
-        border-radius: 50%;
-        border: 2px solid rgba(255,255,255,0.3);
-        border-top-color: white;
-        animation: spin 0.8s linear infinite;
-      }
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
   }
 
   .success-message {
@@ -166,6 +136,12 @@ export const ContactInfo = styled.div`
       border-radius: 2px;
       box-shadow: 0 0 10px rgba(128, 0, 0, 0.4);
     }
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+  }
   }
 
   > p {
@@ -180,25 +156,27 @@ export const ContactInfo = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.5rem 1.2rem;
+    padding: 0.5rem 1rem;
     background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    border: 1px solid #10b981;
+    font-family: 'monospace';
+    font-size: 0.7rem;
+    font-weight: 700;
     color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 
     .dot {
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
       background: #10b981;
       border-radius: 50%;
-      animation: pulse 1.5s ease infinite;
+      animation: blink 1.5s infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.4); }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
   }
 `;
@@ -206,74 +184,71 @@ export const ContactInfo = styled.div`
 export const ContactDetail = styled.a`
   display: flex;
   align-items: center;
-  margin-bottom: 0.85rem;
-  padding: 1rem 1.25rem;
-  border-radius: 14px;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  background-color: transparent;
-  border: 1px solid transparent;
+  margin-bottom: 1rem;
+  padding: 1.2rem;
+  border: 1px solid ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'};
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(30, 41, 59, 0.2)' : 'rgba(255, 255, 255, 0.2)'};
   text-decoration: none;
-  cursor: pointer;
-
-  .arrow {
-    margin-left: auto;
-    opacity: 0;
-    transform: translateX(-8px);
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-  }
+  transition: all 0.3s ease;
 
   &:hover {
-    background-color: ${({ theme }) =>
-      theme.isDarkMode ? 'rgba(30, 41, 59, 0.5)' : 'rgba(255, 255, 255, 0.7)'};
-    border-color: rgba(128, 0, 0, 0.12);
-    transform: translateX(6px);
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+    background: ${({ theme }) => theme.isDarkMode ? 'rgba(30, 41, 59, 0.4)' : 'rgba(255, 255, 255, 0.4)'};
 
     .icon {
-      background: var(--primary-color);
-      color: white;
-      box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+      color: var(--primary-color);
+      transform: scale(1.1);
     }
-    .text h4 { color: var(--primary-color); }
-    .arrow { opacity: 1; transform: translateX(0); }
   }
 
   .icon {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-    border-radius: 12px;
-    background-color: ${({ theme }) =>
-      theme.isDarkMode ? 'rgba(128, 0, 0, 0.12)' : 'rgba(128, 0, 0, 0.06)'};
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 1rem;
-    color: var(--primary-color);
+    color: var(--gray-color);
     font-size: 1.2rem;
-    transition: all 0.35s ease;
+    border-right: 1px solid ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'};
+    margin-right: 1.2rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    
+    .icon {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+      margin-right: 0.8rem;
+    }
   }
 
   .text {
     h4 {
-      font-size: 0.8rem;
+      font-size: 0.65rem;
+      font-family: 'monospace';
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.2rem;
-      font-weight: 700;
-      color: var(--gray-color);
-      transition: color 0.3s ease;
+      letter-spacing: 2px;
+      color: var(--primary-color);
+      margin-bottom: 0.3rem;
     }
     p {
-      margin: 0;
-      color: var(--text-color);
-      font-size: 0.93rem;
+      font-size: 1rem;
+      color: ${({ theme }) => theme.colors.text};
       font-weight: 500;
+      word-break: break-all;
+
+      @media (max-width: 480px) {
+        font-size: 0.85rem;
+      }
     }
   }
 `;
+
 
 export const ContactSocial = styled.div`
   display: flex;

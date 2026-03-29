@@ -24,36 +24,29 @@ const gridPulse = keyframes`
 // ── Main Footer Container ───────────────────────────────────────────────────
 export const FooterContainer = styled.footer`
   position: relative;
-  background: linear-gradient(180deg, #0a0000 0%, #110000 40%, #0d0000 100%);
-  color: rgba(255, 255, 255, 0.85);
+  background: ${({ theme }) => theme.isDarkMode ? '#030712' : '#f8fafc'};
+  color: ${({ theme }) => theme.colors.text};
   overflow: hidden;
+  border-top: 2px solid var(--primary-color);
 
-  /* Animated grid pattern overlay */
   &::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(128, 0, 0, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(128, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 60px 60px;
-    animation: ${gridPulse} 6s ease-in-out infinite;
-    pointer-events: none;
+    width: 200%;
+    height: 200%;
+    background-image: 
+      radial-gradient(var(--primary-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.05;
     z-index: 0;
+    top: -50%;
+    left: -50%;
+    animation: footerDrift 60s linear infinite;
   }
 
-  /* Subtle radial glow */
-  &::after {
-    content: '';
-    position: absolute;
-    top: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: 400px;
-    background: radial-gradient(ellipse, rgba(128, 0, 0, 0.12) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
+  @keyframes footerDrift {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 `;
 
@@ -107,12 +100,13 @@ export const FooterContent = styled.div`
 
   @media (max-width: 992px) {
     grid-template-columns: 1fr 1fr;
-    gap: 3rem 2.5rem;
+    gap: 2.5rem 1.5rem;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 640px) {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
+    padding: 3.5rem 0 2.5rem;
   }
 `;
 
@@ -124,7 +118,7 @@ export const FooterBrand = styled.div`
 `;
 
 export const FooterText = styled.p`
-  color: rgba(255, 255, 255, 0.55);
+  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(15, 23, 42, 0.6)'};
   line-height: 1.85;
   font-size: 0.95rem;
   max-width: 380px;
@@ -141,46 +135,29 @@ export const FooterSocial = styled.div`
 export const SocialLink = styled.a`
   width: 42px;
   height: 42px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.04);
+  border-radius: 2px;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)'};
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--primary-color);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--primary-color);
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--primary-color), #cc3d3d);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
 
   svg {
     font-size: 1.1rem;
     position: relative;
     z-index: 1;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   &:hover {
     color: white;
+    background: var(--primary-color);
     transform: translateY(-4px);
-    box-shadow:
-      0 8px 24px rgba(128, 0, 0, 0.35),
-      0 0 0 1px rgba(128, 0, 0, 0.3);
-    border-color: transparent;
-
-    &::before {
-      opacity: 1;
-    }
+    box-shadow: 0 8px 24px rgba(128, 0, 0, 0.35);
 
     svg {
       transform: scale(1.15);
@@ -195,17 +172,18 @@ export const FooterColumn = styled.div`
 `;
 
 export const ColumnTitle = styled.h4`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 1.75rem;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
   position: relative;
   padding-bottom: 0.85rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: 'monospace';
 
   &::after {
     content: '';
@@ -235,7 +213,7 @@ export const FooterLinks = styled.ul`
 
   li {
     a {
-      color: rgba(255, 255, 255, 0.5);
+      color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(15, 23, 42, 0.5)'};
       font-size: 0.92rem;
       text-decoration: none;
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -258,7 +236,7 @@ export const FooterLinks = styled.ul`
       }
 
       &:hover {
-        color: rgba(255, 255, 255, 0.95);
+        color: ${({ theme }) => theme.colors.text};
         padding-left: 4px;
 
         &::before {
@@ -284,14 +262,14 @@ export const ContactItem = styled.li`
   display: flex;
   align-items: flex-start;
   gap: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(15, 23, 42, 0.5)'};
   font-size: 0.92rem;
   line-height: 1.5;
   letter-spacing: 0.01em;
   transition: color 0.3s ease;
 
   &:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--primary-color);
   }
 `;
 
@@ -310,10 +288,10 @@ export const ContactIcon = styled.span`
   transition: all 0.35s ease;
 
   ${ContactItem}:hover & {
-    background: rgba(128, 0, 0, 0.22);
-    color: #ff6b6b;
+    background: ${({ theme }) => theme.isDarkMode ? 'rgba(128, 0, 0, 0.22)' : 'rgba(128, 0, 0, 0.1)'};
+    color: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.1);
   }
 `;
 
@@ -324,13 +302,8 @@ export const ContactText = styled.span`
 // ── Middle Divider ──────────────────────────────────────────────────────────
 export const FooterDivider = styled.div`
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.06) 20%,
-    rgba(255, 255, 255, 0.06) 80%,
-    transparent 100%
-  );
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.06)' : 'rgba(0, 0, 0, 0.06)'};
+  width: 100%;
 `;
 
 // ── Bottom Bar ──────────────────────────────────────────────────────────────
@@ -349,14 +322,14 @@ export const FooterBottom = styled.div`
 `;
 
 export const FooterCopyright = styled.p`
-  color: rgba(255, 255, 255, 0.35);
+  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.4)' : 'rgba(15, 23, 42, 0.4)'};
   font-size: 0.82rem;
   letter-spacing: 0.03em;
   margin: 0;
 `;
 
 export const FooterMadeWith = styled.p`
-  color: rgba(255, 255, 255, 0.35);
+  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.4)' : 'rgba(15, 23, 42, 0.4)'};
   font-size: 0.82rem;
   letter-spacing: 0.03em;
   margin: 0;
@@ -375,26 +348,31 @@ export const FooterMadeWith = styled.p`
 export const StatusBadge = styled.div`
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1rem;
-  border-radius: 100px;
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.15);
-  font-size: 0.78rem;
-  color: rgba(16, 185, 129, 0.9);
-  letter-spacing: 0.04em;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)'};
+  border-left: 3px solid #10b981;
+  font-size: 0.75rem;
+  color: #10b981;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  font-weight: 600;
-  margin-top: 0.5rem;
+  font-weight: 700;
+  font-family: 'monospace';
+  margin-top: 1rem;
 
   &::before {
     content: '';
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: #10b981;
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
-    animation: ${pulseGlow} 2s ease-in-out infinite;
+    box-shadow: 0 0 10px #10b981;
+    animation: blink 2s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
   }
 `;
 
@@ -466,9 +444,9 @@ export const FooterCTA = styled.div`
 `;
 
 export const CTACard = styled.div`
-  background: rgba(128, 0, 0, 0.06);
-  border: 1px solid rgba(128, 0, 0, 0.12);
-  border-radius: 16px;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(128, 0, 0, 0.06)' : 'rgba(128, 0, 0, 0.03)'};
+  border: 1px solid ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'};
+  border-radius: 4px;
   padding: 2.5rem 3rem;
   display: flex;
   align-items: center;
@@ -487,7 +465,8 @@ export const CTACard = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
 `;
 
@@ -498,13 +477,17 @@ export const CTAContent = styled.div`
 export const CTATitle = styled.h3`
   font-size: 1.35rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
+  color: ${({ theme }) => theme.colors.text};
   margin-bottom: 0.5rem;
   letter-spacing: -0.01em;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const CTASubtext = styled.p`
-  color: rgba(255, 255, 255, 0.45);
+  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(15, 23, 42, 0.5)'};
   font-size: 0.92rem;
   margin: 0;
   letter-spacing: 0.01em;
@@ -555,21 +538,22 @@ export const TechBadgeRow = styled.div`
 export const TechBadge = styled.span`
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.3rem 0.7rem;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2px;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)'};
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: 'monospace';
   transition: all 0.3s ease;
 
   &:hover {
-    color: rgba(255, 255, 255, 0.7);
-    border-color: rgba(128, 0, 0, 0.2);
-    background: rgba(128, 0, 0, 0.08);
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
   }
 `;

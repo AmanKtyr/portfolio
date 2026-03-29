@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FaCode, FaLaptopCode, FaServer, FaDownload, FaPhotoVideo, FaUserGraduate, FaBriefcase, FaAward } from 'react-icons/fa';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { AboutPageContainer, AboutBanner, AboutBannerContent, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, AboutTimeline, TimelineItem, TimelineContent, TimelineDot, TimelineConnector, AboutStats, StatItem } from './AboutStyles';
+import { AboutPageContainer, AboutBanner, AboutBannerContent, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, AboutTimeline, TimelineItem, TimelineContent, TimelineDot, TimelineConnector, AboutStats, StatItem, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './AboutStyles';
 import aboutImg from '../../assets/aman-about.png';
 import resumePdf from '../../assets/Aman_Katiyar_Resume.pdf';
 
@@ -16,118 +16,66 @@ const AboutPage = () => {
 
       <AboutPageContainer>
         <AboutBanner>
-          {/* Grid overlay for cyberpunk/tech feel */}
-          <div className="grid-overlay"></div>
+          <WatermarkText>PROFILE</WatermarkText>
+          <TechBadge style={{ top: '15%', right: '10%' }}>SYSTEM_STATUS: ACTIVE</TechBadge>
+          <TechBadge style={{ bottom: '15%', left: '10%' }}>V_BUILD: 1.4.2</TechBadge>
+          
+          <GridCoordinates style={{ top: '10%', left: '5%' }}>
+            <span>LAT: 26.8467</span>
+            <span>LON: 80.9462</span>
+          </GridCoordinates>
+          <GridCoordinates style={{ bottom: '10%', right: '5%' }}>
+            <span>SECTOR: 7_ALPHA</span>
+            <span>UNIT: BIOS_01</span>
+          </GridCoordinates>
 
           <div className="container">
             <AboutBannerContent>
-              {/* Floating elements for visual interest */}
-              <motion.div
-                className="floating-element element-1"
-                animate={{
-                  y: [0, -20, 0],
-                  x: [0, 10, 0],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
+              <div className="banner-text">
+                <motion.h1
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  {t('about.title').split(' ').map((word, i) => (
+                    <span key={i} data-text={word}>{word} </span>
+                  ))}
+                </motion.h1>
 
-              <motion.div
-                className="floating-element element-2"
-                animate={{
-                  y: [0, 20, 0],
-                  x: [0, -15, 0],
-                  rotate: [0, -5, 0]
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                >
+                  {t('about.subtitle')}
+                </motion.p>
+              </div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 100
-                }}
-              >
-                {t('about.title')}
-              </motion.h1>
+              <VisualEngine>
+                <RotatingRing size={350} duration={40} />
+                <RotatingRing size={270} duration={25} reverse={true} color="rgba(128, 0, 0, 0.2)" />
+                <RotatingRing size={190} duration={15} color="rgba(128, 0, 0, 0.3)" />
 
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.3,
-                  type: "spring",
-                  stiffness: 50
-                }}
-              >
-                {t('about.subtitle')}
-              </motion.p>
-
-              {/* Animated code particles */}
-              <motion.div
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "5%",
-                  color: "rgba(128, 0, 0, 0.4)",
-                  fontSize: "1.2rem",
-                  fontFamily: "monospace",
-                  zIndex: 5
-                }}
-                animate={{
-                  opacity: [0.2, 0.8, 0.2],
-                  y: [0, -30, 0]
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                &lt;about&gt;
-              </motion.div>
-
-              <motion.div
-                style={{
-                  position: "absolute",
-                  bottom: "30%",
-                  right: "10%",
-                  color: "rgba(90, 0, 0, 0.4)",
-                  fontSize: "1.2rem",
-                  fontFamily: "monospace",
-                  zIndex: 5
-                }}
-                animate={{
-                  opacity: [0.2, 0.7, 0.2],
-                  y: [0, 20, 0]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
-              >
-                &lt;/about&gt;
-              </motion.div>
+                <VisualNode style={{ transform: 'translate(110px, -110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaUserGraduate />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, 110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaBriefcase />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(110px, 110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaCode />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, -110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaAward />
+                </VisualNode>
+              </VisualEngine>
             </AboutBannerContent>
           </div>
         </AboutBanner>
 
         <div className="container">
-          <AboutContent>
+          <AboutContent style={{ position: 'relative' }}>
+            <WatermarkText style={{ left: 'auto', right: '-5%', writingMode: 'vertical-rl', rotate: '0deg' }}>MISSION</WatermarkText>
             <AboutImage>
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -275,6 +223,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
             >
               <StatItem>
+                <TechBadge style={{ top: '5px', right: '5px', fontSize: '0.5rem' }}>DATA_STREAM</TechBadge>
                 <h3>3+</h3>
                 <p>{t('about.stats.experience')}</p>
               </StatItem>
@@ -337,144 +286,34 @@ const AboutPage = () => {
           </div>
 
           <AboutTimeline>
-            <TimelineItem>
-              <TimelineDot>
-                <FaBriefcase />
-              </TimelineDot>
-              <TimelineConnector />
-              <TimelineContent>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="date">{t('about.journey.currentRole.date')}</span>
-                  <h3>{t('about.journey.currentRole.title')}</h3>
-                  <p>{t('about.journey.currentRole.company')}</p>
-                  <p>{t('about.journey.currentRole.desc')}</p>
-                </motion.div>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineDot>
-                <FaBriefcase />
-              </TimelineDot>
-              <TimelineConnector />
-              <TimelineContent>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="date">{t('about.journey.previousRole.date')}</span>
-                  <h3>{t('about.journey.previousRole.title')}</h3>
-                  <p>{t('about.journey.previousRole.company')}</p>
-                  <p>{t('about.journey.previousRole.desc')}</p>
-                </motion.div>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineDot>
-                <FaUserGraduate />
-              </TimelineDot>
-              <TimelineConnector />
-              <TimelineContent>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="date">{t('about.journey.degree.date')}</span>
-                  <h3>{t('about.journey.degree.title')}</h3>
-                  <p>{t('about.journey.degree.company')}</p>
-                  <p>{t('about.journey.degree.desc')}</p>
-                </motion.div>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineDot>
-                <FaBriefcase />
-              </TimelineDot>
-              <TimelineConnector />
-              <TimelineContent>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="date">{t('about.journey.apprenticeship.date')}</span>
-                  <h3>{t('about.journey.apprenticeship.title')}</h3>
-                  <p>{t('about.journey.apprenticeship.company')}</p>
-                  <p>{t('about.journey.apprenticeship.desc')}</p>
-                </motion.div>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineDot>
-                <FaAward />
-              </TimelineDot>
-              <TimelineConnector />
-              <TimelineContent>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="date">{t('about.journey.training.date')}</span>
-                  <h3>{t('about.journey.training.title')}</h3>
-                  <p>{t('about.journey.training.company')}</p>
-                  <p>{t('about.journey.training.desc')}</p>
-                </motion.div>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineDot>
-                <FaUserGraduate />
-              </TimelineDot>
-              <TimelineConnector />
-              <TimelineContent>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="date">{t('about.journey.diploma.date')}</span>
-                  <h3>{t('about.journey.diploma.title')}</h3>
-                  <p>{t('about.journey.diploma.company')}</p>
-                  <p>{t('about.journey.diploma.desc')}</p>
-                </motion.div>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineDot>
-                <FaUserGraduate />
-              </TimelineDot>
-              <TimelineContent>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="date">{t('about.journey.school.date')}</span>
-                  <h3>{t('about.journey.school.title')}</h3>
-                  <p>{t('about.journey.school.company')}</p>
-                  <p>{t('about.journey.school.desc')}</p>
-                </motion.div>
-              </TimelineContent>
-            </TimelineItem>
+            {[
+              { role: 'currentRole', icon: <FaBriefcase /> },
+              { role: 'previousRole', icon: <FaBriefcase /> },
+              { role: 'degree', icon: <FaUserGraduate /> },
+              { role: 'apprenticeship', icon: <FaBriefcase /> },
+              { role: 'training', icon: <FaAward /> },
+              { role: 'diploma', icon: <FaUserGraduate /> },
+              { role: 'school', icon: <FaUserGraduate /> }
+            ].map((item, index) => (
+              <TimelineItem key={index} index={index}>
+                <TimelineDot>
+                  {item.icon}
+                </TimelineDot>
+                <TimelineContent>
+                  <motion.div
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <span className="date">{t(`about.journey.${item.role}.date`)}</span>
+                    <h3>{t(`about.journey.${item.role}.title`)}</h3>
+                    <p>{t(`about.journey.${item.role}.company`)}</p>
+                    <p>{t(`about.journey.${item.role}.desc`)}</p>
+                  </motion.div>
+                </TimelineContent>
+              </TimelineItem>
+            ))}
           </AboutTimeline>
         </div>
       </AboutPageContainer>

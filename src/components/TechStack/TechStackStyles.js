@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TechStackContainer = styled.section`
-  padding: 6rem 0;
+  padding: 4.5rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;

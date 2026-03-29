@@ -54,10 +54,6 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-        {/* Decorative floating orbs */}
-        <FloatingOrb className="orb-1" />
-        <FloatingOrb className="orb-2" />
-
         {/* Glowing top divider */}
         <FooterTopDivider />
 
@@ -85,7 +81,7 @@ const Footer = () => {
               <FooterText>
                 {t('footer.brandText')}
               </FooterText>
-              <StatusBadge>{t('footer.available')}</StatusBadge>
+              <StatusBadge>AVAILABILITY: ACTIVE</StatusBadge>
               <FooterSocial>
                 <SocialLink
                   href="https://github.com/amanktyr"
@@ -172,11 +168,14 @@ const Footer = () => {
 
           {/* Bottom Bar */}
           <FooterBottom>
-            <FooterCopyright>
-              {t('footer.copyright', { year: currentYear })}
+            <FooterCopyright style={{ fontFamily: 'monospace' }}>
+              {t('footer.copyright', { year: currentYear })} | SECURE_ACCESS
             </FooterCopyright>
-            <FooterMadeWith>
-              {t('footer.madeWith')} <FaHeart /> {t('footer.passion')}
+            <div style={{ fontFamily: 'monospace', fontSize: '0.8rem', opacity: 0.4 }}>
+              SYS_REV: 2.0.4 // UNIT: ARCHIVE_V1
+            </div>
+            <FooterMadeWith style={{ fontFamily: 'monospace' }}>
+              BUILD: {t('footer.passion')} <FaHeart /> PRECISION
             </FooterMadeWith>
           </FooterBottom>
         </FooterInner>

@@ -133,7 +133,7 @@ const Contact = () => {
               <motion.div variants={itemVariants} style={{ marginTop: '2rem' }}>
                 <div className="availability-badge">
                   <span className="dot"></span>
-                  Available for new projects
+                  SYSTEM_STATUS: ONLINE
                 </div>
               </motion.div>
             </ContactInfo>
@@ -148,8 +148,8 @@ const Contact = () => {
           >
             <ContactForm onSubmit={handleSubmit}>
               <div className="form-header">
-                <h3>Send a Message</h3>
-                <p>Fill out the form and I'll get back to you within 24 hours.</p>
+                <h3>&lt;MESSAGE_RELAY&gt;</h3>
+                <p>ESTABLISHING SECURE CONNECTION...</p>
               </div>
 
               {submitMessage && (

@@ -17,7 +17,8 @@ import {
   SkillsPageContainer, SkillsBanner, SkillsBannerContent, SkillsContent, 
   SkillsGrid, SkillCard, SkillIcon, SkillTitle, SkillText, SkillList, 
   TechStackSection, TechStackGrid, TechItem, TechIcon, TechName, 
-  SkillsTimeline, TimelineItem, TimelineContent, TimelineDot, TimelineConnector 
+  SkillsTimeline, TimelineItem, TimelineContent, TimelineDot, TimelineConnector,
+  WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates
 } from './SkillsStyles';
 
 const categoryIconMap = {
@@ -82,18 +83,59 @@ const Skills = () => {
 
       <SkillsPageContainer>
         <SkillsBanner>
-          <div className="grid-overlay"></div>
+          <WatermarkText>SKILLS_MATRIX</WatermarkText>
+          <TechBadge style={{ top: '15%', right: '10%' }}>SYSTEM_STATUS: OPTIMIZED</TechBadge>
+          <TechBadge style={{ bottom: '15%', left: '10%' }}>V_BUILD: 3.1.0</TechBadge>
+          
+          <GridCoordinates style={{ top: '10%', left: '5%' }}>
+            <span>LAT: 26.8467</span>
+            <span>LON: 80.9462</span>
+          </GridCoordinates>
+          <GridCoordinates style={{ bottom: '10%', right: '5%' }}>
+            <span>NODE: SKL_7</span>
+            <span>SYNC: ACTIVE</span>
+          </GridCoordinates>
+
           <div className="container">
             <SkillsBannerContent>
-              <motion.div className="floating-element element-1" animate={{ y: [0, -20, 0], x: [0, 10, 0], rotate: [0, 5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} />
-              <motion.div className="floating-element element-2" animate={{ y: [0, 20, 0], x: [0, -15, 0], rotate: [0, -5, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} />
+              <div className="banner-text">
+                <motion.h1
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  {t('skills.title').split(' ').map((word, i) => (
+                    <span key={i} data-text={word}>{word} </span>
+                  ))}
+                </motion.h1>
+                
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                >
+                  {t('skills.subtitle')}
+                </motion.p>
+              </div>
 
-              <motion.h1 initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, type: "spring", stiffness: 100 }}>
-                {t('skills.title')}
-              </motion.h1>
-              <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 50 }}>
-                {t('skills.subtitle')}
-              </motion.p>
+              <VisualEngine>
+                <RotatingRing size={350} duration={40} />
+                <RotatingRing size={270} duration={25} reverse={true} color="rgba(128, 0, 0, 0.2)" />
+                <RotatingRing size={190} duration={15} color="rgba(128, 0, 0, 0.3)" />
+
+                <VisualNode style={{ transform: 'translate(110px, -110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaReact />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, 110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaNodeJs />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(110px, 110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaJs />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, -110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaDatabase />
+                </VisualNode>
+              </VisualEngine>
             </SkillsBannerContent>
           </div>
         </SkillsBanner>

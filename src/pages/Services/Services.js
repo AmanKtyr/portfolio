@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FaCode, FaMobileAlt, FaServer, FaShoppingCart, FaPalette, FaSearch, FaDatabase, FaLaptopCode, FaTools } from 'react-icons/fa';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { ServicesPageContainer, ServicesBanner, ServicesBannerContent, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText, ServiceFeatures, ServiceFeature, PricingSection, PricingContainer, PricingCard, PricingHeader, PricingPrice, PricingFeatures, PricingFeature, PricingButton, FAQSection, FAQContainer, FAQItem, FAQQuestion, FAQAnswer, CTASection, CTAContent } from './ServicesStyles';
+import { ServicesPageContainer, ServicesBanner, ServicesBannerContent, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText, ServiceFeatures, ServiceFeature, PricingSection, PricingContainer, PricingCard, PricingHeader, PricingPrice, PricingFeatures, PricingFeature, PricingButton, FAQSection, FAQContainer, FAQItem, FAQQuestion, FAQAnswer, CTASection, CTAContent, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './ServicesStyles';
 
 const serviceIcons = [<FaCode />, <FaMobileAlt />, <FaServer />, <FaShoppingCart />, <FaPalette />, <FaSearch />, <FaDatabase />, <FaLaptopCode />, <FaTools />];
 
@@ -34,25 +34,59 @@ const Services = () => {
 
       <ServicesPageContainer>
         <ServicesBanner>
-          <div className="grid-overlay"></div>
+          <WatermarkText>SERVICES_ARCHIVE</WatermarkText>
+          <TechBadge style={{ top: '15%', right: '10%' }}>SYSTEM_STATUS: ONLINE</TechBadge>
+          <TechBadge style={{ bottom: '15%', left: '10%' }}>V_BUILD: 2.0.4</TechBadge>
+          
+          <GridCoordinates style={{ top: '10%', left: '5%' }}>
+            <span>LAT: 26.8467</span>
+            <span>LON: 80.9462</span>
+          </GridCoordinates>
+          <GridCoordinates style={{ bottom: '10%', right: '5%' }}>
+            <span>SEC: DELTA_9</span>
+            <span>UNIT: SRV_PROCT</span>
+          </GridCoordinates>
+
           <div className="container">
             <ServicesBannerContent>
-              <motion.div className="floating-element element-1" animate={{ y: [0, -20, 0], x: [0, 10, 0], rotate: [0, 5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} />
-              <motion.div className="floating-element element-2" animate={{ y: [0, 20, 0], x: [0, -15, 0], rotate: [0, -5, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} />
+              <div className="banner-text">
+                <motion.h1
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  {t('services.title').split(' ').map((word, i) => (
+                    <span key={i} data-text={word}>{word} </span>
+                  ))}
+                </motion.h1>
+                
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                >
+                  {t('services.subtitle')}
+                </motion.p>
+              </div>
 
-              <motion.h1 initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, type: "spring", stiffness: 100 }}>
-                {t('services.title')}
-              </motion.h1>
-              <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 50 }}>
-                {t('services.servicesSubtext')}
-              </motion.p>
+              <VisualEngine>
+                <RotatingRing size={350} duration={40} />
+                <RotatingRing size={270} duration={25} reverse={true} color="rgba(128, 0, 0, 0.2)" />
+                <RotatingRing size={190} duration={15} color="rgba(128, 0, 0, 0.3)" />
 
-              <motion.div style={{ position: "absolute", top: "50%", left: "5%", color: "rgba(128, 0, 0, 0.4)", fontSize: "1.2rem", fontFamily: "monospace", zIndex: 5 }} animate={{ opacity: [0.2, 0.8, 0.2], y: [0, -30, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
-                &lt;services&gt;
-              </motion.div>
-              <motion.div style={{ position: "absolute", bottom: "30%", right: "10%", color: "rgba(90, 0, 0, 0.4)", fontSize: "1.2rem", fontFamily: "monospace", zIndex: 5 }} animate={{ opacity: [0.2, 0.7, 0.2], y: [0, 20, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-                &lt;/services&gt;
-              </motion.div>
+                <VisualNode style={{ transform: 'translate(110px, -110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaCode />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, 110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaMobileAlt />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(110px, 110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaPalette />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, -110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaSearch />
+                </VisualNode>
+              </VisualEngine>
             </ServicesBannerContent>
           </div>
         </ServicesBanner>

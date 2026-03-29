@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCode, FaMobileAlt, FaPalette, FaSearch, FaArrowRight, FaPhotoVideo, FaDesktop } from 'react-icons/fa';
-import { ServicesContainer, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText } from './ServicesStyles';
+import { ServicesContainer, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText, WatermarkText, TechBadge } from './ServicesStyles';
 import { useTranslation } from 'react-i18next';
 
 const homeIcons = [<FaCode />, <FaMobileAlt />, <FaPhotoVideo />, <FaSearch />, <FaDesktop />, <FaPalette />];
@@ -13,6 +13,7 @@ const Services = () => {
 
   return (
     <ServicesContainer id="services">
+      <WatermarkText>SERVICES</WatermarkText>
       <div className="container">
         <motion.div
           className="section-title"
@@ -22,7 +23,6 @@ const Services = () => {
           viewport={{ once: true }}
         >
           <h2>{t('services.title')}</h2>
-          <p>{t('services.subtitle')}</p>
         </motion.div>
 
         <ServicesGrid>
@@ -35,6 +35,9 @@ const Services = () => {
               viewport={{ once: true }}
             >
               <ServiceCard>
+                <TechBadge style={{ top: '1rem', right: '1rem' }}>
+                  STATUS: ONLINE
+                </TechBadge>
                 <ServiceIcon>{homeIcons[index]}</ServiceIcon>
                 <ServiceTitle>{card.title}</ServiceTitle>
                 <ServiceText>{card.desc}</ServiceText>

@@ -1,18 +1,41 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.section`
-  padding: 8rem 0 4rem;
+  @keyframes scan {
+    0% { top: -100%; }
+    100% { top: 100%; }
+  }
+
   background-color: transparent;
   position: relative;
   overflow: hidden;
 
-  @media (max-width: 992px) {
-    padding: 6rem 0 3rem;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(var(--primary-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.05;
+    z-index: 0;
   }
+`;
 
-  @media (max-width: 768px) {
-    padding: 4rem 0 2rem;
-  }
+export const WatermarkText = styled.div`
+  position: absolute;
+  font-size: clamp(8rem, 20vw, 22rem);
+  font-weight: 900;
+  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)'};
+  letter-spacing: -15px;
+  text-transform: uppercase;
+  z-index: 0;
+  right: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: 'monospace';
+  writing-mode: vertical-lr;
 `;
 
 export const AboutContent = styled.div`
@@ -118,36 +141,33 @@ export const AboutText = styled.div`
   }
 
   h3 {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 1rem;
-    line-height: 1.3;
-    background: var(--primary-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 900;
+    margin-bottom: 2rem;
+    color: ${({ theme }) => theme.colors.text};
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    font-family: 'monospace';
+    
     &::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 50px;
-      height: 3px;
+      width: 60px;
+      height: 4px;
       background: var(--primary-color);
-    }
-
-    @media (max-width: 768px) {
-      font-size: 1.8rem;
     }
   }
 
   p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     color: var(--gray-color);
-    line-height: 1.8;
-    font-size: clamp(0.95rem, 2vw, 1.05rem);
-    opacity: 0.9;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    font-weight: 300;
   }
 `;
 
@@ -200,37 +220,57 @@ export const AboutSkills = styled.div`
 export const SkillItem = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.75rem;
-  border-radius: ${({ theme }) => theme.borderRadius.default};
-  background-color: ${({ theme }) => theme.neumorphism.background};
-  box-shadow: ${({ theme }) => theme.neumorphism.shadow1}, ${({ theme }) => theme.neumorphism.shadow2};
-  transition: all 0.3s ease;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(15, 23, 42, 0.4)' : '#ffffff'};
+  border: 1px solid ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'};
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+    z-index: 5;
+    display: none;
+  }
 
   &:hover {
+    border-color: var(--primary-color);
     transform: translateY(-5px);
-    box-shadow: ${({ theme }) => theme.neumorphism.shadow1.replace('10px', '15px')},
-                ${({ theme }) => theme.neumorphism.shadow2.replace('-10px', '-15px')};
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+    &::before {
+      display: block;
+      animation: scan 2s linear infinite;
+    }
 
     svg {
-      transform: rotate(10deg) scale(1.2);
+      color: var(--primary-color);
+      transform: scale(1.1);
     }
   }
 
-  &:active {
-    box-shadow: ${({ theme }) => theme.neumorphism.activeShadow1},
-                ${({ theme }) => theme.neumorphism.activeShadow2};
-  }
-
   svg {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
+    font-size: 2rem;
+    color: var(--gray-color);
+    transition: all 0.3s ease;
   }
 
   h4 {
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'monospace';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    color: ${({ theme }) => theme.colors.text};
   }
 `;
 

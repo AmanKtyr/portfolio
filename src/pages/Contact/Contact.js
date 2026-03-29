@@ -1,10 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Contact from '../../components/Contact/Contact';
-import { ContactPageContainer, ContactBanner, ContactBannerContent, ContactMap } from './ContactStyles';
+import { ContactPageContainer, ContactBanner, ContactBannerContent, ContactMap, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './ContactStyles';
 
 const ContactPage = () => {
   const { t } = useTranslation();
@@ -13,58 +14,59 @@ const ContactPage = () => {
       <Header />
       <ContactPageContainer>
         <ContactBanner>
-          <div className="grid-overlay"></div>
+          <WatermarkText>COMMUNICATIONS</WatermarkText>
+          <TechBadge style={{ top: '15%', right: '10%' }}>SYSTEM_STATUS: ONLINE</TechBadge>
+          <TechBadge style={{ bottom: '15%', left: '10%' }}>V_BUILD: 4.1.2</TechBadge>
+          
+          <GridCoordinates style={{ top: '10%', left: '5%' }}>
+            <span>LAT: 26.8467</span>
+            <span>LON: 80.9462</span>
+          </GridCoordinates>
+          <GridCoordinates style={{ bottom: '10%', right: '5%' }}>
+            <span>PORT: 8080</span>
+            <span>MODE: SECURE</span>
+          </GridCoordinates>
+
           <div className="container">
             <ContactBannerContent>
-              <motion.div
-                className="floating-element element-1"
-                animate={{
-                  y: [0, -20, 0],
-                  x: [0, 10, 0],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <motion.div
-                className="floating-element element-2"
-                animate={{
-                  y: [0, 20, 0],
-                  x: [0, -15, 0],
-                  rotate: [0, -5, 0]
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <motion.h1
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 100
-                }}
-              >
-                {t('contact.contactHero')}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.3,
-                  type: "spring",
-                  stiffness: 50
-                }}
-              >
-                {t('contact.contactSubtext')}
-              </motion.p>
+              <div className="banner-text">
+                <motion.h1
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  {t('contact.title').split(' ').map((word, i) => (
+                    <span key={i} data-text={word}>{word} </span>
+                  ))}
+                </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                >
+                  {t('contact.subtitle')}
+                </motion.p>
+              </div>
+
+              <VisualEngine>
+                <RotatingRing size={350} duration={40} />
+                <RotatingRing size={270} duration={25} reverse={true} color="rgba(128, 0, 0, 0.2)" />
+                <RotatingRing size={190} duration={15} color="rgba(128, 0, 0, 0.3)" />
+
+                <VisualNode style={{ transform: 'translate(110px, -110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaEnvelope />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, 110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaPhone />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(110px, 110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaMapMarkerAlt />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, -110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                  <FaPaperPlane />
+                </VisualNode>
+              </VisualEngine>
             </ContactBannerContent>
           </div>
         </ContactBanner>

@@ -20,7 +20,9 @@ import {
   MetaItem, 
   ProjectLinks, 
   ProjectLink,
-  SectionContainer
+  SectionContainer,
+  WatermarkText,
+  TechBadge
 } from './ProjectDetailsStyles';
 
 const ProjectDetails = () => {
@@ -54,9 +56,17 @@ const ProjectDetails = () => {
       <Header />
       <SectionContainer>
         <ProjectDetailsContainer>
+          <WatermarkText>PROJECT_SPEC</WatermarkText>
+          <TechBadge style={{ top: '15%', right: '5%' }}>
+            STATUS: ARCHIVED
+          </TechBadge>
+          <TechBadge style={{ top: '20%', right: '5%' }}>
+            BUILD: {project.id}.0.8
+          </TechBadge>
+
           <div className="container">
-            <BackButton to="/">
-              <FaArrowLeft /> Back to Projects
+            <BackButton to="/projects">
+              <FaArrowLeft /> BACK_TO_PROJECT_INDEX
             </BackButton>
 
             <ProjectHeader>
@@ -116,10 +126,10 @@ const ProjectDetails = () => {
                     <p>{project.date}</p>
                   </MetaItem>
                   <MetaItem>
-                    <h4>Technologies Used</h4>
+                    <h4>[FRAMEWORK_UNIT]</h4>
                     <div className="technologies">
                       {project.technologies.map((tech, index) => (
-                        <span key={index}>{tech}</span>
+                        <span key={index}>{tech.toUpperCase()}</span>
                       ))}
                     </div>
                   </MetaItem>

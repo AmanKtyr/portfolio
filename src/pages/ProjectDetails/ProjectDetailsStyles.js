@@ -1,21 +1,104 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const WatermarkText = styled.div`
+  position: absolute;
+  font-size: clamp(8rem, 20vw, 22rem);
+  font-weight: 900;
+  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)'};
+  letter-spacing: -15px;
+  text-transform: uppercase;
+  z-index: 0;
+  left: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: 'monospace';
+  writing-mode: vertical-lr;
+  rotate: 180deg;
+`;
+
+export const TechBadge = styled.div`
+  position: absolute;
+  padding: 0.4rem 0.8rem;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(15, 23, 42, 0.8)' : 'rgba(255, 255, 255, 0.8)'};
+  border: 1px solid var(--primary-color);
+  font-family: 'monospace';
+  font-size: 0.6rem;
+  color: var(--primary-color);
+  border-radius: 2px;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: blink 1.5s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+`;
+
 export const ProjectDetailsContainer = styled.section`
-  padding: 8rem 0 6rem;
-  background-color: white;
+  @keyframes scan {
+    0% { top: -100%; }
+    100% { top: 100%; }
+  }
+
+  @keyframes gridDrift {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+  }
+
+  position: relative;
+  overflow: hidden;
+  padding: 10rem 0 8rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(var(--primary-color) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.04;
+    animation: gridDrift 30s linear infinite;
+    z-index: 0;
+  }
 `;
 
 export const BackButton = styled(Link)`
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--gray-color);
-  margin-bottom: 2rem;
-  transition: var(--transition);
+  gap: 0.8rem;
+  color: var(--primary-color);
+  font-family: 'monospace';
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid rgba(128, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
   
   &:hover {
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+    transform: translateX(-5px);
   }
 `;
 
@@ -49,23 +132,18 @@ export const ProjectCategory = styled.span`
 `;
 
 export const ProjectTitle = styled.h2`
-  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 950;
   margin-bottom: 1.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  font-family: 'monospace';
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  line-height: 0.9;
   position: relative;
-  padding-bottom: 1rem;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-color: var(--primary-color);
-  }
   
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -80,28 +158,40 @@ export const ProjectMeta = styled.div`
 `;
 
 export const MetaItem = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'};
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(30, 41, 59, 0.2)' : 'rgba(255, 255, 255, 0.2)'};
   
   h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.65rem;
+    font-family: 'monospace';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
   }
   
   p {
-    color: var(--gray-color);
+    font-size: 1.1rem;
+    color: ${({ theme }) => theme.colors.text};
+    font-weight: 600;
   }
   
   .technologies {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.8rem;
     
     span {
-      background-color: rgba(128, 0, 0, 0.1);
+      background: transparent;
+      border: 1px solid var(--primary-color);
       color: var(--primary-color);
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
+      padding: 0.4rem 1rem;
+      font-family: 'monospace';
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
   }
 `;
@@ -118,19 +208,42 @@ export const ProjectLinks = styled.div`
 export const ProjectLink = styled.a`
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: var(--border-radius);
-  font-weight: 500;
-  transition: var(--transition);
-  background-color: ${({ primary }) => (primary === 'true' ? 'var(--primary-color)' : 'white')};
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.5rem;
+  background: ${({ primary }) => (primary === 'true' ? 'var(--primary-color)' : 'transparent')};
   color: ${({ primary }) => (primary === 'true' ? 'white' : 'var(--primary-color)')};
   border: 1px solid var(--primary-color);
+  font-family: 'monospace';
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    filter: blur(2px);
+  }
   
   &:hover {
-    background-color: ${({ primary }) => (primary === 'true' ? 'var(--secondary-color)' : 'var(--primary-color)')};
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
+    background: var(--primary-color);
     color: white;
-    border-color: ${({ primary }) => (primary === 'true' ? 'var(--secondary-color)' : 'var(--primary-color)')};
+
+    &::before {
+      animation: scan 2s linear infinite;
+    }
   }
 `;
 

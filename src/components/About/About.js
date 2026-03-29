@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaCode, FaLaptopCode, FaServer, FaDownload, FaPhotoVideo } from 'react-icons/fa';
-import { AboutContainer, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton } from './AboutStyles';
+import { AboutContainer, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, WatermarkText } from './AboutStyles';
 import aboutImg from '../../assets/aman-about.png'; // You'll need to add this image
 import resumePdf from '../../assets/Aman_Katiyar_Resume.pdf'; // Add your resume PDF
 import ScrollAnimation from '../ScrollAnimation/ScrollAnimation';
@@ -11,10 +11,10 @@ const About = () => {
 
   return (
     <AboutContainer id="about">
+      <WatermarkText>MISSION</WatermarkText>
       <div className="container">
         <ScrollAnimation animation="fadeUp" className="section-title">
           <h2>{t('about.title')}</h2>
-          <p>{t('about.subtitle')}</p>
         </ScrollAnimation>
 
         <AboutContent>

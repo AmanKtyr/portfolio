@@ -1,7 +1,17 @@
 import styled from 'styled-components';
 
 export const ServicesContainer = styled.section`
-  padding: 6rem 0;
+  @keyframes scan {
+    0% { top: -100%; }
+    100% { top: 100%; }
+  }
+
+  @keyframes gridDrift {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+  }
+
+  padding: 4.5rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;
@@ -9,46 +19,83 @@ export const ServicesContainer = styled.section`
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 300px;
-    background: transparent;
+    inset: 0;
+    background-image: 
+      radial-gradient(var(--primary-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.05;
+    animation: gridDrift 20s linear infinite;
+    z-index: 0;
+  }
+`;
+
+export const WatermarkText = styled.div`
+  position: absolute;
+  font-size: clamp(8rem, 20vw, 22rem);
+  font-weight: 900;
+  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)'};
+  letter-spacing: -15px;
+  text-transform: uppercase;
+  z-index: 0;
+  left: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: 'monospace';
+  writing-mode: vertical-lr;
+  rotate: 180deg;
+`;
+
+export const TechBadge = styled.div`
+  position: absolute;
+  padding: 0.4rem 0.8rem;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(15, 23, 42, 0.8)' : 'rgba(255, 255, 255, 0.8)'};
+  border: 1px solid var(--primary-color);
+  font-family: 'monospace';
+  font-size: 0.6rem;
+  color: var(--primary-color);
+  border-radius: 2px;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
     border-radius: 50%;
-    z-index: -1;
+    margin-right: 8px;
+    animation: blink 1.5s infinite;
   }
 
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+`;
+
+export const ServicesContainerInner = styled.div`
   .btn-primary {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 2.5rem;
     background: var(--primary-color);
     color: white;
-    border-radius: var(--border-radius);
-    font-weight: 500;
+    font-family: 'monospace';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     z-index: 1;
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background: var(--secondary-color);
-      transition: width 0.3s ease;
-      z-index: -1;
-    }
-
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-
-      &:before {
-        width: 100%;
-      }
+      box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
     }
   }
 `;
@@ -64,38 +111,54 @@ export const ServicesGrid = styled.div`
 `;
 
 export const ServiceCard = styled.div`
-  backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
-  background-color: ${({ theme }) => theme.glassmorphism.background};
-  border: ${({ theme }) => theme.glassmorphism.border};
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
-  transition: all 0.3s ease;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(15, 23, 42, 0.4)' : '#ffffff'};
+  border: 1px solid ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'};
+  padding: 2.5rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
   &::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -100%;
     left: 0;
     width: 100%;
-    height: 5px;
+    height: 4px;
     background: var(--primary-color);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px var(--primary-color);
+    z-index: 5;
+    display: none;
+  }
+
+  &::after {
+    content: 'S_LINK_ESTABLISHED';
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-family: 'monospace';
+    font-size: 0.6rem;
+    color: var(--primary-color);
+    opacity: 0.1;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
   }
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 
     &::before {
-      transform: scaleX(1);
+      display: block;
+      animation: scan 2s linear infinite;
+    }
+
+    &::after {
+      opacity: 0.4;
     }
   }
 
@@ -175,30 +238,28 @@ export const ServiceIcon = styled.div`
 `;
 
 export const ServiceTitle = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 800;
   margin-bottom: 1rem;
+  color: ${({ theme }) => theme.colors.text};
+  font-family: 'monospace';
+  text-transform: uppercase;
+  letter-spacing: -1px;
   position: relative;
-  padding-bottom: 0.5rem;
-  color: var(--primary-color);
   transition: all 0.3s ease;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background: var(--primary-color);
-    transition: width 0.3s ease;
-  }
-
-  ${ServiceCard}:hover &::after {
-    width: 50px;
+  span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
   }
 
   ${ServiceCard}:hover & {
-    transform: translateY(-2px);
+    letter-spacing: 0px;
+    color: var(--primary-color);
   }
 `;
 

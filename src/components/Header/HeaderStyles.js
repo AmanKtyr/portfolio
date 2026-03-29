@@ -54,21 +54,20 @@ export const NavMenuWrapper = styled.div`
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.5rem;
   list-style: none;
   margin: 0;
-  padding: 0.3rem;
+  padding: 0.2rem;
   background: ${({ theme }) =>
     theme.isDarkMode
-      ? 'rgba(30, 41, 59, 0.3)'
-      : 'rgba(241, 245, 249, 0.3)'};
-  border-radius: 100px;
-  backdrop-filter: blur(8px);
+      ? 'rgba(15, 23, 42, 0.4)'
+      : 'rgba(241, 245, 249, 0.4)'};
+  border-radius: 4px;
+  backdrop-filter: blur(12px);
   border: 1px solid ${({ theme }) =>
     theme.isDarkMode
-      ? 'rgba(255, 255, 255, 0.05)'
-      : 'rgba(0, 0, 0, 0.05)'};
-  box-shadow: 0 2px 15px -5px rgba(0, 0, 0, 0.05);
+      ? 'rgba(255, 255, 255, 0.1)'
+      : 'rgba(0, 0, 0, 0.1)'};
 `;
 
 export const NavItem = styled.li`
@@ -83,36 +82,51 @@ export const NavLink = styled(Link)`
       ? 'var(--primary-color)'
       : theme.colors.text};
   font-weight: 700;
-  font-size: 0.8rem;
-  padding: 0.5rem 0.8rem;
+  font-size: 0.7rem;
+  padding: 0.6rem 0.7rem;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  border-radius: 50px;
-  transition: all 0.2s ease;
-  background: ${({ active, theme }) =>
-    active === 'true'
-      ? theme.isDarkMode
-        ? 'rgba(128, 0, 0, 0.1)'
-        : 'rgba(128, 0, 0, 0.05)'
-      : 'transparent'};
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  font-family: 'monospace';
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: ${({ active }) => (active === 'true' ? '100%' : '0')};
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+  }
 
   svg {
-    font-size: 0.9rem;
-    opacity: ${({ active }) => (active === 'true' ? '1' : '0.7')};
+    font-size: 0.85rem;
+    opacity: ${({ active }) => (active === 'true' ? '1' : '0.6')};
   }
 
   &:hover {
     color: var(--primary-color);
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'rgba(128, 0, 0, 0.05)'
-        : 'rgba(128, 0, 0, 0.03)'};
+        ? 'rgba(128, 0, 0, 0.1)'
+        : 'rgba(128, 0, 0, 0.05)'};
     
+    &::after {
+      width: 100%;
+    }
+
     svg {
       opacity: 1;
-      transform: translateY(-1px);
+      transform: scale(1.1);
     }
   }
 `;
@@ -169,21 +183,26 @@ export const FloatingElement = styled(motion.div)`
 
 export const PrimaryButton = styled.div`
   .btn-primary {
-    padding: 0.55rem 1.1rem;
+    padding: 0.6rem 1.2rem;
     background: var(--primary-color);
     color: white;
-    border-radius: 50px;
+    border-radius: 2px;
     font-weight: 700;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
+    font-family: 'monospace';
+    text-transform: uppercase;
+    letter-spacing: 1px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
-      transform: translateY(-1.5px);
-      box-shadow: 0 6px 18px rgba(128, 0, 0, 0.35);
-      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(128, 0, 0, 0.4);
+      background: #991111;
     }
   }
 `;
