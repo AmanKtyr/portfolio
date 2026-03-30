@@ -61,6 +61,11 @@ const GlobalStyles = createGlobalStyle`
     display: block;
   }
 
+  button, title, h1, h2, h3, h4, h5, h6 {
+    font-family: 'monospace', 'Courier New', Courier, monospace;
+    font-weight: 700;
+  }
+
   button, input, textarea {
     font-family: inherit;
   }
@@ -97,12 +102,13 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h2 {
-      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
       font-weight: 800;
       position: relative;
       display: inline-block;
       margin-bottom: 1.5rem;
       letter-spacing: -0.02em;
+      font-family: 'monospace', monospace;
 
       background: linear-gradient(120deg, var(--primary-color), #ff4d4d, var(--primary-color));
       background-size: 200% auto;
@@ -140,7 +146,7 @@ const GlobalStyles = createGlobalStyle`
 
   .btn {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     border-radius: var(--border-radius);
     font-weight: 500;
     cursor: pointer;

@@ -173,6 +173,7 @@ export const ProjectsBannerContent = styled.div`
       color: ${({ theme }) => theme.colors.text};
       letter-spacing: -4px;
       text-transform: uppercase;
+      font-family: 'monospace';
       
       span {
         display: block;
@@ -637,6 +638,7 @@ export const ProjectTitle = styled.h3`
   font-size: 1.75rem;
   font-weight: 800;
   margin-bottom: 1rem;
+  font-family: 'monospace';
   
   a {
     color: inherit;

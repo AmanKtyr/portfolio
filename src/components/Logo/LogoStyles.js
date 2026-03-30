@@ -60,6 +60,7 @@ export const LogoText = styled.div`
     font-weight: 800;
     color: ${({ theme }) => theme.colors.text};
     letter-spacing: -0.5px;
+    font-family: 'monospace';
     
     span {
       color: var(--primary-color);

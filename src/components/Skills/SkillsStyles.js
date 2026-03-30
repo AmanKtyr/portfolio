@@ -161,7 +161,7 @@ export const ActionButton = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 2.8rem;
+    padding: 0.7rem 1.8rem;
     background: var(--primary-color);
     color: white;
     font-weight: 800;

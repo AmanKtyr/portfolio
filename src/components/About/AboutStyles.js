@@ -141,11 +141,7 @@ export const AboutText = styled.div`
   }
 
   h3 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    font-weight: 900;
-    margin-bottom: 2rem;
-    color: ${({ theme }) => theme.colors.text};
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     text-transform: uppercase;
     font-family: 'monospace';
     
@@ -220,8 +216,8 @@ export const AboutSkills = styled.div`
 export const SkillItem = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: 1rem;
+  padding: 1rem;
   background: ${({ theme }) => theme.isDarkMode ? 'rgba(15, 23, 42, 0.4)' : '#ffffff'};
   border: 1px solid ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'};
   position: relative;
@@ -258,13 +254,13 @@ export const SkillItem = styled.div`
   }
 
   svg {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--gray-color);
     transition: all 0.3s ease;
   }
 
   h4 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     font-family: 'monospace';
     text-transform: uppercase;
@@ -278,7 +274,7 @@ export const ResumeButton = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   background: var(--primary-color);
   color: white;
   border-radius: var(--border-radius);

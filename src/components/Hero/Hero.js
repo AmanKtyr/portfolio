@@ -15,7 +15,7 @@ import {
   TechBar,
   TechBarItem
 } from './HeroStyles';
-import { FaPython, FaNodeJs, FaReact, FaDatabase, FaArrowRight, FaGithub, FaLinkedin, FaCodepen, FaQuora } from 'react-icons/fa';
+import { FaRocket, FaLaptopCode, FaServer, FaCode, FaArrowRight, FaGithub, FaLinkedin, FaCodepen, FaQuora } from 'react-icons/fa';
 // import laptopImage from '../../assets/laptop-code.svg';
 import laptopImage from '../../assets/hero-image.png';
 import { motion } from 'framer-motion';
@@ -83,10 +83,10 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.7 }}
           >
             {[
-              { Icon: FaReact, name: "REACT" },
-              { Icon: FaPython, name: "PYTHON" },
-              { Icon: FaNodeJs, name: "NODEJS" },
-              { Icon: FaDatabase, name: "SQL_DB" }
+              { Icon: FaLaptopCode, name: "AI_DEVELOPMENT" },
+              { Icon: FaCode, name: "WEB_ARCHITECTURE" },
+              { Icon: FaServer, name: "AGENTIC_SYSTEMS" },
+              { Icon: FaRocket, name: "TECH_STRATEGY" }
             ].map((tech, i) => (
               <TechBarItem key={i}>
                 <tech.Icon />

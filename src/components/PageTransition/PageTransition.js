@@ -26,8 +26,8 @@ const TransitionLayer = styled(motion.div)`
   z-index: 10;
   background: ${({ theme }) =>
     theme.isDarkMode
-      ? 'var(--primary-color)'
-      : 'var(--primary-color)'};
+      ? 'linear-gradient(135deg, #030712 0%, #111827 100%)'
+      : 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)'};
 
   &::before {
     content: '';
@@ -38,11 +38,12 @@ const TransitionLayer = styled(motion.div)`
     height: 100%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle at 50% 50%, rgba(128, 0, 0, 0.4), transparent 50%), radial-gradient(circle at 100% 0%, rgba(128, 0, 0, 0.8), transparent 40%)'
-        : 'radial-gradient(circle at 50% 50%, rgba(128, 0, 0, 0.3), transparent 50%), radial-gradient(circle at 100% 0%, rgba(128, 0, 0, 0.6), transparent 40%)'};
+        ? 'radial-gradient(circle at 0% 0%, var(--primary-color) 0%, transparent 40%), radial-gradient(circle at 100% 100%, var(--primary-color) 0%, transparent 40%)'
+        : 'radial-gradient(circle at 0% 0%, rgba(128, 0, 0, 0.1) 0%, transparent 40%), radial-gradient(circle at 100% 100%, rgba(128, 0, 0, 0.1) 0%, transparent 40%)'};
+    opacity: 0.2;
   }
 
-  /* Grid pattern overlay */
+  /* Digital grid overlay */
   &::after {
     content: '';
     position: absolute;
@@ -50,12 +51,11 @@ const TransitionLayer = styled(motion.div)`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: ${({ theme }) =>
-      theme.isDarkMode
-        ? 'linear-gradient(rgba(128, 0, 0, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(128, 0, 0, 0.3) 1px, transparent 1px)'
-        : 'linear-gradient(rgba(128, 0, 0, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(128, 0, 0, 0.2) 1px, transparent 1px)'};
-    background-size: 30px 30px;
-    opacity: 0.5;
+    background-image: 
+      linear-gradient(var(--primary-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--primary-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.03;
   }
 `;
 
@@ -82,39 +82,46 @@ const GlowingLine = styled(motion.div)`
 `;
 
 const TransitionLogo = styled(motion.div)`
-  font-size: 4.5rem;
-  font-weight: 800;
-  color: #ffffff;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  font-weight: 900;
+  color: ${({ theme }) => theme.isDarkMode ? '#ffffff' : 'var(--dark-color)'};
   z-index: 100;
   position: relative;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(128, 0, 0, 0.8);
-  letter-spacing: 2px;
+  font-family: 'monospace';
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 
-  span {
-    color: #ff4d4d;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 77, 77, 0.8);
+  /* Subtitle for technical feel */
+  & .sub {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: var(--primary-color);
+    font-weight: 500;
+    opacity: 0.8;
   }
 
-  /* Glassmorphism effect */
+  span {
+    color: var(--primary-color);
+  }
+
+  /* Modern Glass Container */
   &::before {
     content: '';
     position: absolute;
-    top: -30px;
-    left: -30px;
-    right: -30px;
-    bottom: -30px;
+    inset: -40px;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'rgba(15, 23, 42, 0.3)'
-        : 'rgba(255, 255, 255, 0.1)'};
-    backdrop-filter: blur(12px);
-    border-radius: 50%;
+        ? 'rgba(15, 23, 42, 0.6)'
+        : 'rgba(255, 255, 255, 0.8)'};
+    backdrop-filter: blur(20px);
+    border-radius: 4px;
     z-index: -1;
-    opacity: 0.7;
-    box-shadow: ${({ theme }) =>
-      theme.isDarkMode
-        ? '0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 0 1px rgba(128, 0, 0, 0.1), inset 0 0 20px rgba(128, 0, 0, 0.1)'
-        : '0 8px 32px 0 rgba(31, 38, 135, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.4), inset 0 0 20px rgba(128, 0, 0, 0.1)'};
+    border: 1px solid var(--primary-color);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%);
   }
 
   /* Glowing ring effect */
@@ -308,7 +315,8 @@ const PageTransition = ({ children }) => {
             }
           }}
         >
-          Aman Katiyar<span>.</span>
+          <div>Aman <span>Katiyar</span></div>
+          <div className="sub">SYSTEM_INITIALIZING...</div>
         </TransitionLogo>
 
         {/* Animated particles */}
@@ -352,4 +360,3 @@ const PageTransition = ({ children }) => {
 };
 
 export default PageTransition;
-
