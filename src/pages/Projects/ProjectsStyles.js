@@ -1,15 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
 
-const scanline = keyframes`
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
-`;
-
-const pulse = keyframes`
-  0% { box-shadow: 0 0 0 0 rgba(128, 0, 0, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(128, 0, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(128, 0, 0, 0); }
-`;
 
 const scan = keyframes`
   0% { transform: translateY(-100%); }

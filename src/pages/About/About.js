@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FaCode, FaLaptopCode, FaServer, FaDownload, FaPhotoVideo, FaUserGraduate, FaBriefcase, FaAward } from 'react-icons/fa';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { AboutPageContainer, AboutBanner, AboutBannerContent, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, AboutTimeline, TimelineItem, TimelineContent, TimelineDot, TimelineConnector, AboutStats, StatItem, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './AboutStyles';
+import { AboutPageContainer, AboutBanner, AboutBannerContent, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, AboutTimeline, TimelineItem, TimelineContent, TimelineDot, AboutStats, StatItem, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './AboutStyles';
 import aboutImg from '../../assets/aman-about.png';
 import resumePdf from '../../assets/Aman_Katiyar_Resume.pdf';
 
