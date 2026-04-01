@@ -1,9 +1,9 @@
 const lightTheme = {
   isDarkMode: false,
   colors: {
-    primary: '#800000', // Maroon
-    secondary: '#5a0000', // Darker Maroon
-    accent: '#a52a2a', // Brownish Red
+    primary: '#D92C54', // Maroon
+    secondary: '#D92C54', // Darker Maroon
+    accent: '#D92C54', // Brownish Red
     dark: '#1e293b',
     light: '#f8fafc',
     gray: '#64748b',
@@ -59,9 +59,9 @@ const lightTheme = {
 const darkTheme = {
   isDarkMode: true,
   colors: {
-    primary: '#800000', // Maroon
-    secondary: '#cc3d3d', // Lighter Maroon for better contrast
-    accent: '#ff4d4d',
+    primary: '#08CB00', // Maroon
+    secondary: '#F97A00', // Lighter Maroon for better contrast
+    accent: '#F97A00', // Brownish Red
     dark: '#f8fafc',
     light: '#0f172a',
     gray: '#cbd5e1', // Lighter gray for dark mode
