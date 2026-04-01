@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaLaptopCode, FaCogs, FaEnvelope } from 'react-icons/fa';
-import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
+import { AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { scrollToSection } from '../../utils/scrollUtils';
 import {
@@ -11,14 +11,11 @@ import {
   NavItem,
   NavLink,
   MobileIcon,
-  ThemeToggleWrapper,
   NavMenuWrapper,
   MobileMenuBackdrop,
   ScrollProgressContainer,
   ScrollProgressBar,
-  FloatingElement,
   PrimaryButton,
-  LanguageToggleWrapper,
   ActionGroup,
   MobileNavLink
 } from './HeaderStyles';

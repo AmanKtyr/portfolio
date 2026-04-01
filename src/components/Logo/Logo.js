@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { LogoWrapper, LogoSvg, LogoText } from './LogoStyles';
 import logoImg from '../../assets/logo.png';

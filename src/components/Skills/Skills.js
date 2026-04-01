@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaNodeJs, FaDatabase, FaGitAlt, FaArrowRight, FaBrain } from 'react-icons/fa';
-import { SiDjango, SiTailwindcss, SiPostgresql, SiNestjs } from 'react-icons/si';
+import { SiDjango, SiNestjs } from 'react-icons/si';
 import {
   SkillsContainer,
   SummaryWrapper,
@@ -10,7 +10,6 @@ import {
   TechIconNode,
   ActionButton,
   WatermarkText,
-  TechBadge
 } from './SkillsStyles';
 
 const Skills = () => {

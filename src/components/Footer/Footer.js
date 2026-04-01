@@ -9,11 +9,7 @@ import {
   FaMapMarkerAlt,
   FaEnvelope,
   FaPhone,
-  FaArrowRight,
-  FaRocket,
-  FaLaptopCode,
-  FaServer,
-  FaCode
+  FaArrowRight
 } from 'react-icons/fa';
 import {
   FooterContainer,
@@ -36,7 +32,6 @@ import {
   FooterCopyright,
   FooterMadeWith,
   StatusBadge,
-  FloatingOrb,
   FooterCTA,
   CTACard,
   CTAContent,
@@ -44,7 +39,6 @@ import {
   CTASubtext,
   CTAButton,
   TechBadgeRow,
-  TechBadge,
 } from './FooterStyles';
 import Logo from '../Logo/Logo';
 

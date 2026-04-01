@@ -1,10 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
 // ── Animations ──────────────────────────────────────────────────────────────
-const shimmer = keyframes`
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-`;
 
 const float = keyframes`
   0%, 100% { transform: translateY(0); }
@@ -14,11 +10,6 @@ const float = keyframes`
 const pulseGlow = keyframes`
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.8; }
-`;
-
-const gridPulse = keyframes`
-  0%, 100% { opacity: 0.03; }
-  50% { opacity: 0.07; }
 `;
 
 // ── Main Footer Container ───────────────────────────────────────────────────
