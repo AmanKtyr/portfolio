@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaPhp, FaBootstrap, FaDocker, FaGitAlt, FaGithub } from 'react-icons/fa';
 import { SiDjango, SiTailwindcss, SiJquery, SiFlask, SiPostgresql, SiMysql, SiSqlite } from 'react-icons/si';
