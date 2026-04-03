@@ -23,7 +23,7 @@ const SectionHeading = ({
   useEffect(() => {
     const chars = titleRef.current.querySelectorAll('.char');
     const sub = subtitleRef.current;
-
+    
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -33,22 +33,35 @@ const SectionHeading = ({
       }
     });
 
-    tl.to(chars, {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      stagger: {
-        amount: 0.6,
-        from: "left"
-      },
-      ease: "power4.out"
-    })
-    .to(sub, {
+    // Matrix-style scramble effect
+    chars.forEach((char, i) => {
+      const originalText = char.innerText;
+      const possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&*@";
+      
+      tl.to(char, {
+        opacity: 1,
+        y: 0,
+        duration: 0.1,
+        onStart: () => {
+          let iterations = 0;
+          const interval = setInterval(() => {
+            char.innerText = possibleChars[Math.floor(Math.random() * possibleChars.length)];
+            if (iterations >= 8) {
+              clearInterval(interval);
+              char.innerText = originalText;
+            }
+            iterations++;
+          }, 30);
+        }
+      }, i * 0.03);
+    });
+
+    tl.to(sub, {
       y: 0,
       opacity: 1,
       duration: 0.8,
       ease: "power3.out"
-    }, "-=0.4");
+    }, "-=0.2");
 
     return () => {
       ScrollTrigger.getById(id)?.kill();
@@ -79,6 +92,13 @@ const SectionHeading = ({
           {subtitle}
         </SubHeadingText>
       )}
+      <div className="heading-line" style={{ 
+        width: '0%', 
+        height: '1px', 
+        background: 'var(--primary-color)', 
+        marginTop: '2rem',
+        opacity: 0.3
+      }} />
     </HeadingWrapper>
   );
 };

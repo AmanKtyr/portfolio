@@ -7,6 +7,7 @@ import Footer from '../../components/layout/Footer/Footer';
 import { AboutPageContainer, AboutBanner, AboutBannerContent, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, AboutTimeline, TimelineItem, TimelineContent, TimelineDot, AboutStats, StatItem, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './AboutStyles';
 import aboutImg from '../../assets/aman-about.png';
 import resumePdf from '../../assets/Aman_Katiyar_Resume.pdf';
+import SectionHeading from '../../components/ui/SectionHeading/SectionHeading';
 
 const AboutPage = () => {
   const { t } = useTranslation();
@@ -266,24 +267,12 @@ const AboutPage = () => {
             </motion.div>
           </AboutStats>
 
-          <div className="section-title">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              {t('about.journey.title')}
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              {t('about.journey.subtitle')}
-            </motion.p>
-          </div>
+          <SectionHeading 
+            number="7"
+            title="PROFESSIONAL"
+            accent="JOURNEY"
+            subtitle={t('about.journey.subtitle')}
+          />
 
           <AboutTimeline>
             {[

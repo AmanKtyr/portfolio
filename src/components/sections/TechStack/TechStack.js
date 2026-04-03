@@ -1,18 +1,14 @@
 import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, 
-  FaJava, FaPhp, FaBootstrap, FaDocker, FaGitAlt, FaGithub 
+  FaJava, FaPhp, FaBootstrap, FaDocker, FaGitAlt, FaGithub, FaArrowRight 
 } from 'react-icons/fa';
-import { 
-  SiDjango, SiTailwindcss, SiJquery, SiFlask, 
-  SiPostgresql, SiMysql, SiSqlite 
-} from 'react-icons/si';
-import { 
-  TechStackContainer, TechStackTitle, 
-  MarqueeWrapper, MarqueeRow, TechCard, IconBox, TechName, SignatureLine 
-} from './TechStackStyles';
+import { SiDjango, SiTailwindcss, SiJquery, SiFlask, SiPostgresql, SiMysql, SiSqlite } from 'react-icons/si';
+import { TechStackContainer, TechStackTitle, MarqueeWrapper, MarqueeRow, TechCard, IconBox, TechName, SignatureLine } from './TechStackStyles';
+import { ActionButton } from '../Skills/SkillsStyles';
 import SectionHeading from '../../ui/SectionHeading/SectionHeading';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -50,10 +46,10 @@ const TechStack = () => {
   return (
     <TechStackContainer ref={containerRef} id="tech-stack">
         <SectionHeading 
-          number="0"
-          title="MASTERED"
+          number="2"
+          title="CORE"
           accent="STACK"
-          subtitle="A specialized assortment of technological proficiencies, encompassing machine learning, full-stack architecture, and high-performance system design."
+          subtitle="A comprehensive toolkit of modern technologies, frameworks, and architectural principles that I leverage to build scalable and high-performance digital solutions."
         />
         
         <TechStackTitle style={{ border: 'none', margin: '0' }}>
@@ -91,6 +87,21 @@ const TechStack = () => {
         </MarqueeWrapper>
         
         <SignatureLine />
+
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            style={{ display: 'flex', justifyContent: 'center', marginTop: '4rem' }}
+          >
+            <ActionButton>
+              <Link to="/skills">
+                View Detailed Skills
+                <FaArrowRight />
+              </Link>
+            </ActionButton>
+          </motion.div>
     </TechStackContainer>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCode, FaMobileAlt, FaPalette, FaSearch, FaArrowRight, FaPhotoVideo, FaDesktop } from 'react-icons/fa';
-import { ServicesContainer, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText, WatermarkText, TechBadge } from './ServicesStyles';
+import { ServicesContainer, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText, TechBadge } from './ServicesStyles';
 import SectionHeading from '../../ui/SectionHeading/SectionHeading';
 import { useTranslation } from 'react-i18next';
 

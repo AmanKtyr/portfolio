@@ -12,6 +12,39 @@ const BackgroundContainer = styled.div`
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.background};
   transition: background-color 0.5s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 3px, 3px 100%;
+    pointer-events: none;
+    z-index: 10;
+    opacity: ${({ theme }) => theme.isDarkMode ? 0.4 : 0.1};
+  }
+`;
+
+const ScanLine = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(217, 44, 84, 0.1);
+  box-shadow: 0 0 15px rgba(217, 44, 84, 0.2);
+  pointer-events: none;
+  z-index: 11;
+  opacity: 0.5;
+`;
+
+const GrainOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_ext_9_static_grain.png");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 1;
 `;
 
 const Orb = styled.div`
@@ -84,6 +117,13 @@ const GSAPBackground = () => {
         ease: "sine.inOut"
       });
 
+      gsap.to('.global-scan', {
+        top: "100%",
+        duration: 4,
+        repeat: -1,
+        ease: "none"
+      });
+
       gsap.to('.orb-3', {
         x: "20vw",
         y: "-10vh",
@@ -124,6 +164,8 @@ const GSAPBackground = () => {
 
   return (
     <BackgroundContainer ref={containerRef}>
+      <GrainOverlay />
+      <ScanLine className="global-scan" />
       <Orb1 className="orb-1" />
       <Orb2 className="orb-2" />
       <Orb3 className="orb-3" />

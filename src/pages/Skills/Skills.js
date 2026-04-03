@@ -20,6 +20,7 @@ import {
   SkillsTimeline, TimelineItem, TimelineContent, TimelineDot, TimelineConnector,
   WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates
 } from './SkillsStyles';
+import SectionHeading from '../../components/ui/SectionHeading/SectionHeading';
 
 const categoryIconMap = {
   core: <FaRocket />,
@@ -142,14 +143,12 @@ const Skills = () => {
 
         <div className="container">
           <SkillsContent>
-            <div className="section-title">
-              <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
-                Industry Expertise
-              </motion.h2>
-              <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
-                {t('skills.skillsDescription')}
-              </motion.p>
-            </div>
+            <SectionHeading 
+              number="3"
+              title="CORE"
+              accent="SKILLS"
+              subtitle={t('skills.skillsDescription')}
+            />
 
             <SkillsGrid>
               {Array.isArray(skillCards) && skillCards.map((skill, index) => (
@@ -170,14 +169,12 @@ const Skills = () => {
           </SkillsContent>
 
           <TechStackSection>
-            <div className="section-title">
-              <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
-                {t('skills.techStackTitle')}
-              </motion.h2>
-              <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
-                {t('skills.techStackSubtitle')}
-              </motion.p>
-            </div>
+            <SectionHeading 
+              number="4"
+              title="TECH"
+              accent="STACK"
+              subtitle={t('skills.techStackSubtitle')}
+            />
 
             <TechStackGrid>
               {techItems.map((tech, index) => (
@@ -191,14 +188,12 @@ const Skills = () => {
             </TechStackGrid>
           </TechStackSection>
 
-          <div className="section-title">
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
-              {t('skills.learningPathTitle')}
-            </motion.h2>
-            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
-              {t('skills.learningPathSubtitle')}
-            </motion.p>
-          </div>
+          <SectionHeading 
+            number="5"
+            title="PROFESSIONAL"
+            accent="EVOLUTION"
+            subtitle={t('skills.learningPathSubtitle')}
+          />
 
           <SkillsTimeline>
             {Array.isArray(learningPath) && learningPath.map((item, index) => (

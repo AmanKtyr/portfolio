@@ -21,12 +21,81 @@ import laptopImage from '../../../assets/hero-image.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { gsap } from 'gsap';
+import React, { useEffect, useRef } from 'react';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const heroRef = useRef(null);
+  const nameRef = useRef(null);
+
+  useEffect(() => {
+    const nameChars = nameRef.current.querySelectorAll('.name-char');
+    const magneticElements = heroRef.current.querySelectorAll('.magnetic-target');
+
+    // Name Scramble Effect
+    const tl = gsap.timeline();
+    nameChars.forEach((char, i) => {
+      const originalText = char.innerText;
+      const possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&*@";
+      
+      tl.to(char, {
+        opacity: 1,
+        y: 0,
+        direction: 'none',
+        duration: 0.1,
+        onStart: () => {
+          let iterations = 0;
+          const interval = setInterval(() => {
+            char.innerText = possibleChars[Math.floor(Math.random() * possibleChars.length)];
+            if (iterations >= 10) {
+              clearInterval(interval);
+              char.innerText = originalText;
+            }
+            iterations++;
+          }, 40);
+        }
+      }, i * 0.05);
+    });
+
+    // Magnetic Effect Logic
+    magneticElements.forEach(el => {
+      el.addEventListener('mousemove', (e) => {
+        const bounds = el.getBoundingClientRect();
+        const x = e.clientX - bounds.left - bounds.width / 2;
+        const y = e.clientY - bounds.top - bounds.height / 2;
+        
+        gsap.to(el, {
+          x: x * 0.4,
+          y: y * 0.4,
+          duration: 0.6,
+          ease: "power2.out"
+        });
+      });
+
+      el.addEventListener('mouseleave', () => {
+        gsap.to(el, {
+          x: 0,
+          y: 0,
+          duration: 0.6,
+          ease: "elastic.out(1, 0.3)"
+        });
+      });
+    });
+
+    return () => tl.kill();
+  }, []);
+
+  const renderName = (text) => {
+    return text.split('').map((char, i) => (
+      <span key={i} className="name-char" style={{ opacity: 0, display: 'inline-block', transform: 'translateY(10px)' }}>
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ));
+  };
 
   return (
-    <HeroContainer id="home">
+    <HeroContainer id="home" ref={heroRef}>
       <WatermarkText>SYSTEM_CORE</WatermarkText>
       
       <TechBadge className="status-top" style={{ top: '15%', right: '5%' }}>
@@ -54,14 +123,10 @@ const Hero = () => {
           >
             {t('hero.greeting')}
           </motion.h4>
-          <motion.h1
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span data-text="Aman">Aman</span>
-            <span data-text="Katiyar">Katiyar</span>
-          </motion.h1>
+          <h1 ref={nameRef}>
+            <div className="name-line">{renderName("AMAN")}</div>
+            <div className="name-line" style={{ color: 'var(--primary-color)' }}>{renderName("KATIYAR")}</div>
+          </h1>
           <motion.h2
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -100,6 +165,8 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
+              className="magnetic-target"
+              style={{ display: 'inline-block' }}
             >
               <Link
                 to="/contact"
@@ -114,6 +181,8 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1 }}
+              className="magnetic-target"
+              style={{ display: 'inline-block' }}
             >
               <Link
                 to="/#projects"
@@ -138,6 +207,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 1.2 + idx * 0.1 }}
+                className="magnetic-target"
               >
                 <SocialIcon
                   href={social.url}

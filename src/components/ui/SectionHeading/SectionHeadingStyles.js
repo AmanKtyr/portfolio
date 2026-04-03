@@ -75,9 +75,10 @@ export const CharBox = styled.span`
 
 export const CharSpan = styled.span`
   display: inline-block;
-  transform: translateY(105%);
+  transform: translateY(20px);
   will-change: transform, opacity;
   opacity: 0;
+  transition: transform 0.1s ease;
 `;
 
 export const SubHeadingText = styled.p`

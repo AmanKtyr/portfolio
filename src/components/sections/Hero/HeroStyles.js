@@ -225,7 +225,7 @@ export const HeroBtns = styled.div`
     color: white;
     border-radius: var(--border-radius);
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -248,7 +248,6 @@ export const HeroBtns = styled.div`
     }
 
     &:hover {
-      transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(128, 0, 0, 0.3);
 
       &::before {
@@ -271,7 +270,7 @@ export const HeroBtns = styled.div`
     color: var(--primary-color);
     border-radius: var(--border-radius);
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 1;
 
@@ -290,7 +289,6 @@ export const HeroBtns = styled.div`
 
     &:hover {
       color: ${({ theme }) => theme.isDarkMode ? 'white' : 'var(--dark-color)'};
-      transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
       &::before {

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaCode, FaMobileAlt, FaServer, FaShoppingCart, FaPalette, FaSearch, FaDatabase, FaLaptopCode, FaTools } from 'react-icons/fa';
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
+import SectionHeading from '../../components/ui/SectionHeading/SectionHeading';
 import { ServicesPageContainer, ServicesBanner, ServicesBannerContent, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText, ServiceFeatures, ServiceFeature, PricingSection, PricingContainer, PricingCard, PricingHeader, PricingPrice, PricingFeatures, PricingFeature, PricingButton, FAQSection, FAQContainer, FAQItem, FAQQuestion, FAQAnswer, CTASection, CTAContent, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './ServicesStyles';
 
 const serviceIcons = [<FaCode />, <FaMobileAlt />, <FaServer />, <FaShoppingCart />, <FaPalette />, <FaSearch />, <FaDatabase />, <FaLaptopCode />, <FaTools />];
@@ -92,10 +93,12 @@ const Services = () => {
         </ServicesBanner>
 
         <div className="container">
-          <motion.div className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
-            <h2>{t('services.title')}</h2>
-            <p>{t('services.subtitle')}</p>
-          </motion.div>
+          <SectionHeading 
+            number="8"
+            title="EXPERT"
+            accent="SOLUTIONS"
+            subtitle={t('services.subtitle')}
+          />
 
           <ServicesGrid>
             {Array.isArray(cards) && cards.map((card, index) => (
@@ -117,10 +120,12 @@ const Services = () => {
 
         <PricingSection>
           <div className="container">
-            <motion.div className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
-              <h2>{t('services.pricingTitle')}</h2>
-              <p>{t('services.pricingSubtitle')}</p>
-            </motion.div>
+            <SectionHeading 
+              number="9"
+              title="STRATEGIC"
+              accent="PRICING"
+              subtitle={t('services.pricingSubtitle')}
+            />
 
             <motion.div className="currency-toggle" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
               <button className={`currency-btn ${currency === 'USD' ? 'active' : ''}`} onClick={() => setCurrency('USD')}>USD</button>
@@ -160,10 +165,12 @@ const Services = () => {
 
         <FAQSection>
           <div className="container">
-            <motion.div className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
-              <h2>{t('services.faqTitle')}</h2>
-              <p>{t('services.faqSubtitle')}</p>
-            </motion.div>
+            <SectionHeading 
+              number="10"
+              title="COMMON"
+              accent="QUERIES"
+              subtitle={t('services.faqSubtitle')}
+            />
 
             <FAQContainer>
               {Array.isArray(faq) && faq.map((item, index) => (

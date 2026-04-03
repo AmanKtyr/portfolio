@@ -8,6 +8,7 @@ import Footer from '../../components/layout/Footer/Footer';
 import { ProjectsPageContainer, ProjectsBanner, ProjectsBannerContent, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLinks, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc, SearchContainer, SearchInput, SearchButton, ProjectsCategories, CategoryItem, VisualEngine, VisualNode, GridCoordinates, WatermarkText, TechBadge, RotatingRing } from './ProjectsStyles';
 
 import { projectsData } from '../../data/projectsData';
+import SectionHeading from '../../components/ui/SectionHeading/SectionHeading';
 
 // Extract unique categories
 const categories = ['all', ...new Set(projectsData.map(project => project.category.toLowerCase()))];
@@ -120,6 +121,12 @@ const ProjectsPage = () => {
         </ProjectsBanner>
 
         <div className="container">
+          <SectionHeading 
+            number="1"
+            title="SELECTED"
+            accent="WORKS"
+            subtitle={t('projects.projectsDescription')}
+          />
           <SearchContainer>
             <form onSubmit={handleSearch}>
               <SearchInput
