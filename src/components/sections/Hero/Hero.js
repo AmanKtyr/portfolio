@@ -214,6 +214,7 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor-text={social.label}
+                  aria-label={`Visit Aman Katiyar's ${social.label} profile`}
                 >
                   <social.Icon />
                 </SocialIcon>
@@ -233,7 +234,7 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <img src={laptopImage} alt="Aman Katiyar Portfolio" loading="lazy" />
+              <img src={laptopImage} alt="Aman Katiyar - Full-Stack AI Engineer & Solutions Architect" loading="lazy" />
             </motion.div>
           </VisualEngine>
         </HeroImage>

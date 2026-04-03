@@ -1,0 +1,13 @@
+/* TEAM */
+    Developer: Aman Katiyar
+    Site: https://aman.ktyr.in
+    Location: Lucknow, India
+    Twitter: @AmanKtyr
+
+/* THANKS */
+    Family, Mentor, and Global Open Source Community
+
+/* SITE */
+    Built with: React, GSAP, Styled-Components, Framer Motion
+    Deployment: Vercel / Netlify
+    Architecture: Agentic Design Patterns

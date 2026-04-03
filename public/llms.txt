@@ -1,0 +1,38 @@
+# Aman Katiyar - Portfolio
+
+> Portfolio of Aman Katiyar: Full-Stack AI Engineer & Solutions Architect.
+
+This site contains professional information, project portfolios, and technical expertise of Aman Katiyar.
+
+## Summary
+
+Aman Katiyar is a Full-Stack AI Engineer specializing in building intelligent Agentic Systems, scalable Web Architectures, and high-performance technical strategies. With over 3 years of experience, he focuses on the intersection of AI and modern web engineering.
+
+## Key Expertise
+
+-   **Artificial Intelligence**: Agentic systems, LLM integration, prompt engineering, AI development.
+-   **Web Architecture**: Scalable React/Node.js systems, distributed systems, system design.
+-   **Full-Stack Development**: React, Node.js, Python, PostgreSQL, GSAP, Framer Motion.
+-   **Solutions Architecture**: Strategic technical consulting, system scaling, cloud infrastructure.
+
+## Navigation
+
+-   [Home](https://aman.ktyr.in/) - Overview and professional introduction.
+-   [About](https://aman.ktyr.in/about) - Professional journey, biography, and detailed experience.
+-   [Projects](https://aman.ktyr.in/projects) - Showcase of selected professional works.
+-   [Services](https://aman.ktyr.in/services) - Professional offerings and specialized technical solutions.
+-   [Contact](https://aman.ktyr.in/contact) - Contact details for professional inquiries.
+
+## Primary Contact
+
+-   **Email**: amankatiyar.tech01@gmail.com
+-   **Location**: Lucknow, Uttar Pradesh, India
+-   **Website**: https://aman.ktyr.in
+
+## Social Profiles
+
+-   [LinkedIn](https://www.linkedin.com/in/amanktyr)
+-   [GitHub](https://github.com/AmanKtyr)
+-   [CodePen](https://codepen.io/amanktyr)
+-   [Quora](https://www.quora.com/profile/AmAn-KtYr-1)
+-   [Twitter](https://twitter.com/AmanKtyr)

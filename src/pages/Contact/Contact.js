@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
+import Meta from '../../components/common/Meta/Meta';
 import Contact from '../../components/sections/Contact/Contact';
 import { ContactPageContainer, ContactBanner, ContactBannerContent, ContactMap, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './ContactStyles';
 
@@ -11,6 +12,11 @@ const ContactPage = () => {
   const { t } = useTranslation();
   return (
     <>
+      <Meta 
+        title="Contact Me" 
+        description="Get in touch with Aman Katiyar for project inquiries, collaborations, or technical consultations. Available for AI development and full-stack solutions." 
+        url="https://aman.ktyr.in/contact"
+      />
       <Header />
       <ContactPageContainer>
         <ContactBanner>

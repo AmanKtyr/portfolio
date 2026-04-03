@@ -6,6 +6,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { useContext, useState } from 'react';
 import { ThemeContext } from './context/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { HelmetProvider } from 'react-helmet-async';
 
 // Pages
 import Home from './pages/Home/Home';
@@ -24,9 +25,11 @@ import Loader from './components/ui/Loader/Loader';
 
 function App() {
   return (
-    <ThemeProvider>
-      <AppWrapper />
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider>
+        <AppWrapper />
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
 

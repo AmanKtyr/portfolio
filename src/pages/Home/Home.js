@@ -1,4 +1,5 @@
 import React from 'react';
+import Meta from '../../components/common/Meta/Meta';
 import Header from '../../components/layout/Header/Header';
 import Hero from '../../components/sections/Hero/Hero';
 import About from '../../components/sections/About/About';
@@ -12,8 +13,15 @@ import Footer from '../../components/layout/Footer/Footer';
 const Home = () => {
   return (
     <>
+      <Meta 
+        title="Home" 
+        description="Welcome to the portfolio of Aman Katiyar, a Full-Stack AI Engineer & Solutions Architect. Specializing in AI development, scalable web architectures, and strategic tech solutions." 
+        url="https://aman.ktyr.in/"
+      />
+
       <Header />
       <Hero />
+
       <About />
       <TechStack />
       <Projects />

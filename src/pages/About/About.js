@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FaCode, FaLaptopCode, FaServer, FaDownload, FaPhotoVideo, FaUserGraduate, FaBriefcase, FaAward } from 'react-icons/fa';
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
+import Meta from '../../components/common/Meta/Meta';
 import { AboutPageContainer, AboutBanner, AboutBannerContent, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, AboutTimeline, TimelineItem, TimelineContent, TimelineDot, AboutStats, StatItem, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './AboutStyles';
 import aboutImg from '../../assets/aman-about.png';
 import resumePdf from '../../assets/Aman_Katiyar_Resume.pdf';
@@ -13,6 +14,12 @@ const AboutPage = () => {
   const { t } = useTranslation();
   return (
     <>
+      <Meta 
+        title="About Me" 
+        description="Learn more about Aman Katiyar's professional journey, experience in AI engineering, and commitment to building cutting-edge technical solutions." 
+        url="https://aman.ktyr.in/about"
+      />
+
       <Header />
 
       <AboutPageContainer>
@@ -84,7 +91,7 @@ const AboutPage = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <img src={aboutImg} alt="About Me" loading="lazy" />
+                <img src={aboutImg} alt="Aman Katiyar - Full-Stack AI Engineer Profile" loading="lazy" />
               </motion.div>
             </AboutImage>
 
@@ -158,7 +165,11 @@ const AboutPage = () => {
                   transition={{ duration: 0.5, delay: 0.7 }}
                   viewport={{ once: true }}
                 >
-                  <ResumeButton href={resumePdf} download="Aman_Katiyar_Resume.pdf">
+                  <ResumeButton 
+                    href={resumePdf} 
+                    download="Aman_Katiyar_Resume.pdf"
+                    aria-label="Download Aman Katiyar's Resume PDF"
+                  >
                     <FaDownload /> {t('about.downloadCV')}
                   </ResumeButton>
                 </motion.div>

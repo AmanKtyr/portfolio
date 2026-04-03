@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaCheck } from 'react-icons/fa';
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
+import Meta from '../../components/common/Meta/Meta';
 import { projectsData } from '../../data/projectsData';
 import { 
   ProjectDetailsContainer, 
@@ -53,6 +54,13 @@ const ProjectDetails = () => {
   
   return (
     <>
+      <Meta 
+        title={project.title} 
+        description={project.description} 
+        image={project.previewImage}
+        url={`https://aman.ktyr.in/project/${project.id}`}
+      />
+
       <Header />
       <SectionContainer>
         <ProjectDetailsContainer>

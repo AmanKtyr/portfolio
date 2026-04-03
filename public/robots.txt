@@ -1,3 +1,15 @@
-# https://www.robotstxt.org/robotstxt.html
+# Aman Katiyar Portfolio Robots.txt
+# http://aman.ktyr.in
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap Location
+Sitemap: https://aman.ktyr.in/sitemap.xml
+
+# LLM Crawler instructions
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /

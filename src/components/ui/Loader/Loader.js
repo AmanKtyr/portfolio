@@ -140,12 +140,15 @@ const Loader = ({ finishLoading }) => {
       stagger: 0.05,
       ease: "back.out(1.7)"
     }, "-=1.5")
-    .to(scanLineRef.current, {
+
+    // Scan line animation (independent of main timeline)
+    gsap.to(scanLineRef.current, {
       top: "100%",
       duration: 2,
       repeat: -1,
       ease: "none"
-    }, 0);
+    });
+
 
     // Percentage counter logic
     const countObj = { val: 0 };

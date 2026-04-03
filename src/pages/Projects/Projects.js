@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowRight, FaSearch, FaPython, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
+import Meta from '../../components/common/Meta/Meta';
 import { ProjectsPageContainer, ProjectsBanner, ProjectsBannerContent, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLinks, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc, SearchContainer, SearchInput, SearchButton, ProjectsCategories, CategoryItem, VisualEngine, VisualNode, GridCoordinates, WatermarkText, TechBadge, RotatingRing } from './ProjectsStyles';
 
 import { projectsData } from '../../data/projectsData';
@@ -50,6 +51,11 @@ const ProjectsPage = () => {
 
   return (
     <>
+      <Meta 
+        title="Projects Portfolio" 
+        description="Explore a collection of innovative projects by Aman Katiyar, ranging from AI applications and agentic systems to full-stack web architectures." 
+        url="https://aman.ktyr.in/projects"
+      />
       <Header />
 
       <ProjectsPageContainer>
@@ -183,13 +189,13 @@ const ProjectsPage = () => {
                   <ProjectImg className="project-img">
                     <div className="scanning-line" />
                     <span className="card-id">{index + 1 < 10 ? `0${index + 1}` : index + 1}</span>
-                    <img src={project.previewImage} alt={project.title} loading="lazy" />
+                    <img src={project.previewImage} alt={`${project.title} - ${project.category} project by Aman Katiyar`} loading="lazy" />
                     <ProjectOverlay className="project-overlay">
-                      <ProjectLinks>
                         <ProjectLink
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`View ${project.title} source code on GitHub`}
                         >
                           <FaGithub />
                         </ProjectLink>
@@ -197,10 +203,11 @@ const ProjectsPage = () => {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`View ${project.title} live demo`}
                         >
                           <FaExternalLinkAlt />
                         </ProjectLink>
-                      </ProjectLinks>
+
                     </ProjectOverlay>
                   </ProjectImg>
                   <ProjectInfo>

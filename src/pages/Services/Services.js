@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaCode, FaMobileAlt, FaServer, FaShoppingCart, FaPalette, FaSearch, FaDatabase, FaLaptopCode, FaTools } from 'react-icons/fa';
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
+import Meta from '../../components/common/Meta/Meta';
 import SectionHeading from '../../components/ui/SectionHeading/SectionHeading';
 import { ServicesPageContainer, ServicesBanner, ServicesBannerContent, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText, ServiceFeatures, ServiceFeature, PricingSection, PricingContainer, PricingCard, PricingHeader, PricingPrice, PricingFeatures, PricingFeature, PricingButton, FAQSection, FAQContainer, FAQItem, FAQQuestion, FAQAnswer, CTASection, CTAContent, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './ServicesStyles';
 
@@ -31,6 +32,12 @@ const Services = () => {
 
   return (
     <>
+      <Meta 
+        title="Expert Services" 
+        description="Providing professional AI development, full-stack web solutions, and strategic technical consulting. Tailored services to help your business scale with intelligent systems." 
+        url="https://aman.ktyr.in/services"
+      />
+
       <Header />
 
       <ServicesPageContainer>
