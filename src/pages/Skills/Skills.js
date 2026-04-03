@@ -11,8 +11,8 @@ import {
   SiThreedotjs, SiNginx, SiFramer, SiGunicorn, SiPm2, SiLetsencrypt, SiJsonwebtokens
 } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import Header from '../../components/layout/Header/Header';
+import Footer from '../../components/layout/Footer/Footer';
 import { 
   SkillsPageContainer, SkillsBanner, SkillsBannerContent, SkillsContent, 
   SkillsGrid, SkillCard, SkillIcon, SkillTitle, SkillText, SkillList, 

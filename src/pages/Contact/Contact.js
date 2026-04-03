@@ -2,9 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-import Contact from '../../components/Contact/Contact';
+import Header from '../../components/layout/Header/Header';
+import Footer from '../../components/layout/Footer/Footer';
+import Contact from '../../components/sections/Contact/Contact';
 import { ContactPageContainer, ContactBanner, ContactBannerContent, ContactMap, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './ContactStyles';
 
 const ContactPage = () => {

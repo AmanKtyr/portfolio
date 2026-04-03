@@ -17,11 +17,10 @@ import SkillsPage from './pages/Skills/Skills';
 import ProjectsPage from './pages/Projects/Projects';
 
 // Components
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
-import ThreeBackground from './components/ThreeBackground/ThreeBackground';
-import ParticleBackground from './components/ParticleBackground/ParticleBackground';
-import PageTransition from './components/PageTransition/PageTransition';
-import Loader from './components/Loader/Loader';
+import ScrollToTop from './components/layout/ScrollToTop/ScrollToTop';
+import GSAPBackground from './components/backgrounds/GSAPBackground/GSAPBackground';
+import PageTransition from './components/layout/PageTransition/PageTransition';
+import Loader from './components/ui/Loader/Loader';
 
 function App() {
   return (
@@ -50,9 +49,8 @@ function AppWrapper() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <ThreeBackground />
-            <ParticleBackground />
-            <Router>
+            <GSAPBackground />
+                        <Router>
               <AppContent />
             </Router>
           </motion.div>

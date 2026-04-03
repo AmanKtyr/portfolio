@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowRight, FaSearch, FaPython, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import Header from '../../components/layout/Header/Header';
+import Footer from '../../components/layout/Footer/Footer';
 import { ProjectsPageContainer, ProjectsBanner, ProjectsBannerContent, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLinks, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc, SearchContainer, SearchInput, SearchButton, ProjectsCategories, CategoryItem, VisualEngine, VisualNode, GridCoordinates, WatermarkText, TechBadge, RotatingRing } from './ProjectsStyles';
 
 import { projectsData } from '../../data/projectsData';

@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCode, FaMobileAlt, FaServer, FaShoppingCart, FaPalette, FaSearch, FaDatabase, FaLaptopCode, FaTools } from 'react-icons/fa';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import Header from '../../components/layout/Header/Header';
+import Footer from '../../components/layout/Footer/Footer';
 import { ServicesPageContainer, ServicesBanner, ServicesBannerContent, ServicesGrid, ServiceCard, ServiceIcon, ServiceTitle, ServiceText, ServiceFeatures, ServiceFeature, PricingSection, PricingContainer, PricingCard, PricingHeader, PricingPrice, PricingFeatures, PricingFeature, PricingButton, FAQSection, FAQContainer, FAQItem, FAQQuestion, FAQAnswer, CTASection, CTAContent, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './ServicesStyles';
 
 const serviceIcons = [<FaCode />, <FaMobileAlt />, <FaServer />, <FaShoppingCart />, <FaPalette />, <FaSearch />, <FaDatabase />, <FaLaptopCode />, <FaTools />];

@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaCheck } from 'react-icons/fa';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import Header from '../../components/layout/Header/Header';
+import Footer from '../../components/layout/Footer/Footer';
 import { projectsData } from '../../data/projectsData';
 import { 
   ProjectDetailsContainer, 

@@ -1,20 +1,20 @@
 const lightTheme = {
   isDarkMode: false,
   colors: {
-    primary: '#D92C54', // Maroon
-    secondary: '#D92C54', // Darker Maroon
-    accent: '#D92C54', // Brownish Red
-    dark: '#1e293b',
+    primary: '#D92C54', // Deep Maroon
+    secondary: '#e91244ff', // Brownish Red
+    accent: '#D92C54', // Vibrant Red
+    dark: '#0f172a',
     light: '#f8fafc',
-    gray: '#64748b',
+    gray: '#475569', // Darker gray for better text contrast
     success: '#10b981',
     warning: '#f59e0b',
     danger: '#ef4444',
     background: '#ffffff',
-    cardBg: '#ffffff',
-    text: '#1e293b',
-    textSecondary: '#64748b',
-    border: '#e2e8f0',
+    cardBg: '#f1f5f9',
+    text: '#0f172a',
+    textSecondary: '#475569',
+    border: '#cbd5e1',
   },
   fonts: {
     main: "'Poppins', sans-serif",
@@ -59,20 +59,20 @@ const lightTheme = {
 const darkTheme = {
   isDarkMode: true,
   colors: {
-    primary: '#08CB00', // Maroon
-    secondary: '#F97A00', // Lighter Maroon for better contrast
-    accent: '#F97A00', // Brownish Red
+    primary: '#08CB00', // Neon Green
+    secondary: '#39ff14', // Lighter Green
+    accent: '#F97A00', // Cyber Orange
     dark: '#f8fafc',
-    light: '#0f172a',
-    gray: '#cbd5e1', // Lighter gray for dark mode
+    light: '#030712',
+    gray: '#94a3b8',
     success: '#10b981',
     warning: '#f59e0b',
     danger: '#ef4444',
-    background: '#0f172a',
-    cardBg: '#1e293b',
+    background: '#030712',
+    cardBg: '#0f172a',
     text: '#f8fafc',
     textSecondary: '#94a3b8',
-    border: '#334155',
+    border: '#1e293b',
   },
   fonts: {
     main: "'Poppins', sans-serif",
