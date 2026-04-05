@@ -348,240 +348,258 @@ export const GridCoordinates = styled.div`
   }
 `;
 
-export const AboutContent = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  margin-bottom: 4rem;
-
-  @media (max-width: 992px) {
-    grid-template-columns: 1fr;
+export const PillarsSection = styled.div`
+  margin: 10rem 0;
+  position: relative;
+  
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
+    margin-top: 4rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
   }
 `;
 
-export const AboutImage = styled.div`
+export const PillarCard = styled.div`
+  padding: 3rem;
+  background: ${({ theme }) => theme.colors.cardBg};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   position: relative;
-  transform-style: preserve-3d;
-  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 
-  img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: ${({ theme }) => theme.neumorphism.shadow1}, ${({ theme }) => theme.neumorphism.shadow2};
-    transition: transform 0.5s ease;
-    transform: rotateY(5deg) rotateX(5deg);
+  .pillar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
 
-    &:hover {
-      transform: rotateY(-5deg) rotateX(-5deg);
+    .icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      opacity: 0.8;
     }
+
+    .tag {
+      font-family: 'monospace';
+      font-size: 0.6rem;
+      background: rgba(var(--primary-rgb), 0.1);
+      color: var(--primary-color);
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      letter-spacing: 1px;
+    }
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-family: 'monospace';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    color: ${({ theme }) => theme.colors.text};
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary-color);
   }
 
   &::before {
     content: '';
     position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 60px;
-    height: 60px;
-    border-top: 3px solid var(--primary-color);
-    border-left: 3px solid var(--primary-color);
-    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.05) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 60px;
-    height: 60px;
-    border-bottom: 3px solid var(--secondary-color);
-    border-right: 3px solid var(--secondary-color);
-    z-index: -1;
+  &:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      opacity: 1;
+    }
   }
 `;
 
-export const AboutText = styled.div`
-  padding: 2rem;
-  border-radius: ${({ theme }) => theme.borderRadius.large};
-  backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
-  background-color: ${({ theme }) => theme.glassmorphism.background};
-  border: ${({ theme }) => theme.glassmorphism.border};
-  box-shadow: ${({ theme }) => theme.glassmorphism.shadow};
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+export const BlueprintSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  margin-top: 6rem;
+  position: relative;
+  z-index: 1;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  @media (max-width: 1100px) {
+    gap: 4rem;
+  }
+`;
+
+export const BlueprintGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+`;
+
+export const BlueprintNode = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  @media (max-width: 1100px) {
+    order: 2;
+    align-items: center;
+  }
+`;
+
+export const BlueprintVisual = styled.div`
+  position: relative;
+  padding: 2rem;
+
+  @media (max-width: 1100px) {
+    order: 1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+`;
+
+export const ProfileSpec = styled.div`
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+  padding: 10px;
+  background: ${({ theme }) => theme.colors.cardBg};
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: contrast(1.1) brightness(0.9);
   }
 
-  h3 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 1rem;
+  .corner-tag {
+    position: absolute;
+    top: -10px;
+    right: -10px;
     background: var(--primary-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
+    font-family: 'monospace';
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+  }
+`;
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 3px;
-      background: var(--primary-color);
-    }
+export const ParameterCard = styled.div`
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.02)' : 'rgba(0, 0, 0, 0.02)'};
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+  padding: 1.5rem;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  width: 100%;
 
-    @media (max-width: 768px) {
-      font-size: 1.8rem;
+  .label {
+    display: block;
+    font-family: 'monospace';
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+
+  .value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: ${({ theme }) => theme.colors.text};
+  }
+
+  &:hover {
+    border-color: var(--primary-color);
+    background: rgba(var(--primary-rgb), 0.05);
+    transform: translateX(${({ side }) => side === 'left' ? '-10px' : '10px'});
+  }
+`;
+
+export const OperativeCard = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: ${({ theme }) => theme.colors.cardBg};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  width: 100%;
+
+  .icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+
+  .details {
+    h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'monospace';
+      margin: 0;
     }
+  }
+
+  &:hover {
+    border-color: var(--primary-color);
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+`;
+
+export const NarrativeBio = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  
+  h3 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    font-family: 'monospace';
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    color: ${({ theme }) => theme.colors.text};
+    margin-bottom: 2rem;
   }
 
   p {
-    color: ${({ theme }) => theme.isDarkMode ? '#e2e8f0' : '#4b5563'};
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-secondary-color);
+    opacity: 0.8;
   }
 `;
 
-export const AboutInfo = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-
-  @media (max-width: 576px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-export const InfoItem = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 0.75rem;
-  border-radius: ${({ theme }) => theme.borderRadius.default};
-  background-color: ${({ theme }) =>
-    theme.isDarkMode
-      ? 'rgba(30, 41, 59, 0.5)'
-      : 'rgba(255, 255, 255, 0.5)'};
-  backdrop-filter: blur(5px);
-  border: ${({ theme }) => theme.glassmorphism.border};
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateX(5px);
-  }
-
-  strong {
-    margin-right: 0.5rem;
-    color: var(--primary-color);
-    font-weight: 600;
-  }
-`;
-
-export const AboutSkills = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-
-  @media (max-width: 576px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-export const SkillItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.75rem;
-  border-radius: ${({ theme }) => theme.borderRadius.default};
-  background-color: ${({ theme }) => theme.neumorphism.background};
-  box-shadow: ${({ theme }) => theme.neumorphism.shadow1}, ${({ theme }) => theme.neumorphism.shadow2};
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: ${({ theme }) => theme.neumorphism.shadow1.replace('10px', '15px')},
-                ${({ theme }) => theme.neumorphism.shadow2.replace('-10px', '-15px')};
-
-    svg {
-      transform: rotate(10deg) scale(1.2);
-    }
-  }
-
-  &:active {
-    box-shadow: ${({ theme }) => theme.neumorphism.activeShadow1},
-                ${({ theme }) => theme.neumorphism.activeShadow2};
-  }
-
-  svg {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
-  }
-
-  h4 {
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-`;
-
-export const ResumeButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  background: var(--primary-color);
-  color: white;
-  border-radius: var(--border-radius);
-  font-weight: 500;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
-  grid-column: 1 / -1;
-  width: fit-content;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--primary-color);
-    transition: width 0.3s ease;
-    z-index: -1;
-  }
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-
-    &:before {
-      width: 100%;
-    }
-  }
-
-  &:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
-`;
-
-export const AboutStats = styled.div`
+export const StatsDashboard = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin: 6rem 0;
+  gap: 2rem;
+  margin-top: 4rem;
 
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
@@ -592,52 +610,63 @@ export const AboutStats = styled.div`
   }
 `;
 
-export const StatItem = styled.div`
-  background: ${({ theme }) => theme.isDarkMode ? 'rgba(15, 23, 42, 0.4)' : '#ffffff'};
-  border: 1px solid ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'};
-  padding: 2rem;
+export const DashboardItem = styled.div`
+  padding: 2.5rem;
+  background: ${({ theme }) => theme.colors.cardBg};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--primary-color);
-    box-shadow: 0 0 15px var(--primary-color);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-5px);
-
-    &::before {
-      transform: scaleX(1);
-    }
-  }
 
   h3 {
-    font-size: 3rem;
-    font-family: 'monospace';
+    font-size: 3.5rem;
     font-weight: 900;
+    font-family: 'monospace';
     color: var(--primary-color);
     margin-bottom: 0.5rem;
   }
 
   p {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-family: 'monospace';
     text-transform: uppercase;
-    color: var(--gray-color);
-    letter-spacing: 2px;
-    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text-secondary-color);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-color);
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+  }
+
+  &:hover {
+    border-color: var(--primary-color);
+    &::after {
+      opacity: 1;
+    }
+  }
+`;
+
+export const MasterActionArea = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 6rem;
+  padding: 3rem;
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.01)' : 'rgba(0, 0, 0, 0.01)'};
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
   }
 `;
 

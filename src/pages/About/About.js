@@ -1,22 +1,72 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaCode, FaLaptopCode, FaServer, FaDownload, FaPhotoVideo, FaUserGraduate, FaBriefcase, FaAward } from 'react-icons/fa';
+import { FaCode, FaLaptopCode, FaServer, FaDownload, FaBrain, FaShieldAlt, FaBriefcase, FaUserGraduate, FaAward, FaCog, FaLock, FaRocket, FaFingerprint } from 'react-icons/fa';
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
 import Meta from '../../components/common/Meta/Meta';
-import { AboutPageContainer, AboutBanner, AboutBannerContent, AboutContent, AboutImage, AboutText, AboutInfo, InfoItem, AboutSkills, SkillItem, ResumeButton, AboutTimeline, TimelineItem, TimelineContent, TimelineDot, AboutStats, StatItem, WatermarkText, TechBadge, VisualEngine, RotatingRing, VisualNode, GridCoordinates } from './AboutStyles';
+import { 
+  AboutPageContainer, 
+  AboutBanner, 
+  AboutBannerContent, 
+  PillarsSection,
+  PillarCard,
+  BlueprintSection,
+  BlueprintGrid,
+  BlueprintNode,
+  BlueprintVisual,
+  ProfileSpec,
+  ParameterCard,
+  OperativeCard,
+  NarrativeBio,
+  StatsDashboard,
+  DashboardItem,
+  MasterActionArea,
+  AboutTimeline, 
+  TimelineItem, 
+  TimelineContent, 
+  TimelineDot, 
+  WatermarkText, 
+  TechBadge, 
+  VisualEngine, 
+  RotatingRing, 
+  VisualNode, 
+  GridCoordinates 
+} from './AboutStyles';
 import aboutImg from '../../assets/aman-about.png';
 import resumePdf from '../../assets/Aman_Katiyar_Resume.pdf';
 import SectionHeading from '../../components/ui/SectionHeading/SectionHeading';
+import { ResumeBtn, AvailabilityIndicator } from '../../components/sections/About/AboutStyles';
 
 const AboutPage = () => {
   const { t } = useTranslation();
+
+  const parameters = [
+    { label: 'System_Name', value: 'Aman Katiyar' },
+    { label: 'Link_Endpoint', value: 'amankatiyar.tech01@gmail.com' },
+    { label: 'Deploy_Region', value: 'Lucknow, UP, India' },
+    { label: 'Core_Logic', value: 'Full-Stack Architect' },
+  ];
+
+  const operatives = [
+    { label: 'Web_Architecture', icon: <FaCode /> },
+    { label: 'Enterprise_Systems', icon: <FaLaptopCode /> },
+    { label: 'AI_Agent_Logic', icon: <FaBrain /> },
+    { label: 'Resilient_Security', icon: <FaShieldAlt /> },
+  ];
+
+  const stats = [
+    { value: '3+', label: 'Strategic Years' },
+    { value: '35+', label: 'Ecosystems Shipped' },
+    { value: '20+', label: 'Enterprise Partners' },
+    { value: '10+', label: 'Tech Honors' },
+  ];
+
   return (
     <>
       <Meta 
-        title="About Me" 
-        description="Learn more about Aman Katiyar's professional journey, experience in AI engineering, and commitment to building cutting-edge technical solutions." 
+        title="About Deep-Dive | Aman Katiyar" 
+        description="Explore the architectural blueprint of Aman Katiyar's career. From full-stack engineering to AI solutions architecture." 
         url="https://aman.ktyr.in/about"
       />
 
@@ -24,17 +74,13 @@ const AboutPage = () => {
 
       <AboutPageContainer>
         <AboutBanner>
-          <WatermarkText>PROFILE</WatermarkText>
-          <TechBadge style={{ top: '15%', right: '10%' }}>SYSTEM_STATUS: ACTIVE</TechBadge>
-          <TechBadge style={{ bottom: '15%', left: '10%' }}>V_BUILD: 1.4.2</TechBadge>
+          <WatermarkText>ARCHITECT</WatermarkText>
+          <TechBadge style={{ top: '15%', right: '10%' }}>SYSTEM_STATUS: OPTIMIZED</TechBadge>
+          <TechBadge style={{ bottom: '15%', left: '10%' }}>V_BLUEPRINT: 2.0.0</TechBadge>
           
           <GridCoordinates style={{ top: '10%', left: '5%' }}>
-            <span>LAT: 26.8467</span>
-            <span>LON: 80.9462</span>
-          </GridCoordinates>
-          <GridCoordinates style={{ bottom: '10%', right: '5%' }}>
-            <span>SECTOR: 7_ALPHA</span>
-            <span>UNIT: BIOS_01</span>
+            <span>SEC_LVL: 04</span>
+            <span>AUTH: GRANTED</span>
           </GridCoordinates>
 
           <div className="container">
@@ -43,7 +89,7 @@ const AboutPage = () => {
                 <motion.h1
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.8 }}
                 >
                   {t('about.title').split(' ').map((word, i) => (
                     <span key={i} data-text={word}>{word} </span>
@@ -64,17 +110,17 @@ const AboutPage = () => {
                 <RotatingRing size={270} duration={25} reverse={true} color="rgba(var(--primary-rgb), 0.2)" />
                 <RotatingRing size={190} duration={15} color="rgba(var(--primary-rgb), 0.3)" />
 
-                <VisualNode style={{ transform: 'translate(110px, -110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
-                  <FaUserGraduate />
+                <VisualNode style={{ transform: 'translate(110px, -110px)' }}>
+                  <FaBrain />
                 </VisualNode>
-                <VisualNode style={{ transform: 'translate(-110px, 110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
-                  <FaBriefcase />
+                <VisualNode style={{ transform: 'translate(-110px, 110px)' }}>
+                  <FaShieldAlt />
                 </VisualNode>
-                <VisualNode style={{ transform: 'translate(110px, 110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
+                <VisualNode style={{ transform: 'translate(110px, 110px)' }}>
+                  <FaLaptopCode />
+                </VisualNode>
+                <VisualNode style={{ transform: 'translate(-110px, -110px)' }}>
                   <FaCode />
-                </VisualNode>
-                <VisualNode style={{ transform: 'translate(-110px, -110px)' }} as={motion.div} whileHover={{ scale: 1.2 }}>
-                  <FaAward />
                 </VisualNode>
               </VisualEngine>
             </AboutBannerContent>
@@ -82,201 +128,118 @@ const AboutPage = () => {
         </AboutBanner>
 
         <div className="container">
-          <AboutContent style={{ position: 'relative' }}>
-            <WatermarkText style={{ left: 'auto', right: '-5%', writingMode: 'vertical-rl', rotate: '0deg' }}>MISSION</WatermarkText>
-            <AboutImage>
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <img src={aboutImg} alt="Aman Katiyar - Full-Stack AI Engineer Profile" loading="lazy" />
-              </motion.div>
-            </AboutImage>
-
-            <AboutText>
-              <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                {t('about.aboutMeHeader')}
-              </motion.h3>
-
+          <BlueprintSection>
+            <NarrativeBio>
+              <SectionHeading 
+                number="05"
+                title="Full-Stack Systems Architect &"
+                accent="AI Solutions Engineer"
+              />
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                transition={{ delay: 0.2 }}
                 viewport={{ once: true }}
               >
                 {t('about.aboutMeText')}
               </motion.p>
+            </NarrativeBio>
 
-              <AboutInfo>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <InfoItem>
-                    <strong>{t('about.name')}</strong> Aman Katiyar
-                  </InfoItem>
-                </motion.div>
+            <BlueprintGrid>
+              <BlueprintNode>
+                {parameters.map((p, i) => (
+                  <ParameterCard key={i} side="left">
+                    <span className="label">{p.label}</span>
+                    <span className="value">{p.value}</span>
+                  </ParameterCard>
+                ))}
+              </BlueprintNode>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <InfoItem>
-                    <strong>{t('about.email')}</strong> amankatiyar.tech01@gmail.com
-                  </InfoItem>
-                </motion.div>
+              <BlueprintVisual>
+                <ProfileSpec>
+                  <img src={aboutImg} alt="Aman Katiyar Blueprint" />
+                  <div className="corner-tag">U_IDENT: AMAN_K</div>
+                </ProfileSpec>
+              </BlueprintVisual>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <InfoItem>
-                    <strong>{t('about.location')}</strong> Lucknow, UP, India
-                  </InfoItem>
-                </motion.div>
+              <BlueprintNode>
+                {operatives.map((o, i) => (
+                  <OperativeCard key={i}>
+                    <div className="icon">{o.icon}</div>
+                    <div className="details">
+                      <h4>{o.label}</h4>
+                    </div>
+                  </OperativeCard>
+                ))}
+              </BlueprintNode>
+            </BlueprintGrid>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <InfoItem>
-                    <strong>{t('about.freelance')}</strong> {t('about.available')}
-                  </InfoItem>
-                </motion.div>
+            <StatsDashboard>
+              {stats.map((s, i) => (
+                <DashboardItem key={i}>
+                  <h3>{s.value}</h3>
+                  <p>{s.label}</p>
+                </DashboardItem>
+              ))}
+            </StatsDashboard>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
-                  viewport={{ once: true }}
-                >
-                  <ResumeButton 
-                    href={resumePdf} 
-                    download="Aman_Katiyar_Resume.pdf"
-                    aria-label="Download Aman Katiyar's Resume PDF"
-                  >
-                    <FaDownload /> {t('about.downloadCV')}
-                  </ResumeButton>
-                </motion.div>
-              </AboutInfo>
+            <MasterActionArea>
+              <ResumeBtn href={resumePdf} download="Aman_Katiyar_Resume.pdf">
+                <FaDownload /> {t('about.downloadCV')}
+              </ResumeBtn>
+              <AvailabilityIndicator>
+                <div className="dot"></div>
+                {t('about.available')}
+              </AvailabilityIndicator>
+            </MasterActionArea>
+          </BlueprintSection>
 
-              <AboutSkills>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
-                  viewport={{ once: true }}
-                >
-                  <SkillItem>
-                    <FaCode />
-                    <h4>{t('skills.frontend')}</h4>
-                  </SkillItem>
-                </motion.div>
+          <PillarsSection>
+            <SectionHeading 
+              number="06"
+              title="SYSTEMS"
+              accent="PHILOSOPHY"
+              subtitle="The foundational principles that drive every architectural decision I make."
+            />
 
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  <SkillItem>
-                    <FaLaptopCode />
-                    <h4>{t('skills.backend')}</h4>
-                  </SkillItem>
-                </motion.div>
+            <div className="pillars-grid">
+              <PillarCard>
+                <div className="pillar-header">
+                  <FaRocket className="icon" />
+                  <span className="tag">PRIORITY_01</span>
+                </div>
+                <h4>Scalability First</h4>
+                <p>Architecting ecosystems that grow effortlessly. Every line of code is written with planetary-scale infrastructure in mind, ensuring your system remains robust under extreme load.</p>
+              </PillarCard>
 
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.9 }}
-                  viewport={{ once: true }}
-                >
-                  <SkillItem>
-                    <FaPhotoVideo />
-                    <h4>{t('skills.design')}</h4>
-                  </SkillItem>
-                </motion.div>
+              <PillarCard>
+                <div className="pillar-header">
+                  <FaLock className="icon" />
+                  <span className="tag">ZERO_TRUST</span>
+                </div>
+                <h4>Security by Design</h4>
+                <p>Proactive protection is a standard, not an afterthought. I implement multi-layered hardening strategies to safeguard data integrity and secure your digital assets from day one.</p>
+              </PillarCard>
 
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1.0 }}
-                  viewport={{ once: true }}
-                >
-                  <SkillItem>
-                    <FaServer />
-                    <h4>{t('skills.other')}</h4>
-                  </SkillItem>
-                </motion.div>
-              </AboutSkills>
-            </AboutText>
-          </AboutContent>
+              <PillarCard>
+                <div className="pillar-header">
+                  <FaFingerprint className="icon" />
+                  <span className="tag">UX_ARCH</span>
+                </div>
+                <h4>Human-Centric Logic</h4>
+                <p>Bridging the gap between complex engineering and intuitive experience. I build architectures that treat user experience as a core technical performance metric.</p>
+              </PillarCard>
 
-          <AboutStats>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <StatItem>
-                <TechBadge style={{ top: '5px', right: '5px', fontSize: '0.5rem' }}>DATA_STREAM</TechBadge>
-                <h3>3+</h3>
-                <p>{t('about.stats.experience')}</p>
-              </StatItem>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <StatItem>
-                <h3>35+</h3>
-                <p>{t('about.stats.projects')}</p>
-              </StatItem>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <StatItem>
-                <h3>20+</h3>
-                <p>{t('about.stats.clients')}</p>
-              </StatItem>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <StatItem>
-                <h3>10+</h3>
-                <p>{t('about.stats.awards')}</p>
-              </StatItem>
-            </motion.div>
-          </AboutStats>
+              <PillarCard>
+                <div className="pillar-header">
+                  <FaBrain className="icon" />
+                  <span className="tag">AI_STRATEGY</span>
+                </div>
+                <h4>Strategic Innovation</h4>
+                <p>Leveraging GenAI and Agentic systems to solve real-world business bottlenecks. I don't just follow trends; I engineer AI to drive measurable commercial impact.</p>
+              </PillarCard>
+            </div>
+          </PillarsSection>
 
           <SectionHeading 
             number="7"
@@ -296,9 +259,7 @@ const AboutPage = () => {
               { role: 'school', icon: <FaUserGraduate /> }
             ].map((item, index) => (
               <TimelineItem key={index} index={index}>
-                <TimelineDot>
-                  {item.icon}
-                </TimelineDot>
+                <TimelineDot>{item.icon}</TimelineDot>
                 <TimelineContent>
                   <motion.div
                     initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
@@ -324,4 +285,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
