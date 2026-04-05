@@ -53,7 +53,7 @@ function AppWrapper() {
             transition={{ duration: 1 }}
           >
             <GSAPBackground />
-                        <Router>
+            <Router>
               <AppContent />
             </Router>
           </motion.div>

@@ -226,8 +226,8 @@ const Hero = () => {
         <HeroImage>
           <VisualEngine>
             <RotatingRing size={450} duration={40} />
-            <RotatingRing size={350} duration={25} reverse={true} color="rgba(128, 0, 0, 0.2)" />
-            <RotatingRing size={250} duration={15} color="rgba(128, 0, 0, 0.3)" />
+            <RotatingRing size={350} duration={25} reverse={true} color="rgba(var(--primary-rgb), 0.2)" />
+            <RotatingRing size={250} duration={15} color="rgba(var(--primary-rgb), 0.3)" />
 
             <motion.div className="image-wrapper"
               initial={{ opacity: 0, scale: 0.8 }}

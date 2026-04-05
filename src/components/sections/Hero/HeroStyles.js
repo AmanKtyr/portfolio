@@ -121,12 +121,12 @@ export const HeroText = styled.div`
   }
 
   h1 {
-    font-size: clamp(2.5rem, 12vw, 6.5rem);
+    font-size: clamp(2.2rem, 8vw, 4rem);
     font-weight: 900;
-    line-height: 1;
-    margin-bottom: 2rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
     color: ${({ theme }) => theme.colors.text};
-    letter-spacing: -4px;
+    letter-spacing: -2px;
     text-transform: uppercase;
     font-family: 'monospace';
 
@@ -165,15 +165,15 @@ export const HeroText = styled.div`
   }
 
   h2 {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: ${({ theme }) => theme.colors.text};
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     font-family: 'monospace';
-    border-left: 5px solid var(--primary-color);
-    padding-left: 2rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
     
     @media (max-width: 992px) {
       border-left: none;
@@ -182,12 +182,12 @@ export const HeroText = styled.div`
   }
 
   p {
-    font-size: clamp(1rem, 2.5vw, 1.15rem);
-    margin-bottom: 2.5rem;
-    max-width: 600px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    margin-bottom: 2rem;
+    max-width: 550px;
     color: var(--gray-color);
-    line-height: 1.7;
-    opacity: 0.9;
+    line-height: 1.6;
+    opacity: 0.8;
 
     @media (max-width: 992px) {
       margin: 0 auto 2.5rem;
@@ -229,7 +229,7 @@ export const HeroBtns = styled.div`
     position: relative;
     overflow: hidden;
     z-index: 1;
-    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
 
     &::before {
       content: '';
@@ -248,7 +248,7 @@ export const HeroBtns = styled.div`
     }
 
     &:hover {
-      box-shadow: 0 15px 30px rgba(128, 0, 0, 0.3);
+      box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.3);
 
       &::before {
         width: 100%;
@@ -393,7 +393,7 @@ export const RotatingRing = styled.div`
   position: absolute;
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
-  border: 1px solid ${({ color }) => color || 'rgba(128, 0, 0, 0.1)'};
+  border: 1px solid ${({ color }) => color || 'rgba(var(--primary-rgb), 0.1)'};
   border-radius: 50%;
   animation: rotate ${({ duration }) => duration}s linear infinite;
   animation-direction: ${({ reverse }) => reverse ? 'reverse' : 'normal'};
@@ -453,7 +453,7 @@ export const TechBarItem = styled.div`
   &:hover {
     opacity: 1;
     transform: translateX(3px);
-    background: ${({ theme }) => theme.isDarkMode ? 'rgba(128, 0, 0, 0.05)' : 'rgba(128, 0, 0, 0.02)'};
+    background: ${({ theme }) => theme.isDarkMode ? 'rgba(var(--primary-rgb), 0.05)' : 'rgba(var(--primary-rgb), 0.02)'};
   }
 `;
 

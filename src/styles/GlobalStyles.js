@@ -3,7 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
   :root {
     --primary-color: ${({ theme }) => theme.colors.primary};
+    --primary-rgb: ${({ theme }) => theme.colors.primaryRgb};
     --secondary-color: ${({ theme }) => theme.colors.secondary};
+    --secondary-rgb: ${({ theme }) => theme.colors.secondaryRgb};
     --accent-color: ${({ theme }) => theme.colors.accent};
     --dark-color: ${({ theme }) => theme.colors.dark};
     --light-color: ${({ theme }) => theme.colors.light};
@@ -102,12 +104,12 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h2 {
-      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-size: clamp(1.4rem, 3.5vw, 1.8rem);
       font-weight: 800;
       position: relative;
       display: inline-block;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
       font-family: 'monospace', monospace;
 
       background: linear-gradient(120deg, var(--primary-color), #ff4d4d, var(--primary-color));
@@ -131,37 +133,45 @@ const GlobalStyles = createGlobalStyle`
         height: 4px;
         background: var(--primary-color);
         border-radius: 2px;
-        box-shadow: 0 0 10px rgba(128, 0, 0, 0.4);
+        box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.4);
       }
     }
 
     p {
       color: var(--gray-color);
-      max-width: 650px;
+      max-width: 600px;
       margin: 0 auto;
-      font-size: clamp(1rem, 2vw, 1.1rem);
-      opacity: 0.9;
+      font-size: clamp(0.9rem, 1.8vw, 1rem);
+      opacity: 0.8;
+      line-height: 1.6;
     }
   }
 
   .btn {
     display: inline-block;
-    padding: 0.6rem 1.2rem;
+    padding: 0.7rem 1.4rem;
     border-radius: var(--border-radius);
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     border: none;
     outline: none;
     text-align: center;
+    font-family: 'monospace';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
   }
 
   .btn-primary {
     background-color: var(--primary-color);
     color: white;
+    box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.2);
 
     &:hover {
       background-color: var(--secondary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(var(--primary-rgb), 0.3);
     }
   }
 
@@ -173,6 +183,8 @@ const GlobalStyles = createGlobalStyle`
     &:hover {
       background-color: var(--primary-color);
       color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(var(--primary-rgb), 0.1);
     }
   }
 

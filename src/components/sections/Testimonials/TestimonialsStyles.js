@@ -14,8 +14,8 @@ export const TestimonialsContainer = styled.section`
     width: 100%;
     background: ${({ theme }) =>
     theme.isDarkMode
-      ? 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 40%)'
-      : 'radial-gradient(circle, rgba(128, 0, 0, 0.1) 0%, transparent 40%)'};
+      ? 'radial-gradient(circle, rgba(var(--primary-rgb), 0.15) 0%, transparent 40%)'
+      : 'radial-gradient(circle, rgba(var(--primary-rgb), 0.1) 0%, transparent 40%)'};
     z-index: -1;
   }
 
@@ -61,61 +61,48 @@ export const TestimonialItem = styled.div`
   backdrop-filter: blur(${({ theme }) => theme.glassmorphism.blur});
   background-color: ${({ theme }) => theme.colors.cardBg};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  padding: 2.5rem;
-  border-radius: 20px;
-  box-shadow: ${({ theme }) => theme.shadows.medium};
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: ${({ theme }) => theme.shadows.small};
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
   overflow: hidden;
 
   &::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 120px;
-    background: ${({ theme }) =>
-    theme.isDarkMode
-      ? 'radial-gradient(circle, rgba(128, 0, 0, 0.2) 0%, transparent 70%)'
-      : 'radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 70%)'};
-    border-radius: 50%;
-    z-index: 0;
+    display: none;
   }
 
   &:hover {
-    transform: translateY(-10px);
-    border-color: rgba(128, 0, 0, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: ${({ theme }) => theme.shadows.medium};
   }
 `;
 
 export const QuoteIcon = styled.div`
   color: var(--primary-color);
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.2;
-  transition: all 0.4s ease;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  opacity: 0.15;
+  transition: all 0.3s ease;
   position: relative;
   z-index: 1;
 
   ${TestimonialItem}:hover & {
-    transform: scale(1.1) rotate(5deg);
-    opacity: 0.4;
-    color: var(--secondary-color);
+    opacity: 0.3;
   }
 `;
 
 export const TestimonialText = styled.p`
   color: var(--text-color);
-  margin-bottom: 2.5rem;
-  line-height: 1.8;
+  margin-bottom: 2rem;
+  line-height: 1.6;
   flex-grow: 1;
-  font-style: italic;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
-  opacity: 0.9;
+  font-size: 0.95rem;
+  opacity: 0.8;
   z-index: 1;
 `;
 
@@ -127,40 +114,34 @@ export const TestimonialAuthor = styled.div`
 `;
 
 export const AuthorImage = styled.div`
-  width: 65px;
-  height: 65px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 1.25rem;
+  margin-right: 1rem;
   position: relative;
-  transition: all 0.4s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--primary-color);
-  padding: 2px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--primary-color);
+  padding: 1px;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    transition: transform 0.4s ease;
   }
 
   ${TestimonialItem}:hover & {
-    transform: scale(1.1) rotate(5deg);
-    
-    img {
-      transform: scale(1.1);
-    }
+    transform: scale(1.05);
   }
 `;
 
 export const AuthorInfo = styled.div``;
 
 export const AuthorName = styled.h4`
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.1rem;
   color: var(--text-color);
   transition: all 0.3s ease;
   
@@ -170,13 +151,12 @@ export const AuthorName = styled.h4`
 `;
 
 export const AuthorPosition = styled.p`
-  font-size: 0.85rem;
-  background: var(--primary-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 0.75rem;
+  color: var(--gray-color);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  opacity: 0.7;
 `;
 
 

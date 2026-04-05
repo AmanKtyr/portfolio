@@ -21,8 +21,8 @@ export const ProjectsPageContainer = styled.div`
     width: 100%;
     height: 100%;
     background-image: 
-      linear-gradient(to right, rgba(128, 0, 0, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(128, 0, 0, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(var(--primary-rgb), 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(var(--primary-rgb), 0.05) 1px, transparent 1px);
     background-size: 60px 60px;
     pointer-events: none;
     z-index: 0;
@@ -44,7 +44,7 @@ export const ProjectsPageContainer = styled.div`
     text-align: center;
     padding: 6rem 2rem;
     border: 1px dashed var(--primary-color);
-    background: ${({ theme }) => theme.isDarkMode ? 'rgba(128, 0, 0, 0.05)' : 'rgba(0, 0, 0, 0.02)'};
+    background: ${({ theme }) => theme.isDarkMode ? 'rgba(var(--primary-rgb), 0.05)' : 'rgba(0, 0, 0, 0.02)'};
     border-radius: 4px;
     grid-column: 1 / -1;
 
@@ -83,7 +83,7 @@ export const ProjectsPageContainer = styled.div`
     &:hover {
       background-color: ${({ theme }) => theme.colors.primary};
       color: #ffffff;
-      box-shadow: 0 10px 25px ${({ theme }) => theme.isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(128, 0, 0, 0.25)'};
+      box-shadow: 0 10px 25px ${({ theme }) => theme.isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(var(--primary-rgb), 0.25)'};
       transform: translateY(-2px);
       
       svg {
@@ -263,7 +263,7 @@ export const VisualEngine = styled.div`
 
 export const RotatingRing = styled.div`
   position: absolute;
-  border: 1px solid ${({ color }) => color || 'rgba(128, 0, 0, 0.1)'};
+  border: 1px solid ${({ color }) => color || 'rgba(var(--primary-rgb), 0.1)'};
   border-radius: 50%;
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
@@ -311,7 +311,7 @@ export const VisualNode = styled.div`
   align-items: center;
   font-size: 1.5rem;
   color: var(--primary-color);
-  box-shadow: 0 0 20px rgba(128, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.2);
   transition: all 0.3s ease;
 
   &:hover {
@@ -390,7 +390,7 @@ export const ProjectsCategories = styled.div`
   display: flex;
   align-items: center;
   gap: 3rem;
-  border-bottom: 1px solid rgba(128, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(var(--primary-rgb), 0.1);
   padding-bottom: 1.5rem;
   overflow-x: auto;
   -ms-overflow-style: none;
@@ -429,7 +429,7 @@ export const CategoryItem = styled.button`
   padding: 0.6rem 2rem;
   background: ${({ active }) => active === 'true' ? 'var(--primary-color)' : 'transparent'};
   color: ${({ active, theme }) => active === 'true' ? 'white' : theme.colors.text};
-  border: 1px solid ${({ active }) => active === 'true' ? 'var(--primary-color)' : 'rgba(128, 0, 0, 0.2)'};
+  border: 1px solid ${({ active }) => active === 'true' ? 'var(--primary-color)' : 'rgba(var(--primary-rgb), 0.2)'};
   font-family: 'monospace';
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -447,7 +447,7 @@ export const CategoryItem = styled.button`
 
   ${({ active }) => active === 'true' && css`
     &:hover { color: white; }
-    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.3);
   `}
 `;
 

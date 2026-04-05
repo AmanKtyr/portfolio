@@ -13,12 +13,12 @@
     "hireMe": "Get in Touch"
   },
   "hero": {
-    "greeting": "Expert Craftsmanship Meets",
-    "profession": "Innovative Solutions",
-    "description": "I build high-performance, scalable web ecosystems for recruiters seeking elite talent and businesses looking for a competitive edge. Let's turn your vision into a digital reality.",
-    "hireMe": "Start a Project",
-    "viewProjects": "Explore Portfolio",
-    "scrollDown": "Dive In"
+    "greeting": "Crafting the Future of",
+    "profession": "Intelligent Systems",
+    "description": "I engineer high-performance, scalable digital ecosystems that merge advanced AI with robust architecture. Delivering production-grade solutions for global businesses and elite recruiters seeking technical excellence.",
+    "hireMe": "Get in Touch",
+    "viewProjects": "Review My Work",
+    "scrollDown": "Explore More"
   },
   "about": {
     "title": "Strategic Expertise",
@@ -29,19 +29,19 @@
     "freelance": "Strategic Partner Availability:",
     "available": "Open for New Challenges",
     "downloadCV": "Download CV",
-    "aboutMeHeader": "Full-Stack Engineer specialized in Scalable Systems",
-    "aboutMeText": "I'm a Full-Stack Engineer who views code as a tool for business growth. Whether you're an HR looking for a technical lead or a business owner needing a robust MVP, I deliver quality that exceeds industry standards. I specialize in crafting high-impact digital experiences that drive measurable results.",
+    "aboutMeHeader": "Full-Stack Systems Architect & AI Solutions Engineer",
+    "aboutMeText": "I engineer high-performance, scalable digital ecosystems where architectural integrity meets AI-driven innovation. With a focus on enterprise-grade reliability, I bridge the gap between complex business logic and robust technical execution. From architecting distributed backends to leading intelligent agentic workflows, I deliver production-grade solutions that scale with global ambition.",
     "stats": {
-      "experience": "Years Experience",
-      "projects": "Projects Completed",
-      "clients": "Happy Clients",
-      "awards": "Awards Received"
+      "experience": "Years of Strategic Experience",
+      "projects": "Production Ecosystems Built",
+      "clients": "Enterprise Collaborations",
+      "awards": "Technical Excellence Awards"
     },
     "skillItems": {
-      "webDev": "Web Development",
-      "crmDev": "CRM Development",
-      "genAI": "Gen/Agentic AI",
-      "seo": "SEO Marketing"
+      "webDev": "Web Architecture",
+      "crmDev": "Enterprise Logic",
+      "genAI": "Agentic Systems",
+      "security": "Security Architecture"
     },
     "journey": {
       "title": "Professional Evolution",
@@ -449,15 +449,15 @@
     "success": "Connection established! I'll secure a response within 24 hours.",
     "error": "Transmission failed. Let's try again.",
     "contactHero": "Let's Connect for a Strategy Session",
-    "contactSubtext": "No project is too small for big thinking. Reach out for a consultation, job offer, or technical talk."
+    "contactSubtext": "Whether you're a recruiter seeking technical leadership or a business architecting a new MVP, let's discuss your project's technical specifications and scalability roadmap."
   },
   "footer": {
-    "copyright": "© {{year}} Aman Katiyar. All rights reserved.",
+    "copyright": "© {{year}} Aman Katiyar | Core Architect",
     "madeWith": "Engineered with",
     "passion": "precision & passion",
-    "ctaTitle": "Ready to build something exceptional?",
-    "ctaSubtext": "Let's discuss your project and create digital solutions that drive real business impact.",
-    "ctaButton": "Start a Conversation",
+    "ctaTitle": "Ready to Architect something exceptional?",
+    "ctaSubtext": "Let’s discuss your technical requirements and engineer a solution that scales with your ambition.",
+    "ctaButton": "Initialize Consultation",
     "brandText": "Engineering high-performance, scalable web ecosystems that transform ambitious ideas into production-grade digital realities.",
     "available": "Available for opportunities",
     "navigation": "Navigation",

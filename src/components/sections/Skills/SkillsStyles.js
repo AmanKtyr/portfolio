@@ -31,10 +31,10 @@ export const SkillsContainer = styled.section`
 
 export const WatermarkText = styled.div`
   position: absolute;
-  font-size: clamp(8rem, 20vw, 22rem);
+  font-size: clamp(6rem, 15vw, 12rem);
   font-weight: 900;
   color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.02)'};
-  letter-spacing: -15px;
+  letter-spacing: -8px;
   text-transform: uppercase;
   z-index: 0;
   right: -2%;
@@ -136,20 +136,22 @@ export const TechIconNode = styled.div`
   }
 
   &:hover {
-    transform: translateY(-5px) scale(1.05);
+    transform: translateY(-5px);
     border-color: var(--primary-color);
     color: var(--primary-color);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: ${({ theme }) => theme.shadows.medium};
 
     &::before {
       display: block;
-      animation: scan 2s linear infinite;
+      animation: none;
+      top: 0;
+      height: 3px;
     }
 
     &::after {
       border-color: var(--primary-color);
-      inset: -5px;
-      opacity: 0.1;
+      inset: 0;
+      opacity: 0.05;
     }
   }
 `;
@@ -176,7 +178,7 @@ export const ActionButton = styled.div`
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(128, 0, 0, 0.3);
+      box-shadow: 0 12px 25px rgba(var(--primary-rgb), 0.3);
       filter: brightness(1.1);
 
       svg {

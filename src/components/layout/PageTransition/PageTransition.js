@@ -39,7 +39,7 @@ const TransitionLayer = styled(motion.div)`
     background: ${({ theme }) =>
       theme.isDarkMode
         ? 'radial-gradient(circle at 0% 0%, var(--primary-color) 0%, transparent 40%), radial-gradient(circle at 100% 100%, var(--primary-color) 0%, transparent 40%)'
-        : 'radial-gradient(circle at 0% 0%, rgba(128, 0, 0, 0.1) 0%, transparent 40%), radial-gradient(circle at 100% 100%, rgba(128, 0, 0, 0.1) 0%, transparent 40%)'};
+        : 'radial-gradient(circle at 0% 0%, rgba(var(--primary-rgb), 0.1) 0%, transparent 40%), radial-gradient(circle at 100% 100%, rgba(var(--primary-rgb), 0.1) 0%, transparent 40%)'};
     opacity: 0.2;
   }
 
@@ -65,7 +65,7 @@ const CircleElement = styled(motion.div)`
   border-radius: 50%;
   background: ${({ theme, color }) =>
     color === 'primary'
-      ? theme.isDarkMode ? 'rgba(128, 0, 0, 0.15)' : 'rgba(128, 0, 0, 0.1)'
+      ? theme.isDarkMode ? 'rgba(var(--primary-rgb), 0.15)' : 'rgba(var(--primary-rgb), 0.1)'
       : theme.isDarkMode ? 'rgba(90, 0, 0, 0.1)' : 'rgba(90, 0, 0, 0.05)'};
   filter: blur(${props => props.blur || '0px'});
   z-index: 1;
@@ -136,8 +136,8 @@ const TransitionLogo = styled(motion.div)`
     z-index: -2;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'radial-gradient(circle, rgba(128, 0, 0, 0.2) 0%, transparent 70%)'
-        : 'radial-gradient(circle, rgba(128, 0, 0, 0.2) 0%, transparent 70%)'};
+        ? 'radial-gradient(circle, rgba(var(--primary-rgb), 0.2) 0%, transparent 70%)'
+        : 'radial-gradient(circle, rgba(var(--primary-rgb), 0.2) 0%, transparent 70%)'};
     animation: pulse 4s ease-in-out infinite alternate;
   }
 
@@ -334,8 +334,8 @@ const PageTransition = ({ children }) => {
                 ? `rgba(${Math.random() > 0.5 ? '56, 189, 248' : '90, 0, 0'}, ${Math.random() * 0.3 + 0.2})`
                 : `rgba(${Math.random() > 0.5 ? '128, 0, 0' : '90, 0, 0'}, ${Math.random() * 0.3 + 0.2})`,
               boxShadow: isDarkMode
-                ? `0 0 ${Math.random() * 10 + 5}px rgba(128, 0, 0, 0.3)`
-                : `0 0 ${Math.random() * 10 + 5}px rgba(128, 0, 0, 0.3)`,
+                ? `0 0 ${Math.random() * 10 + 5}px rgba(var(--primary-rgb), 0.3)`
+                : `0 0 ${Math.random() * 10 + 5}px rgba(var(--primary-rgb), 0.3)`,
               opacity: 0.6,
               zIndex: 10001,
             }}

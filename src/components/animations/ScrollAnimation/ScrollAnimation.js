@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { isLowPerformanceDevice } from '../../../utils/performanceUtils';
 
-const ScrollAnimation = ({ 
-  children, 
+const ScrollAnimation = ({
+  children,
   threshold = 0.1,
   triggerOnce = true,
   animation = 'fadeUp',
@@ -14,7 +14,7 @@ const ScrollAnimation = ({
   style = {}
 }) => {
   const isLowPerformance = useMemo(() => isLowPerformanceDevice(), []);
-  
+
   const [ref, inView] = useInView({
     threshold,
     triggerOnce,
@@ -25,8 +25,8 @@ const ScrollAnimation = ({
   const animations = useMemo(() => ({
     fadeUp: {
       hidden: { opacity: 0, y: isLowPerformance ? 20 : 50 }, // Reduced movement for low-performance devices
-      visible: { 
-        opacity: 1, 
+      visible: {
+        opacity: 1,
         y: 0,
         transition: {
           duration: isLowPerformance ? duration * 0.7 : duration, // Faster animations for low-performance
@@ -37,8 +37,8 @@ const ScrollAnimation = ({
     },
     fadeDown: {
       hidden: { opacity: 0, y: isLowPerformance ? -20 : -50 },
-      visible: { 
-        opacity: 1, 
+      visible: {
+        opacity: 1,
         y: 0,
         transition: {
           duration: isLowPerformance ? duration * 0.7 : duration,
@@ -49,8 +49,8 @@ const ScrollAnimation = ({
     },
     fadeLeft: {
       hidden: { opacity: 0, x: isLowPerformance ? -20 : -50 },
-      visible: { 
-        opacity: 1, 
+      visible: {
+        opacity: 1,
         x: 0,
         transition: {
           duration: isLowPerformance ? duration * 0.7 : duration,
@@ -61,8 +61,8 @@ const ScrollAnimation = ({
     },
     fadeRight: {
       hidden: { opacity: 0, x: isLowPerformance ? 20 : 50 },
-      visible: { 
-        opacity: 1, 
+      visible: {
+        opacity: 1,
         x: 0,
         transition: {
           duration: isLowPerformance ? duration * 0.7 : duration,
@@ -73,8 +73,8 @@ const ScrollAnimation = ({
     },
     zoom: {
       hidden: { opacity: 0, scale: isLowPerformance ? 0.9 : 0.8 },
-      visible: { 
-        opacity: 1, 
+      visible: {
+        opacity: 1,
         scale: 1,
         transition: {
           duration: isLowPerformance ? duration * 0.7 : duration,
@@ -85,8 +85,8 @@ const ScrollAnimation = ({
     },
     flip: {
       hidden: { opacity: 0, rotateY: isLowPerformance ? 45 : 90 },
-      visible: { 
-        opacity: 1, 
+      visible: {
+        opacity: 1,
         rotateY: 0,
         transition: {
           duration: isLowPerformance ? duration * 0.7 : duration,

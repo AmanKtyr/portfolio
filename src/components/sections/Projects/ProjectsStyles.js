@@ -24,7 +24,7 @@ export const FilterBtn = styled.button`
   transition: var(--transition);
 
   &:hover {
-    background-color: ${({ active }) => (active === 'true' ? 'var(--secondary-color)' : 'rgba(128, 0, 0, 0.1)')};
+    background-color: ${({ active }) => (active === 'true' ? 'var(--secondary-color)' : 'rgba(var(--primary-rgb), 0.1)')};
     color: ${({ active }) => (active === 'true' ? 'white' : 'var(--primary-color)')};
   }
 `;

@@ -99,8 +99,8 @@ const ThemeSwitcher = () => {
         whileHover={{
           rotate: isDarkMode ? -15 : 15,
           boxShadow: isDarkMode
-            ? '0 10px 40px 0 rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(128, 0, 0, 0.2), 0 0 15px rgba(128, 0, 0, 0.15)'
-            : '0 10px 40px 0 rgba(31, 38, 135, 0.1), 0 0 0 1px rgba(128, 0, 0, 0.3), 0 0 15px rgba(128, 0, 0, 0.15)'
+            ? '0 10px 40px 0 rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(var(--primary-rgb), 0.2), 0 0 15px rgba(var(--primary-rgb), 0.15)'
+            : '0 10px 40px 0 rgba(31, 38, 135, 0.1), 0 0 0 1px rgba(var(--primary-rgb), 0.3), 0 0 15px rgba(var(--primary-rgb), 0.15)'
         }}
       >
         <AnimatePresence mode="wait">

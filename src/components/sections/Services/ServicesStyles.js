@@ -1,17 +1,19 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const float = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+`;
+
+const scan = keyframes`
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+`;
 
 export const ServicesContainer = styled.section`
-  @keyframes scan {
-    0% { top: -100%; }
-    100% { top: 100%; }
-  }
-
-  @keyframes gridDrift {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
-  }
-
-  padding: 4.5rem 0;
+  padding: 10rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;
@@ -21,252 +23,165 @@ export const ServicesContainer = styled.section`
     position: absolute;
     inset: 0;
     background-image: 
-      radial-gradient(var(--primary-color) 1px, transparent 1px);
-    background-size: 50px 50px;
-    opacity: ${({ theme }) => theme.isDarkMode ? 0.05 : 0.02};
-    animation: gridDrift 20s linear infinite;
+      linear-gradient(rgba(var(--primary-rgb), 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(var(--primary-rgb), 0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
     z-index: 0;
-  }
-`;
-
-export const WatermarkText = styled.div`
-  position: absolute;
-  font-size: clamp(8rem, 20vw, 22rem);
-  font-weight: 900;
-  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.02)'};
-  letter-spacing: -15px;
-  text-transform: uppercase;
-  z-index: 0;
-  left: -2%;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-family: 'monospace';
-  writing-mode: vertical-lr;
-  rotate: 180deg;
-`;
-
-export const TechBadge = styled.div`
-  position: absolute;
-  padding: 0.4rem 0.8rem;
-  background: ${({ theme }) => theme.colors.cardBg};
-  border: 1px solid var(--primary-color);
-  font-family: 'monospace';
-  font-size: 0.6rem;
-  color: var(--primary-color);
-  border-radius: 2px;
-  backdrop-filter: blur(10px);
-  z-index: 5;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  letter-spacing: 1px;
-  pointer-events: none;
-
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    margin-right: 8px;
-    animation: blink 1.5s infinite;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-`;
-
-export const ServicesContainerInner = styled.div`
-  .btn-primary {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background: var(--primary-color);
-    color: white;
-    font-family: 'monospace';
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
-    }
+    mask-image: radial-gradient(ellipse at center, black, transparent 80%);
   }
 `;
 
 export const ServicesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 `;
 
 export const ServiceCard = styled.div`
   background: ${({ theme }) => theme.colors.cardBg};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  padding: 2.5rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  padding: 3rem;
+  border-radius: 4px;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 
   &::before {
     content: '';
     position: absolute;
-    top: -100%;
+    top: 0;
     left: 0;
     width: 100%;
     height: 4px;
     background: var(--primary-color);
-    box-shadow: 0 0 15px var(--primary-color);
-    z-index: 5;
-    display: none;
-  }
-
-  &::after {
-    content: 'S_LINK_ESTABLISHED';
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    font-family: 'monospace';
-    font-size: 0.6rem;
-    color: var(--primary-color);
-    opacity: 0.1;
-    letter-spacing: 1px;
-    transition: opacity 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
   }
 
   &:hover {
-    border-color: var(--primary-color);
+    border-color: rgba(var(--primary-rgb), 0.3);
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 
     &::before {
-      display: block;
-      animation: scan 2s linear infinite;
+      transform: scaleX(1);
     }
 
-    &::after {
-      opacity: 0.4;
-    }
-  }
-
-  .btn-text {
-    display: inline-flex;
-    align-items: center;
-    color: var(--primary-color);
-    font-weight: 500;
-    margin-top: auto;
-    padding-top: 1rem;
-    transition: all 0.3s ease;
-
-    svg {
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: all 0.3s ease;
-      margin-left: 5px;
-    }
-
-    &:hover {
-      color: var(--secondary-color);
-
-      svg {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    .service-footer {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 `;
 
 export const ServiceIcon = styled.div`
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  background: ${({ theme }) => theme.colors.cardBg};
-  box-shadow: ${({ theme }) => theme.shadows.medium};
+  width: 60px;
+  height: 60px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
+  justify-content: center;
+  background: rgba(var(--primary-rgb), 0.08);
+  border-radius: 4px;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  transition: all 0.4s ease;
   position: relative;
-  z-index: 1;
 
-  &::before {
+  &::after {
     content: '';
     position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    padding: 2px;
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    
-    
+    inset: -2px;
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
+    border-radius: 4px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: all 0.4s ease;
   }
 
   ${ServiceCard}:hover & {
-    transform: rotate(10deg);
-
-    &::before {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1) rotate(5deg);
+    
+    &::after {
       opacity: 1;
+      inset: -5px;
     }
-  }
-
-  svg {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    transition: all 0.3s ease;
-  }
-
-  ${ServiceCard}:hover svg {
-    transform: scale(1.1);
-    color: var(--secondary-color);
   }
 `;
 
 export const ServiceTitle = styled.h3`
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 800;
-  margin-bottom: 1rem;
   color: ${({ theme }) => theme.colors.text};
-  font-family: 'monospace';
   text-transform: uppercase;
-  letter-spacing: -1px;
-  position: relative;
-  transition: all 0.3s ease;
-
-  span {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: var(--primary-color);
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-  }
-
-  ${ServiceCard}:hover & {
-    letter-spacing: 0px;
-    color: var(--primary-color);
-  }
+  letter-spacing: 1px;
+  font-family: 'monospace';
+  margin: 0;
 `;
 
 export const ServiceText = styled.p`
-  color: ${({ theme }) => theme.colors.textSecondary};
-  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary-color);
+  margin: 0;
+  opacity: 0.8;
   flex-grow: 1;
+`;
+
+export const ServiceFooter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
+  opacity: 0.5;
+  transition: all 0.4s ease;
+  transform: translateY(10px);
+
+  .btn-text {
+    font-family: 'monospace';
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .status {
+    font-family: 'monospace';
+    font-size: 0.6rem;
+    color: ${({ theme }) => theme.isDarkMode ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)'};
+    letter-spacing: 1px;
+  }
+`;
+
+export const TechBadge = styled.div`
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: 'monospace';
+  font-size: 0.6rem;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)'};
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
 `;
 
 

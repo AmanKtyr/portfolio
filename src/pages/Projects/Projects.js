@@ -99,8 +99,8 @@ const ProjectsPage = () => {
               <VisualEngine>
                 {/* Compact Orbital System */}
                 <RotatingRing size={350} duration={40} />
-                <RotatingRing size={270} duration={25} reverse={true} color="rgba(128, 0, 0, 0.2)" />
-                <RotatingRing size={190} duration={15} color="rgba(128, 0, 0, 0.3)" />
+                <RotatingRing size={270} duration={25} reverse={true} color="rgba(var(--primary-rgb), 0.2)" />
+                <RotatingRing size={190} duration={15} color="rgba(var(--primary-rgb), 0.3)" />
 
                 <VisualNode style={{ transform: 'translate(110px, -110px)', width: '60px', height: '60px', fontSize: '1.5rem' }} as={motion.div} whileHover={{ scale: 1.2 }}>
                   <FaPython />

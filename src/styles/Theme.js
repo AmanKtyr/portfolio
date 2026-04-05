@@ -2,7 +2,9 @@ const lightTheme = {
   isDarkMode: false,
   colors: {
     primary: '#D92C54', // Deep Maroon
+    primaryRgb: '217, 44, 84',
     secondary: '#e91244ff', // Brownish Red
+    secondaryRgb: '233, 18, 68',
     accent: '#D92C54', // Vibrant Red
     dark: '#0f172a',
     light: '#f8fafc',
@@ -34,7 +36,7 @@ const lightTheme = {
     background: 'rgba(255, 255, 255, 0.7)',
     border: '1px solid rgba(255, 255, 255, 0.18)',
     blur: '10px',
-    shadow: '0 8px 32px 0 rgba(128, 0, 0, 0.07)',
+    shadow: '0 8px 32px 0 rgba(var(--primary-rgb), 0.07)',
   },
   neumorphism: {
     background: '#f0f4f8',
@@ -60,7 +62,9 @@ const darkTheme = {
   isDarkMode: true,
   colors: {
     primary: '#08CB00', // Neon Green
+    primaryRgb: '8, 203, 0',
     secondary: '#39ff14', // Lighter Green
+    secondaryRgb: '57, 255, 20',
     accent: '#F97A00', // Cyber Orange
     dark: '#f8fafc',
     light: '#030712',

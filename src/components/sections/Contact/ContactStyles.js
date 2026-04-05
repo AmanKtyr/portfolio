@@ -1,17 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const scan = keyframes`
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+`;
 
 export const ContactContainer = styled.section`
-  @keyframes scan {
-    0% { top: -100%; }
-    100% { top: 100%; }
-  }
-
-  @keyframes gridDrift {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
-  }
-
-  padding: 4.5rem 0;
+  padding: 8rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;
@@ -22,359 +18,328 @@ export const ContactContainer = styled.section`
     inset: 0;
     background-image: 
       radial-gradient(var(--primary-color) 1px, transparent 1px);
-    background-size: 50px 50px;
-    opacity: 0.05;
-    animation: gridDrift 20s linear infinite;
+    background-size: 60px 60px;
+    opacity: ${({ theme }) => theme.isDarkMode ? 0.04 : 0.02};
     z-index: 0;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1.2rem 2.5rem;
-    background: var(--primary-color);
-    color: white;
-    font-family: 'monospace';
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 2px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -100%;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.3);
-      filter: blur(2px);
-    }
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(128, 0, 0, 0.3);
-
-      &::before {
-        animation: scan 2s linear infinite;
-      }
-    }
-
-    &:disabled {
-      background: var(--gray-color);
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-  }
-
-  .success-message {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(16, 185, 129, 0.1);
-    color: #10b981;
-    padding: 1.1rem 1.4rem;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    backdrop-filter: blur(5px);
   }
 `;
 
 export const ContactContent = styled.div`
   display: grid;
-  grid-template-columns: 5fr 7fr;
-  gap: 3rem;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
   align-items: start;
+  position: relative;
+  z-index: 1;
 
-  @media (max-width: 992px) {
+  @media (max-width: 1100px) {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
   }
 `;
 
 export const ContactInfo = styled.div`
-  padding: 2.5rem;
-  border-radius: 24px;
-  backdrop-filter: blur(10px);
-  background-color: ${({ theme }) => theme.colors.cardBg};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  box-shadow: ${({ theme }) => theme.shadows.medium};
-  position: sticky;
-  top: 6rem;
-  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
 
-  &:hover {
-    border-color: rgba(128, 0, 0, 0.15);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-  }
-
+export const InfoHeader = styled.div`
   h3 {
-    font-size: clamp(1.5rem, 3vw, 1.9rem);
-    margin-bottom: 1rem;
+    font-size: 2rem;
     font-weight: 800;
-    color: var(--primary-color);
-    position: relative;
-    padding-bottom: 1rem;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 3px;
-      background: var(--primary-color);
-      border-radius: 2px;
-      box-shadow: 0 0 10px rgba(128, 0, 0, 0.4);
-    }
-
-    @media (max-width: 768px) {
-      font-size: 1.5rem;
-      margin-bottom: 0.8rem;
-    }
-  }
-  }
-
-  > p {
-    margin-bottom: 2rem;
-    color: var(--gray-color);
-    line-height: 1.8;
-    font-size: 0.97rem;
-    opacity: 0.9;
-  }
-
-  .availability-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.5rem 1rem;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid #10b981;
     font-family: 'monospace';
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #10b981;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: -1px;
+    color: ${({ theme }) => theme.colors.text};
+    margin: 0 0 1rem 0;
 
-    .dot {
-      width: 6px;
-      height: 6px;
-      background: #10b981;
-      border-radius: 50%;
-      animation: blink 1.5s infinite;
+    span {
+      color: var(--primary-color);
     }
+  }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary-color);
+    opacity: 0.8;
+    margin: 0;
   }
 `;
 
-export const ContactDetail = styled.a`
+export const ContactGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+`;
+
+export const ContactCard = styled.a`
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
-  padding: 1.2rem;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  gap: 1.5rem;
+  padding: 1.5rem;
   background: ${({ theme }) => theme.colors.cardBg};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 4px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
 
-  &:hover {
-    border-color: var(--primary-color);
-    transform: translateX(5px);
-    background: ${({ theme }) => theme.colors.background};
-
-    .icon {
-      color: var(--primary-color);
-      transform: scale(1.1);
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background: var(--primary-color);
+    transition: height 0.4s ease;
   }
 
   .icon {
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: var(--gray-color);
+    justify-content: center;
+    background: rgba(var(--primary-rgb), 0.08);
+    border-radius: 4px;
+    color: var(--primary-color);
     font-size: 1.2rem;
-    border-right: 1px solid ${({ theme }) => theme.colors.border};
-    margin-right: 1.2rem;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
+    transition: all 0.4s ease;
   }
 
-  @media (max-width: 480px) {
-    padding: 1rem;
-    
-    .icon {
-      width: 35px;
-      height: 35px;
-      font-size: 1rem;
-      margin-right: 0.8rem;
-    }
-  }
-
-  .text {
+  .details {
     h4 {
-      font-size: 0.65rem;
       font-family: 'monospace';
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--primary-color);
-      margin-bottom: 0.3rem;
+      margin: 0 0 0.25rem 0;
     }
     p {
       font-size: 1rem;
-      color: ${({ theme }) => theme.colors.text};
       font-weight: 500;
-      word-break: break-all;
+      color: ${({ theme }) => theme.colors.text};
+      margin: 0;
+    }
+  }
 
-      @media (max-width: 480px) {
-        font-size: 0.85rem;
-      }
+  &:hover {
+    border-color: rgba(var(--primary-rgb), 0.3);
+    transform: translateX(10px);
+    background: ${({ theme }) => theme.isDarkMode ? 'rgba(255,255,255,0.02)' : 'rgba(0,0,0,0.02)'};
+
+    &::before {
+      height: 100%;
+    }
+
+    .icon {
+      background: var(--primary-color);
+      color: white;
     }
   }
 `;
 
-
-export const ContactSocial = styled.div`
+export const SocialFrame = styled.div`
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
 `;
 
-export const SocialLink = styled.a`
+export const SocialBox = styled.a`
   width: 44px;
   height: 44px;
-  border-radius: 12px;
-  background: ${({ theme }) =>
-    theme.isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.7)'};
-  border: 1px solid rgba(128, 0, 0, 0.15);
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: var(--primary-color);
+  justify-content: center;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 4px;
+  color: ${({ theme }) => theme.colors.text};
   font-size: 1.1rem;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s ease;
 
   &:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.3);
     border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
   }
 `;
 
 export const ContactForm = styled.form`
-  backdrop-filter: blur(10px);
-  background-color: ${({ theme }) => theme.colors.cardBg};
+  background: ${({ theme }) => theme.colors.cardBg};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  padding: 2.5rem;
-  border-radius: 24px;
-  box-shadow: ${({ theme }) => theme.shadows.medium};
-  transition: all 0.4s ease;
+  padding: 3rem;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 
-  &:hover {
-    border-color: rgba(128, 0, 0, 0.15);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
   }
 
   .form-header {
-    margin-bottom: 2rem;
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+    padding-bottom: 1rem;
+
+    h4 {
+      font-family: 'monospace';
+      font-size: 0.8rem;
       color: var(--primary-color);
-      margin-bottom: 0.4rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 0 0 0.5rem 0;
     }
-    p {
-      font-size: 0.92rem;
-      color: var(--gray-color);
-      opacity: 0.85;
+    span {
+      font-family: 'monospace';
+      font-size: 0.6rem;
+      opacity: 0.4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 2rem;
+    position: relative;
+
+    label {
+      font-family: 'monospace';
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: ${({ theme }) => theme.colors.text};
+      opacity: 0.6;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    input, textarea {
+      width: 100%;
+      background: ${({ theme }) => theme.isDarkMode ? 'rgba(255,255,255,0.02)' : 'rgba(0,0,0,0.02)'};
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      padding: 1rem 1.25rem;
+      border-radius: 4px;
+      color: ${({ theme }) => theme.colors.text};
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        background: ${({ theme }) => theme.isDarkMode ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)'};
+        box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.1);
+      }
+    }
+
+    textarea {
+      resize: none;
+      min-height: 150px;
+    }
+
+    .error-msg {
+      position: absolute;
+      bottom: -18px;
+      left: 0;
+      font-family: 'monospace';
+      font-size: 0.6rem;
+      color: #ef4444;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
   }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-
-    @media (max-width: 576px) {
-      grid-template-columns: 1fr;
-    }
-  }
-`;
-
-export const FormGroup = styled.div`
-  margin-bottom: 1.75rem;
-  position: relative;
-
-  label {
-    display: block;
-    font-size: 0.82rem;
-    font-weight: 700;
+  .submit-btn {
+    width: 100%;
+    padding: 1.25rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'monospace';
     text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--gray-color);
-    margin-bottom: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.3);
+
+    &:hover:not(:disabled) {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.4);
+      filter: brightness(1.1);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    svg {
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(5px) scale(1.1);
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 2rem;
   }
 `;
 
-export const FormControl = styled.input`
-  width: 100%;
-  padding: 1rem 1.2rem;
-  background-color: ${({ theme }) => theme.colors.background};
-  border: 1.5px solid ${({ theme }) => theme.colors.border};
-  border-radius: 12px;
-  font-family: inherit;
-  font-size: 0.97rem;
-  transition: all 0.3s ease;
-  color: var(--text-color);
-  resize: ${({ as: tag }) => (tag === 'textarea' ? 'vertical' : 'none')};
-
-  &:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    background-color: ${({ theme }) =>
-      theme.isDarkMode ? 'rgba(15, 23, 42, 0.6)' : '#fff'};
-    box-shadow: 0 0 0 4px rgba(128, 0, 0, 0.1);
-    transform: translateY(-2px);
-  }
-
-  &.error {
-    border-color: #ef4444;
-    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
-  }
-
-  &::placeholder {
-    color: var(--gray-color);
-    opacity: 0.5;
-  }
-`;
-
-export const ErrorMessage = styled.small`
+export const ConnectionStatus = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  color: #ef4444;
-  position: absolute;
-  bottom: -22px;
-  left: 4px;
-  font-size: 0.75rem;
-  font-weight: 600;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding: 0.75rem 1rem;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 4px;
+  width: fit-content;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+    animation: blink 2s infinite;
+  }
+
+  span {
+    font-family: 'monospace';
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.2); }
+  }
 `;

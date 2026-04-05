@@ -46,13 +46,13 @@ const TechStack = () => {
   return (
     <TechStackContainer ref={containerRef} id="tech-stack">
         <SectionHeading 
-          number="2"
+          number="02"
           title="CORE"
           accent="STACK"
           subtitle="A comprehensive toolkit of modern technologies, frameworks, and architectural principles that I leverage to build scalable and high-performance digital solutions."
         />
         
-        <TechStackTitle style={{ border: 'none', margin: '0' }}>
+        <TechStackTitle style={{ border: 'none', margin: '0 0 4rem 0' }}>
           <div className="tech-meta" style={{ width: '100%', display: 'flex', justifyContent: 'space-between', padding: '0 2rem' }}>
             <div className="meta-item">
               <span>USER__SYSTEM:</span> <b style={{ color: 'var(--primary-color)' }}>Aman Katiyar</b>

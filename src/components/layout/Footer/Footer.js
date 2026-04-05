@@ -169,7 +169,7 @@ const Footer = () => {
             SYS_REV: 2.0.4 // UNIT: ARCHIVE_V1
           </div>
           <FooterMadeWith style={{ fontFamily: 'monospace' }}>
-            BUILD: {t('footer.passion')} <FaHeart /> PRECISION
+            BUILD: {t('footer.passion')} <FaHeart />
           </FooterMadeWith>
         </FooterBottom>
       </FooterInner>

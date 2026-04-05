@@ -58,14 +58,15 @@ export const NavMenu = styled.ul`
   padding: 0.2rem;
   background: ${({ theme }) =>
     theme.isDarkMode
-      ? 'rgba(15, 23, 42, 0.6)'
-      : 'rgba(255, 255, 255, 0.8)'};
-  border-radius: 4px;
-  backdrop-filter: blur(12px);
+      ? 'rgba(15, 23, 42, 0.4)'
+      : 'rgba(255, 255, 255, 0.6)'};
+  border-radius: 8px;
+  backdrop-filter: blur(16px);
   border: 1px solid ${({ theme }) =>
     theme.isDarkMode
-      ? 'rgba(255, 255, 255, 0.1)'
-      : 'rgba(0, 0, 0, 0.1)'};
+      ? 'rgba(255, 255, 255, 0.08)'
+      : 'rgba(0, 0, 0, 0.08)'};
+  box-shadow: ${({ theme }) => theme.shadows.small};
 `;
 
 export const NavItem = styled.li`
@@ -79,8 +80,8 @@ export const NavLink = styled(Link)`
     active === 'true'
       ? 'var(--primary-color)'
       : theme.colors.text};
-  font-weight: 700;
-  font-size: 0.7rem;
+  font-weight: 600;
+  font-size: 0.8rem;
   padding: 0.6rem 0.7rem;
   text-decoration: none;
   display: flex;
@@ -100,10 +101,12 @@ export const NavLink = styled(Link)`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: ${({ active }) => (active === 'true' ? '100%' : '0')};
+    width: ${({ active }) => (active === 'true' ? '12px' : '0')};
     height: 2px;
     background: var(--primary-color);
     transition: width 0.3s ease;
+    border-radius: 1px;
+    margin-bottom: 2px;
   }
 
   svg {
@@ -115,11 +118,11 @@ export const NavLink = styled(Link)`
     color: var(--primary-color);
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'rgba(128, 0, 0, 0.1)'
-        : 'rgba(128, 0, 0, 0.05)'};
+        ? 'rgba(var(--primary-rgb), 0.1)'
+        : 'rgba(var(--primary-rgb), 0.05)'};
     
     &::after {
-      width: 100%;
+      width: 12px;
     }
 
     svg {
@@ -199,8 +202,8 @@ export const PrimaryButton = styled.div`
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(128, 0, 0, 0.4);
-      background: #991111;
+      box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.3);
+      filter: brightness(1.1);
     }
   }
 `;

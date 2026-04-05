@@ -75,7 +75,7 @@ export const ServicesPageContainer = styled.div`
         height: 4px;
         background: var(--primary-color);
         border-radius: 2px;
-        box-shadow: 0 0 15px rgba(128, 0, 0, 0.4);
+        box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.4);
       }
     }
 
@@ -104,11 +104,11 @@ export const ServicesPageContainer = styled.div`
     border-radius: 12px;
     font-weight: 700;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 15px 30px rgba(128, 0, 0, 0.3);
+      box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.3);
     }
   }
 `;
@@ -232,7 +232,7 @@ export const VisualEngine = styled.div`
 
 export const RotatingRing = styled.div`
   position: absolute;
-  border: 1px solid ${({ color }) => color || 'rgba(128, 0, 0, 0.1)'};
+  border: 1px solid ${({ color }) => color || 'rgba(var(--primary-rgb), 0.1)'};
   border-radius: 50%;
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
@@ -268,7 +268,7 @@ export const VisualNode = styled.div`
   align-items: center;
   font-size: 1.7rem;
   color: var(--primary-color);
-  box-shadow: 0 0 20px rgba(128, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.2);
   transition: all 0.3s ease;
 
   &:hover {
@@ -326,7 +326,7 @@ export const ServiceIcon = styled.div`
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: rgba(128, 0, 0, 0.1);
+  background-color: rgba(var(--primary-rgb), 0.1);
   display: flex;
   justify-content: center;
   align-items: center;

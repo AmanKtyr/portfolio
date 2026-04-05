@@ -48,9 +48,9 @@ export const FooterTopDivider = styled.div`
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(128, 0, 0, 0.3) 15%,
-    rgba(128, 0, 0, 0.8) 50%,
-    rgba(128, 0, 0, 0.3) 85%,
+    rgba(var(--primary-rgb), 0.3) 15%,
+    rgba(var(--primary-rgb), 0.8) 50%,
+    rgba(var(--primary-rgb), 0.3) 85%,
     transparent 100%
   );
 
@@ -64,9 +64,9 @@ export const FooterTopDivider = styled.div`
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(128, 0, 0, 0.05) 15%,
-      rgba(128, 0, 0, 0.15) 50%,
-      rgba(128, 0, 0, 0.05) 85%,
+      rgba(var(--primary-rgb), 0.05) 15%,
+      rgba(var(--primary-rgb), 0.15) 50%,
+      rgba(var(--primary-rgb), 0.05) 85%,
       transparent 100%
     );
     filter: blur(4px);
@@ -148,7 +148,7 @@ export const SocialLink = styled.a`
     color: white;
     background: var(--primary-color);
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(128, 0, 0, 0.35);
+    box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.35);
 
     svg {
       transform: scale(1.15);
@@ -272,17 +272,18 @@ export const ContactIcon = styled.span`
   height: 34px;
   min-width: 34px;
   border-radius: 8px;
-  background: rgba(128, 0, 0, 0.12);
-  border: 1px solid rgba(128, 0, 0, 0.15);
-  color: rgba(200, 80, 80, 0.9);
+  background: rgba(var(--primary-rgb), 0.12);
+  border: 1px solid rgba(var(--primary-rgb), 0.15);
+  color: var(--primary-color);
+  opacity: 0.9;
   font-size: 0.85rem;
   transition: all 0.35s ease;
 
   ${ContactItem}:hover & {
-    background: ${({ theme }) => theme.isDarkMode ? 'rgba(128, 0, 0, 0.22)' : 'rgba(128, 0, 0, 0.1)'};
+    background: ${({ theme }) => theme.isDarkMode ? 'rgba(var(--primary-rgb), 0.22)' : 'rgba(var(--primary-rgb), 0.1)'};
     color: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.1);
   }
 `;
 
@@ -379,7 +380,7 @@ export const FloatingOrb = styled.div`
     height: 300px;
     bottom: -100px;
     right: -80px;
-    background: radial-gradient(circle, rgba(128, 0, 0, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.06) 0%, transparent 70%);
     animation: ${float} 8s ease-in-out infinite;
   }
 
@@ -388,7 +389,7 @@ export const FloatingOrb = styled.div`
     height: 200px;
     top: 40px;
     left: -60px;
-    background: radial-gradient(circle, rgba(128, 0, 0, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.04) 0%, transparent 70%);
     animation: ${float} 10s ease-in-out infinite 2s;
   }
 `;
@@ -401,7 +402,7 @@ export const BackToTopButton = styled.button`
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary-color), #a52a2a);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
   border: none;
   cursor: pointer;
@@ -413,11 +414,11 @@ export const BackToTopButton = styled.button`
   opacity: ${props => (props.$visible ? '1' : '0')};
   transform: translateY(${props => (props.$visible ? '0' : '20px')});
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px rgba(128, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.3);
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(128, 0, 0, 0.45);
+    box-shadow: 0 8px 30px rgba(var(--primary-rgb), 0.45);
   }
 
   svg {
@@ -448,9 +449,9 @@ export const CTACard = styled.div`
   transition: all 0.4s ease;
 
   &:hover {
-    border-color: rgba(128, 0, 0, 0.22);
-    background: rgba(128, 0, 0, 0.08);
-    box-shadow: 0 8px 40px rgba(128, 0, 0, 0.1);
+    border-color: rgba(var(--primary-rgb, 128, 0, 0), 0.22);
+    background: ${({ theme }) => theme.isDarkMode ? 'rgba(var(--primary-rgb, 128, 0, 0), 0.08)' : 'rgba(var(--primary-rgb, 128, 0, 0), 0.03)'};
+    box-shadow: 0 8px 40px rgba(var(--primary-rgb, 128, 0, 0), 0.15);
   }
 
   @media (max-width: 768px) {
@@ -490,21 +491,22 @@ export const CTAButton = styled.a`
   gap: 0.6rem;
   padding: 0.85rem 2rem;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--primary-color), #a52a2a);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.03em;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 16px rgba(128, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px rgba(var(--primary-rgb, 128, 0, 0), 0.3);
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(128, 0, 0, 0.4);
-    background: linear-gradient(135deg, #991111, #c0392b);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(var(--primary-rgb, 128, 0, 0), 0.45);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    filter: brightness(1.1);
   }
 
   svg {

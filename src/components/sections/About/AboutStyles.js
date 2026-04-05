@@ -1,11 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const scan = keyframes`
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+`;
 
 export const AboutContainer = styled.section`
-  @keyframes scan {
-    0% { top: -100%; }
-    100% { top: 100%; }
-  }
-
+  padding: 10rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;
@@ -15,308 +17,284 @@ export const AboutContainer = styled.section`
     position: absolute;
     inset: 0;
     background-image: 
-      radial-gradient(var(--primary-color) 1px, transparent 1px);
-    background-size: 50px 50px;
-    opacity: ${({ theme }) => theme.isDarkMode ? 0.05 : 0.02};
+      radial-gradient(rgba(var(--primary-rgb), 0.08) 1px, transparent 1px);
+    background-size: 80px 80px;
     z-index: 0;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
   }
 `;
 
-export const WatermarkText = styled.div`
-  position: absolute;
-  font-size: clamp(8rem, 20vw, 22rem);
-  font-weight: 900;
-  color: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.02)'};
-  letter-spacing: -15px;
-  text-transform: uppercase;
-  z-index: 0;
-  right: -2%;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-family: 'monospace';
-  writing-mode: vertical-lr;
+export const AboutContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  position: relative;
+  z-index: 1;
 `;
 
-export const AboutContent = styled.div`
+export const MainLayout = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 6rem;
   align-items: center;
 
-  @media (max-width: 992px) {
+  @media (max-width: 1100px) {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 4rem;
+  }
+`;
+
+export const VisualSection = styled.div`
+  position: relative;
+`;
+
+export const AboutImageContainer = styled.div`
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+    border-top: 2px solid var(--primary-color);
+    border-left: 2px solid var(--primary-color);
+    z-index: -1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    border-bottom: 2px solid var(--primary-color);
+    border-right: 2px solid var(--primary-color);
+    z-index: -1;
+    opacity: 0.3;
   }
 `;
 
 export const AboutImage = styled.div`
   position: relative;
-  transform-style: preserve-3d;
-  perspective: 1000px;
+  background: ${({ theme }) => theme.colors.cardBg};
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
 
   img {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: ${({ theme }) => theme.shadows.large};
-    transition: transform 0.5s ease;
-    transform: rotateY(5deg) rotateX(5deg);
-
-    &:hover {
-      transform: rotateY(-5deg) rotateX(-5deg);
-    }
+    height: auto;
+    display: block;
+    filter: grayscale(10%) contrast(1.05);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  &::before {
-    content: '';
+  &:hover img {
+    transform: scale(1.08);
+  }
+
+  .scan-line {
     position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 60px;
-    height: 60px;
-    border-top: 3px solid var(--primary-color);
-    border-left: 3px solid var(--primary-color);
-    z-index: -1;
-    animation: pulse 2s infinite alternate;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 60px;
-    height: 60px;
-    border-bottom: 3px solid var(--primary-color);
-    border-right: 3px solid var(--primary-color);
-    z-index: -1;
-    animation: pulse 2s infinite alternate-reverse;
-  }
-
-  @keyframes pulse {
-    0% {
-      opacity: 0.5;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-  }
-
-  @media (max-width: 992px) {
-    max-width: 450px;
-    margin: 0 auto;
-    
-    img {
-      transform: none !important;
-    }
-    
-    &::before, &::after {
-      display: none;
-    }
-  }
-
-  @media (max-width: 768px) {
-    max-width: 320px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-color);
+    z-index: 2;
+    animation: ${scan} 4s linear infinite;
   }
 `;
 
-export const AboutText = styled.div`
-  padding: 3rem;
-  border-radius: ${({ theme }) => theme.borderRadius.large};
-  background-color: ${({ theme }) => theme.colors.cardBg};
-  backdrop-filter: blur(10px);
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  box-shadow: ${({ theme }) => theme.shadows.medium};
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+export const TextSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+`;
 
-  @media (max-width: 768px) {
-    padding: 2rem 1.5rem;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: ${({ theme }) => theme.shadows.large};
+export const HeaderArea = styled.div`
+  .pre-title {
+    font-family: 'monospace';
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
   }
 
   h3 {
-    letter-spacing: -1px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    font-weight: 900;
+    color: ${({ theme }) => theme.colors.text};
+    letter-spacing: -2px;
+    margin: 0;
     text-transform: uppercase;
     font-family: 'monospace';
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: var(--primary-color);
-    }
-  }
-
-  p {
-    margin-bottom: 2rem;
-    color: var(--gray-color);
-    line-height: 1.6;
-    font-size: 1.1rem;
-    border-left: 4px solid var(--primary-color);
-    padding-left: 1.5rem;
-    font-weight: 300;
   }
 `;
 
-export const AboutInfo = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+export const BioText = styled.p`
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary-color);
+  margin: 0;
+  opacity: 0.9;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 4px solid var(--primary-color);
+`;
 
-  @media (max-width: 576px) {
+export const InfoGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-top: 1rem;
+
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 `;
 
 export const InfoItem = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 0.75rem;
-  border-radius: ${({ theme }) => theme.borderRadius.default};
-  background-color: ${({ theme }) => theme.colors.cardBg};
-  backdrop-filter: blur(5px);
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateX(5px);
-  }
-
-  strong {
-    margin-right: 0.5rem;
-    color: var(--primary-color);
-    font-weight: 600;
-  }
-`;
-
-export const AboutSkills = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-
-  @media (max-width: 576px) {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-`;
-
-export const SkillItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: ${({ theme }) => theme.colors.cardBg};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--primary-color);
-    box-shadow: 0 0 15px var(--primary-color);
-    z-index: 5;
-    display: none;
-  }
-
-  &:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-
-    &::before {
-      display: block;
-      animation: scan 2s linear infinite;
-    }
-
-    svg {
-      color: var(--primary-color);
-      transform: scale(1.1);
-    }
-  }
-
-  svg {
-    font-size: 1.5rem;
-    color: var(--gray-color);
-    transition: all 0.3s ease;
-  }
-
-  h4 {
-    font-size: 0.9rem;
-    font-weight: 700;
+  .label {
     font-family: 'monospace';
+    font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .value {
+    font-size: 1.1rem;
+    font-weight: 600;
     color: ${({ theme }) => theme.colors.text};
   }
 `;
 
-export const ResumeButton = styled.a`
-  display: inline-flex;
+export const SkillsSection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 3rem;
+  background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.02)' : 'rgba(0, 0, 0, 0.02)'};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 4px;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+`;
+
+export const SkillBox = styled.div`
+  .icon-row {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(var(--primary-rgb), 0.2);
+    }
+  }
+
+  h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'monospace';
+    font-weight: 800;
+    margin: 0 0 0.5rem 0;
+    color: ${({ theme }) => theme.colors.text};
+  }
+
+  span {
+    font-size: 0.75rem;
+    color: var(--text-secondary-color);
+    opacity: 0.6;
+    letter-spacing: 1px;
+  }
+`;
+
+export const ActionArea = styled.div`
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 1.5rem 3rem;
   background: var(--primary-color);
   color: white;
-  border-radius: var(--border-radius);
-  font-weight: 500;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+`;
+
+export const ResumeBtn = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  text-decoration: none;
+  font-family: 'monospace';
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   transition: all 0.3s ease;
-  margin-top: 1rem;
-  grid-column: 1 / -1;
-  width: fit-content;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--primary-color);
-    transition: width 0.3s ease;
-    z-index: -1;
-  }
-
-  &:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-
-    &:before {
-      width: 100%;
-    }
-
-    svg {
-      transform: translateX(3px);
-    }
-  }
 
   svg {
     font-size: 1.2rem;
-    transition: transform 0.3s ease;
   }
 
-  @media (max-width: 576px) {
-    width: 100%;
-    justify-content: center;
+  &:hover {
+    transform: translateX(10px);
+    opacity: 0.8;
+  }
+`;
+
+export const AvailabilityIndicator = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'monospace';
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
   }
 `;
 

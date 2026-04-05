@@ -63,6 +63,13 @@ const SectionHeading = ({
       ease: "power3.out"
     }, "-=0.2");
 
+    tl.to(containerRef.current.querySelector('.heading-line'), {
+      width: '60px',
+      opacity: 0.4,
+      duration: 1,
+      ease: "power3.out"
+    }, "-=0.6");
+
     return () => {
       ScrollTrigger.getById(id)?.kill();
     };
@@ -84,7 +91,7 @@ const SectionHeading = ({
         SYSTEM_ACCESS // 0.{number}
       </SectionLabel>
       <MainTitle ref={titleRef}>
-        <div>{renderChars(title)}</div>
+        <span>{renderChars(title)}</span>
         {accent && <span className="accent">{renderChars(accent)}</span>}
       </MainTitle>
       {subtitle && (
@@ -96,8 +103,8 @@ const SectionHeading = ({
         width: '0%', 
         height: '1px', 
         background: 'var(--primary-color)', 
-        marginTop: '2rem',
-        opacity: 0.3
+        margin: '2rem auto 0',
+        opacity: 0
       }} />
     </HeadingWrapper>
   );

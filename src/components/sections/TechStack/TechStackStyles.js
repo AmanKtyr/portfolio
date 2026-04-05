@@ -27,7 +27,7 @@ export const TechStackContainer = styled.section`
     width: 150%;
     height: 150%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle at center, rgba(128, 0, 0, 0.03) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(var(--primary-rgb), 0.03) 0%, transparent 70%);
     pointer-events: none;
   }
 `;
@@ -154,7 +154,7 @@ export const TechCard = styled.div`
     background: var(--primary-color);
     border-color: var(--primary-color);
     transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(128, 0, 0, 0.2);
+    box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.2);
 
     div, h3 { color: white !important; }
   }

@@ -27,7 +27,7 @@ const ProgressBarLabel = styled.div`
     &.percentage {
       font-weight: 600;
       color: var(--primary-color);
-      text-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
+      text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.3);
     }
   }
 `;
@@ -50,7 +50,7 @@ const ProgressBarFill = styled(motion.div)`
   top: 0;
   left: 0;
   width: 0%;
-  box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.3);
 
   /* Glowing head */
   &::after {

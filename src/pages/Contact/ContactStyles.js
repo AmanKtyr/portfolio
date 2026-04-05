@@ -195,7 +195,7 @@ export const VisualEngine = styled.div`
 
 export const RotatingRing = styled.div`
   position: absolute;
-  border: 1px solid ${({ color }) => color || 'rgba(128, 0, 0, 0.1)'};
+  border: 1px solid ${({ color }) => color || 'rgba(var(--primary-rgb), 0.1)'};
   border-radius: 50%;
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
@@ -231,7 +231,7 @@ export const VisualNode = styled.div`
   align-items: center;
   font-size: 1.7rem;
   color: var(--primary-color);
-  box-shadow: 0 0 20px rgba(128, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.2);
   transition: all 0.3s ease;
 
   &:hover {
@@ -309,7 +309,7 @@ export const ContactDetail = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgba(128, 0, 0, 0.1);
+    background-color: rgba(var(--primary-rgb), 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -398,7 +398,7 @@ export const ContactForm = styled.form`
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
+      box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
 
       &::before {
         animation: scan 2s linear infinite;
@@ -432,7 +432,7 @@ export const FormControl = styled.input`
     outline: none;
     border-color: var(--primary-color);
     background: ${({ theme }) => theme.isDarkMode ? 'rgba(30, 41, 59, 0.5)' : 'rgba(255, 255, 255, 0.5)'};
-    box-shadow: 0 0 15px rgba(128, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.1);
   }
 
   &::placeholder {
@@ -461,7 +461,7 @@ export const ContactMap = styled.div`
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(128, 0, 0, 0.03);
+    background: rgba(var(--primary-rgb), 0.03);
     pointer-events: none;
     border-radius: 24px;
   }

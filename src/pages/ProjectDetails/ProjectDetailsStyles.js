@@ -90,7 +90,7 @@ export const BackButton = styled(Link)`
   letter-spacing: 2px;
   margin-bottom: 3rem;
   padding: 0.8rem 1.5rem;
-  border: 1px solid rgba(128, 0, 0, 0.2);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
   transition: all 0.3s ease;
   position: relative;
   z-index: 10;
@@ -237,7 +237,7 @@ export const ProjectLink = styled.a`
   
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
     background: var(--primary-color);
     color: white;
 
@@ -292,7 +292,7 @@ export const FeatureList = styled.div`
       &:hover {
         transform: translateX(5px);
         border-color: var(--primary-color);
-        background: ${({ theme }) => theme.isDarkMode ? 'rgba(128, 0, 0, 0.1)' : 'rgba(128, 0, 0, 0.05)'};
+        background: ${({ theme }) => theme.isDarkMode ? 'rgba(var(--primary-rgb), 0.1)' : 'rgba(var(--primary-rgb), 0.05)'};
       }
       
       svg {

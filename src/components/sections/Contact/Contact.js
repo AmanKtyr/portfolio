@@ -3,13 +3,19 @@ import { motion } from 'framer-motion';
 import {
   FaEnvelope, FaPhone, FaMapMarkerAlt,
   FaGithub, FaLinkedin, FaCodepen, FaQuora,
-  FaPaperPlane, FaCheckCircle, FaExclamationCircle,
-  FaWhatsapp
+  FaPaperPlane, FaWhatsapp
 } from 'react-icons/fa';
 import {
-  ContactContainer, ContactContent, ContactInfo,
-  ContactDetail, ContactSocial, SocialLink,
-  ContactForm, FormGroup, FormControl, ErrorMessage
+  ContactContainer,
+  ContactContent,
+  ContactInfo,
+  InfoHeader,
+  ContactGrid,
+  ContactCard,
+  SocialFrame,
+  SocialBox,
+  ContactForm,
+  ConnectionStatus
 } from './ContactStyles';
 import SectionHeading from '../../ui/SectionHeading/SectionHeading';
 import { useTranslation } from 'react-i18next';
@@ -20,7 +26,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,11 +35,11 @@ const Contact = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
-    else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) newErrors.email = 'Invalid email address';
-    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    if (!formData.name.trim()) newErrors.name = 'Name REQUIRED';
+    if (!formData.email.trim()) newErrors.email = 'Email REQUIRED';
+    else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) newErrors.email = 'INVALID_FORMAT';
+    if (!formData.subject.trim()) newErrors.subject = 'Subject REQUIRED';
+    if (!formData.message.trim()) newErrors.message = 'Message REQUIRED';
     return newErrors;
   };
 
@@ -42,191 +47,143 @@ const Contact = () => {
     e.preventDefault();
     const newErrors = validateForm();
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
+    
     setIsSubmitting(true);
-    const whatsappNumber = '+916387343245';
+    const whatsappNumber = '916387343245';
     const { name, email, subject, message } = formData;
-    const whatsappMessage = `Hello, you have a new message from your portfolio contact form:%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+    const whatsappMessage = `*NEW_MESSAGE_RELAYED*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+    
     window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
-    setIsSubmitting(false);
-    setSubmitMessage('Your message has been sent successfully!');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setSubmitMessage(''), 5000);
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    }, 1000);
   };
 
   const contactDetails = [
-    { icon: <FaEnvelope />, label: t('contact.email'), value: 'amankatiyar.tech01@gmail.com', href: 'mailto:amankatiyar.tech01@gmail.com' },
-    { icon: <FaPhone />, label: t('contact.phone'), value: '+91 6387343245', href: 'tel:+916387343245' },
-    { icon: <FaWhatsapp />, label: 'WhatsApp', value: '+91 6387343245', href: 'https://wa.me/916387343245' },
-    { icon: <FaMapMarkerAlt />, label: t('contact.location'), value: 'Lucknow, Uttar Pradesh, India', href: null },
+    { icon: <FaEnvelope />, label: 'SYSTEM_EMAIL', value: 'amankatiyar.tech01@gmail.com', href: 'mailto:amankatiyar.tech01@gmail.com' },
+    { icon: <FaPhone />, label: 'DIRECT_LINE', value: '+91 6387343245', href: 'tel:+916387343245' },
+    { icon: <FaWhatsapp />, label: 'SECURE_WHATSAPP', value: '+91 6387343245', href: 'https://wa.me/916387343245' },
+    { icon: <FaMapMarkerAlt />, label: 'DEPLOYMENT_ZONE', value: 'Lucknow, UP, India', href: null },
   ];
 
   const socials = [
-    { icon: <FaGithub />, href: 'https://github.com/AmanKtyr', label: 'GitHub' },
-    { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/amanktyr', label: 'LinkedIn' },
-    { icon: <FaCodepen />, href: 'https://codepen.io/amanktyr', label: 'CodePen' },
-    { icon: <FaQuora />, href: 'https://www.quora.com/profile/AmAn-KtYr-1', label: 'Quora' },
+    { icon: <FaGithub />, href: 'https://github.com/AmanKtyr' },
+    { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/amanktyr' },
+    { icon: <FaCodepen />, href: 'https://codepen.io/amanktyr' },
+    { icon: <FaQuora />, href: 'https://www.quora.com/profile/AmAn-KtYr-1' },
   ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
-  };
 
   return (
     <ContactContainer id="contact">
       <div className="container">
         <SectionHeading 
-          number="6"
+          number="04"
           title="GET IN"
           accent="TOUCH"
           subtitle={t('contact.subtitle')}
         />
 
         <ContactContent>
-          {/* ---- Left: Info Panel ---- */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-          >
-            <ContactInfo>
-              <motion.h3 variants={itemVariants}>{t('contact.getInTouch')}</motion.h3>
-              <motion.p variants={itemVariants}>
-                I'm a passionate Full-Stack Developer specializing in modern web technologies. 
-                Available for freelance projects, collaborations, and exciting opportunities. 
-                Let's discuss how I can help bring your ideas to life!
-              </motion.p>
+          <ContactInfo>
+            <InfoHeader>
+              <h3>Establish <span>Connection</span></h3>
+              <p>
+                Engineer your next big milestone with a strategic partner. 
+                Available for high-stakes collaborations and enterprise solutions.
+              </p>
+            </InfoHeader>
 
+            <ContactGrid>
               {contactDetails.map((detail, i) => (
-                <motion.div key={i} variants={itemVariants}>
-                  <ContactDetail as={detail.href ? 'a' : 'div'} href={detail.href || undefined} target={detail.href && !detail.href.startsWith('tel') && !detail.href.startsWith('mailto') ? '_blank' : undefined} rel="noopener noreferrer">
-                    <div className="icon">{detail.icon}</div>
-                    <div className="text">
-                      <h4>{detail.label}</h4>
-                      <p>{detail.value}</p>
-                    </div>
-                    <div className="arrow">→</div>
-                  </ContactDetail>
-                </motion.div>
-              ))}
-
-              <motion.div variants={itemVariants}>
-                <ContactSocial>
-                  {socials.map((s, i) => (
-                    <SocialLink key={i} href={s.href} target="_blank" rel="noopener noreferrer" title={s.label}>
-                      {s.icon}
-                    </SocialLink>
-                  ))}
-                </ContactSocial>
-              </motion.div>
-
-              {/* Availability Badge */}
-              <motion.div variants={itemVariants} style={{ marginTop: '2rem' }}>
-                <div className="availability-badge">
-                  <span className="dot"></span>
-                  SYSTEM_STATUS: ONLINE
-                </div>
-              </motion.div>
-            </ContactInfo>
-          </motion.div>
-
-          {/* ---- Right: Form ---- */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true, margin: '-50px' }}
-          >
-            <ContactForm onSubmit={handleSubmit}>
-              <div className="form-header">
-                <h3>&lt;MESSAGE_RELAY&gt;</h3>
-                <p>ESTABLISHING SECURE CONNECTION...</p>
-              </div>
-
-              {submitMessage && (
-                <motion.div
-                  className="success-message"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                <ContactCard 
+                  key={i} 
+                  as={detail.href ? 'a' : 'div'} 
+                  href={detail.href || undefined}
+                  target={detail.href?.startsWith('http') ? '_blank' : undefined}
                 >
-                  <FaCheckCircle />
-                  {submitMessage}
-                </motion.div>
-              )}
+                  <div className="icon">{detail.icon}</div>
+                  <div className="details">
+                    <h4>{detail.label}</h4>
+                    <p>{detail.value}</p>
+                  </div>
+                </ContactCard>
+              ))}
+            </ContactGrid>
 
-              <div className="form-row">
-                <FormGroup>
-                  <label>Your Name</label>
-                  <FormControl
-                    type="text"
-                    name="name"
-                    placeholder="Aman Katiyar"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className={errors.name ? 'error' : ''}
-                  />
-                  {errors.name && <ErrorMessage><FaExclamationCircle /> {errors.name}</ErrorMessage>}
-                </FormGroup>
+            <SocialFrame>
+              {socials.map((s, i) => (
+                <SocialBox key={i} href={s.href} target="_blank">
+                  {s.icon}
+                </SocialBox>
+              ))}
+            </SocialFrame>
 
-                <FormGroup>
-                  <label>Email Address</label>
-                  <FormControl
-                    type="email"
-                    name="email"
-                    placeholder="hello@example.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={errors.email ? 'error' : ''}
-                  />
-                  {errors.email && <ErrorMessage><FaExclamationCircle /> {errors.email}</ErrorMessage>}
-                </FormGroup>
-              </div>
+            <ConnectionStatus>
+              <div className="dot"></div>
+              <span>SYSTEM_STATUS: SECURE_AND_ACTIVE</span>
+            </ConnectionStatus>
+          </ContactInfo>
 
-              <FormGroup>
-                <label>Subject</label>
-                <FormControl
-                  type="text"
-                  name="subject"
-                  placeholder="Project Collaboration / Freelance Work..."
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className={errors.subject ? 'error' : ''}
-                />
-                {errors.subject && <ErrorMessage><FaExclamationCircle /> {errors.subject}</ErrorMessage>}
-              </FormGroup>
+          <ContactForm onSubmit={handleSubmit}>
+            <div className="form-header">
+              <h4>&lt;SECURE_RELAY&gt;</h4>
+              <span>Transmission_Latency: Optimized</span>
+            </div>
 
-              <FormGroup>
-                <label>Message</label>
-                <FormControl
-                  as="textarea"
-                  name="message"
-                  placeholder="Tell me about your project, goals, and timeline..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  className={errors.message ? 'error' : ''}
-                  rows="6"
-                />
-                {errors.message && <ErrorMessage><FaExclamationCircle /> {errors.message}</ErrorMessage>}
-              </FormGroup>
+            <div className="form-group">
+              <label>Origin Name</label>
+              <input 
+                type="text" 
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Ex: John Doe"
+              />
+              {errors.name && <span className="error-msg">{errors.name}</span>}
+            </div>
 
-              <button type="submit" className="btn-primary" disabled={isSubmitting} id="contact-submit-btn">
-                {isSubmitting ? (
-                  <span className="loading-text">Sending...</span>
-                ) : (
-                  <>
-                    {t('contact.send')}
-                    <FaPaperPlane />
-                  </>
-                )}
-              </button>
-            </ContactForm>
-          </motion.div>
+            <div className="form-group">
+              <label>Link Endpoint (Email)</label>
+              <input 
+                type="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Ex: john@enterprise.com"
+              />
+              {errors.email && <span className="error-msg">{errors.email}</span>}
+            </div>
+
+            <div className="form-group">
+              <label>Subject Header</label>
+              <input 
+                type="text" 
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Project_Proposal_V1"
+              />
+              {errors.subject && <span className="error-msg">{errors.subject}</span>}
+            </div>
+
+            <div className="form-group">
+              <label>Payload Message</label>
+              <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Describe your architectural requirements..."
+              />
+              {errors.message && <span className="error-msg">{errors.message}</span>}
+            </div>
+
+            <button type="submit" className="submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? 'TRANSMITTING...' : 'INITIALIZE CONNECTION'}
+              <FaPaperPlane />
+            </button>
+          </ContactForm>
         </ContactContent>
       </div>
     </ContactContainer>

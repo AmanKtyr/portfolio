@@ -26,11 +26,11 @@ export const ThemeToggle = styled(motion.button)`
   backdrop-filter: blur(10px);
   box-shadow: ${({ theme }) =>
     theme.isDarkMode
-      ? '0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 0 1px rgba(128, 0, 0, 0.1), inset 0 0 0 1px rgba(128, 0, 0, 0.05)'
+      ? '0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 0 1px rgba(var(--primary-rgb), 0.1), inset 0 0 0 1px rgba(var(--primary-rgb), 0.05)'
       : '0 8px 32px 0 rgba(31, 38, 135, 0.07), 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.2)'};
   border: ${({ theme }) =>
     theme.isDarkMode
-      ? '1px solid rgba(128, 0, 0, 0.18)'
+      ? '1px solid rgba(var(--primary-rgb), 0.18)'
       : '1px solid rgba(255, 255, 255, 0.18)'};
   position: relative;
   overflow: hidden;
@@ -44,8 +44,8 @@ export const ThemeToggle = styled(motion.button)`
     height: 200%;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'conic-gradient(from 0deg at 50% 50%, rgba(128, 0, 0, 0) 0%, rgba(128, 0, 0, 0.1) 50%, rgba(128, 0, 0, 0) 100%)'
-        : 'conic-gradient(from 0deg at 50% 50%, rgba(128, 0, 0, 0) 0%, rgba(128, 0, 0, 0.1) 50%, rgba(128, 0, 0, 0) 100%)'};
+        ? 'conic-gradient(from 0deg at 50% 50%, rgba(var(--primary-rgb), 0) 0%, rgba(var(--primary-rgb), 0.1) 50%, rgba(var(--primary-rgb), 0) 100%)'
+        : 'conic-gradient(from 0deg at 50% 50%, rgba(var(--primary-rgb), 0) 0%, rgba(var(--primary-rgb), 0.1) 50%, rgba(var(--primary-rgb), 0) 100%)'};
     animation: rotate 8s linear infinite;
     z-index: 0;
     opacity: 0;
@@ -71,8 +71,8 @@ export const ThemeToggle = styled(motion.button)`
     font-size: 1.4rem;
     filter: ${({ theme }) =>
       theme.isDarkMode
-        ? 'drop-shadow(0 0 3px rgba(128, 0, 0, 0.5))'
-        : 'drop-shadow(0 0 3px rgba(128, 0, 0, 0.3))'};
+        ? 'drop-shadow(0 0 3px rgba(var(--primary-rgb), 0.5))'
+        : 'drop-shadow(0 0 3px rgba(var(--primary-rgb), 0.3))'};
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   }
 
@@ -80,7 +80,7 @@ export const ThemeToggle = styled(motion.button)`
     transform: scale(1.05);
     box-shadow: ${({ theme }) =>
       theme.isDarkMode
-        ? '0 10px 40px 0 rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(128, 0, 0, 0.2), inset 0 0 0 1px rgba(128, 0, 0, 0.1)'
+        ? '0 10px 40px 0 rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(var(--primary-rgb), 0.2), inset 0 0 0 1px rgba(var(--primary-rgb), 0.1)'
         : '0 10px 40px 0 rgba(31, 38, 135, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.3)'};
   }
 
@@ -108,7 +108,7 @@ export const TooltipText = styled(motion.span)`
   backdrop-filter: blur(5px);
   border: ${({ theme }) =>
     theme.isDarkMode
-      ? '1px solid rgba(128, 0, 0, 0.1)'
+      ? '1px solid rgba(var(--primary-rgb), 0.1)'
       : '1px solid rgba(226, 232, 240, 0.8)'};
   z-index: 10;
 `;

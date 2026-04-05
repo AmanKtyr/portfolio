@@ -5,11 +5,7 @@ export const HeadingWrapper = styled.div`
   margin: 0 auto 6rem;
   padding: 0 1.5rem;
   position: relative;
-  text-align: left;
-  
-  @media (max-width: 992px) {
-    text-align: center;
-  }
+  text-align: center;
 `;
 
 export const SectionLabel = styled.div`
@@ -21,6 +17,7 @@ export const SectionLabel = styled.div`
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.25rem;
   opacity: 0.9;
   font-weight: 700;
@@ -34,30 +31,29 @@ export const SectionLabel = styled.div`
     background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'};
     border-radius: 4px;
   }
-
-  @media (max-width: 992px) {
-    justify-content: center;
-  }
 `;
 
 export const MainTitle = styled.h2`
-  font-size: clamp(3.5rem, 10vw, 7rem);
-  font-weight: 900;
-  line-height: 0.85;
-  letter-spacing: -5px;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -2px;
   margin: 0;
   color: ${({ theme }) => theme.colors.text};
   font-family: 'monospace';
   text-transform: uppercase;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
   overflow: hidden;
 
   .accent {
     color: var(--primary-color);
     -webkit-text-stroke: 1px var(--primary-color);
     -webkit-text-fill-color: transparent;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     transition: all 0.3s ease;
     
     &:hover {
@@ -82,19 +78,13 @@ export const CharSpan = styled.span`
 `;
 
 export const SubHeadingText = styled.p`
-  margin-top: 1.5rem;
+  margin: 1.2rem auto 0;
   color: ${({ theme }) => theme.colors.textSecondary};
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  max-width: 600px;
-  border-left: 2px solid var(--primary-color);
-  padding-left: 1.5rem;
-  font-weight: 300;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  max-width: 800px;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 400;
   opacity: 0;
   transform: translateY(20px);
-  
-  @media (max-width: 992px) {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-  }
 `;

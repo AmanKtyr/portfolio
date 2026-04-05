@@ -35,12 +35,12 @@ const SwitcherButton = styled(motion.button)`
   padding: 0.3rem 0.6rem;
   background: ${({ theme }) =>
     theme.isDarkMode
-      ? 'rgba(128, 0, 0, 0.12)'
-      : 'rgba(128, 0, 0, 0.05)'};
+      ? 'rgba(var(--primary-rgb), 0.12)'
+      : 'rgba(var(--primary-rgb), 0.05)'};
   border: 1px solid ${({ theme }) =>
     theme.isDarkMode
-      ? 'rgba(128, 0, 0, 0.2)'
-      : 'rgba(128, 0, 0, 0.1)'};
+      ? 'rgba(var(--primary-rgb), 0.2)'
+      : 'rgba(var(--primary-rgb), 0.1)'};
   border-radius: 50px;
   color: ${({ theme }) =>
     theme.isDarkMode
@@ -71,7 +71,7 @@ const SwitcherButton = styled(motion.button)`
     color: white;
     border-color: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
 
     .globe-icon {
       color: white;
@@ -97,8 +97,8 @@ const Dropdown = styled(motion.div)`
   backdrop-filter: blur(20px);
   border: 1px solid ${({ theme }) =>
     theme.isDarkMode
-      ? 'rgba(128, 0, 0, 0.2)'
-      : 'rgba(128, 0, 0, 0.1)'};
+      ? 'rgba(var(--primary-rgb), 0.2)'
+      : 'rgba(var(--primary-rgb), 0.1)'};
   border-radius: 12px;
   padding: 0.35rem;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
@@ -124,8 +124,8 @@ const DropdownItem = styled.button`
   background: ${({ $active, theme }) =>
     $active
       ? theme.isDarkMode
-        ? 'rgba(128, 0, 0, 0.18)'
-        : 'rgba(128, 0, 0, 0.08)'
+        ? 'rgba(var(--primary-rgb), 0.18)'
+        : 'rgba(var(--primary-rgb), 0.08)'
       : 'transparent'};
   border: none;
   border-radius: 8px;
@@ -161,8 +161,8 @@ const DropdownItem = styled.button`
   &:hover {
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'rgba(128, 0, 0, 0.22)'
-        : 'rgba(128, 0, 0, 0.1)'};
+        ? 'rgba(var(--primary-rgb), 0.22)'
+        : 'rgba(var(--primary-rgb), 0.1)'};
   }
 `;
 

@@ -84,7 +84,7 @@ export const SkillsPageContainer = styled.div`
         height: 4px;
         background: var(--primary-color);
         border-radius: 2px;
-        box-shadow: 0 0 15px rgba(128, 0, 0, 0.5);
+        box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.5);
       }
 
       @media (max-width: 768px) {
@@ -247,7 +247,7 @@ export const VisualEngine = styled.div`
 
 export const RotatingRing = styled.div`
   position: absolute;
-  border: 1px solid ${({ color }) => color || 'rgba(128, 0, 0, 0.1)'};
+  border: 1px solid ${({ color }) => color || 'rgba(var(--primary-rgb), 0.1)'};
   border-radius: 50%;
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
@@ -283,7 +283,7 @@ export const VisualNode = styled.div`
   align-items: center;
   font-size: 1.7rem;
   color: var(--primary-color);
-  box-shadow: 0 0 20px rgba(128, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.2);
   transition: all 0.3s ease;
 
   &:hover {
@@ -348,7 +348,7 @@ export const SkillIcon = styled.div`
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: rgba(128, 0, 0, 0.1);
+  background-color: rgba(var(--primary-rgb), 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -500,7 +500,7 @@ export const SkillsTimeline = styled.div`
     height: 100%;
     background: var(--primary-color);
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.3);
     opacity: 0.7;
   }
 
@@ -581,7 +581,7 @@ export const TimelineDot = styled.div`
   align-items: center;
   color: white;
   z-index: 2;
-  box-shadow: 0 0 15px rgba(128, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.5);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   /* Pulsing animation */
