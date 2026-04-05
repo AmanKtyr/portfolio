@@ -5,10 +5,9 @@ import { ThemeContext } from '../../../context/ThemeContext';
 
 const PageTransitionWrapper = styled(motion.div)`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 9999;
   pointer-events: none;
   display: flex;
@@ -112,16 +111,16 @@ const TransitionLogo = styled(motion.div)`
   &::before {
     content: '';
     position: absolute;
-    inset: -40px;
+    inset: -30px -50px;
     background: ${({ theme }) =>
       theme.isDarkMode
-        ? 'rgba(15, 23, 42, 0.6)'
-        : 'rgba(255, 255, 255, 0.8)'};
+        ? 'rgba(15, 23, 42, 0.75)'
+        : 'rgba(255, 255, 255, 0.9)'};
     backdrop-filter: blur(20px);
     border-radius: 4px;
     z-index: -1;
     border: 1px solid var(--primary-color);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
   }
 
   /* Glowing ring effect */
