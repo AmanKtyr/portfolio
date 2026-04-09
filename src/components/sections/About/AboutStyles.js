@@ -7,7 +7,7 @@ const scan = keyframes`
 `;
 
 export const AboutContainer = styled.section`
-  padding: 10rem 0;
+  padding: 3rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;

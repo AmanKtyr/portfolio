@@ -166,7 +166,7 @@ export const AboutPageContainer = styled.div`
 `;
 
 export const AboutBanner = styled.div`
-  padding: 8rem 0 6rem;
+  padding: 5rem 0 4rem;
   position: relative;
   background: ${({ theme }) => theme.isDarkMode ? '#030712' : '#f8fafc'};
   border-bottom: 2px solid var(--primary-color);
@@ -349,7 +349,7 @@ export const GridCoordinates = styled.div`
 `;
 
 export const PillarsSection = styled.div`
-  margin: 10rem 0;
+  margin: 5rem 0;
   position: relative;
   
   .pillars-grid {
@@ -436,8 +436,8 @@ export const PillarCard = styled.div`
 export const BlueprintSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8rem;
-  margin-top: 6rem;
+  gap: 4rem;
+  margin-top: 4rem;
   position: relative;
   z-index: 1;
 
@@ -658,7 +658,7 @@ export const MasterActionArea = styled.div`
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  margin-top: 6rem;
+  margin-top: 4rem;
   padding: 3rem;
   border: 1px solid rgba(var(--primary-rgb), 0.1);
   background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.01)' : 'rgba(0, 0, 0, 0.01)'};
@@ -673,7 +673,7 @@ export const MasterActionArea = styled.div`
 export const AboutTimeline = styled.div`
   position: relative;
   max-width: 1000px;
-  margin: 4rem auto 8rem;
+  margin: 4rem auto 5rem;
 
   &::before {
     content: '';

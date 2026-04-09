@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HeadingWrapper = styled.div`
   max-width: var(--max-width);
-  margin: 0 auto 6rem;
+  margin: 0 auto 2rem;
   padding: 0 1.5rem;
   position: relative;
   text-align: center;

@@ -88,10 +88,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .section {
-    padding: 5rem 0;
+    padding: 2.5rem 0;
 
     @media (max-width: 768px) {
-      padding: 4rem 0;
+      padding: 2rem 0;
     }
   }
 

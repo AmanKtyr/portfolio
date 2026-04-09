@@ -13,7 +13,7 @@ const marqueeRight = keyframes`
 
 
 export const TechStackContainer = styled.section`
-  padding: 12rem 0;
+  padding: 3rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;
@@ -34,7 +34,7 @@ export const TechStackContainer = styled.section`
 
 export const TechStackTitle = styled.div`
   max-width: var(--max-width);
-  margin: 0 auto 8rem;
+  margin: 0 auto 4rem;
   padding: 0 2rem;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -196,7 +196,7 @@ export const SignatureLine = styled.div`
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-  margin-top: 10rem;
+  margin-top: 5rem;
   opacity: 0.3;
   position: relative;
 

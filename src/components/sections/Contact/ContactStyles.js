@@ -7,7 +7,7 @@ const scan = keyframes`
 `;
 
 export const ContactContainer = styled.section`
-  padding: 8rem 0;
+  padding: 2.5rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;

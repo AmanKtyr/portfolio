@@ -11,7 +11,7 @@ export const SkillsContainer = styled.section`
     100% { background-position: 100px 100px; }
   }
 
-  padding: 4.5rem 0;
+  padding: 2.5rem 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;
