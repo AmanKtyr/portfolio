@@ -5,6 +5,7 @@ import gurukulSetuImg from '../assets/gurukulsetuproject.png';
 import bhattSquareImg from '../assets/bhattsquareproject.png';
 import sipherWebTechImg from '../assets/sipherwebtechproject.png';
 import sipherWebAcademyImg from '../assets/sipherwebacademyproject.png';
+import attendStackImg from '../assets/attendstack.png';
 
 export const projectsData = [
   {
@@ -178,5 +179,28 @@ export const projectsData = [
     client: "Educational Institutions",
     github: "#",
     demo: "https://sipherweb.com/"
+  },
+  {
+    id: 9,
+    title: "Attend Stack - Attendance Management SaaS",
+    category: "Full Stack",
+    previewImage: attendStackImg,
+    description: "A powerful and intuitive attendance management system designed to streamline employee tracking for businesses of all sizes.",
+    fullDescription: "Attend Stack is a comprehensive SaaS solution for attendance management, built with a modern tech stack. It provides a seamless experience for both administrators and employees, featuring a real-time dashboard, live activity feeds, and detailed attendance overviews. The system is designed to be fully responsive, offering a consistent experience on both desktop and mobile devices.",
+    features: [
+      "Admin Dashboard with real-time data",
+      "Employee and Attendance Rate tracking",
+      "Live Activity Feed",
+      "Today's Attendance Overview with charts",
+      "Leave Management",
+      "Employee Task Assignment",
+      "Responsive design for mobile and desktop",
+      "User-friendly interface"
+    ],
+    technologies: ["Next.js", "Django", "Django REST API"],
+    date: "2026",
+    client: "SaaS Product",
+    github: "#",
+    demo: "https://attendance.nextgenapplication.com/"
   }
 ];

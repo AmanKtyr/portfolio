@@ -141,7 +141,7 @@ const AboutPage = () => {
                 transition={{ delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                {t('about.aboutMeText')}
+                I am a full-stack developer with a passion for building beautiful and functional web applications. I have experience with a variety of technologies, including Next.js, Django, and Django REST API. I am always looking for new challenges and opportunities to learn and grow as a developer.
               </motion.p>
             </NarrativeBio>
 
