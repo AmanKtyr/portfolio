@@ -185,7 +185,7 @@ const Hero = () => {
               style={{ display: 'inline-block' }}
             >
               <Link
-                to="/#projects"
+                to="/projects"
                 className="btn-outline"
                 data-cursor-text="Projects"
                 data-cursor-variant="link"
