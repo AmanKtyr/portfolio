@@ -6,7 +6,7 @@ import { FaGithub, FaExternalLinkAlt, FaArrowRight, FaSearch, FaPython, FaReact,
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
 import Meta from '../../components/common/Meta/Meta';
-import { ProjectsPageContainer, ProjectsBanner, ProjectsBannerContent, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLinks, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc, SearchContainer, SearchInput, SearchButton, ProjectsCategories, CategoryItem, VisualEngine, VisualNode, GridCoordinates, WatermarkText, TechBadge, RotatingRing } from './ProjectsStyles';
+import { ProjectsPageContainer, ProjectsBanner, ProjectsBannerContent, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc, SearchContainer, SearchInput, SearchButton, ProjectsCategories, CategoryItem, VisualEngine, VisualNode, GridCoordinates, WatermarkText, TechBadge, RotatingRing } from './ProjectsStyles';
 
 import { projectsData } from '../../data/projectsData';
 import SectionHeading from '../../components/ui/SectionHeading/SectionHeading';

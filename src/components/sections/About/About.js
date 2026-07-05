@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCode, FaLaptopCode, FaServer, FaDownload, FaBrain, FaShieldAlt } from 'react-icons/fa';
+import { FaCode, FaLaptopCode, FaDownload, FaBrain, FaShieldAlt } from 'react-icons/fa';
 import {
   AboutContainer,
   AboutContent,

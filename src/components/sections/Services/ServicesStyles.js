@@ -1,16 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-const float = keyframes`
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-`;
-
-const scan = keyframes`
-  0% { transform: translateY(-100%); opacity: 0; }
-  50% { opacity: 0.5; }
-  100% { transform: translateY(100%); opacity: 0; }
-`;
 
 export const ServicesContainer = styled.section`
   padding: 3rem 0;

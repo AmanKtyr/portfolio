@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaCode, FaLaptopCode, FaServer, FaDownload, FaBrain, FaShieldAlt, FaBriefcase, FaUserGraduate, FaAward, FaCog, FaLock, FaRocket, FaFingerprint } from 'react-icons/fa';
+import { FaCode, FaLaptopCode, FaDownload, FaBrain, FaShieldAlt, FaBriefcase, FaUserGraduate, FaAward, FaLock, FaRocket, FaFingerprint } from 'react-icons/fa';
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
 import Meta from '../../components/common/Meta/Meta';

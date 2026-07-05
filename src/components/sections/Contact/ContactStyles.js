@@ -1,10 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-const scan = keyframes`
-  0% { transform: translateY(-100%); opacity: 0; }
-  50% { opacity: 0.5; }
-  100% { transform: translateY(100%); opacity: 0; }
-`;
 
 export const ContactContainer = styled.section`
   padding: 2.5rem 0;
