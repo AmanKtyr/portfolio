@@ -55,25 +55,24 @@ export const projectsData = [
     demo: "https://lovenest.helyonex.com/"
   },
   {
-    id: 3,
-    title: "Mafroosh & Storepilot",
+    id: 10,
+    title: "SimplyJob",
     category: "Full Stack",
-    previewImage: mafrooshImg,
-    description: "A premium e-commerce ecosystem featuring a luxury home decor storefront and a robust integrated administrative dashboard for real-time management.",
-    fullDescription: "Mafroosh.in is an high-end e-commerce platform specializing in luxury rugs and home decor, powered by Storepilot—a custom-engineered administrative dashboard. The ecosystem provides a seamless shopping experience for customers while offering business owners deep analytical insights and precise inventory control through a technical, data-driven interface.",
+    previewImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1484&auto=format&fit=crop",
+    description: "A comprehensive job portal platform designed to connect job seekers with employers, built with a robust backend architecture.",
+    fullDescription: "SimplyJob is an advanced job portal platform developed to streamline the hiring process. The backend is powered by the Django REST API framework, utilizing PostgreSQL as the database for reliable and scalable data management. The platform facilitates seamless interactions between job seekers and companies, offering features like job postings, advanced filtering, and secure user authentication.",
     features: [
-      "Luxury Storefront with High-Resolution Product Curations",
-      "Storepilot Admin Panel: Real-time Sales & Inventory Tracking",
-      "Secure Authentication with Google OAuth Integration",
-      "Dynamic Pricing & Product Variant Management",
-      "Next.js Server-Side Rendering (SSR) for SEO Optimization",
-      "Responsive Design using Tailwind CSS for all devices"
+      "Comprehensive Job Search and Filtering",
+      "Secure User Authentication and Authorization",
+      "Employer Dashboard for Job Management",
+      "Candidate Profile and Resume Uploads",
+      "RESTful API Architecture for Scalability"
     ],
-    technologies: ["Next.js", "React", "Tailwind CSS", "Node.js", "PostgreSQL", "Google Auth"],
-    date: "2025",
-    client: "Mafroosh Luxury Decor",
-    github: "https://github.com",
-    demo: "https://mafroosh.in/"
+    technologies: ["Django REST Framework", "Python", "PostgreSQL", "React", "Tailwind CSS"],
+    date: "2026",
+    client: "SimplyJob",
+    github: "#",
+    demo: "https://simplyjob.in/"
   },
   {
     id: 4,
@@ -202,5 +201,26 @@ export const projectsData = [
     client: "SaaS Product",
     github: "#",
     demo: "https://attendance.nextgenapplication.com/"
+  },
+  {
+    id: 3,
+    title: "Mafroosh & Storepilot",
+    category: "Full Stack",
+    previewImage: mafrooshImg,
+    description: "A premium e-commerce ecosystem featuring a luxury home decor storefront and a robust integrated administrative dashboard for real-time management.",
+    fullDescription: "Mafroosh.in is an high-end e-commerce platform specializing in luxury rugs and home decor, powered by Storepilot—a custom-engineered administrative dashboard. The ecosystem provides a seamless shopping experience for customers while offering business owners deep analytical insights and precise inventory control through a technical, data-driven interface.",
+    features: [
+      "Luxury Storefront with High-Resolution Product Curations",
+      "Storepilot Admin Panel: Real-time Sales & Inventory Tracking",
+      "Secure Authentication with Google OAuth Integration",
+      "Dynamic Pricing & Product Variant Management",
+      "Next.js Server-Side Rendering (SSR) for SEO Optimization",
+      "Responsive Design using Tailwind CSS for all devices"
+    ],
+    technologies: ["Next.js", "React", "Tailwind CSS", "Node.js", "PostgreSQL", "Google Auth"],
+    date: "2025",
+    client: "Mafroosh Luxury Decor",
+    github: "https://github.com",
+    demo: "https://mafroosh.in/"
   }
 ];
