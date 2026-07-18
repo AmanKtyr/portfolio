@@ -3,8 +3,7 @@ import mafrooshImg from '../assets/mafroosh_storepilot_mockup.jpg';
 import captionBrainImg from '../assets/captionbrainaiproject.jpeg';
 import gurukulSetuImg from '../assets/gurukulsetuproject.png';
 import bhattSquareImg from '../assets/bhattsquareproject.png';
-import sipherWebTechImg from '../assets/sipherwebtechproject.png';
-import sipherWebAcademyImg from '../assets/sipherwebacademyproject.png';
+
 import attendStackImg from '../assets/attendstack.png';
 
 export const projectsData = [
