@@ -137,48 +137,7 @@ export const projectsData = [
     github: "#",
     demo: "https://www.bhattsquare.com/"
   },
-  {
-    id: 7,
-    title: "Sipher Web Tech - Digital Excellence",
-    category: "Web",
-    previewImage: sipherWebTechImg,
-    description: "An innovative digital excellence partner building cutting-edge, scalable web applications with a focus on ISO-certified quality and security.",
-    fullDescription: "Sipher Web Pvt. Ltd. is a digital solutions provider specialized in high-performance React.js applications. This corporate platform showcases their extensive service portfolio, ranging from custom software development to ROI-focused digital marketing strategies. The project emphasizes clean code, modern UI engineering, and robust architecture to deliver enterprise-grade digital experiences for a global clientele.",
-    features: [
-      "Modern React.js Application with Modular Architecture",
-      "Comprehensive Digital Service Showcase (Web, Mobile, Custom Software)",
-      "ISO 27001 Certified Security Standards & High Performance",
-      "Dynamic ROI-Focused Digital Marketing Integration",
-      "Cross-Browser Compatibility & Seamless Mobile Responsiveness",
-      "Global Client Portfolio & Strategic Technology Consultations"
-    ],
-    technologies: ["React.js", "JavaScript", "Bootstrap", "Framer Motion", "ISO Standards", "Netlify"],
-    date: "2024",
-    client: "Sipher Web Pvt. Ltd.",
-    github: "#",
-    demo: "https://sipherwebtech.com/"
-  },
-  {
-    id: 8,
-    title: "Sipher Web Academy - ERP/CRM Ecosystem",
-    category: "Full Stack",
-    previewImage: sipherWebAcademyImg,
-    description: "A comprehensive, data-driven educational management platform integrating a full ERP and CRM system for modern training institutes.",
-    fullDescription: "Sipher Web Academy is a high-end educational infrastructure built with Python and Django. It integrates a sophisticated ERP and CRM ecosystem to manage the entire student lifecycle—from initial lead inquiry to graduation. The platform provides real-time analytics for financial tracking, automated academic operations, and a centralized management portal designed to optimize institutional efficiency and student success.",
-    features: [
-      "Full Student Lifecycle Management (CRM-to-Enrollment)",
-      "Automated Fee Management & Financial Invoicing System",
-      "Integrated Batch Scheduling & Attendance Monitoring",
-      "Advanced Enquiry & Lead Management Pipeline",
-      "Faculty Performance & Staff Administrative Controls",
-      "Real-time Analytical Dashboards & Performance Reports"
-    ],
-    technologies: ["Python", "Django", "PostgreSQL", "JavaScript", "CRM Integration", "ERP Logic"],
-    date: "2024",
-    client: "Educational Institutions",
-    github: "#",
-    demo: "https://sipherweb.com/"
-  },
+
   {
     id: 9,
     title: "Attend Stack - Attendance Management SaaS",
