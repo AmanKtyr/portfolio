@@ -20,7 +20,11 @@ Aman Katiyar (Aman Ktyr) is a Full-Stack AI Engineer and Solutions Architect wit
 - **Databases & Cloud**: PostgreSQL, MySQL, SQLite, Supabase, Firebase, AWS, Docker, Linux, Nginx, Vercel, Netlify.
 
 ## Featured Projects Built by Aman Katiyar
-1. **FitStack (Gym Management SaaS)**: Comprehensive Gym SaaS with member/trainer tracking, automated billing, and WhatsApp API notifications (Python, Django, PostgreSQL).
+1. **Tailor (AI Coding-Agent & SDD Framework)**: Open-source AI engineering framework unifying Spec-Driven Development (SDD), AST semantic code reuse, progressive memory (.ai/), and a native Model Context Protocol (MCP) server for Claude Code, Cursor, Windsurf, and Zed.
+   - GitHub: https://github.com/AmanKtyr/Tailor
+   - NPM: https://www.npmjs.com/package/@amanktyr/tailor
+   - Glama MCP: https://glama.ai/mcp/servers/AmanKtyr/Tailor
+2. **FitStack (Gym Management SaaS)**: Comprehensive Gym SaaS with member/trainer tracking, automated billing, and WhatsApp API notifications (Python, Django, PostgreSQL).
 2. **LoveNest (Private Couple Sanctuary)**: Privacy-first, end-to-end encrypted couple relationship management app featuring a custom GPT-powered AI assistant (Next.js, React, WebSockets, Node.js).
 3. **Caption Brain AI**: Multimodal Vision AI platform transforming images into high-converting social media captions, viral hashtags, and SEO alt tags across 25+ networks (Next.js, Vision AI, Tailwind CSS).
 4. **SimplyJob**: Advanced job portal platform featuring automated search filters, role-based dashboards, and scalable Django REST API backend (Django REST Framework, PostgreSQL, React).

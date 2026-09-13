@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaCheck } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaCheck, FaServer } from 'react-icons/fa';
+import { SiNpm } from 'react-icons/si';
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
 import Meta from '../../components/common/Meta/Meta';
@@ -144,12 +145,25 @@ const ProjectDetails = () => {
                   </MetaItem>
                   
                   <ProjectLinks>
-                    <ProjectLink href={project.demo} target="_blank" rel="noopener noreferrer" primary="true">
-                      <FaExternalLinkAlt /> Live Preview
-                    </ProjectLink>
-                    {project.github !== '#' && (
+                    {project.npm ? (
+                      <ProjectLink href={project.npm} target="_blank" rel="noopener noreferrer" primary="true">
+                        <SiNpm /> NPM Package
+                      </ProjectLink>
+                    ) : (
+                      project.demo && project.demo !== '#' && (
+                        <ProjectLink href={project.demo} target="_blank" rel="noopener noreferrer" primary="true">
+                          <FaExternalLinkAlt /> Live Preview
+                        </ProjectLink>
+                      )
+                    )}
+                    {project.mcp && (
+                      <ProjectLink href={project.mcp} target="_blank" rel="noopener noreferrer">
+                        <FaServer /> Glama MCP
+                      </ProjectLink>
+                    )}
+                    {project.github && project.github !== '#' && (
                       <ProjectLink href={project.github} target="_blank" rel="noopener noreferrer">
-                        <FaGithub /> View Source
+                        <FaGithub /> GitHub Source
                       </ProjectLink>
                     )}
                   </ProjectLinks>

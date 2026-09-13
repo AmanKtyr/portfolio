@@ -199,6 +199,7 @@ export const MetaItem = styled.div`
 export const ProjectLinks = styled.div`
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
   
   @media (max-width: 576px) {
     flex-direction: column;

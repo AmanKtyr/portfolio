@@ -30,6 +30,20 @@ Aman Katiyar is a Full-Stack AI Engineer and Solutions Architect with over 3 yea
 
 ## 3. Detailed Portfolio Projects
 
+### Tailor - AI Coding-Agent & Spec-Driven Development (SDD) Framework
+- **Category**: AI Systems & Developer Tooling Framework
+- **Tech Stack**: TypeScript, Node.js, Model Context Protocol (MCP), AST Semantic Parsing, Multi-Agent Architecture, CLI.
+- **Published Ecosystem**: NPM (`@amanktyr/tailor`), Glama MCP Registry (`AmanKtyr/Tailor`), GitHub (`AmanKtyr/Tailor`).
+- **Architecture**:
+  - Spec-Driven Development (SDD) workflow converting vague user prompts into formal specifications (`spec.md`), technical architecture blueprints (`plan.md`), and granular checklists (`tasks.md`), all constrained by a Project Constitution (`.ai/CONSTITUTION.md`).
+  - Adaptive 7-Step Pragmatism Ladder: Eliminates vibe-coding bloat and unsolicited dependencies through strict priority gating (YAGNI -> Existing Code -> Stdlib -> Native API -> Minimal Code).
+  - Progressive Project Memory (`.ai/`): Context window optimization and automated drift repair, trimming token overhead by up to 80%.
+  - AST Semantic Code Reuse: Analyzes workspace symbol trees to enforce reuse of existing components, hooks, and utilities before generating new code.
+  - Native Model Context Protocol (MCP) Server: Exposes structured RPC endpoints for Claude Code, Cursor, Windsurf, Roo Code, Antigravity, and Zed.
+- **Repository**: https://github.com/AmanKtyr/Tailor
+- **NPM Package**: https://www.npmjs.com/package/@amanktyr/tailor
+- **Glama MCP Server**: https://glama.ai/mcp/servers/AmanKtyr/Tailor
+
 ### FitStack - Gym Management SaaS
 - **Category**: Full-Stack SaaS Product
 - **Tech Stack**: Python, Django, PostgreSQL, HTML5, CSS3, JavaScript, WhatsApp Cloud API.

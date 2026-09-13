@@ -6,8 +6,34 @@ import bhattSquareImg from '../assets/bhattsquareproject.png';
 import sipherWebTechImg from '../assets/sipherwebtechproject.png';
 import sipherWebAcademyImg from '../assets/sipherwebacademyproject.png';
 import attendStackImg from '../assets/attendstack.png';
+import tailorImg from '../assets/tailor_project.jpg';
 
 export const projectsData = [
+  {
+    id: 11,
+    title: 'Tailor - AI Coding-Agent & SDD Framework',
+    category: 'Full Stack',
+    previewImage: tailorImg,
+    description: 'The Unified AI Coding-Agent & Spec-Driven Development (SDD) framework with AST code reuse, progressive memory (.ai/), and native MCP server.',
+    fullDescription: 'Tailor is an advanced open-source precision AI engineering framework engineered by Aman Katiyar to eliminate vibe-coding bloat and token waste. It combines Spec-Driven Development (SDD), progressive project memory (.ai/), an adaptive 7-step pragmatism ladder, and AST semantic code reuse into a single unified architecture. Published to NPM and the Glama MCP registry, Tailor features 17 production agent skills and a native Model Context Protocol (MCP) server connecting Claude Code, Cursor, Windsurf, Roo Code, Antigravity, and Zed directly to enterprise-grade AI coding workflows.',
+    features: [
+      'Spec-Driven Development (SDD): Automated user intent conversion to formal spec.md, plan.md, and tasks.md with .ai/CONSTITUTION.md governance',
+      'Adaptive Pragmatism Ladder: 7-step decision ladder (YAGNI -> Existing Code -> Stdlib -> Native API -> Minimal Code)',
+      'Progressive Project Memory (.ai/): Reduces LLM context token overhead by up to 80% with live drift repair',
+      'AST Semantic Code Reuse: Deterministically indexes workspace components, hooks, and utilities before code generation',
+      'Native Model Context Protocol (MCP) Server: Connects to Claude Desktop, Cursor, Zed, Windsurf, and Antigravity',
+      '17 Production Agent Skills: Standardized skills across frontend, backend, security, testing, architecture, and governance',
+      'Strict Anti-Bloat Guardrails: Enforces zero unsolicited CSS, styling sprawl prevention, and minimal diff discipline',
+      'Published on NPM & Glama: Installs globally via npx @amanktyr/tailor or npx skills add AmanKtyr/Tailor'
+    ],
+    technologies: ['TypeScript', 'Node.js', 'Model Context Protocol (MCP)', 'AST Parsing', 'Multi-Agent Systems', 'LLM Orchestration', 'CLI Tooling'],
+    date: '2026',
+    client: 'Open Source / Aman Katiyar',
+    github: 'https://github.com/AmanKtyr/Tailor',
+    demo: 'https://www.npmjs.com/package/@amanktyr/tailor',
+    npm: 'https://www.npmjs.com/package/@amanktyr/tailor',
+    mcp: 'https://glama.ai/mcp/servers/AmanKtyr/Tailor',
+  },
   {
     id: 1,
     title: 'FitStack - Gym Management SaaS',
