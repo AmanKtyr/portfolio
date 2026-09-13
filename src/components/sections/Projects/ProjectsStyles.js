@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const ProjectsContainer = styled.section`
   padding: 3rem 0;
@@ -275,6 +276,53 @@ export const ProjectDesc = styled.p`
   color: var(--gray-color);
   font-size: 0.95rem;
   margin-bottom: 1rem;
+`;
+
+export const ViewAllContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+  position: relative;
+  z-index: 5;
+`;
+
+export const ViewAllButton = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.95rem 2.4rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-family: 'monospace', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color, #059669));
+  box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(var(--primary-rgb), 0.55);
+    color: #ffffff;
+
+    svg {
+      transform: translateX(6px);
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
 `;
 
 

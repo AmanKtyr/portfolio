@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa';
 import { projectsData } from '../../../data/projectsData';
-import { ProjectsContainer, ProjectsFilter, FilterBtn, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLinks, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc } from './ProjectsStyles';
+import { ProjectsContainer, ProjectsFilter, FilterBtn, ProjectsGrid, ProjectCard, ProjectImg, ProjectOverlay, ProjectLinks, ProjectLink, ProjectInfo, ProjectTitle, ProjectCategory, ProjectDesc, ViewAllContainer, ViewAllButton } from './ProjectsStyles';
 import SectionHeading from '../../ui/SectionHeading/SectionHeading';
 
 const Projects = () => {
@@ -20,6 +20,8 @@ const Projects = () => {
       setFilteredProjects(filtered);
     }
   };
+
+  const displayedProjects = filteredProjects.slice(0, 6);
 
   return (
     <ProjectsContainer id="projects">
@@ -59,7 +61,7 @@ const Projects = () => {
         </ProjectsFilter>
 
         <ProjectsGrid>
-          {filteredProjects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -107,6 +109,13 @@ const Projects = () => {
             </motion.div>
           ))}
         </ProjectsGrid>
+
+        <ViewAllContainer>
+          <ViewAllButton to="/projects" data-cursor-text="All Projects" data-cursor-variant="link">
+            <span>Explore All Projects</span>
+            <FaArrowRight />
+          </ViewAllButton>
+        </ViewAllContainer>
       </div>
     </ProjectsContainer>
   );
