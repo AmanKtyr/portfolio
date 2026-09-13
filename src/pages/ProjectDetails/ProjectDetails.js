@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaCheck, FaServer } from 'react-icons/fa';
 import { SiNpm } from 'react-icons/si';
@@ -29,12 +29,18 @@ import {
 
 const ProjectDetails = () => {
   const { id } = useParams();
-  const project = projectsData.find(p => p.id === parseInt(id));
+  const navigate = useNavigate();
+  const project = projectsData.find(
+    p => p.slug === id || p.id.toString() === id
+  );
 
-  // Scroll to top on mount
+  // Scroll to top and redirect numeric ID to SEO slug
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    if (project && project.slug && id !== project.slug) {
+      navigate(`/project/${project.slug}`, { replace: true });
+    }
+  }, [id, project, navigate]);
   
   if (!project) {
     return (
@@ -43,8 +49,8 @@ const ProjectDetails = () => {
         <SectionContainer>
           <div className="container" style={{ padding: '10rem 0', textAlign: 'center' }}>
             <h2>Project not found</h2>
-            <Link to="/" className="btn-primary" style={{ display: 'inline-block', marginTop: '2rem' }}>
-              Back to Home
+            <Link to="/projects" className="btn-primary" style={{ display: 'inline-block', marginTop: '2rem' }}>
+              Back to Projects
             </Link>
           </div>
         </SectionContainer>
@@ -60,7 +66,7 @@ const ProjectDetails = () => {
         description={project.description} 
         keywords={`${project.title}, ${project.category}, ${project.technologies ? project.technologies.join(', ') : ''}, Aman Katiyar project, Aman Ktyr`}
         image={typeof project.previewImage === 'string' ? project.previewImage : undefined}
-        url={`https://aman.ktyr.in/project/${project.id}`}
+        url={`https://aman.ktyr.in/project/${project.slug || project.id}`}
       />
 
       <Header />

@@ -98,10 +98,10 @@ const Projects = () => {
                 <ProjectInfo className="project-content">
                   <ProjectCategory>{project.category}</ProjectCategory>
                   <ProjectTitle>
-                    <Link to={`/project/${project.id}`}>{project.title}</Link>
+                    <Link to={`/project/${project.slug || project.id}`}>{project.title}</Link>
                   </ProjectTitle>
                   <ProjectDesc>{project.description}</ProjectDesc>
-                  <Link to={`/project/${project.id}`} className="btn-text" data-cursor-text="View Details" data-cursor-variant="link">
+                  <Link to={`/project/${project.slug || project.id}`} className="btn-text" data-cursor-text="View Details" data-cursor-variant="link">
                     View Details <FaArrowRight />
                   </Link>
                 </ProjectInfo>

@@ -11,6 +11,7 @@ import tailorImg from '../assets/tailor_project.jpg';
 export const projectsData = [
   {
     id: 11,
+    slug: 'tailor-ai-coding-agent',
     title: 'Tailor - AI Coding-Agent & SDD Framework',
     category: 'Full Stack',
     previewImage: tailorImg,
@@ -36,6 +37,7 @@ export const projectsData = [
   },
   {
     id: 1,
+    slug: 'fitstack-gym-management-saas',
     title: 'FitStack - Gym Management SaaS',
     category: 'Full Stack',
     previewImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop',
@@ -61,6 +63,7 @@ export const projectsData = [
   },
   {
     id: 2,
+    slug: 'lovenest-ai-couple-sanctuary',
     title: "LoveNest - Private Couple Sanctuary",
     category: "Full Stack",
     previewImage: lovenestImg,
@@ -82,6 +85,7 @@ export const projectsData = [
   },
   {
     id: 10,
+    slug: 'simplyjob-recruitment-portal',
     title: "SimplyJob",
     category: "Full Stack",
     previewImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1484&auto=format&fit=crop",
@@ -102,6 +106,7 @@ export const projectsData = [
   },
   {
     id: 4,
+    slug: 'caption-brain-multimodal-ai',
     title: "Caption Brain AI",
     category: "Full Stack",
     previewImage: captionBrainImg,
@@ -123,6 +128,7 @@ export const projectsData = [
   },
   {
     id: 5,
+    slug: 'gurukulsetu-school-management',
     title: "GurukulSetu - School Management Ecosystem",
     category: "Full Stack",
     previewImage: gurukulSetuImg,
@@ -144,6 +150,7 @@ export const projectsData = [
   },
   {
     id: 6,
+    slug: 'bhatt-square-it-solutions',
     title: "Bhatt Square - Premium IT Solutions",
     category: "Web",
     previewImage: bhattSquareImg,
@@ -165,6 +172,7 @@ export const projectsData = [
   },
   {
     id: 7,
+    slug: 'sipher-web-tech-platform',
     title: "Sipher Web Tech - Digital Excellence",
     category: "Web",
     previewImage: sipherWebTechImg,
@@ -186,6 +194,7 @@ export const projectsData = [
   },
   {
     id: 8,
+    slug: 'sipher-web-academy-crm',
     title: "Sipher Web Academy - ERP/CRM Ecosystem",
     category: "Full Stack",
     previewImage: sipherWebAcademyImg,
@@ -207,6 +216,7 @@ export const projectsData = [
   },
   {
     id: 9,
+    slug: 'attend-stack-saas',
     title: "Attend Stack - Attendance Management SaaS",
     category: "Full Stack",
     previewImage: attendStackImg,
@@ -230,6 +240,7 @@ export const projectsData = [
   },
   {
     id: 3,
+    slug: 'mafroosh-storepilot-ecommerce',
     title: "Mafroosh & Storepilot",
     category: "Full Stack",
     previewImage: mafrooshImg,

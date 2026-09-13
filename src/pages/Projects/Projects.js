@@ -214,10 +214,10 @@ const ProjectsPage = () => {
                   <ProjectInfo>
                     <ProjectCategory>{project.category}</ProjectCategory>
                     <ProjectTitle>
-                      <Link to={`/project/${project.id}`}>{project.title}</Link>
+                      <Link to={`/project/${project.slug || project.id}`}>{project.title}</Link>
                     </ProjectTitle>
                     <ProjectDesc>{project.description}</ProjectDesc>
-                    <Link to={`/project/${project.id}`} className="btn-text">
+                    <Link to={`/project/${project.slug || project.id}`} className="btn-text">
                       {t('projects.viewDetails')} <FaArrowRight />
                     </Link>
                   </ProjectInfo>
