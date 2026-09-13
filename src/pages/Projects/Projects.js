@@ -52,8 +52,9 @@ const ProjectsPage = () => {
   return (
     <>
       <Meta 
-        title="Projects Portfolio" 
-        description="Explore a collection of innovative projects by Aman Katiyar, ranging from AI applications and agentic systems to full-stack web architectures." 
+        title="Featured Projects & Systems" 
+        description="Explore production software and AI ecosystems engineered by Aman Katiyar (Aman Ktyr): FitStack Gym SaaS, LoveNest AI, Caption Brain AI, SimplyJob portal, GurukulSetu ERP, and more." 
+        keywords="Aman Katiyar projects, Aman Ktyr portfolio, FitStack SaaS, LoveNest AI, Caption Brain AI, SimplyJob, GurukulSetu, Full-Stack projects, React projects, Django projects"
         url="https://aman.ktyr.in/projects"
       />
       <Header />

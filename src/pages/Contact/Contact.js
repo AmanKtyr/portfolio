@@ -13,8 +13,9 @@ const ContactPage = () => {
   return (
     <>
       <Meta 
-        title="Contact Me" 
-        description="Get in touch with Aman Katiyar for project inquiries, collaborations, or technical consultations. Available for AI development and full-stack solutions." 
+        title="Contact & Consultation" 
+        description="Get in touch with Aman Katiyar (Aman Ktyr) for software architecture, AI agent development, enterprise projects, or technical consulting. Located in Lucknow, India." 
+        keywords="Contact Aman Katiyar, Aman Ktyr email, Aman Katiyar contact, hire AI engineer Lucknow, software consultant India, amankatiyar.tech01@gmail.com"
         url="https://aman.ktyr.in/contact"
       />
       <Header />

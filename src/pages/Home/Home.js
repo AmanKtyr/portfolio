@@ -15,7 +15,8 @@ const Home = () => {
     <>
       <Meta 
         title="Home" 
-        description="Welcome to the portfolio of Aman Katiyar, a Full-Stack AI Engineer & Solutions Architect. Specializing in AI development, scalable web architectures, and strategic tech solutions." 
+        description="Official portfolio of Aman Katiyar (Aman Ktyr), a Full-Stack AI Engineer & Solutions Architect specializing in Agentic Systems, Web Architecture, React, Next.js, and Python/Django." 
+        keywords="Aman Katiyar, Aman Ktyr, amanktyr, Aman, Full-Stack AI Engineer, Solutions Architect, Agentic Systems, React Developer, Django Developer, Next.js, Python Full Stack, Lucknow, India, Developer Portfolio"
         url="https://aman.ktyr.in/"
       />
 

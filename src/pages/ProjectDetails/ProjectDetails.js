@@ -57,7 +57,8 @@ const ProjectDetails = () => {
       <Meta 
         title={project.title} 
         description={project.description} 
-        image={project.previewImage}
+        keywords={`${project.title}, ${project.category}, ${project.technologies ? project.technologies.join(', ') : ''}, Aman Katiyar project, Aman Ktyr`}
+        image={typeof project.previewImage === 'string' ? project.previewImage : undefined}
         url={`https://aman.ktyr.in/project/${project.id}`}
       />
 

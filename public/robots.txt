@@ -1,15 +1,46 @@
-# Aman Katiyar Portfolio Robots.txt
-# http://aman.ktyr.in
+# Aman Katiyar (Aman Ktyr) Official Portfolio Robots.txt
+# https://aman.ktyr.in
 
 User-agent: *
 Allow: /
 
 # Sitemap Location
 Sitemap: https://aman.ktyr.in/sitemap.xml
+Host: https://aman.ktyr.in
 
-# LLM Crawler instructions
+# Explicit Permissions for Search Engines & LLM Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
 Allow: /

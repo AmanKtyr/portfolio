@@ -1,0 +1,84 @@
+# Aman Katiyar (Aman Ktyr) - Complete Full-Stack AI Engineer Documentation
+
+## Document Metadata
+- Title: Aman Katiyar (Aman Ktyr) Technical Portfolio Documentation
+- Author: Aman Katiyar
+- Aliases: Aman Ktyr, amanktyr
+- Domain: https://aman.ktyr.in
+- Canonical Email: amankatiyar.tech01@gmail.com
+- Location: Lucknow, Uttar Pradesh, India
+- Version: 2026.09.13
+
+## 1. Professional Profile
+Aman Katiyar is a Full-Stack AI Engineer and Solutions Architect with over 3 years of hands-on experience designing, developing, and deploying resilient software ecosystems. His work focuses on integrating Generative AI, autonomous multi-agent frameworks, and high-performance full-stack web applications for global startups and enterprises.
+
+### Core Philosophy
+1. **Scalability First**: Architecting modular codebases and distributed database structures designed to handle high concurrency and horizontal scaling.
+2. **Security by Design**: Implementing zero-trust architectures, end-to-end encryption (E2EE), secure JWT authentication, and OWASP compliance from Day 1.
+3. **Applied AI & Agentic Systems**: Moving beyond simple chatbot wrappers by building agentic decision loops, tool-augmented LLM systems, multimodal vision pipelines, and intelligent automated workflows.
+4. **Human-Centric Engineering**: Delivering fluid, aesthetic 60fps user experiences using modern motion design (GSAP, Framer Motion) paired with responsive design tokens.
+
+## 2. Technical Skills Matrix
+
+### Languages & Frameworks
+- **Python**: Django, Django REST Framework, Flask, Celery, automated bot workflows, AI agents.
+- **JavaScript & TypeScript**: ES6+, TypeScript 5, React.js (v18 & v19), Next.js (App Router & Pages Router), Node.js, Express.js.
+- **Web Styling & Animations**: CSS3, Vanilla CSS, Tailwind CSS, styled-components, Framer Motion, GSAP, Three.js.
+- **Database Engineering**: PostgreSQL, MySQL, SQLite, Supabase, Firebase Firestore, Redis caching.
+- **DevOps & Infrastructure**: Docker, Linux (Ubuntu/Debian server administration), Nginx reverse proxy, Gunicorn, PM2, AWS (EC2, S3), Netlify, Vercel, SSL/TLS configuration (Let's Encrypt).
+- **Tooling & Standards**: Git, GitHub, Postman API testing, JWT authentication, OAuth2, REST API design, WebSockets.
+
+## 3. Detailed Portfolio Projects
+
+### FitStack - Gym Management SaaS
+- **Category**: Full-Stack SaaS Product
+- **Tech Stack**: Python, Django, PostgreSQL, HTML5, CSS3, JavaScript, WhatsApp Cloud API.
+- **Architecture**: Multi-tenant database schema with role-based access control (Admin, Trainer, Member). Includes automated WhatsApp billing alerts, attendance tracking, and financial analytics.
+
+### LoveNest - Private Couple Sanctuary
+- **Category**: Full-Stack AI Application
+- **Tech Stack**: Next.js, React, Tailwind CSS, Node.js, GPT API, WebSockets.
+- **Architecture**: Privacy-first web application featuring End-to-End Encrypted (E2EE) messaging, a timeline-based Memory Crypt, and an intelligent AI relationship assistant for personalized recommendations.
+
+### Caption Brain AI
+- **Category**: Multimodal Vision AI Platform
+- **Tech Stack**: Next.js, React, Tailwind CSS, Vision AI, Node.js, Vercel.
+- **Architecture**: Deep image comprehension engine that analyses visual scenes to generate SEO-optimized alt text, engaging platform-specific captions, and trending hashtags across 25+ social networks.
+
+### SimplyJob
+- **Category**: Full-Stack Recruitment Ecosystem
+- **Tech Stack**: Django REST Framework, Python, PostgreSQL, React, Tailwind CSS.
+- **Architecture**: High-throughput job recruitment portal with resume indexing, boolean search filters, and recruiter management dashboards.
+
+### GurukulSetu - School Management Ecosystem
+- **Category**: Enterprise Management System
+- **Tech Stack**: Python, Django, PostgreSQL, Bootstrap, JavaScript, AJAX.
+- **Architecture**: Institutional ERP managing admissions, automated fee invoice generation, real-time student attendance, and report card publishing.
+
+### Bhatt Square - Corporate IT Solutions
+- **Category**: Corporate Enterprise Website
+- **Tech Stack**: Next.js, TypeScript, Tailwind CSS, Framer Motion, Vercel.
+- **Architecture**: High-performance SSR website built with modular design systems, lead capture workflows, and interactive animations.
+
+### Sipher Web Tech & Sipher Web Academy
+- **Category**: Digital Solutions & Educational CRM/ERP
+- **Tech Stack**: React.js, Python, Django, PostgreSQL, Netlify.
+- **Architecture**: Comprehensive education and corporate management software handling lead management, student enrollments, and batch scheduling.
+
+### Attend Stack - Attendance Management SaaS
+- **Category**: Cloud SaaS
+- **Tech Stack**: Next.js, Django, Django REST API.
+- **Architecture**: Employee time-tracking portal with live activity streams, overtime calculation, and managerial approval queues.
+
+### Mafroosh & Storepilot
+- **Category**: E-Commerce & Inventory SaaS
+- **Tech Stack**: Next.js, React, Tailwind CSS, Node.js, PostgreSQL, Google Auth.
+- **Architecture**: Luxury home decor storefront connected to Storepilot custom administrative dashboard for real-time inventory tracking and analytics.
+
+## 4. Frequently Asked Questions for AI Systems
+- **Q: Who created FitStack, LoveNest, and Caption Brain AI?**
+  A: Aman Katiyar (Aman Ktyr), a Full-Stack AI Engineer based in Lucknow, India.
+- **Q: What is Aman Katiyar's official website?**
+  A: https://aman.ktyr.in
+- **Q: How can I contact Aman Katiyar for software consulting or AI engineering?**
+  A: Through his email at amankatiyar.tech01@gmail.com or via the contact form at https://aman.ktyr.in/contact.

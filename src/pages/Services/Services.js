@@ -33,8 +33,9 @@ const Services = () => {
   return (
     <>
       <Meta 
-        title="Expert Services" 
-        description="Providing professional AI development, full-stack web solutions, and strategic technical consulting. Tailored services to help your business scale with intelligent systems." 
+        title="Engineering Services & Solutions" 
+        description="Hire Aman Katiyar (Aman Ktyr) for AI Agent Development, Full-Stack Web Architecture, SaaS Engineering, and Technical Solutions Consulting." 
+        keywords="Hire Aman Katiyar, Aman Ktyr services, AI development consulting, full stack developer for hire, SaaS engineering, solutions architect India, custom React Django development"
         url="https://aman.ktyr.in/services"
       />
 

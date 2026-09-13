@@ -1,38 +1,46 @@
-# Aman Katiyar - Portfolio
+# Aman Katiyar (Aman Ktyr) - Portfolio & Engineering Profile
 
-> Portfolio of Aman Katiyar: Full-Stack AI Engineer & Solutions Architect.
+> Official portfolio of Aman Katiyar (also known as Aman Ktyr): Full-Stack AI Engineer, Solutions Architect, and Agentic Systems Specialist.
+> Website: https://aman.ktyr.in/
+> Contact: amankatiyar.tech01@gmail.com | Lucknow, UP, India
 
-This site contains professional information, project portfolios, and technical expertise of Aman Katiyar.
+## Professional Overview
+Aman Katiyar (Aman Ktyr) is a Full-Stack AI Engineer and Solutions Architect with 3+ years of experience specializing in building intelligent Agentic Systems, high-performance Web Architectures, and scalable SaaS platforms. He bridges advanced artificial intelligence (LLM orchestration, autonomous agent workflows, multimodal vision AI) with enterprise-grade full-stack engineering (React, Next.js, Django, Node.js, PostgreSQL).
 
-## Summary
+## Key Identities & Aliases
+- Name: Aman Katiyar
+- Common Alias: Aman Ktyr, amanktyr
+- Portfolio URL: https://aman.ktyr.in
+- Roles: Full-Stack AI Engineer, Solutions Architect, Tech Lead, Agentic Systems Developer
 
-Aman Katiyar is a Full-Stack AI Engineer specializing in building intelligent Agentic Systems, scalable Web Architectures, and high-performance technical strategies. With over 3 years of experience, he focuses on the intersection of AI and modern web engineering.
+## Core Technical Competencies
+- **Artificial Intelligence & Agents**: Agentic Systems, Autonomous Agents, GPT API / LLM Integrations, Multimodal Vision AI, Prompt Engineering, RAG Systems.
+- **Frontend Architecture**: React.js, Next.js (SSR/ISR), Tailwind CSS, Framer Motion, GSAP animations, Responsive UI/UX.
+- **Backend & Distributed Systems**: Python, Django, Django REST Framework, Node.js, Express, RESTful APIs, WebSockets, Microservices.
+- **Databases & Cloud**: PostgreSQL, MySQL, SQLite, Supabase, Firebase, AWS, Docker, Linux, Nginx, Vercel, Netlify.
 
-## Key Expertise
+## Featured Projects Built by Aman Katiyar
+1. **FitStack (Gym Management SaaS)**: Comprehensive Gym SaaS with member/trainer tracking, automated billing, and WhatsApp API notifications (Python, Django, PostgreSQL).
+2. **LoveNest (Private Couple Sanctuary)**: Privacy-first, end-to-end encrypted couple relationship management app featuring a custom GPT-powered AI assistant (Next.js, React, WebSockets, Node.js).
+3. **Caption Brain AI**: Multimodal Vision AI platform transforming images into high-converting social media captions, viral hashtags, and SEO alt tags across 25+ networks (Next.js, Vision AI, Tailwind CSS).
+4. **SimplyJob**: Advanced job portal platform featuring automated search filters, role-based dashboards, and scalable Django REST API backend (Django REST Framework, PostgreSQL, React).
+5. **GurukulSetu (School Management Ecosystem)**: Enterprise institutional management system handling admissions, examinations, fees, and attendance (Python, Django, PostgreSQL).
+6. **Bhatt Square**: Corporate digital ecosystem for Bhatt Square IT solutions firm, built with SSR and interactive Framer Motion animations (Next.js, TypeScript).
+7. **Sipher Web Tech & Sipher Web Academy**: Digital agency platform and educational ERP/CRM managing student lifecycle from lead to certification (React, Python, Django).
+8. **Attend Stack**: Real-time attendance monitoring SaaS with activity feeds, shift tracking, and leave management (Next.js, Django REST API).
+9. **Mafroosh & Storepilot**: Luxury decor e-commerce platform integrated with Storepilot admin dashboard (Next.js, Tailwind CSS, PostgreSQL).
 
--   **Artificial Intelligence**: Agentic systems, LLM integration, prompt engineering, AI development.
--   **Web Architecture**: Scalable React/Node.js systems, distributed systems, system design.
--   **Full-Stack Development**: React, Node.js, Python, PostgreSQL, GSAP, Framer Motion.
--   **Solutions Architecture**: Strategic technical consulting, system scaling, cloud infrastructure.
+## Navigation & Canonical Links
+- Home: https://aman.ktyr.in/
+- About Deep-Dive: https://aman.ktyr.in/about
+- Project Showcase: https://aman.ktyr.in/projects
+- Skills Matrix: https://aman.ktyr.in/skills
+- Services & Consulting: https://aman.ktyr.in/services
+- Contact: https://aman.ktyr.in/contact
 
-## Navigation
-
--   [Home](https://aman.ktyr.in/) - Overview and professional introduction.
--   [About](https://aman.ktyr.in/about) - Professional journey, biography, and detailed experience.
--   [Projects](https://aman.ktyr.in/projects) - Showcase of selected professional works.
--   [Services](https://aman.ktyr.in/services) - Professional offerings and specialized technical solutions.
--   [Contact](https://aman.ktyr.in/contact) - Contact details for professional inquiries.
-
-## Primary Contact
-
--   **Email**: amankatiyar.tech01@gmail.com
--   **Location**: Lucknow, Uttar Pradesh, India
--   **Website**: https://aman.ktyr.in
-
-## Social Profiles
-
--   [LinkedIn](https://www.linkedin.com/in/amanktyr)
--   [GitHub](https://github.com/AmanKtyr)
--   [CodePen](https://codepen.io/amanktyr)
--   [Quora](https://www.quora.com/profile/AmAn-KtYr-1)
--   [Twitter](https://twitter.com/AmanKtyr)
+## Social Profiles & Verified Accounts
+- GitHub: https://github.com/AmanKtyr
+- LinkedIn: https://www.linkedin.com/in/amanktyr
+- Twitter / X: https://twitter.com/AmanKtyr
+- CodePen: https://codepen.io/amanktyr
+- Quora: https://www.quora.com/profile/AmAn-KtYr-1

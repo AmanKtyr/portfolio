@@ -65,8 +65,9 @@ const AboutPage = () => {
   return (
     <>
       <Meta 
-        title="About Deep-Dive | Aman Katiyar" 
-        description="Explore the architectural blueprint of Aman Katiyar's career. From full-stack engineering to AI solutions architecture." 
+        title="About & Career Blueprint" 
+        description="Explore the engineering journey and architectural blueprint of Aman Katiyar (Aman Ktyr). Over 3 years specializing in Full-Stack Engineering, Agentic Systems, and AI Solutions Architecture." 
+        keywords="About Aman Katiyar, Aman Ktyr bio, Aman Katiyar engineer, full-stack architect Lucknow, agentic AI engineer journey, software career"
         url="https://aman.ktyr.in/about"
       />
 

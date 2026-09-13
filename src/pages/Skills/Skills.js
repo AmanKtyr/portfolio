@@ -13,6 +13,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
+import Meta from '../../components/common/Meta/Meta';
 import { 
   SkillsPageContainer, SkillsBanner, SkillsBannerContent, SkillsContent, 
   SkillsGrid, SkillCard, SkillIcon, SkillTitle, SkillText, SkillList, 
@@ -80,6 +81,12 @@ const Skills = () => {
 
   return (
     <>
+      <Meta 
+        title="Technical Skills & Architecture" 
+        description="Explore the technical stack and systems engineering capabilities of Aman Katiyar (Aman Ktyr), covering AI agent systems, Python, Django, React, Next.js, and cloud infrastructure." 
+        keywords="Aman Katiyar skills, Aman Ktyr tech stack, Python Django engineer, React Next.js developer, AI Agentic systems, system architecture, database engineering"
+        url="https://aman.ktyr.in/skills"
+      />
       <Header />
 
       <SkillsPageContainer>
