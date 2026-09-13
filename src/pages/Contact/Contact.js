@@ -18,6 +18,29 @@ const ContactPage = () => {
         keywords="Contact Aman Katiyar, Aman Ktyr email, Aman Katiyar contact, hire AI engineer Lucknow, software consultant India, amankatiyar.tech01@gmail.com"
         url="https://aman.ktyr.in/contact"
       />
+
+      {/* ContactPage JSON-LD Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Aman Katiyar (Aman Ktyr)",
+          "description": "Get in touch with Aman Katiyar for project inquiries, collaborations, or technical consultations.",
+          "url": "https://aman.ktyr.in/contact",
+          "mainEntity": {
+            "@type": "Person",
+            "name": "Aman Katiyar",
+            "email": "mailto:amankatiyar.tech01@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lucknow",
+              "addressRegion": "Uttar Pradesh",
+              "addressCountry": "India"
+            }
+          }
+        })}
+      </script>
+
       <Header />
       <ContactPageContainer>
         <ContactBanner>

@@ -71,6 +71,24 @@ const AboutPage = () => {
         url="https://aman.ktyr.in/about"
       />
 
+      {/* AboutPage JSON-LD Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About Aman Katiyar (Aman Ktyr)",
+          "description": "Architectural blueprint and career deep-dive of Full-Stack AI Engineer Aman Katiyar.",
+          "url": "https://aman.ktyr.in/about",
+          "mainEntity": {
+            "@type": "Person",
+            "name": "Aman Katiyar",
+            "alternateName": "Aman Ktyr",
+            "jobTitle": "Full-Stack AI Engineer & Solutions Architect",
+            "url": "https://aman.ktyr.in"
+          }
+        })}
+      </script>
+
       <Header />
 
       <AboutPageContainer>

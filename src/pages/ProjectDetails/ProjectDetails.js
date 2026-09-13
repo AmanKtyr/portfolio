@@ -69,12 +69,30 @@ const ProjectDetails = () => {
         url={`https://aman.ktyr.in/project/${project.slug || project.id}`}
       />
 
+      {/* Project Software/CreativeWork JSON-LD Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": project.title,
+          "description": project.description,
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "All",
+          "url": `https://aman.ktyr.in/project/${project.slug || project.id}`,
+          "author": {
+            "@type": "Person",
+            "name": "Aman Katiyar",
+            "url": "https://aman.ktyr.in"
+          }
+        })}
+      </script>
+
       <Header />
       <SectionContainer>
         <ProjectDetailsContainer>
           <WatermarkText>PROJECT_SPEC</WatermarkText>
           <TechBadge style={{ top: '15%', right: '5%' }}>
-            STATUS: ARCHIVED
+            STATUS: ACTIVE
           </TechBadge>
           <TechBadge style={{ top: '20%', right: '5%' }}>
             BUILD: {project.id}.0.8
@@ -96,7 +114,11 @@ const ProjectDetails = () => {
               transition={{ duration: 0.6 }}
             >
               <ImageGallery>
-                <img src={project.previewImage} alt={project.title} />
+                <img 
+                  src={project.previewImage} 
+                  alt={`${project.title} - ${project.category} engineered by Aman Katiyar (Aman Ktyr)`} 
+                  loading="lazy"
+                />
               </ImageGallery>
             </motion.div>
             

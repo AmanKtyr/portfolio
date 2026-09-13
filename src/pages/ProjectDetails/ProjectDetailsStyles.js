@@ -131,7 +131,7 @@ export const ProjectCategory = styled.span`
   margin-bottom: 0.5rem;
 `;
 
-export const ProjectTitle = styled.h2`
+export const ProjectTitle = styled.h1`
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 950;
   margin-bottom: 1.5rem;

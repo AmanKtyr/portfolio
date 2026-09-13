@@ -39,6 +39,22 @@ const Services = () => {
         url="https://aman.ktyr.in/services"
       />
 
+      {/* Service JSON-LD Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "AI & Full-Stack Web Architecture",
+          "provider": {
+            "@type": "Person",
+            "name": "Aman Katiyar",
+            "url": "https://aman.ktyr.in"
+          },
+          "areaServed": "Global",
+          "description": "AI Agent Development, Full-Stack SaaS Engineering, and Technical Solutions Architecture by Aman Katiyar."
+        })}
+      </script>
+
       <Header />
 
       <ServicesPageContainer>
