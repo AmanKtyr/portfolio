@@ -3,14 +3,16 @@
 
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
+Allow: /robots.txt
 
 # Sitemap Location
 Sitemap: https://aman.ktyr.in/sitemap.xml
-Host: https://aman.ktyr.in
 
 # Explicit Permissions for Search Engines & LLM Crawlers
 User-agent: Googlebot
 Allow: /
+Allow: /sitemap.xml
 
 User-agent: Bingbot
 Allow: /
