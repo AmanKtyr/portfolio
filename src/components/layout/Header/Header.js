@@ -203,8 +203,8 @@ const Header = () => {
         </ActionGroup>
 
         {/* Mobile Toggle */}
-        <MobileIcon onClick={toggleMenu}>
-          <FaBars />
+        <MobileIcon as="button" aria-label="Open navigation menu" onClick={toggleMenu}>
+          <FaBars aria-hidden="true" />
         </MobileIcon>
       </Nav>
 
@@ -219,8 +219,8 @@ const Header = () => {
           >
             <div className="mobile-header">
               <Logo size="medium" />
-              <MobileIcon onClick={toggleMenu}>
-                <FaTimes />
+              <MobileIcon as="button" aria-label="Close navigation menu" onClick={toggleMenu}>
+                <FaTimes aria-hidden="true" />
               </MobileIcon>
             </div>
 

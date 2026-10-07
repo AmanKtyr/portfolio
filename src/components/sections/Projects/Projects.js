@@ -78,19 +78,21 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`${project.title} GitHub repository`}
                         data-cursor-text="GitHub"
                         data-cursor-variant="text"
                       >
-                        <FaGithub />
+                        <FaGithub aria-hidden="true" />
                       </ProjectLink>
                       <ProjectLink
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`${project.title} live demo`}
                         data-cursor-text="Live Demo"
                         data-cursor-variant="text"
                       >
-                        <FaExternalLinkAlt />
+                        <FaExternalLinkAlt aria-hidden="true" />
                       </ProjectLink>
                     </ProjectLinks>
                   </ProjectOverlay>

@@ -97,12 +97,11 @@ export const QuoteIcon = styled.div`
 `;
 
 export const TestimonialText = styled.p`
-  color: var(--text-color);
+  color: ${({ theme }) => theme.isDarkMode ? '#f1f5f9' : '#1e293b'};
   margin-bottom: 2rem;
   line-height: 1.6;
   flex-grow: 1;
   font-size: 0.95rem;
-  opacity: 0.8;
   z-index: 1;
 `;
 
@@ -138,11 +137,11 @@ export const AuthorImage = styled.div`
 
 export const AuthorInfo = styled.div``;
 
-export const AuthorName = styled.h4`
+export const AuthorName = styled.h3`
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.1rem;
-  color: var(--text-color);
+  color: ${({ theme }) => theme.colors.text};
   transition: all 0.3s ease;
   
   ${TestimonialItem}:hover & {
@@ -152,11 +151,10 @@ export const AuthorName = styled.h4`
 
 export const AuthorPosition = styled.p`
   font-size: 0.75rem;
-  color: var(--gray-color);
+  color: ${({ theme }) => theme.isDarkMode ? '#cbd5e1' : '#475569'};
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  opacity: 0.7;
 `;
 
 

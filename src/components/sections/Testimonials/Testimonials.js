@@ -96,14 +96,14 @@ const Testimonials = () => {
             <SwiperSlide key={testimonial.id}>
               <TestimonialItem>
                 <QuoteIcon>
-                  <FaQuoteLeft />
+                  <FaQuoteLeft aria-hidden="true" />
                 </QuoteIcon>
                 <TestimonialText>
                   {testimonial.text}
                 </TestimonialText>
                 <TestimonialAuthor>
                   <AuthorImage>
-                    <img src={testimonial.image} alt={testimonial.name} loading="lazy" />
+                    <img src={testimonial.image} alt={testimonial.name} loading="lazy" width="50" height="50" />
                   </AuthorImage>
                   <AuthorInfo>
                     <AuthorName>{testimonial.name}</AuthorName>

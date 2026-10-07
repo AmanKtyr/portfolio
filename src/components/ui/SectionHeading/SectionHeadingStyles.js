@@ -19,7 +19,7 @@ export const SectionLabel = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
-  opacity: 0.9;
+  opacity: 1;
   font-weight: 700;
 
   &::before {
@@ -28,7 +28,8 @@ export const SectionLabel = styled.div`
     font-weight: 900;
     letter-spacing: 0;
     padding: 2px 8px;
-    background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'};
+    background: ${({ theme }) => theme.isDarkMode ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)'};
+    border: 1px solid rgba(var(--primary-rgb), 0.25);
     border-radius: 4px;
   }
 `;

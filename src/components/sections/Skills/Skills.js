@@ -14,17 +14,17 @@ import SectionHeading from '../../ui/SectionHeading/SectionHeading';
 
 const Skills = () => {
   const techStack = [
-    { id: 'html', icon: <FaHtml5 />, name: 'HTML5' },
-    { id: 'css', icon: <FaCss3Alt />, name: 'CSS3' },
-    { id: 'js', icon: <FaJs />, name: 'JavaScript' },
-    { id: 'react', icon: <FaReact />, name: 'React' },
-    { id: 'node', icon: <FaNodeJs />, name: 'Node.js' },
-    { id: 'python', icon: <FaPython />, name: 'Python' },
-    { id: 'django', icon: <SiDjango />, name: 'Django' },
-    { id: 'db', icon: <FaDatabase />, name: 'Databases' },
-    { id: 'git', icon: <FaGitAlt />, name: 'Git' },
-    { id: 'ai', icon: <FaBrain />, name: 'AI' },
-    { id: 'nestjs', icon: <SiNestjs />, name: 'Nest.js' }
+    { id: 'html', icon: <FaHtml5 aria-hidden="true" />, name: 'HTML5' },
+    { id: 'css', icon: <FaCss3Alt aria-hidden="true" />, name: 'CSS3' },
+    { id: 'js', icon: <FaJs aria-hidden="true" />, name: 'JavaScript' },
+    { id: 'react', icon: <FaReact aria-hidden="true" />, name: 'React' },
+    { id: 'node', icon: <FaNodeJs aria-hidden="true" />, name: 'Node.js' },
+    { id: 'python', icon: <FaPython aria-hidden="true" />, name: 'Python' },
+    { id: 'django', icon: <SiDjango aria-label="Django" role="img" />, name: 'Django' },
+    { id: 'db', icon: <FaDatabase aria-hidden="true" />, name: 'Databases' },
+    { id: 'git', icon: <FaGitAlt aria-hidden="true" />, name: 'Git' },
+    { id: 'ai', icon: <FaBrain aria-hidden="true" />, name: 'AI' },
+    { id: 'nestjs', icon: <SiNestjs aria-label="Nest.js" role="img" />, name: 'Nest.js' }
   ];
 
   return (
@@ -51,8 +51,8 @@ const Skills = () => {
                 viewport={{ once: true }}
                 title={tech.name}
               >
-                <TechIconNode>
-                  {tech.icon}
+                <TechIconNode aria-label={tech.name} role="img">
+                  {React.cloneElement(tech.icon, { 'aria-label': tech.name, role: 'img' })}
                 </TechIconNode>
               </motion.div>
             ))}

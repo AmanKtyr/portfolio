@@ -73,9 +73,8 @@ export const LogoText = styled.div`
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
-    color: var(--gray-color);
+    color: ${({ theme }) => theme.isDarkMode ? '#cbd5e1' : '#475569'};
     margin-top: 2px;
-    opacity: 0.8;
   }
 
   &.footer {

@@ -198,8 +198,8 @@ const LanguageSwitcher = () => {
         aria-label="Switch language"
         aria-expanded={isOpen}
       >
-        <FaGlobe className="globe-icon" />
-        <img className="flag-img" src={getFlagUrl(currentLang.flagCode)} alt={currentLang.label} />
+        <FaGlobe className="globe-icon" aria-hidden="true" />
+        <img className="flag-img" src={getFlagUrl(currentLang.flagCode)} alt="" aria-hidden="true" width="18" height="13" />
         <span>{currentLang.label}</span>
       </SwitcherButton>
 
@@ -217,9 +217,9 @@ const LanguageSwitcher = () => {
                 $active={lang.code === i18n.language}
                 onClick={() => handleSelect(lang.code)}
               >
-                <img className="flag-img" src={getFlagUrl(lang.flagCode)} alt={lang.label} />
+                <img className="flag-img" src={getFlagUrl(lang.flagCode)} alt="" aria-hidden="true" width="22" height="16" />
                 <span className="label">{lang.label}</span>
-                <FaCheck className="check" />
+                <FaCheck className="check" aria-hidden="true" />
               </DropdownItem>
             ))}
           </Dropdown>

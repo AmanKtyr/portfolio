@@ -100,7 +100,7 @@ const ProjectDetails = () => {
 
           <div className="container">
             <BackButton to="/projects">
-              <FaArrowLeft /> BACK_TO_PROJECT_INDEX
+              <FaArrowLeft aria-hidden="true" /> BACK_TO_PROJECT_INDEX
             </BackButton>
 
             <ProjectHeader>
@@ -118,6 +118,8 @@ const ProjectDetails = () => {
                   src={project.previewImage} 
                   alt={`${project.title} - ${project.category} engineered by Aman Katiyar (Aman Ktyr)`} 
                   loading="lazy"
+                  width="1200"
+                  height="675"
                 />
               </ImageGallery>
             </motion.div>
@@ -174,24 +176,24 @@ const ProjectDetails = () => {
                   
                   <ProjectLinks>
                     {project.npm ? (
-                      <ProjectLink href={project.npm} target="_blank" rel="noopener noreferrer" primary="true">
-                        <SiNpm /> NPM Package
+                      <ProjectLink href={project.npm} target="_blank" rel="noopener noreferrer" primary="true" aria-label={`View ${project.title} on npm`}>
+                        <SiNpm role="presentation" aria-hidden="true" /> NPM Package
                       </ProjectLink>
                     ) : (
                       project.demo && project.demo !== '#' && (
-                        <ProjectLink href={project.demo} target="_blank" rel="noopener noreferrer" primary="true">
-                          <FaExternalLinkAlt /> Live Preview
+                        <ProjectLink href={project.demo} target="_blank" rel="noopener noreferrer" primary="true" aria-label={`View live demo of ${project.title}`}>
+                          <FaExternalLinkAlt aria-hidden="true" /> Live Preview
                         </ProjectLink>
                       )
                     )}
                     {project.mcp && (
-                      <ProjectLink href={project.mcp} target="_blank" rel="noopener noreferrer">
-                        <FaServer /> Glama MCP
+                      <ProjectLink href={project.mcp} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} on Glama MCP`}>
+                        <FaServer aria-hidden="true" /> Glama MCP
                       </ProjectLink>
                     )}
                     {project.github && project.github !== '#' && (
-                      <ProjectLink href={project.github} target="_blank" rel="noopener noreferrer">
-                        <FaGithub /> GitHub Source
+                      <ProjectLink href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`View source code of ${project.title} on GitHub`}>
+                        <FaGithub aria-hidden="true" /> GitHub Source
                       </ProjectLink>
                     )}
                   </ProjectLinks>

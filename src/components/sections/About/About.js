@@ -41,7 +41,7 @@ const About = () => {
             <VisualSection>
               <AboutImageContainer>
                 <AboutImage>
-                  <img src={aboutImg} alt="Aman Katiyar" />
+                  <img src={aboutImg} alt="Aman Katiyar" width="500" height="500" loading="lazy" />
                   <div className="scan-line"></div>
                 </AboutImage>
               </AboutImageContainer>

@@ -70,7 +70,9 @@ const TechStack = () => {
             <MarqueeRow duration="40s">
                 {row1.map((tech, i) => (
                     <TechCard key={i}>
-                        <IconBox color={tech.color}>{tech.icon}</IconBox>
+                        <IconBox color={tech.color} aria-hidden="true">
+                            {React.cloneElement(tech.icon, { 'aria-hidden': 'true', role: 'presentation' })}
+                        </IconBox>
                         <TechName>{tech.name}</TechName>
                     </TechCard>
                 ))}
@@ -79,7 +81,9 @@ const TechStack = () => {
             <MarqueeRow duration="35s" reverse={true}>
                 {row2.map((tech, i) => (
                     <TechCard key={i}>
-                        <IconBox color={tech.color}>{tech.icon}</IconBox>
+                        <IconBox color={tech.color} aria-hidden="true">
+                            {React.cloneElement(tech.icon, { 'aria-hidden': 'true', role: 'presentation' })}
+                        </IconBox>
                         <TechName>{tech.name}</TechName>
                     </TechCard>
                 ))}

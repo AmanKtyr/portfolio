@@ -95,6 +95,8 @@ const ThemeSwitcher = () => {
         onClick={handleToggleTheme}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
+        aria-label={isDarkMode ? t('theme.switchToLight', 'Switch to Light Mode') : t('theme.switchToDark', 'Switch to Dark Mode')}
+        title={isDarkMode ? t('theme.switchToLight', 'Switch to Light Mode') : t('theme.switchToDark', 'Switch to Dark Mode')}
         whileTap={{ scale: 0.9 }}
         whileHover={{
           rotate: isDarkMode ? -15 : 15,

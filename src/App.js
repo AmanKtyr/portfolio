@@ -3,25 +3,24 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import theme from './styles/Theme';
 import { ThemeProvider } from './context/ThemeContext';
-import { useContext, useState } from 'react';
+import { useContext, useState, lazy, Suspense } from 'react';
 import { ThemeContext } from './context/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
 
-// Pages
 import Home from './pages/Home/Home';
-import ProjectDetails from './pages/ProjectDetails/ProjectDetails';
-import Services from './pages/Services/Services';
-import ContactPage from './pages/Contact/Contact';
-import AboutPage from './pages/About/About';
-import SkillsPage from './pages/Skills/Skills';
-import ProjectsPage from './pages/Projects/Projects';
-
-// Components
 import ScrollToTop from './components/layout/ScrollToTop/ScrollToTop';
 import GSAPBackground from './components/backgrounds/GSAPBackground/GSAPBackground';
 import PageTransition from './components/layout/PageTransition/PageTransition';
 import Loader from './components/ui/Loader/Loader';
+
+// Lazy load secondary routes for bundle reduction
+const ProjectDetails = lazy(() => import('./pages/ProjectDetails/ProjectDetails'));
+const Services = lazy(() => import('./pages/Services/Services'));
+const ContactPage = lazy(() => import('./pages/Contact/Contact'));
+const AboutPage = lazy(() => import('./pages/About/About'));
+const SkillsPage = lazy(() => import('./pages/Skills/Skills'));
+const ProjectsPage = lazy(() => import('./pages/Projects/Projects'));
 
 function App() {
   return (
@@ -71,15 +70,17 @@ function AppContent() {
     <>
       <AnimatePresence mode="wait">
         <PageTransition key={location.pathname}>
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/skills" element={<SkillsPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/project/:id" element={<ProjectDetails />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
+          <Suspense fallback={null}>
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/skills" element={<SkillsPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/project/:id" element={<ProjectDetails />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </Suspense>
         </PageTransition>
       </AnimatePresence>
       <ScrollToTop />

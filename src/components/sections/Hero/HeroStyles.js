@@ -185,9 +185,8 @@ export const HeroText = styled.div`
     font-size: clamp(0.9rem, 1.5vw, 1rem);
     margin-bottom: 2rem;
     max-width: 550px;
-    color: var(--gray-color);
+    color: ${({ theme }) => theme.isDarkMode ? '#cbd5e1' : '#475569'};
     line-height: 1.6;
-    opacity: 0.8;
 
     @media (max-width: 992px) {
       margin: 0 auto 2.5rem;
@@ -222,9 +221,9 @@ export const HeroBtns = styled.div`
     gap: 0.5rem;
     padding: 1rem 2rem;
     background: var(--primary-color);
-    color: white;
+    color: ${({ theme }) => theme.isDarkMode ? '#030712' : '#ffffff'};
     border-radius: var(--border-radius);
-    font-weight: 600;
+    font-weight: 700;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;

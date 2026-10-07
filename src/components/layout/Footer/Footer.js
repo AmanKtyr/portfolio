@@ -60,8 +60,8 @@ const Footer = () => {
               {t('footer.ctaSubtext')}
             </CTASubtext>
           </CTAContent>
-          <CTAButton href="/#contact">
-            {t('footer.ctaButton')} <FaArrowRight />
+          <CTAButton as={Link} to="/contact">
+            {t('footer.ctaButton')} <FaArrowRight aria-hidden="true" />
           </CTAButton>
         </CTACard>
       </FooterCTA>
@@ -83,7 +83,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="GitHub"
               >
-                <FaGithub />
+                <FaGithub aria-hidden="true" />
               </SocialLink>
               <SocialLink
                 href="https://linkedin.com/in/amanktyr"
@@ -91,15 +91,15 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <FaLinkedinIn />
+                <FaLinkedinIn aria-hidden="true" />
               </SocialLink>
               <SocialLink
-                href="https://twitter.com"
+                href="https://twitter.com/AmanKtyr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter"
               >
-                <FaTwitter />
+                <FaTwitter aria-hidden="true" />
               </SocialLink>
             </FooterSocial>
           </FooterBrand>
@@ -109,11 +109,11 @@ const Footer = () => {
             <ColumnTitle>{t('footer.navigation')}</ColumnTitle>
             <FooterLinks>
               <li><Link to="/">{t('header.home')}</Link></li>
-              <li><Link to="/#about">{t('header.about')}</Link></li>
-              <li><Link to="/#skills">{t('header.skills')}</Link></li>
-              <li><Link to="/#projects">{t('header.projects')}</Link></li>
-              <li><Link to="/#services">{t('header.services')}</Link></li>
-              <li><Link to="/#contact">{t('header.contact')}</Link></li>
+              <li><Link to="/about">{t('header.about')}</Link></li>
+              <li><Link to="/skills">{t('header.skills')}</Link></li>
+              <li><Link to="/projects">{t('header.projects')}</Link></li>
+              <li><Link to="/services">{t('header.services')}</Link></li>
+              <li><Link to="/contact">{t('header.contact')}</Link></li>
             </FooterLinks>
           </FooterColumn>
 
@@ -134,16 +134,20 @@ const Footer = () => {
             <ColumnTitle>{t('footer.getInTouch')}</ColumnTitle>
             <ContactList>
               <ContactItem>
-                <ContactIcon><FaMapMarkerAlt /></ContactIcon>
+                <ContactIcon><FaMapMarkerAlt aria-hidden="true" /></ContactIcon>
                 <ContactText>Lucknow, Uttar Pradesh, India</ContactText>
               </ContactItem>
-              <ContactItem as="a" href="mailto:amankatiyar.tech01@gmail.com" style={{ textDecoration: 'none' }}>
-                <ContactIcon><FaEnvelope /></ContactIcon>
-                <ContactText>amankatiyar.tech01@gmail.com</ContactText>
+              <ContactItem>
+                <a href="mailto:amankatiyar.tech01@gmail.com" style={{ display: 'flex', alignItems: 'flex-start', gap: '0.85rem', color: 'inherit', textDecoration: 'none' }} aria-label="Email: amankatiyar.tech01@gmail.com">
+                  <ContactIcon><FaEnvelope aria-hidden="true" /></ContactIcon>
+                  <ContactText>amankatiyar.tech01@gmail.com</ContactText>
+                </a>
               </ContactItem>
-              <ContactItem as="a" href="tel:+916387343245" style={{ textDecoration: 'none' }}>
-                <ContactIcon><FaPhone /></ContactIcon>
-                <ContactText>+91 6387343245</ContactText>
+              <ContactItem>
+                <a href="tel:+916387343245" style={{ display: 'flex', alignItems: 'flex-start', gap: '0.85rem', color: 'inherit', textDecoration: 'none' }} aria-label="Phone: +91 6387343245">
+                  <ContactIcon><FaPhone aria-hidden="true" /></ContactIcon>
+                  <ContactText>+91 6387343245</ContactText>
+                </a>
               </ContactItem>
             </ContactList>
 

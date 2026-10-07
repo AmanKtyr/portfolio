@@ -6,10 +6,10 @@ const Logo = ({ size = 'medium', showTagline = true, isFooter = false }) => {
   const { t } = useTranslation();
 
   return (
-    <LogoWrapper to="/">
+    <LogoWrapper to="/" aria-label="Aman Katiyar Portfolio Homepage">
       {/* Recreated Monogram Logo based on User's Image */}
       <LogoSvg className={`${size} logo-svg`}>
-        <svg viewBox="-10 0 130 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ color: 'var(--text-color, #ffffff)' }}>
+        <svg viewBox="-10 0 130 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true" style={{ color: 'var(--text-color, #ffffff)' }}>
           {/* White 'A' Shape */}
           <polygon 
             points="40,10 0,90 15,90 40,40 52.5,65 60,50 40,10" 

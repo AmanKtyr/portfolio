@@ -428,10 +428,11 @@ export const ProjectsCategories = styled.div`
 export const CategoryItem = styled.button`
   padding: 0.6rem 2rem;
   background: ${({ active }) => active === 'true' ? 'var(--primary-color)' : 'transparent'};
-  color: ${({ active, theme }) => active === 'true' ? 'white' : theme.colors.text};
+  color: ${({ active, theme }) => active === 'true' ? (theme.isDarkMode ? '#030712' : '#ffffff') : theme.colors.text};
   border: 1px solid ${({ active }) => active === 'true' ? 'var(--primary-color)' : 'rgba(var(--primary-rgb), 0.2)'};
   font-family: 'monospace';
   font-size: 0.85rem;
+  font-weight: ${({ active }) => active === 'true' ? '700' : '600'};
   text-transform: uppercase;
   letter-spacing: 1.5px;
   cursor: pointer;
@@ -440,13 +441,13 @@ export const CategoryItem = styled.button`
   position: relative;
 
   &:hover {
-    color: var(--primary-color);
+    color: ${({ active, theme }) => active === 'true' ? (theme.isDarkMode ? '#030712' : '#ffffff') : 'var(--primary-color)'};
     border-color: var(--primary-color);
     transform: translateY(-2px);
   }
 
-  ${({ active }) => active === 'true' && css`
-    &:hover { color: white; }
+  ${({ active, theme }) => active === 'true' && css`
+    &:hover { color: ${theme.isDarkMode ? '#030712' : '#ffffff'}; }
     box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.3);
   `}
 `;

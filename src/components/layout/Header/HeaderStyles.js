@@ -10,15 +10,17 @@ export const HeaderContainer = styled.header`
   z-index: 1000;
   background-color: ${({ scrolled, theme }) =>
     scrolled
-      ? theme.colors.background
-      : 'transparent'};
-  backdrop-filter: ${({ scrolled }) => scrolled ? 'blur(20px)' : 'none'};
+      ? (theme.isDarkMode ? 'rgba(3, 7, 18, 0.95)' : 'rgba(255, 255, 255, 0.95)')
+      : (theme.isDarkMode ? 'rgba(3, 7, 18, 0.88)' : 'rgba(255, 255, 255, 0.88)')};
+  backdrop-filter: blur(20px);
   border-bottom: ${({ scrolled, theme }) =>
     scrolled
       ? theme.isDarkMode
-        ? '1px solid rgba(255, 255, 255, 0.05)'
-        : '1px solid rgba(0, 0, 0, 0.05)'
-      : 'none'};
+        ? '1px solid rgba(255, 255, 255, 0.08)'
+        : '1px solid rgba(0, 0, 0, 0.08)'
+      : theme.isDarkMode
+        ? '1px solid rgba(255, 255, 255, 0.04)'
+        : '1px solid rgba(0, 0, 0, 0.04)'};
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   padding: ${({ scrolled }) => (scrolled ? '0.4rem 0' : '0.8rem 0')};
 `;
@@ -58,14 +60,14 @@ export const NavMenu = styled.ul`
   padding: 0.2rem;
   background: ${({ theme }) =>
     theme.isDarkMode
-      ? 'rgba(15, 23, 42, 0.4)'
-      : 'rgba(255, 255, 255, 0.6)'};
+      ? 'rgba(15, 23, 42, 0.88)'
+      : 'rgba(255, 255, 255, 0.92)'};
   border-radius: 8px;
   backdrop-filter: blur(16px);
   border: 1px solid ${({ theme }) =>
     theme.isDarkMode
-      ? 'rgba(255, 255, 255, 0.08)'
-      : 'rgba(0, 0, 0, 0.08)'};
+      ? 'rgba(255, 255, 255, 0.12)'
+      : 'rgba(0, 0, 0, 0.1)'};
   box-shadow: ${({ theme }) => theme.shadows.small};
 `;
 
@@ -186,7 +188,7 @@ export const PrimaryButton = styled.div`
   .btn-primary {
     padding: 0.6rem 1.2rem;
     background: var(--primary-color);
-    color: white;
+    color: ${({ theme }) => theme.isDarkMode ? '#030712' : '#ffffff'};
     border-radius: 2px;
     font-weight: 700;
     font-size: 0.75rem;

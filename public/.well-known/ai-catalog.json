@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agenticresourcediscovery.org/spec/v1/schema.json",
+  "specVersion": "1.0",
+  "host": {
+    "identifier": "https://aman.ktyr.in",
+    "displayName": "Aman Katiyar Portfolio & AI Systems",
+    "description": "Official engineering portfolio and agentic capabilities for Aman Katiyar (Aman Ktyr), Full-Stack AI Engineer & Solutions Architect.",
+    "documentationUrl": "https://aman.ktyr.in/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ard:amanktyr:tool:tailor-mcp",
+      "displayName": "Tailor MCP Server",
+      "type": "mcp-server",
+      "url": "https://glama.ai/mcp/servers/AmanKtyr/Tailor",
+      "description": "Model Context Protocol server for Spec-Driven Development (SDD), AST code reuse, and progressive project memory (.ai/).",
+      "representativeQueries": [
+        "spec-driven development framework",
+        "AST code reuse",
+        "MCP server for coding agent",
+        "codebase architecture memory"
+      ]
+    },
+    {
+      "identifier": "urn:ard:amanktyr:portfolio:discovery",
+      "displayName": "Aman Katiyar Engineering Profile Discovery",
+      "type": "agent",
+      "url": "https://aman.ktyr.in/llms.txt",
+      "description": "Machine-readable engineering profile, technical skills matrix, and project documentation for autonomous AI agents.",
+      "representativeQueries": [
+        "hire full stack AI engineer",
+        "portfolio of Aman Katiyar",
+        "solutions architect projects",
+        "agentic systems developer"
+      ]
+    }
+  ]
+}

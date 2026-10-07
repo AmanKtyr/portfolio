@@ -190,7 +190,7 @@ const ProjectsPage = () => {
                   <ProjectImg className="project-img">
                     <div className="scanning-line" />
                     <span className="card-id">{index + 1 < 10 ? `0${index + 1}` : index + 1}</span>
-                    <img src={project.previewImage} alt={`${project.title} - ${project.category} project by Aman Katiyar`} loading="lazy" />
+                    <img src={project.previewImage} alt={`${project.title} - ${project.category} project by Aman Katiyar`} loading="lazy" width="600" height="340" />
                     <ProjectOverlay className="project-overlay">
                         <ProjectLink
                           href={project.github}
@@ -198,7 +198,7 @@ const ProjectsPage = () => {
                           rel="noopener noreferrer"
                           aria-label={`View ${project.title} source code on GitHub`}
                         >
-                          <FaGithub />
+                          <FaGithub aria-hidden="true" />
                         </ProjectLink>
                         <ProjectLink
                           href={project.demo}
@@ -206,7 +206,7 @@ const ProjectsPage = () => {
                           rel="noopener noreferrer"
                           aria-label={`View ${project.title} live demo`}
                         >
-                          <FaExternalLinkAlt />
+                          <FaExternalLinkAlt aria-hidden="true" />
                         </ProjectLink>
 
                     </ProjectOverlay>

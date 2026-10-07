@@ -6,14 +6,7 @@ import reportWebVitals from './reportWebVitals';
 // Import i18n
 import './i18n/i18n';
 
-// Import Google Fonts
-import WebFont from 'webfontloader';
 
-WebFont.load({
-  google: {
-    families: ['Poppins:300,400,500,600,700,800', 'sans-serif']
-  }
-});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -36,6 +36,7 @@ const ScanLine = styled.div`
   pointer-events: none;
   z-index: 11;
   opacity: 0.5;
+  will-change: transform;
 `;
 
 const GrainOverlay = styled.div`
@@ -118,7 +119,7 @@ const GSAPBackground = () => {
       });
 
       gsap.to('.global-scan', {
-        top: "100%",
+        y: "100vh",
         duration: 4,
         repeat: -1,
         ease: "none"

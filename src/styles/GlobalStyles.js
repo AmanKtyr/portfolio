@@ -165,11 +165,13 @@ const GlobalStyles = createGlobalStyle`
 
   .btn-primary {
     background-color: var(--primary-color);
-    color: white;
+    color: ${({ theme }) => theme.isDarkMode ? '#030712' : '#ffffff'};
+    font-weight: 700;
     box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.2);
 
     &:hover {
       background-color: var(--secondary-color);
+      color: ${({ theme }) => theme.isDarkMode ? '#030712' : '#ffffff'};
       transform: translateY(-2px);
       box-shadow: 0 6px 15px rgba(var(--primary-rgb), 0.3);
     }
@@ -182,7 +184,7 @@ const GlobalStyles = createGlobalStyle`
 
     &:hover {
       background-color: var(--primary-color);
-      color: white;
+      color: ${({ theme }) => theme.isDarkMode ? '#030712' : '#ffffff'};
       transform: translateY(-2px);
       box-shadow: 0 6px 15px rgba(var(--primary-rgb), 0.1);
     }

@@ -68,10 +68,10 @@ const Contact = () => {
   ];
 
   const socials = [
-    { icon: <FaGithub />, href: 'https://github.com/AmanKtyr' },
-    { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/amanktyr' },
-    { icon: <FaCodepen />, href: 'https://codepen.io/amanktyr' },
-    { icon: <FaQuora />, href: 'https://www.quora.com/profile/AmAn-KtYr-1' },
+    { icon: <FaGithub aria-hidden="true" />, href: 'https://github.com/AmanKtyr', label: 'GitHub' },
+    { icon: <FaLinkedin aria-hidden="true" />, href: 'https://www.linkedin.com/in/amanktyr', label: 'LinkedIn' },
+    { icon: <FaCodepen aria-hidden="true" />, href: 'https://codepen.io/amanktyr', label: 'CodePen' },
+    { icon: <FaQuora aria-hidden="true" />, href: 'https://www.quora.com/profile/AmAn-KtYr-1', label: 'Quora' },
   ];
 
   return (
@@ -101,6 +101,8 @@ const Contact = () => {
                   as={detail.href ? 'a' : 'div'} 
                   href={detail.href || undefined}
                   target={detail.href?.startsWith('http') ? '_blank' : undefined}
+                  rel={detail.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  aria-label={detail.href ? `${detail.label}: ${detail.value}` : undefined}
                 >
                   <div className="icon">{detail.icon}</div>
                   <div className="details">
@@ -113,7 +115,13 @@ const Contact = () => {
 
             <SocialFrame>
               {socials.map((s, i) => (
-                <SocialBox key={i} href={s.href} target="_blank">
+                <SocialBox 
+                  key={i} 
+                  href={s.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label={`Visit Aman Katiyar's ${s.label} profile`}
+                >
                   {s.icon}
                 </SocialBox>
               ))}

@@ -176,7 +176,7 @@ const AboutPage = () => {
 
               <BlueprintVisual>
                 <ProfileSpec>
-                  <img src={aboutImg} alt="Aman Katiyar Blueprint" />
+                  <img src={aboutImg} alt="Aman Katiyar Blueprint" width="400" height="400" loading="lazy" />
                   <div className="corner-tag">U_IDENT: AMAN_K</div>
                 </ProfileSpec>
               </BlueprintVisual>

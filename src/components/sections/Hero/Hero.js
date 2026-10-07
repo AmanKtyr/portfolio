@@ -88,7 +88,7 @@ const Hero = () => {
 
   const renderName = (text) => {
     return text.split('').map((char, i) => (
-      <span key={i} className="name-char" style={{ opacity: 0, display: 'inline-block', transform: 'translateY(10px)' }}>
+      <span key={i} className="name-char" style={{ display: 'inline-block' }}>
         {char === ' ' ? '\u00A0' : char}
       </span>
     ));
@@ -234,7 +234,7 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <img src={laptopImage} alt="Aman Katiyar - Full-Stack AI Engineer & Solutions Architect" loading="lazy" />
+              <img src={laptopImage} alt="Aman Katiyar - Full-Stack AI Engineer & Solutions Architect" loading="lazy" width="600" height="450" />
             </motion.div>
           </VisualEngine>
         </HeroImage>
