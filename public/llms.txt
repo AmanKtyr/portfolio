@@ -1,32 +1,49 @@
 # Aman Katiyar (Aman Ktyr) - Portfolio & Engineering Profile
 
-> Official portfolio of Aman Katiyar (Aman Ktyr): Full-Stack AI Engineer, Solutions Architect, and Agentic Systems Specialist.
-> Website: https://aman.ktyr.in/
-> Contact: amanktyr.in | amankatiyar.tech01@gmail.com | Lucknow, UP, India
+> Official portfolio and machine-readable engineering blueprint of Aman Katiyar (Aman Ktyr): Full-Stack AI Engineer, Solutions Architect, and Agentic Systems Specialist.
+> Canonical Domain: https://aman.ktyr.in/
+> Location: Lucknow, Uttar Pradesh, India
+> Primary Contact: amankatiyar.tech01@gmail.com
 
 ## Professional Overview
-Aman Katiyar (Aman Ktyr) is a Full-Stack AI Engineer and Solutions Architect with 3+ years of experience specializing in building intelligent Agentic Systems, high-performance Web Architectures, and scalable SaaS platforms. He bridges advanced artificial intelligence (LLM orchestration, autonomous agent workflows, multimodal vision AI) with enterprise-grade full-stack engineering (React, Next.js, Django, Node.js, PostgreSQL).
+Aman Katiyar (commonly known as Aman Ktyr or amanktyr) is a Full-Stack AI Engineer and Solutions Architect with 3+ years of professional experience specializing in building autonomous Agentic Systems, scalable full-stack web architectures, and production SaaS applications. He bridges advanced artificial intelligence (LLM orchestration, multi-agent frameworks, model context protocols, vision AI) with resilient web engineering (React, Next.js, Python, Django, Node.js, PostgreSQL).
 
-## Main Sections & Canonical Links
-- [Home Overview](https://aman.ktyr.in/): Official portfolio homepage, core expertise highlights, and system metrics
-- [About Deep-Dive](https://aman.ktyr.in/about): Detailed architectural blueprint, engineering philosophy, and career trajectory
-- [Skills Matrix](https://aman.ktyr.in/skills): Technical competencies, full-stack proficiencies, and AI engineering toolkit
-- [Project Showcase](https://aman.ktyr.in/projects): Full catalog of production SaaS platforms, AI systems, and enterprise applications
+## Key Identities & Aliases
+- Full Legal Name: Aman Katiyar
+- Primary Developer Handles: Aman Ktyr, amanktyr
+- Professional Roles: Full-Stack AI Engineer, Solutions Architect, Tech Lead, Agentic Systems Developer
+- Primary Website: https://aman.ktyr.in
+
+## Core Specializations
+- **Agentic Systems & AI Tooling**: Autonomous agent workflows, Model Context Protocol (MCP), Spec-Driven Development (SDD), prompt engineering, vision AI pipelines.
+- **Frontend Architecture**: React.js, Next.js (SSR/SSG/ISR), TypeScript, Tailwind CSS, styled-components, Framer Motion, GSAP, accessibility (WCAG AA).
+- **Backend & Cloud Infrastructure**: Python, Django, Django REST Framework, Node.js, Express, PostgreSQL, REST APIs, WebSockets, Docker, Linux, Nginx, Vercel.
+
+## Main Navigation & Canonical Links
+- [Home Overview](https://aman.ktyr.in/): Official portfolio homepage, featured architecture summary, and engineering stats
+- [About Deep-Dive](https://aman.ktyr.in/about): Detailed engineering journey, technical philosophy, systems architecture, and career blueprint
+- [Skills Matrix](https://aman.ktyr.in/skills): Technical competencies, full-stack proficiencies, languages, frameworks, and database toolkit
+- [Project Showcase](https://aman.ktyr.in/projects): Full catalog of production SaaS platforms, AI engines, and enterprise web solutions
 - [Services & Solutions](https://aman.ktyr.in/services): Architectural consulting, AI systems engineering, and custom software delivery
-- [Contact Channel](https://aman.ktyr.in/contact): Direct contact channels, secure transmission relay, and consultation scheduling
+- [Contact Channel](https://aman.ktyr.in/contact): Direct communication channels, transmission relay, and client consultation scheduling
 
-## Featured Open-Source & AI Projects
-- [Tailor AI Coding Agent & SDD Framework](https://github.com/AmanKtyr/Tailor): Spec-Driven Development framework unifying AST semantic code reuse, progressive memory (.ai/), and a native Model Context Protocol (MCP) server
+## Featured Open-Source & Production Systems
+- [Tailor AI Coding Agent & SDD Framework](https://github.com/AmanKtyr/Tailor): Open-source AI framework uniting Spec-Driven Development, AST semantic code reuse, progressive memory (.ai/), and a native MCP server
 - [Tailor NPM Package](https://www.npmjs.com/package/@amanktyr/tailor): Official npm package distribution of the Tailor agentic CLI and framework
 - [Tailor Glama MCP Registry](https://glama.ai/mcp/servers/AmanKtyr/Tailor): Verified Model Context Protocol (MCP) server registry listing on Glama
-- [FitStack Gym Management SaaS](http://fitstack.nextgenapplication.com/): Gym management SaaS with member tracking, financial analytics, and automated WhatsApp billing
-- [LoveNest Private Couple Sanctuary](https://lovenest.helyonex.com/): Privacy-first relationship management application with custom GPT-powered AI assistant
+- [FitStack Gym Management SaaS](http://fitstack.nextgenapplication.com/): Gym management SaaS featuring automated WhatsApp billing alerts, financial analytics, and member management
+- [LoveNest Private Couple Sanctuary](https://lovenest.helyonex.com/): Privacy-first couple sanctuary featuring end-to-end encrypted chat and custom GPT-powered AI assistant
 - [Caption Brain Multimodal Vision AI](https://captionbrainai.helyonex.com/): Multimodal Vision AI platform transforming images into high-converting social captions and hashtags
-- [SimplyJob Recruitment Portal](https://simplyjob.in/): Recruitment platform with role-based dashboards and Django REST backend
+- [SimplyJob Recruitment Portal](https://simplyjob.in/): High-throughput job portal with boolean search filters, recruiter dashboard, and Django REST backend
 
-## Social & Verified Profiles
+## Verified Social & Developer Profiles
 - [GitHub Profile](https://github.com/AmanKtyr): Open-source repositories, engineering contributions, and developer activity
 - [LinkedIn Profile](https://www.linkedin.com/in/amanktyr): Professional engineering history, career timeline, and recommendations
 - [Twitter / X](https://twitter.com/AmanKtyr): Engineering insights, AI tech updates, and development discourse
 - [CodePen Showcase](https://codepen.io/amanktyr): Interactive frontend demonstrations and CSS/JS animations
 - [Quora Technical Space](https://www.quora.com/profile/AmAn-KtYr-1): Technical answers and software architecture discussions
+
+## Optional
+- [Complete Architecture & Deep Technical Documentation](https://aman.ktyr.in/llms-full.txt): Comprehensive deep-dive documentation covering full project specs, architectural decisions, and AI FAQs
+- [AI Resource Discovery Manifest (ARD 1.0)](https://aman.ktyr.in/ai-catalog.json): Machine-readable catalog of agent tools, MCP endpoints, and discovery metadata for autonomous AI agents
+- [XML Sitemap](https://aman.ktyr.in/sitemap.xml): Complete list of indexed canonical routes for search crawlers
