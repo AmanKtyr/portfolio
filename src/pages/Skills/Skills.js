@@ -187,7 +187,9 @@ const Skills = () => {
               {techItems.map((tech, index) => (
                 <motion.div key={index} initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: index * 0.05 }} viewport={{ once: true }}>
                   <TechItem>
-                    <TechIcon style={{ color: tech.color }}>{tech.icon}</TechIcon>
+                    <TechIcon style={{ color: tech.color }}>
+                      {React.cloneElement(tech.icon, { 'aria-label': tech.name, role: 'img', title: tech.name })}
+                    </TechIcon>
                     <TechName>{tech.name}</TechName>
                   </TechItem>
                 </motion.div>

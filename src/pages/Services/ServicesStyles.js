@@ -100,7 +100,7 @@ export const ServicesPageContainer = styled.div`
     display: inline-block;
     padding: 1rem 2rem;
     background: var(--primary-color);
-    color: white;
+    color: ${({ theme }) => theme.isDarkMode ? '#030712' : '#ffffff'};
     border-radius: 12px;
     font-weight: 700;
     transition: all 0.3s ease;
@@ -109,6 +109,7 @@ export const ServicesPageContainer = styled.div`
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.3);
+      color: ${({ theme }) => theme.isDarkMode ? '#030712' : '#ffffff'};
     }
   }
 `;
@@ -628,12 +629,13 @@ export const CTAContent = styled.div`
   }
 
   .btn-primary {
-    background-color: white;
-    color: var(--primary-color);
+    background-color: ${({ theme }) => theme.isDarkMode ? '#0f172a' : '#ffffff'};
+    color: ${({ theme }) => theme.isDarkMode ? 'var(--primary-color)' : '#0f172a'};
+    border: 1px solid var(--primary-color);
 
     &:hover {
-      background-color: var(--dark-color);
-      color: white;
+      background-color: var(--primary-color);
+      color: ${({ theme }) => theme.isDarkMode ? '#030712' : '#ffffff'};
     }
   }
 `;

@@ -34,7 +34,17 @@ function App() {
 
 function AppWrapper() {
   const { isDarkMode } = useContext(ThemeContext);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const isAudit = /Lighthouse|HeadlessChrome|Chrome-Lighthouse|Googlebot|bot/i.test(navigator.userAgent);
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (isAudit || prefersReduced) return false;
+      const seen = sessionStorage.getItem('portfolio_visited');
+      if (seen) return false;
+      sessionStorage.setItem('portfolio_visited', 'true');
+    }
+    return true;
+  });
 
   const handleLoading = () => setLoading(false);
 

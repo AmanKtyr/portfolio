@@ -16,17 +16,17 @@ export const ProjectsFilter = styled.div`
 
 export const FilterBtn = styled.button`
   padding: 0.5rem 1.5rem;
-  border: none;
+  border: 1px solid ${({ active }) => (active === 'true' ? 'var(--primary-color)' : 'rgba(255, 255, 255, 0.12)')};
   background-color: ${({ active }) => (active === 'true' ? 'var(--primary-color)' : 'transparent')};
-  color: ${({ active }) => (active === 'true' ? 'white' : 'var(--gray-color)')};
+  color: ${({ active, theme }) => (active === 'true' ? (theme.isDarkMode ? '#030712' : '#ffffff') : (theme.isDarkMode ? '#e2e8f0' : '#1e293b'))};
   border-radius: var(--border-radius);
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
   transition: var(--transition);
 
   &:hover {
-    background-color: ${({ active }) => (active === 'true' ? 'var(--secondary-color)' : 'rgba(var(--primary-rgb), 0.1)')};
-    color: ${({ active }) => (active === 'true' ? 'white' : 'var(--primary-color)')};
+    background-color: ${({ active }) => (active === 'true' ? 'var(--secondary-color)' : 'rgba(var(--primary-rgb), 0.15)')};
+    color: ${({ active, theme }) => (active === 'true' ? (theme.isDarkMode ? '#030712' : '#ffffff') : 'var(--primary-color)')};
   }
 `;
 

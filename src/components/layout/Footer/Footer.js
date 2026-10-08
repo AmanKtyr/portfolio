@@ -81,25 +81,28 @@ const Footer = () => {
                 href="https://github.com/amanktyr"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="GitHub"
+                aria-label="Aman Katiyar GitHub profile"
               >
                 <FaGithub aria-hidden="true" />
+                <span className="sr-only">GitHub</span>
               </SocialLink>
               <SocialLink
                 href="https://linkedin.com/in/amanktyr"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
+                aria-label="Aman Katiyar LinkedIn profile"
               >
                 <FaLinkedinIn aria-hidden="true" />
+                <span className="sr-only">LinkedIn</span>
               </SocialLink>
               <SocialLink
                 href="https://twitter.com/AmanKtyr"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter"
+                aria-label="Aman Katiyar Twitter profile"
               >
                 <FaTwitter aria-hidden="true" />
+                <span className="sr-only">Twitter</span>
               </SocialLink>
             </FooterSocial>
           </FooterBrand>
@@ -173,7 +176,7 @@ const Footer = () => {
             SYS_REV: 2.0.4 // UNIT: ARCHIVE_V1
           </div>
           <FooterMadeWith style={{ fontFamily: 'monospace' }}>
-            BUILD: {t('footer.passion')} <FaHeart />
+            BUILD: {t('footer.passion')} <FaHeart aria-hidden="true" />
           </FooterMadeWith>
         </FooterBottom>
       </FooterInner>

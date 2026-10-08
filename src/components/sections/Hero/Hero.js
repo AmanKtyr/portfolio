@@ -216,7 +216,8 @@ const Hero = () => {
                   data-cursor-text={social.label}
                   aria-label={`Visit Aman Katiyar's ${social.label} profile`}
                 >
-                  <social.Icon />
+                  <social.Icon aria-hidden="true" />
+                  <span className="sr-only">Visit Aman Katiyar's {social.label} profile</span>
                 </SocialIcon>
               </motion.div>
             ))}
@@ -234,7 +235,7 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <img src={laptopImage} alt="Aman Katiyar - Full-Stack AI Engineer & Solutions Architect" loading="lazy" width="600" height="450" />
+              <img src={laptopImage} alt="Aman Katiyar - Full-Stack AI Engineer & Solutions Architect" loading="eager" fetchPriority="high" width="600" height="450" />
             </motion.div>
           </VisualEngine>
         </HeroImage>

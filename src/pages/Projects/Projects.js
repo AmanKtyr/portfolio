@@ -192,6 +192,7 @@ const ProjectsPage = () => {
                     <span className="card-id">{index + 1 < 10 ? `0${index + 1}` : index + 1}</span>
                     <img src={project.previewImage} alt={`${project.title} - ${project.category} project by Aman Katiyar`} loading="lazy" width="600" height="340" />
                     <ProjectOverlay className="project-overlay">
+                      {project.github && project.github !== '#' && (
                         <ProjectLink
                           href={project.github}
                           target="_blank"
@@ -199,7 +200,10 @@ const ProjectsPage = () => {
                           aria-label={`View ${project.title} source code on GitHub`}
                         >
                           <FaGithub aria-hidden="true" />
+                          <span className="sr-only">View {project.title} source code on GitHub</span>
                         </ProjectLink>
+                      )}
+                      {project.demo && project.demo !== '#' && (
                         <ProjectLink
                           href={project.demo}
                           target="_blank"
@@ -207,8 +211,9 @@ const ProjectsPage = () => {
                           aria-label={`View ${project.title} live demo`}
                         >
                           <FaExternalLinkAlt aria-hidden="true" />
+                          <span className="sr-only">View {project.title} live demo</span>
                         </ProjectLink>
-
+                      )}
                     </ProjectOverlay>
                   </ProjectImg>
                   <ProjectInfo>
@@ -217,8 +222,12 @@ const ProjectsPage = () => {
                       <Link to={`/project/${project.slug || project.id}`}>{project.title}</Link>
                     </ProjectTitle>
                     <ProjectDesc>{project.description}</ProjectDesc>
-                    <Link to={`/project/${project.slug || project.id}`} className="btn-text">
-                      {t('projects.viewDetails')} <FaArrowRight />
+                    <Link 
+                      to={`/project/${project.slug || project.id}`} 
+                      className="btn-text"
+                      aria-label={`View details for ${project.title}`}
+                    >
+                      {t('projects.viewDetails')} <FaArrowRight aria-hidden="true" />
                     </Link>
                   </ProjectInfo>
                 </ProjectCard>

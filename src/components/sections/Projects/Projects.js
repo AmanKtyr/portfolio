@@ -71,29 +71,35 @@ const Projects = () => {
             >
               <ProjectCard className="project-card">
                 <ProjectImg className="project-img">
-                  <img src={project.previewImage} alt={project.title} />
+                  <img src={project.previewImage} alt={`${project.title} preview`} width="600" height="340" loading="lazy" />
                   <ProjectOverlay>
                     <ProjectLinks>
-                      <ProjectLink
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${project.title} GitHub repository`}
-                        data-cursor-text="GitHub"
-                        data-cursor-variant="text"
-                      >
-                        <FaGithub aria-hidden="true" />
-                      </ProjectLink>
-                      <ProjectLink
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${project.title} live demo`}
-                        data-cursor-text="Live Demo"
-                        data-cursor-variant="text"
-                      >
-                        <FaExternalLinkAlt aria-hidden="true" />
-                      </ProjectLink>
+                      {project.github && project.github !== '#' && (
+                        <ProjectLink
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${project.title} source code on GitHub`}
+                          data-cursor-text="GitHub"
+                          data-cursor-variant="text"
+                        >
+                          <FaGithub aria-hidden="true" />
+                          <span className="sr-only">View {project.title} source code on GitHub</span>
+                        </ProjectLink>
+                      )}
+                      {project.demo && project.demo !== '#' && (
+                        <ProjectLink
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${project.title} live demo`}
+                          data-cursor-text="Live Demo"
+                          data-cursor-variant="text"
+                        >
+                          <FaExternalLinkAlt aria-hidden="true" />
+                          <span className="sr-only">View {project.title} live demo</span>
+                        </ProjectLink>
+                      )}
                     </ProjectLinks>
                   </ProjectOverlay>
                 </ProjectImg>
@@ -103,8 +109,14 @@ const Projects = () => {
                     <Link to={`/project/${project.slug || project.id}`}>{project.title}</Link>
                   </ProjectTitle>
                   <ProjectDesc>{project.description}</ProjectDesc>
-                  <Link to={`/project/${project.slug || project.id}`} className="btn-text" data-cursor-text="View Details" data-cursor-variant="link">
-                    View Details <FaArrowRight />
+                  <Link 
+                    to={`/project/${project.slug || project.id}`} 
+                    className="btn-text" 
+                    data-cursor-text="View Details" 
+                    data-cursor-variant="link"
+                    aria-label={`View details for ${project.title}`}
+                  >
+                    View Details <FaArrowRight aria-hidden="true" />
                   </Link>
                 </ProjectInfo>
               </ProjectCard>

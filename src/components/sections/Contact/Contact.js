@@ -123,6 +123,7 @@ const Contact = () => {
                   aria-label={`Visit Aman Katiyar's ${s.label} profile`}
                 >
                   {s.icon}
+                  <span className="sr-only">{s.label}</span>
                 </SocialBox>
               ))}
             </SocialFrame>

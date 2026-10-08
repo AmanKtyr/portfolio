@@ -54,7 +54,7 @@ const ScrollToTop = () => {
       isVisible={isVisible}
       aria-label="Scroll to top"
     >
-      <FaArrowUp />
+      <FaArrowUp aria-hidden="true" />
     </ScrollButton>
   );
 };

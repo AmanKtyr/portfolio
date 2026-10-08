@@ -51,8 +51,9 @@ const Skills = () => {
                 viewport={{ once: true }}
                 title={tech.name}
               >
-                <TechIconNode aria-label={tech.name} role="img">
+                <TechIconNode title={tech.name}>
                   {React.cloneElement(tech.icon, { 'aria-label': tech.name, role: 'img' })}
+                  <span className="sr-only">{tech.name}</span>
                 </TechIconNode>
               </motion.div>
             ))}

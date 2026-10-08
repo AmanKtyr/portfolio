@@ -114,7 +114,7 @@ const ThemeSwitcher = () => {
               animate="animate"
               exit="exit"
             >
-              <FaSun />
+              <FaSun aria-hidden="true" />
             </motion.div>
           ) : (
             <motion.div
@@ -124,7 +124,7 @@ const ThemeSwitcher = () => {
               animate="animate"
               exit="exit"
             >
-              <FaMoon />
+              <FaMoon aria-hidden="true" />
             </motion.div>
           )}
         </AnimatePresence>

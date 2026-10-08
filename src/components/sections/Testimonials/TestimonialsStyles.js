@@ -151,8 +151,8 @@ export const AuthorName = styled.h3`
 
 export const AuthorPosition = styled.p`
   font-size: 0.75rem;
-  color: ${({ theme }) => theme.isDarkMode ? '#cbd5e1' : '#475569'};
-  font-weight: 600;
+  color: ${({ theme }) => theme.isDarkMode ? '#e2e8f0' : '#334155'};
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 `;

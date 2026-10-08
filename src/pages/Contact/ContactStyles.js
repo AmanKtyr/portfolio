@@ -373,7 +373,7 @@ export const ContactForm = styled.form`
     display: inline-block;
     padding: 1rem 2rem;
     background: var(--primary-color);
-    color: white;
+    color: ${({ theme }) => theme.isDarkMode ? '#030712' : '#ffffff'};
     font-family: 'monospace';
     text-transform: uppercase;
     font-weight: 800;

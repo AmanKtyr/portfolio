@@ -216,6 +216,7 @@ const LanguageSwitcher = () => {
                 key={lang.code}
                 $active={lang.code === i18n.language}
                 onClick={() => handleSelect(lang.code)}
+                aria-label={`Select ${lang.label} language`}
               >
                 <img className="flag-img" src={getFlagUrl(lang.flagCode)} alt="" aria-hidden="true" width="22" height="16" />
                 <span className="label">{lang.label}</span>
