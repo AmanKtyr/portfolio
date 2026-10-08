@@ -54,6 +54,11 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
+  select option {
+    background-color: ${({ theme }) => (theme.isDarkMode ? '#0f172a' : '#ffffff')};
+    color: ${({ theme }) => (theme.isDarkMode ? '#f8fafc' : '#0f172a')};
+  }
+
   ul {
     list-style: none;
   }

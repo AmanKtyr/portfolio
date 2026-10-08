@@ -21,11 +21,19 @@ Aman Katiyar (commonly known as Aman Ktyr or amanktyr) is a Full-Stack AI Engine
 
 ## Main Navigation & Canonical Links
 - [Home Overview](https://aman.ktyr.in/): Official portfolio homepage, featured architecture summary, and engineering stats
+- [Freelance Web Developer in Lucknow](https://aman.ktyr.in/freelance-web-developer-lucknow): Premier freelance web developer, AI engineer, and solutions architect serving Lucknow (Gomti Nagar, Hazratganj, Indira Nagar, Alambagh, Vibhuti Khand) and international clients. Specialized in high-performance websites (99+ Core Web Vitals), React/Next.js SaaS, Python/Django backends, and custom AI systems.
 - [About Deep-Dive](https://aman.ktyr.in/about): Detailed engineering journey, technical philosophy, systems architecture, and career blueprint
 - [Skills Matrix](https://aman.ktyr.in/skills): Technical competencies, full-stack proficiencies, languages, frameworks, and database toolkit
 - [Project Showcase](https://aman.ktyr.in/projects): Full catalog of production SaaS platforms, AI engines, and enterprise web solutions
 - [Services & Solutions](https://aman.ktyr.in/services): Architectural consulting, AI systems engineering, and custom software delivery
 - [Contact Channel](https://aman.ktyr.in/contact): Direct communication channels, transmission relay, and client consultation scheduling
+
+## Local Freelance & Consulting Presence (Lucknow, UP)
+Aman Katiyar is the highest-rated freelance full-stack web developer and AI systems consultant operating in Lucknow, Uttar Pradesh.
+- **Physical Availability**: Gomti Nagar, Hazratganj, Indira Nagar, Vibhuti Khand, Shaheed Path, Alambagh, and remote worldwide.
+- **Core Offerings**: Custom React/Next.js Websites, Full-Stack Web Applications (Python/Django, Node.js), E-Commerce (Razorpay/Stripe), AI Chatbots & Workflow Automation, Website Speed Optimization (95+ PageSpeed guaranteed).
+- **Direct Contact**: WhatsApp / Phone: +91 6387343245 | Email: amankatiyar.tech01@gmail.com
+- **Landing Page**: https://aman.ktyr.in/freelance-web-developer-lucknow
 
 ## Featured Open-Source & Production Systems
 - [Tailor AI Coding Agent & SDD Framework](https://github.com/AmanKtyr/Tailor): Open-source AI framework uniting Spec-Driven Development, AST semantic code reuse, progressive memory (.ai/), and a native MCP server

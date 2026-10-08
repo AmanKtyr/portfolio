@@ -21,6 +21,7 @@ const ContactPage = lazy(() => import('./pages/Contact/Contact'));
 const AboutPage = lazy(() => import('./pages/About/About'));
 const SkillsPage = lazy(() => import('./pages/Skills/Skills'));
 const ProjectsPage = lazy(() => import('./pages/Projects/Projects'));
+const FreelanceLucknow = lazy(() => import('./pages/FreelanceLucknow/FreelanceLucknow'));
 
 function App() {
   return (
@@ -89,6 +90,8 @@ function AppContent() {
               <Route path="/project/:id" element={<ProjectDetails />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/freelance-web-developer-lucknow" element={<FreelanceLucknow />} />
+              <Route path="/freelancer-lucknow" element={<FreelanceLucknow />} />
             </Routes>
           </Suspense>
         </PageTransition>

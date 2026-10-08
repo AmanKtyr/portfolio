@@ -117,6 +117,7 @@ const Footer = () => {
               <li><Link to="/projects">{t('header.projects')}</Link></li>
               <li><Link to="/services">{t('header.services')}</Link></li>
               <li><Link to="/contact">{t('header.contact')}</Link></li>
+              <li><Link to="/freelance-web-developer-lucknow">Freelancer Lucknow</Link></li>
             </FooterLinks>
           </FooterColumn>
 
@@ -128,7 +129,7 @@ const Footer = () => {
               <li><Link to="/services">{t('footer.apiArch')}</Link></li>
               <li><Link to="/services">{t('footer.responsiveDesign')}</Link></li>
               <li><Link to="/services">{t('footer.ecommerce')}</Link></li>
-              <li><Link to="/services">{t('footer.uiux')}</Link></li>
+              <li><Link to="/freelance-web-developer-lucknow">Freelance Web Dev</Link></li>
             </FooterLinks>
           </FooterColumn>
 

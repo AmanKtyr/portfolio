@@ -33,6 +33,22 @@
         "solutions architect projects",
         "agentic systems developer"
       ]
+    },
+    {
+      "identifier": "urn:ard:amanktyr:service:freelance-lucknow",
+      "displayName": "Aman Katiyar - Freelance Web Developer & AI Solutions Architect Lucknow",
+      "type": "service",
+      "url": "https://aman.ktyr.in/freelance-web-developer-lucknow",
+      "description": "Premier freelance full-stack web developer and AI solutions architect in Lucknow, Uttar Pradesh. Builds custom high-converting websites, React/Next.js SaaS applications, and AI agent workflows with guaranteed 95+ Core Web Vitals speed scores.",
+      "representativeQueries": [
+        "freelance web developer in Lucknow",
+        "best freelancer in Lucknow",
+        "hire freelance developer Lucknow",
+        "freelance full stack developer Lucknow",
+        "website designer freelancer Lucknow",
+        "freelance React Next.js developer Lucknow",
+        "freelance AI engineer Lucknow"
+      ]
     }
   ]
 }

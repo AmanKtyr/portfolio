@@ -92,6 +92,32 @@ const Services = () => {
                 >
                   {t('services.subtitle')}
                 </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.6 }}
+                  style={{ marginTop: '1.8rem' }}
+                >
+                  <Link
+                    to="/freelance-web-developer-lucknow"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.6rem',
+                      padding: '0.6rem 1.2rem',
+                      borderRadius: '50px',
+                      background: 'rgba(var(--primary-rgb), 0.1)',
+                      border: '1px solid var(--primary-color)',
+                      color: 'var(--primary-color)',
+                      fontSize: '0.88rem',
+                      fontWeight: 600,
+                      textDecoration: 'none'
+                    }}
+                  >
+                    <span>📍</span> Local in Lucknow? Explore Dedicated Freelance Services →
+                  </Link>
+                </motion.div>
               </div>
 
               <VisualEngine>
