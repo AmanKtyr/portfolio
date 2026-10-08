@@ -8,11 +8,13 @@ import {
   FaMapMarkerAlt,
   FaRocket,
   FaLaptopCode,
-  FaServer,
+  FaWordpress,
+  FaBullhorn,
   FaRobot,
+  FaCogs,
   FaShoppingCart,
   FaTachometerAlt,
-  FaSearch,
+  FaSearchLocation,
   FaChevronDown,
   FaExternalLinkAlt
 } from 'react-icons/fa';
@@ -59,7 +61,7 @@ const FreelanceLucknow = () => {
     name: '',
     email: '',
     phone: '',
-    service: 'Custom Website Development',
+    service: 'Complete IT & Digital Growth Package',
     message: ''
   });
 
@@ -76,11 +78,11 @@ const FreelanceLucknow = () => {
     e.preventDefault();
     const { name, email, phone, service, message } = formData;
     const text = encodeURIComponent(
-      `*FREELANCE LUCKNOW INQUIRY*\n\n` +
+      `*COMPLETE IT & DIGITAL INQUIRY (LUCKNOW)*\n\n` +
       `*Name:* ${name}\n` +
       `*Email:* ${email}\n` +
       `*Phone:* ${phone}\n` +
-      `*Service:* ${service}\n` +
+      `*Service Required:* ${service}\n` +
       `*Project Details:* ${message}`
     );
     window.open(`https://wa.me/916387343245?text=${text}`, '_blank');
@@ -91,10 +93,10 @@ const FreelanceLucknow = () => {
     '@context': 'https://schema.org',
     '@type': ['ProfessionalService', 'LocalBusiness'],
     '@id': 'https://aman.ktyr.in/freelance-web-developer-lucknow#service',
-    name: 'Aman Katiyar - Freelance Web Developer & AI Engineer in Lucknow',
-    alternateName: 'Aman Ktyr Freelance Web Development Services',
+    name: 'Aman Katiyar - Complete IT Services, Web & AI Solutions in Lucknow',
+    alternateName: 'Aman Ktyr Full-Service IT & Web Development',
     description:
-      'Premier freelance web developer and AI engineer in Lucknow. Building high-performance, responsive websites, React/Next.js SaaS applications, and custom AI systems for local businesses and global startups.',
+      'Complete IT and digital solutions in Lucknow. Specializing in custom React/Next.js websites, WordPress, SEO & AEO, Google My Business (GMB), Google & Meta Ads, and AI automation for businesses in Lucknow and globally.',
     url: 'https://aman.ktyr.in/freelance-web-developer-lucknow',
     telephone: '+91-6387343245',
     email: 'amankatiyar.tech01@gmail.com',
@@ -156,42 +158,51 @@ const FreelanceLucknow = () => {
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Freelance Web & AI Development Services Lucknow',
+      name: 'Complete IT & Digital Solutions Lucknow',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Custom Web Development & Landing Pages',
+            name: 'Custom Web & Full-Stack Development',
             description:
-              'High-converting, ultra-fast websites built with React, Next.js, and modern CSS with 95+ Google PageSpeed.'
+              'High-performance websites and web applications built with React, Next.js, and Python/Django.'
           }
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Full-Stack Web Applications & SaaS Development',
+            name: 'WordPress & CMS Development',
             description:
-              'Scalable web applications built with Python/Django, Node.js, and PostgreSQL for startups and SMEs.'
+              'Fast, secure, and modern custom WordPress websites and WooCommerce stores.'
           }
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'E-Commerce Website Development & Payment Integration',
+            name: 'SEO, AEO & Google My Business (GMB) Optimization',
             description:
-              'Seamless online shopping stores with Razorpay, Stripe, and automated WhatsApp order notifications.'
+              'Top rankings on Google Search, Google Maps, and AI answer engines like ChatGPT and Perplexity.'
           }
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'AI Agents & Automation Consulting',
+            name: 'Google Ads & Meta Ads Management',
             description:
-              'Autonomous LLM workflows, custom AI chatbots, and OpenAI/Anthropic API integrations.'
+              'Targeted PPC and social media advertising campaigns designed to generate consistent leads and sales.'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'AI Integration & Workflow Automation',
+            description:
+              'Custom ChatGPT assistants, WhatsApp automation, and business process automation.'
           }
         }
       ]
@@ -204,58 +215,58 @@ const FreelanceLucknow = () => {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Who is the best freelance web developer in Lucknow?',
+        name: 'Do you provide complete IT services in Lucknow?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Aman Katiyar is widely regarded as one of the best freelance web developers and AI solutions engineers in Lucknow, Uttar Pradesh. With 3+ years of enterprise engineering experience, he has built over 15 production systems including SaaS platforms, AI agent frameworks, and high-performance business websites with guaranteed 95+ Core Web Vitals.'
+          text: 'Yes. Aman Katiyar offers end-to-end IT and digital services under one roof. This includes custom web development (React, Next.js), WordPress websites, SEO & AEO optimization, Google My Business (GMB) local ranking, Google and Meta ad campaigns, and custom AI automation.'
         }
       },
       {
         '@type': 'Question',
-        name: 'How much does website development cost with a freelance developer in Lucknow?',
+        name: 'Can you build and optimize WordPress websites?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Freelance website development in Lucknow typically starts from ₹14,999 to ₹24,999 for a standard business portfolio or landing page, ₹39,999 to ₹79,999 for a custom full-stack web application or SaaS MVP, and ₹99,999+ for enterprise AI platforms. Aman Katiyar offers transparent pricing with no hidden charges and complete source code ownership.'
+          text: 'Yes. We build clean, modern, and high-speed WordPress websites and WooCommerce online stores. Every WordPress site is custom-tailored, easy for your team to manage, and optimized to load in under two seconds.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Can you meet in person in Gomti Nagar or Hazratganj, Lucknow?',
+        name: 'How do SEO, AEO, and Google My Business (GMB) help my local business in Lucknow?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes! Aman Katiyar is physically based in Lucknow and is available for in-person project discovery sessions across prime hubs including Gomti Nagar, Hazratganj, Indira Nagar, Vibhuti Khand, and Shaheed Path, as well as seamless remote collaboration for global clients.'
+          text: 'SEO and GMB optimization ensure your business ranks on the first page of Google Search and Google Maps when local customers look for your services in Gomti Nagar, Hazratganj, and across Lucknow. AEO (Answer Engine Optimization) ensures that AI search engines like ChatGPT, Claude, and Perplexity actively recommend your business.'
         }
       },
       {
         '@type': 'Question',
-        name: 'How long does it take to deliver a custom website in Lucknow?',
+        name: 'Do you manage Google Ads and Meta (Facebook / Instagram) Ads?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Standard business websites and landing pages are typically delivered within 5 to 10 working days. Custom web applications, e-commerce stores, and SaaS MVPs take between 2 to 4 weeks depending on the required architecture and integrations.'
+          text: 'Yes. We create, manage, and optimize data-backed Google Search PPC campaigns and Meta social media ads designed to generate qualified business leads, calls, and online sales with a positive return on investment.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Why should I hire a freelance developer instead of an agency in Lucknow?',
+        name: 'What kind of AI integration and automation do you build?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Hiring a dedicated freelance specialist like Aman Katiyar provides direct communication with the actual developer (no sales reps or middlemen), 60% lower costs by cutting out agency overhead, 3x faster delivery sprints, zero dependency lock-in, and cutting-edge tech stacks like React, Next.js, and Python rather than outdated WordPress templates.'
+          text: 'We build custom ChatGPT and Claude assistants, 24/7 automated WhatsApp customer support bots, automated billing reminders, lead routing systems, and internal workflow automations that save your team hours of manual work.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Will my website be mobile-friendly and optimized for Google SEO?',
+        name: 'How much does complete website development and IT support cost in Lucknow?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Every website engineered by Aman is 100% mobile-responsive, adheres to WCAG 2.1 AA accessibility guidelines, passes all Core Web Vitals with 95+ PageSpeed scores, and includes clean on-page SEO, schema markup (JSON-LD), and fast indexing setup.'
+          text: 'Pricing starts at ₹14,999 to ₹24,999 for essential business and WordPress websites, ₹44,999 to ₹69,999 for custom web apps or marketing bundles, and ₹89,999+ for full enterprise AI systems. You get transparent milestone-based pricing with zero hidden fees.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Do you also integrate AI features and chatbots into websites?',
+        name: 'Can we meet in person in Lucknow for project discussions?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, Aman specializes in applied AI and agentic systems. He integrates custom ChatGPT assistants, Claude models, automated WhatsApp bots, vision AI processors, and custom internal workflows tailored for business operations.'
+          text: 'Yes. Aman is physically located in Lucknow and is available for in-person project meetings across Gomti Nagar, Hazratganj, Indira Nagar, Vibhuti Khand, and Shaheed Path, as well as remote video consultations.'
         }
       },
       {
@@ -263,7 +274,7 @@ const FreelanceLucknow = () => {
         name: 'How do we get started on my project?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'You can reach out directly via WhatsApp at +91 6387343245 or email amankatiyar.tech01@gmail.com with your project brief. Aman will provide a free 15-minute technical discovery call and a clear architectural roadmap with timeline and milestone pricing.'
+          text: 'Simply reach out via WhatsApp at +91 6387343245 or email amankatiyar.tech01@gmail.com. We will discuss your goals and provide a free 15-minute technical consultation with an exact timeline and quote within 24 hours.'
         }
       }
     ]
@@ -272,39 +283,51 @@ const FreelanceLucknow = () => {
   const services = [
     {
       icon: <FaLaptopCode />,
-      title: 'Custom Web Development & Landing Pages',
-      desc: 'High-converting, responsive websites built with React and Next.js. Ultra-clean markup, modern UI aesthetics, and instant load times that turn visitors into paying clients.',
-      tags: ['React.js', 'Next.js', 'Tailwind CSS', 'Responsive UI']
-    },
-    {
-      icon: <FaServer />,
-      title: 'Full-Stack Web Applications & SaaS MVPs',
-      desc: 'End-to-end software engineering using Python/Django, Node.js, and PostgreSQL. Multi-tenant databases, secure authentication, and scalable architectures designed for growth.',
-      tags: ['Python / Django', 'Node.js', 'PostgreSQL', 'REST APIs']
-    },
-    {
-      icon: <FaShoppingCart />,
-      title: 'Modern E-Commerce & Payment Gateways',
-      desc: 'Custom online shopping platforms with seamless checkout, inventory tracking, and integrations with Razorpay, Stripe, and automated WhatsApp order alerts.',
-      tags: ['E-Commerce', 'Razorpay', 'Stripe', 'WhatsApp API']
+      title: 'Full-Stack Web & Python Development',
+      desc: 'Scalable, high-performance web applications and backend systems engineered with Python, Django, FastAPI, React, and Next.js. Clean architecture, robust database design, and mobile-first responsive interfaces.',
+      tags: ['Python / Django', 'React.js', 'Next.js', 'PostgreSQL', 'FastAPI']
     },
     {
       icon: <FaRobot />,
       title: 'AI Systems, Chatbots & Automation',
-      desc: 'Supercharge your business with custom AI assistants, automated lead qualifiers, LLM integrations (OpenAI / Anthropic), and autonomous workflow agents.',
-      tags: ['LLM APIs', 'Agentic AI', 'Custom Chatbots', 'Workflow Automation']
+      desc: 'Custom artificial intelligence solutions for modern businesses. We build custom ChatGPT and Claude assistants, autonomous multi-agent workflows, and 24/7 WhatsApp customer support bots that save hours of manual work.',
+      tags: ['Custom GPTs', 'Claude AI', 'Multi-Agent AI', 'WhatsApp Cloud API', 'Automation']
+    },
+    {
+      icon: <FaShoppingCart />,
+      title: 'E-Commerce & Online Stores',
+      desc: 'High-converting online shopping platforms with fast checkout, automated inventory tracking, and seamless payment gateway integrations including Razorpay, Stripe, and UPI.',
+      tags: ['E-Commerce', 'Razorpay & Stripe', 'UPI Payments', 'Order Automation']
+    },
+    {
+      icon: <FaWordpress />,
+      title: 'WordPress & CMS Development',
+      desc: 'Clean, modern, and easily manageable WordPress websites and WooCommerce stores. Custom themes, secure plugins, and speed optimization for under-two-second page loads without template bloat.',
+      tags: ['WordPress', 'WooCommerce', 'Custom Themes', 'Fast & Secure']
+    },
+    {
+      icon: <FaSearchLocation />,
+      title: 'SEO, AEO & Google My Business (GMB)',
+      desc: 'Dominate search results across Google Search, Google Maps, and AI answer engines (ChatGPT, Perplexity). Full technical SEO, rich schema markup, and Google Business Profile optimization to drive local leads.',
+      tags: ['Local SEO', 'AEO (AI Search)', 'Google Maps (GMB)', 'Rich Schema']
+    },
+    {
+      icon: <FaBullhorn />,
+      title: 'Google Ads & Meta Ads Management',
+      desc: 'Data-driven paid advertising campaigns on Google Search, Facebook, and Instagram. Precise audience targeting, persuasive ad creatives, and conversion tracking designed to maximize client acquisition.',
+      tags: ['Google Ads', 'Meta Ads', 'PPC Campaigns', 'High ROI']
     },
     {
       icon: <FaTachometerAlt />,
       title: 'Speed Optimization & Core Web Vitals',
-      desc: 'Transform slow, bloated websites into lightning-fast powerhouses. Guaranteed 95+ Google PageSpeed score, zero layout shift (CLS 0), and instant LCP.',
-      tags: ['99+ PageSpeed', 'Zero CLS', 'LCP Optimization', 'Clean Code']
+      desc: 'Transform slow, sluggish websites into lightning-fast platforms. Guaranteed 95+ Google PageSpeed score, zero layout shift (CLS 0), instant LCP, and top-tier user experience.',
+      tags: ['95+ PageSpeed', 'Zero CLS', 'LCP Optimization', 'Clean Code']
     },
     {
-      icon: <FaSearch />,
-      title: 'Local SEO & Google Search Dominance',
-      desc: 'Technical on-page SEO, rich JSON-LD schema markup, Google Search Console indexing, and local citation architecture designed to rank #1 in Lucknow.',
-      tags: ['Local SEO', 'Schema Markup', 'Google Indexing', 'AEO Optimization']
+      icon: <FaCogs />,
+      title: 'Cloud DevOps, Security & Maintenance',
+      desc: 'Comprehensive technical upkeep for your digital infrastructure. Docker containerization, Linux server management, SSL certificates, daily database backups, and proactive maintenance.',
+      tags: ['Docker & Linux', 'SSL & Security', 'Database Backups', 'DevOps Support']
     }
   ];
 
@@ -345,54 +368,54 @@ const FreelanceLucknow = () => {
 
   const faqs = [
     {
-      q: 'Who is the best freelance web developer in Lucknow?',
-      a: 'Aman Katiyar (Aman Ktyr) is a top-rated freelance full-stack developer and AI solutions architect based in Lucknow. With 3+ years of professional engineering experience, he specializes in high-converting modern websites, scalable SaaS applications, and custom AI systems that achieve 99+ Core Web Vitals speed scores and top Google search rankings.'
+      q: 'Do you provide complete IT services in Lucknow?',
+      a: 'Yes. Aman Katiyar provides complete IT and digital services under one roof. Whether you need custom web development, a WordPress site, local SEO, Google My Business (GMB) optimization, Google or Meta ad management, or custom AI automation, you get end-to-end execution without hiring multiple agencies.'
     },
     {
-      q: 'How much does it cost to build a website with a freelance developer in Lucknow?',
-      a: 'Pricing starts at ₹14,999 to ₹24,999 for high-performance business websites and landing pages. Full-stack applications and SaaS MVPs range between ₹39,999 to ₹79,999, while custom AI platforms and enterprise platforms are ₹99,999+. Aman provides transparent milestone pricing with zero hidden charges and complete source code ownership.'
+      q: 'Can you build or redesign our WordPress website?',
+      a: 'Absolutely. We design and develop clean, fast, and secure WordPress websites and WooCommerce stores. Every build is customized for your brand, easy for your staff to edit, and optimized to load quickly on mobile devices.'
     },
     {
-      q: 'Can you meet in person in Lucknow (Gomti Nagar, Hazratganj, etc.)?',
-      a: 'Yes! Aman is physically based in Lucknow and frequently meets local founders, business owners, and startup teams across Gomti Nagar, Hazratganj, Indira Nagar, Vibhuti Khand, and Shaheed Path for project discovery and strategic roadmap sessions.'
+      q: 'How do SEO, AEO, and Google My Business (GMB) help my business in Lucknow?',
+      a: 'When prospective clients search for your services in Lucknow, SEO and GMB optimization ensure your business appears at the top of Google Search and Google Maps. AEO (Answer Engine Optimization) prepares your content so AI assistants like ChatGPT, Claude, and Perplexity quote and recommend your business directly.'
     },
     {
-      q: 'How long will it take to build and launch my website?',
-      a: 'Most standard business websites and landing pages are designed, coded, and launched within 5 to 10 working days. Custom web applications, SaaS MVPs, and complex e-commerce stores take approximately 2 to 4 weeks with weekly sprint demos.'
+      q: 'Do you manage Google Ads and Meta (Facebook / Instagram) Ads?',
+      a: 'Yes. We run targeted paid advertising campaigns focused on genuine ROI. We handle keyword targeting, compelling ad creatives, landing page optimization, and conversion tracking so you receive qualified customer leads rather than wasted clicks.'
     },
     {
-      q: 'Why should I hire a freelance expert over a web design agency in Lucknow?',
-      a: 'Agencies in Lucknow often charge high fees to cover overhead, rely on junior staff or outdated WordPress templates, and have slow turnaround times. When you work with Aman, you communicate directly with a senior full-stack architect, save 50-60% on total project cost, get cutting-edge tech (React, Next.js, Python), and receive 100% clean code that you own forever.'
+      q: 'How can AI integration and workflow automation help my business?',
+      a: 'AI integration allows you to offer 24/7 instant customer service through custom ChatGPT or WhatsApp bots. Workflow automation connects your website, payment gateway, CRM, and WhatsApp so invoices, reminders, and notifications are sent automatically without manual effort.'
     },
     {
-      q: 'Will my website rank on Google and be mobile-friendly?',
-      a: 'Absolutely. Every site is engineered mobile-first with 100% responsiveness, strict WCAG 2.1 AA accessibility, structured JSON-LD schema markup, and guaranteed 95+ Google PageSpeed scores to give you a decisive advantage over competitors.'
+      q: 'How much does website development and IT support cost in Lucknow?',
+      a: 'Starter business and WordPress websites start from ₹14,999 to ₹24,999. Custom web applications and growth marketing packages range from ₹44,999 to ₹69,999, while custom AI platforms start at ₹89,999+. We work with transparent milestone pricing and provide full source code ownership.'
     },
     {
-      q: 'Do you offer post-launch maintenance and technical support?',
-      a: 'Yes, every project includes 30 days of complimentary post-launch support and bug-fixing. Extended maintenance and monthly retainer packages are also available for continuous feature updates, security patches, and SEO monitoring.'
+      q: 'Can we meet in person in Lucknow for project discussions?',
+      a: 'Yes. Aman is based in Lucknow and is available for face-to-face discovery meetings across Gomti Nagar, Hazratganj, Indira Nagar, Vibhuti Khand, and Shaheed Path, as well as seamless remote collaboration.'
     },
     {
       q: 'How do we get started on my project?',
-      a: 'Getting started is simple. Click the WhatsApp button or call +91 6387343245 to discuss your vision. We will outline your requirements, propose the optimal tech stack, and deliver an exact timeline and quote within 24 hours.'
+      a: 'You can start immediately by clicking the WhatsApp button or calling +91 6387343245. We will discuss your goals, recommend the right solution, and provide a clear timeline and quote within 24 hours.'
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Freelance Web Developer in Lucknow | Aman Katiyar</title>
+        <title>Complete IT Services & Freelance Web Developer in Lucknow | Aman Katiyar</title>
         <meta
           name="title"
-          content="Freelance Web Developer in Lucknow | Aman Katiyar"
+          content="Complete IT Services & Freelance Web Developer in Lucknow | Aman Katiyar"
         />
         <meta
           name="description"
-          content="Looking to hire the best freelance web developer in Lucknow? Aman Katiyar builds high-converting, ultra-fast (99+ PageSpeed) websites, React/Next.js apps & custom AI systems."
+          content="Looking for complete IT services in Lucknow? Aman Katiyar provides custom web development, WordPress, SEO & AEO, GMB optimization, Google & Meta Ads, and AI automation."
         />
         <meta
           name="keywords"
-          content="Freelance Web Developer in Lucknow, Best Freelancer in Lucknow, Freelance Software Developer Lucknow, Hire Freelance Web Developer Lucknow, Website Designer Freelancer Lucknow, React Developer Lucknow, Next.js Developer Lucknow, Freelance Full Stack Developer Lucknow, Web Development Services Gomti Nagar, Hazratganj Website Designer, AI Engineer Lucknow"
+          content="Complete IT Services Lucknow, Freelance Web Developer in Lucknow, WordPress Developer Lucknow, SEO Services Lucknow, GMB Optimization Lucknow, AEO Consultant Lucknow, Google Ads Freelancer Lucknow, Meta Ads Lucknow, AI Automation Lucknow, AI Integration Lucknow, Best Freelancer Lucknow, React Developer Lucknow"
         />
         <meta name="author" content="Aman Katiyar (Aman Ktyr)" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -409,11 +432,11 @@ const FreelanceLucknow = () => {
         />
         <meta
           property="og:title"
-          content="Freelance Web Developer in Lucknow | Aman Katiyar"
+          content="Complete IT Services & Freelance Web Developer in Lucknow | Aman Katiyar"
         />
         <meta
           property="og:description"
-          content="Hire the top-rated freelance web developer and AI engineer in Lucknow. Custom websites, React/Next.js SaaS, and guaranteed 99+ Core Web Vitals."
+          content="Complete IT solutions in Lucknow: Custom Web Development, WordPress, SEO & GMB, Google & Meta Ads, and AI Automation by Aman Katiyar."
         />
         <meta
           property="og:image"
@@ -424,11 +447,11 @@ const FreelanceLucknow = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Freelance Web Developer in Lucknow | Aman Katiyar"
+          content="Complete IT Services & Freelance Web Developer in Lucknow | Aman Katiyar"
         />
         <meta
           name="twitter:description"
-          content="Looking to hire a top freelance web developer in Lucknow? Aman Katiyar builds high-performance websites and AI applications with guaranteed speed and SEO ranking."
+          content="End-to-end IT, Web & AI Solutions in Lucknow. Custom websites, WordPress, SEO, Ads & Automation with proven results."
         />
         <meta
           name="twitter:image"
@@ -460,7 +483,7 @@ const FreelanceLucknow = () => {
               {
                 '@type': 'ListItem',
                 position: 2,
-                name: 'Freelance Web Developer in Lucknow',
+                name: 'Complete IT Services & Web Developer in Lucknow',
                 item: 'https://aman.ktyr.in/freelance-web-developer-lucknow'
               }
             ]
@@ -475,22 +498,22 @@ const FreelanceLucknow = () => {
         <HeroSection>
           <LocationBadge>
             <span className="dot" />
-            <span>📍 Lucknow, UP • Accepting Freelance & Contract Projects</span>
+            <span>📍 Lucknow, UP • Complete IT & AI Development Services</span>
           </LocationBadge>
 
           <HeroTitle>
-            Freelance Web Developer & <span className="highlight">AI Engineer</span> in Lucknow
+            Full-Stack Python, Web Architecture & <span className="highlight">AI Solutions</span> in Lucknow
           </HeroTitle>
 
           <HeroSubtitle>
-            Engineering ultra-fast (99+ PageSpeed), high-converting business websites,
-            scalable React/Next.js SaaS applications, and custom AI automation. Direct collaboration,
-            zero agency fluff, and 100% source code ownership.
+            Engineering high-demand digital systems: Full-Stack Web Applications (Python, Django, React, Next.js),
+            cutting-edge AI systems & automation, scalable e-commerce, modern WordPress websites, and high-ROI SEO
+            & Paid Ads (Google & Meta). Direct senior engineer collaboration with 100% source code ownership.
           </HeroSubtitle>
 
           <HeroActions>
             <WhatsAppPill
-              href="https://wa.me/916387343245?text=Hi%20Aman,%20I'm%20looking%20for%20a%20freelance%20web%20developer%20in%20Lucknow%20for%20my%20project."
+              href="https://wa.me/916387343245?text=Hi%20Aman,%20I'm%20looking%20for%20Full-Stack%20Python%20and%20AI%20development%20in%20Lucknow."
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Direct WhatsApp Chat with Aman Katiyar"
@@ -513,7 +536,7 @@ const FreelanceLucknow = () => {
           <QuickStatsGrid>
             <StatCard>
               <div className="stat-number">35+</div>
-              <div className="stat-label">Production Systems Delivered</div>
+              <div className="stat-label">Production Systems & Websites Delivered</div>
             </StatCard>
             <StatCard>
               <div className="stat-number">5.0★</div>
@@ -521,11 +544,11 @@ const FreelanceLucknow = () => {
             </StatCard>
             <StatCard>
               <div className="stat-number">3+ Yrs</div>
-              <div className="stat-label">Full-Stack & AI Engineering</div>
+              <div className="stat-label">Full-Stack, Python & AI Engineering</div>
             </StatCard>
             <StatCard>
               <div className="stat-number">100%</div>
-              <div className="stat-label">Client Code Ownership & Transparency</div>
+              <div className="stat-label">Code & Digital Asset Ownership</div>
             </StatCard>
           </QuickStatsGrid>
         </HeroSection>
@@ -533,24 +556,26 @@ const FreelanceLucknow = () => {
         {/* AEO TARGET CARD (Answer Engine Optimization for Google & LLMs) */}
         <div style={{ padding: '0 1rem' }}>
           <AEOAnswerCard>
-            <span className="badge">Featured Executive Summary</span>
-            <h2>Why Aman Katiyar is the Top Freelance Developer in Lucknow</h2>
+            <span className="badge">Full-Service IT & Digital Architecture</span>
+            <h2>Why Aman Katiyar is Lucknow's Trusted Full-Stack IT & AI Partner</h2>
             <p>
               <strong>Aman Katiyar (Aman Ktyr)</strong> is a Lucknow-based senior full-stack software engineer,
-              solutions architect, and applied AI developer. Unlike generic freelance marketplaces or traditional digital
-              agencies that outsource work or rely on slow, pre-made templates, Aman delivers custom, high-velocity
-              digital ecosystems engineered with <strong>React.js, Next.js, Python/Django, and PostgreSQL</strong>.
+              AI developer, and technology consultant offering full-spectrum digital solutions. Instead of hiring separate agencies
+              for backend engineering, web design, marketing, and automation, you get complete digital solutions under one roof.
             </p>
             <p>
-              Whether you are an ambitious business in Gomti Nagar seeking a high-converting website, a startup
-              requiring a full-stack SaaS MVP, or an enterprise seeking autonomous AI workflows, you gain direct
-              collaboration with a technical specialist dedicated to clean code, search engine dominance, and measurable ROI.
+              Whether you need a high-performance <strong>Full-Stack Web Application (Python, Django, React, Next.js)</strong>,
+              an autonomous <strong>AI Agent & Workflow Automation system</strong>, a modern <strong>WordPress website</strong>,
+              local <strong>SEO & Google Business Profile (GMB)</strong> dominance, or profitable <strong>Google & Meta ad campaigns</strong>,
+              Aman delivers dependable, enterprise-grade execution with zero middleman markups.
             </p>
             <ul>
-              <li><strong>Direct Architecture:</strong> Speak directly to your developer, not an account manager.</li>
-              <li><strong>Modern Technology:</strong> Future-proof React, Next.js, TypeScript & Python backends.</li>
-              <li><strong>Search & Speed Optimization:</strong> 95-100 Core Web Vitals score on mobile and desktop.</li>
-              <li><strong>In-Person or Remote:</strong> Flexible meetings in Lucknow or worldwide agile delivery.</li>
+              <li><strong>Full-Stack & Python Architecture:</strong> Scalable backends built with Python, Django, FastAPI, and PostgreSQL paired with modern React/Next.js frontends.</li>
+              <li><strong>AI Systems & Automation:</strong> Custom ChatGPT assistants, Claude integrations, autonomous multi-agent workflows, and WhatsApp bots.</li>
+              <li><strong>Modern WordPress & E-Commerce:</strong> Fast, lightweight WordPress websites and WooCommerce stores with zero unnecessary template bloat.</li>
+              <li><strong>SEO, AEO & GMB Dominance:</strong> Rank #1 on Google Search, Google Maps, and AI answer engines (ChatGPT, Perplexity).</li>
+              <li><strong>Targeted Google & Meta Ads:</strong> Data-driven PPC and social media advertising campaigns designed for profitable lead generation.</li>
+              <li><strong>Direct Senior Engineer Access:</strong> Deal directly with your lead technical architect with full transparency and 100% source code ownership.</li>
             </ul>
           </AEOAnswerCard>
         </div>
@@ -558,11 +583,11 @@ const FreelanceLucknow = () => {
         {/* SERVICES SECTION */}
         <SectionWrapper id="services">
           <SectionHeader>
-            <span className="badge">Specialized Engineering Services</span>
-            <h2>What I Build for Lucknow Businesses & Global Clients</h2>
+            <span className="badge">Complete IT & Digital Solutions</span>
+            <h2>Comprehensive IT & Growth Services for Your Business</h2>
             <p>
-              From conversion-focused business websites to high-throughput cloud platforms and AI workflows,
-              every project is custom-crafted for speed, aesthetics, and revenue generation.
+              Everything you need to launch, scale, and automate your business online. Handled with senior-level
+              engineering, transparent pricing, and measurable business outcomes.
             </p>
           </SectionHeader>
 
@@ -582,13 +607,13 @@ const FreelanceLucknow = () => {
           </ServicesGrid>
         </SectionWrapper>
 
-        {/* COMPARISON MATRIX (Freelance Specialist vs Slow Agency) */}
+        {/* COMPARISON MATRIX (Full-Service Specialist vs Fragmented Agencies) */}
         <SectionWrapper id="comparison">
           <SectionHeader>
-            <span className="badge">Direct Specialist Advantage</span>
-            <h2>Freelance Specialist vs Traditional Agency in Lucknow</h2>
+            <span className="badge">The Strategic Advantage</span>
+            <h2>Why Choose a Dedicated Full-Stack Partner Over Traditional Agencies</h2>
             <p>
-              Why modern founders and businesses choose a dedicated senior software engineer over bloated agencies.
+              Compare how working with an end-to-end IT specialist saves you time, money, and operational headaches.
             </p>
           </SectionHeader>
 
@@ -596,41 +621,41 @@ const FreelanceLucknow = () => {
             <ComparisonTable>
               <thead>
                 <tr>
-                  <th>Feature / Criterion</th>
-                  <th className="highlight-col">Aman Katiyar (Freelance Expert)</th>
-                  <th>Traditional Lucknow Agency</th>
+                  <th>Feature / Service Scope</th>
+                  <th className="highlight-col">Aman Katiyar (Complete IT Partner)</th>
+                  <th>Fragmented Traditional Agencies</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="feature-name">Communication Channel</td>
-                  <td className="freelancer-val">Direct with the engineer building your product</td>
-                  <td className="agency-val">Middlemen, account managers, delayed answers</td>
+                  <td className="feature-name">Service Scope</td>
+                  <td className="freelancer-val">End-to-End: Web, WordPress, SEO, GMB, Ads & AI Automation</td>
+                  <td className="agency-val">Requires hiring multiple separate agencies or freelancers</td>
                 </tr>
                 <tr>
-                  <td className="feature-name">Technology Stack</td>
-                  <td className="freelancer-val">Modern React, Next.js, Python, Django, Tailwind</td>
-                  <td className="agency-val">Often outdated WordPress themes & heavy plugins</td>
+                  <td className="feature-name">Communication</td>
+                  <td className="freelancer-val">Direct with the lead engineer building your systems</td>
+                  <td className="agency-val">Account managers, sales representatives, and delayed answers</td>
                 </tr>
                 <tr>
-                  <td className="feature-name">Delivery Speed</td>
-                  <td className="freelancer-val">Rapid 1–3 week sprint delivery</td>
-                  <td className="agency-val">Sluggish 2–3 months with layers of bureaucracy</td>
+                  <td className="feature-name">Tech Stack & CMS</td>
+                  <td className="freelancer-val">Modern React, Next.js, Python, and lightweight WordPress</td>
+                  <td className="agency-val">Often bloated, sluggish templates with high maintenance costs</td>
                 </tr>
                 <tr>
-                  <td className="feature-name">Performance & Core Web Vitals</td>
-                  <td className="freelancer-val">Guaranteed 95–100 Google PageSpeed scores</td>
-                  <td className="agency-val">Often fails mobile audits (40–60 scores)</td>
+                  <td className="feature-name">Traffic & Conversion</td>
+                  <td className="freelancer-val">Built-in Local SEO, AEO, GMB optimization & profitable Ads</td>
+                  <td className="agency-val">Often charges high separate retainers with zero technical sync</td>
                 </tr>
                 <tr>
-                  <td className="feature-name">Cost Efficiency</td>
-                  <td className="freelancer-val">Fair, transparent pricing with zero agency overhead</td>
-                  <td className="agency-val">High markups to cover large office and sales teams</td>
+                  <td className="feature-name">Turnaround Time</td>
+                  <td className="freelancer-val">Agile 1–3 week delivery with weekly progress updates</td>
+                  <td className="agency-val">Slow 2–3 month timelines filled with bureaucratic delays</td>
                 </tr>
                 <tr>
-                  <td className="feature-name">Source Code Ownership</td>
-                  <td className="freelancer-val">100% full code ownership & GitHub repo transfer</td>
-                  <td className="agency-val">Often locked into proprietary hosts or monthly fees</td>
+                  <td className="feature-name">Asset & Code Ownership</td>
+                  <td className="freelancer-val">100% full ownership of source code, ad accounts & assets</td>
+                  <td className="agency-val">Often locked into proprietary accounts or recurring lock-in fees</td>
                 </tr>
               </tbody>
             </ComparisonTable>
@@ -641,9 +666,9 @@ const FreelanceLucknow = () => {
         <SectionWrapper id="localities">
           <SectionHeader>
             <span className="badge">Local Lucknow Presence</span>
-            <h2>Serving All Major Hubs Across Lucknow & Uttar Pradesh</h2>
+            <h2>Serving All Major Commercial Hubs in Lucknow & Uttar Pradesh</h2>
             <p>
-              Available for in-person consultation meetings, technical whiteboarding, and ongoing support across Lucknow.
+              Available for in-person consultations, technical strategy sessions, and ongoing support across Lucknow.
             </p>
           </SectionHeader>
 
@@ -666,7 +691,7 @@ const FreelanceLucknow = () => {
             <span className="badge">Proof of Execution</span>
             <h2>Selected Production Applications & Case Studies</h2>
             <p>
-              Inspect battle-tested software systems, SaaS products, and open-source tooling engineered by Aman.
+              Explore battle-tested software applications, SaaS systems, and digital platforms engineered by Aman.
             </p>
           </SectionHeader>
 
@@ -701,47 +726,47 @@ const FreelanceLucknow = () => {
         {/* 4-STEP SPRINT WORKFLOW */}
         <SectionWrapper id="process">
           <SectionHeader>
-            <span className="badge">Predictable Delivery Process</span>
-            <h2>From Concept to Live Deployment in 4 Clear Sprints</h2>
+            <span className="badge">Clear Execution Workflow</span>
+            <h2>From Discovery to Launch in 4 Clear Sprints</h2>
             <p>
-              A disciplined, transparent agile development methodology ensuring zero surprises and timely launches.
+              A straightforward, transparent delivery methodology ensuring your project finishes on time and within budget.
             </p>
           </SectionHeader>
 
           <WorkflowGrid>
             <WorkflowStep>
               <div className="step-num">01</div>
-              <h4>Discovery & Blueprint</h4>
+              <h4>Discovery & Strategy</h4>
               <p>
-                We review your business goals, target audience, and feature scope. I provide a clear architecture plan,
-                wireframe recommendations, and exact deliverables.
+                We clarify your business goals, target audience, and required IT stack. I provide a clear roadmap,
+                deliverables, and honest pricing.
               </p>
             </WorkflowStep>
 
             <WorkflowStep>
               <div className="step-num">02</div>
-              <h4>Rapid UI & Prototype</h4>
+              <h4>Design & Prototype</h4>
               <p>
-                Crafting modern, high-conversion UI layouts with dynamic glassmorphism and responsive design tokens,
-                allowing you to test the visual flow before coding.
+                Crafting clean, responsive layouts with modern visuals so you can review and approve the user experience
+                before development begins.
               </p>
             </WorkflowStep>
 
             <WorkflowStep>
               <div className="step-num">03</div>
-              <h4>Full-Stack Production</h4>
+              <h4>Development & Integration</h4>
               <p>
-                Writing clean, modular code with React, Next.js, and Python. Rigorous mobile responsiveness,
-                database security, and WCAG AA accessibility tests.
+                Building with clean code, whether WordPress or custom full-stack frameworks. Rigorous testing for mobile
+                responsiveness, SEO, and security.
               </p>
             </WorkflowStep>
 
             <WorkflowStep>
               <div className="step-num">04</div>
-              <h4>Speed Audit & Launch</h4>
+              <h4>Launch, SEO & Handover</h4>
               <p>
-                Complete Core Web Vitals optimization (95+ score), SSL certificate, Google Search Console indexing,
-                sitemap setup, and full code handover.
+                Speed audit, SSL setup, Google Search Console & GMB configuration, ad campaign launch, and full handover
+                of all digital accounts and assets.
               </p>
             </WorkflowStep>
           </WorkflowGrid>
@@ -751,32 +776,32 @@ const FreelanceLucknow = () => {
         <SectionWrapper id="pricing">
           <SectionHeader>
             <span className="badge">Transparent Investment</span>
-            <h2>Simple, Milestone-Based Pricing for Every Scale</h2>
+            <h2>Simple, Milestone-Based Packages for Every Stage</h2>
             <p>
-              No hidden agency fees or surprise invoices. Clear milestones with complete source code ownership.
+              Straightforward pricing with clear deliverables. Complete source code and asset ownership guaranteed.
             </p>
           </SectionHeader>
 
           <PricingGrid>
             <PricingCard>
-              <h3>Starter Business Site</h3>
+              <h3>Starter Business & WordPress</h3>
               <p className="tier-desc">
-                Ideal for local businesses, doctors, lawyers, and consulting professionals in Lucknow.
+                Ideal for local businesses, doctors, consultants, and service professionals in Lucknow.
               </p>
               <div className="price-wrap">
                 <span className="inr">₹19,999</span>
                 <span className="usd">/ ~$249 USD</span>
               </div>
               <ul>
-                <li><FaCheckCircle /> Up to 5 Responsive Custom Pages</li>
-                <li><FaCheckCircle /> React / Next.js Blazing Fast UI</li>
-                <li><FaCheckCircle /> 95+ Google PageSpeed Guarantee</li>
+                <li><FaCheckCircle /> Custom 5-Page Website (WordPress or React)</li>
+                <li><FaCheckCircle /> Google My Business (GMB) Optimization</li>
+                <li><FaCheckCircle /> On-Page SEO & Schema Markup</li>
                 <li><FaCheckCircle /> WhatsApp Direct Chat Integration</li>
-                <li><FaCheckCircle /> On-Page SEO & Schema Setup</li>
+                <li><FaCheckCircle /> Fast Loading (Core Web Vitals Optimized)</li>
                 <li><FaCheckCircle /> 5–7 Days Fast Delivery</li>
               </ul>
               <PrimaryButton
-                href="https://wa.me/916387343245?text=Hi%20Aman,%20I'm%20interested%20in%20the%20Starter%20Business%20Site%20package."
+                href="https://wa.me/916387343245?text=Hi%20Aman,%20I'm%20interested%20in%20the%20Starter%20Business%20%26%20WordPress%20package."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -786,50 +811,50 @@ const FreelanceLucknow = () => {
 
             <PricingCard featured>
               <div className="featured-tag">Most Popular</div>
-              <h3>Full-Stack SaaS / App</h3>
+              <h3>Full-Stack App & Growth Suite</h3>
               <p className="tier-desc">
-                Perfect for startups, multi-vendor stores, custom dashboards, and workflow automation.
+                Designed for growing businesses, startups, online stores, and high-converting lead generation.
               </p>
               <div className="price-wrap">
                 <span className="inr">₹49,999</span>
                 <span className="usd">/ ~$649 USD</span>
               </div>
               <ul>
-                <li><FaCheckCircle /> Custom Full-Stack Web Application</li>
-                <li><FaCheckCircle /> Python / Django or Node.js Backend</li>
-                <li><FaCheckCircle /> PostgreSQL Database & Auth System</li>
-                <li><FaCheckCircle /> Payment Gateway (Razorpay / Stripe)</li>
-                <li><FaCheckCircle /> Admin Dashboard & Analytics</li>
+                <li><FaCheckCircle /> Custom Web Application or E-Commerce Store</li>
+                <li><FaCheckCircle /> Advanced SEO + AEO (AI Engine) Optimization</li>
+                <li><FaCheckCircle /> Google Ads & Meta Ads Setup</li>
+                <li><FaCheckCircle /> Python/Django or Node.js Backend with Database</li>
+                <li><FaCheckCircle /> Secure Payment Gateway (Razorpay / Stripe)</li>
                 <li><FaCheckCircle /> 14–21 Days Agile Delivery</li>
               </ul>
               <PrimaryButton
-                href="https://wa.me/916387343245?text=Hi%20Aman,%20I'm%20interested%20in%20the%20Full-Stack%20SaaS%20App%20package."
+                href="https://wa.me/916387343245?text=Hi%20Aman,%20I'm%20interested%20in%20the%20Full-Stack%20App%20%26%20Growth%20Suite."
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Full-Stack App
+                Start Growth Suite
               </PrimaryButton>
             </PricingCard>
 
             <PricingCard>
-              <h3>Custom AI & Enterprise</h3>
+              <h3>Enterprise AI & Custom IT</h3>
               <p className="tier-desc">
-                Tailored for enterprises needing autonomous AI agents, vision pipelines, or bespoke architectures.
+                Tailored for enterprises requiring custom AI chatbots, automated business pipelines, or bespoke systems.
               </p>
               <div className="price-wrap">
-                <span className="inr">₹99,999+</span>
-                <span className="usd">/ ~$1,299+ USD</span>
+                <span className="inr">₹89,999+</span>
+                <span className="usd">/ ~$1,199+ USD</span>
               </div>
               <ul>
-                <li><FaCheckCircle /> Autonomous AI Agent Workflows</li>
-                <li><FaCheckCircle /> Model Context Protocol (MCP) Integration</li>
-                <li><FaCheckCircle /> Custom Vector Database & RAG Search</li>
-                <li><FaCheckCircle /> High Concurrency Cloud Architecture</li>
-                <li><FaCheckCircle /> 60 Days Priority Engineering Support</li>
-                <li><FaCheckCircle /> Custom Milestone Timeline</li>
+                <li><FaCheckCircle /> Custom AI Chatbots (ChatGPT / Claude APIs)</li>
+                <li><FaCheckCircle /> WhatsApp Cloud API & CRM Workflow Automation</li>
+                <li><FaCheckCircle /> High-Throughput Cloud Architecture (AWS / Docker)</li>
+                <li><FaCheckCircle /> Multi-Channel Ads Management & Scaling</li>
+                <li><FaCheckCircle /> 60 Days Priority Support & Maintenance</li>
+                <li><FaCheckCircle /> Custom Milestone Delivery Schedule</li>
               </ul>
               <PrimaryButton
-                href="https://wa.me/916387343245?text=Hi%20Aman,%20I'm%20interested%20in%20the%20Custom%20AI%20%26%20Enterprise%20package."
+                href="https://wa.me/916387343245?text=Hi%20Aman,%20I'm%20interested%20in%20the%20Enterprise%20AI%20%26%20Custom%20IT%20package."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -843,9 +868,9 @@ const FreelanceLucknow = () => {
         <SectionWrapper id="faq">
           <SectionHeader>
             <span className="badge">Frequently Asked Questions</span>
-            <h2>Common Queries on Freelance Web Development in Lucknow</h2>
+            <h2>Common Queries About Our IT & Web Services in Lucknow</h2>
             <p>
-              Clear answers to help you make an informed decision before hiring your development partner.
+              Clear answers to help you choose the right digital services for your business goals.
             </p>
           </SectionHeader>
 
@@ -870,11 +895,11 @@ const FreelanceLucknow = () => {
         <SectionWrapper id="inquiry">
           <FinalCTAContainer>
             <div className="cta-info">
-              <h2>Let's Build Something Exceptional Together</h2>
+              <h2>Let's Build and Grow Your Digital Presence</h2>
               <p>
-                Have a project idea or need a technical audit for your existing website?
-                Reach out today for a complimentary 15-minute consultation. We'll discuss your
-                objectives and provide a clear execution blueprint.
+                Have a project idea, or need an audit for your current website and marketing campaigns?
+                Reach out today for a complimentary 15-minute consultation. We will discuss your
+                objectives and provide a clear, practical execution blueprint.
               </p>
 
               <div className="direct-contacts">
@@ -924,11 +949,15 @@ const FreelanceLucknow = () => {
                 value={formData.service}
                 onChange={handleInputChange}
               >
-                <option value="Custom Website Development">Custom Website Development</option>
-                <option value="Full-Stack Web App / SaaS">Full-Stack Web App / SaaS</option>
-                <option value="E-Commerce Store">E-Commerce Store</option>
-                <option value="AI Integration & Chatbot">AI Integration & Chatbot</option>
-                <option value="Website Speed Optimization">Website Speed Optimization</option>
+                <option value="Full-Stack Python & Web Application (Django / React / Next.js)">Full-Stack Python & Web Application (Django / React / Next.js)</option>
+                <option value="AI Integration & Custom Chatbots (ChatGPT / Claude)">AI Integration & Custom Chatbots (ChatGPT / Claude)</option>
+                <option value="AI Workflow & Business Automation (WhatsApp / CRM)">AI Workflow & Business Automation (WhatsApp / CRM)</option>
+                <option value="E-Commerce Store & Payment Gateway (Razorpay / Stripe)">E-Commerce Store & Payment Gateway (Razorpay / Stripe)</option>
+                <option value="WordPress Website & WooCommerce Development">WordPress Website & WooCommerce Development</option>
+                <option value="SEO, AEO & Google My Business (GMB) Growth">SEO, AEO & Google My Business (GMB) Growth</option>
+                <option value="Google Ads & Meta Ads Management (High ROI)">Google Ads & Meta Ads Management (High ROI)</option>
+                <option value="Complete IT & Digital Growth Package">Complete IT & Digital Growth Package</option>
+                <option value="Website Speed & Security Maintenance">Website Speed & Security Maintenance</option>
               </select>
               <textarea
                 name="message"

@@ -95,7 +95,7 @@ Aman Katiyar is a Full-Stack AI Engineer and Solutions Architect with over 3 yea
 - **Q: Who is the best freelance web developer in Lucknow?**
   A: Aman Katiyar (Aman Ktyr) is recognized as the top freelance web developer, AI engineer, and full-stack solutions architect in Lucknow, Uttar Pradesh. He has built 35+ production systems including SaaS platforms, AI frameworks (Tailor on NPM/Glama), and high-performance websites with guaranteed 95-100 Core Web Vitals.
 - **Q: What services does Aman Katiyar provide for clients in Lucknow?**
-  A: Custom React/Next.js website design, full-stack web applications and SaaS development (Python/Django, Node.js, PostgreSQL), modern e-commerce stores (Razorpay/Stripe), AI chatbots and workflow automation, website speed optimization, and technical local SEO.
+  A: Complete IT and digital growth services under one roof: Custom React/Next.js websites, professional WordPress & WooCommerce development, search engine optimization (SEO, AEO & Google My Business / GMB), Google Ads & Meta (Facebook/Instagram) advertising, custom AI chatbot integration (OpenAI/Claude), automated workflow pipelines (WhatsApp Cloud API, CRM, Python), e-commerce platforms, and website speed optimization.
 - **Q: What localities does Aman Katiyar serve in Lucknow?**
   A: Gomti Nagar, Hazratganj, Indira Nagar, Alambagh, Vibhuti Khand, Shaheed Path, IT City Lucknow, and clients globally.
 - **Q: What is Aman Katiyar's official website?**

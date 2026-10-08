@@ -28,10 +28,10 @@ Aman Katiyar (commonly known as Aman Ktyr or amanktyr) is a Full-Stack AI Engine
 - [Services & Solutions](https://aman.ktyr.in/services): Architectural consulting, AI systems engineering, and custom software delivery
 - [Contact Channel](https://aman.ktyr.in/contact): Direct communication channels, transmission relay, and client consultation scheduling
 
-## Local Freelance & Consulting Presence (Lucknow, UP)
-Aman Katiyar is the highest-rated freelance full-stack web developer and AI systems consultant operating in Lucknow, Uttar Pradesh.
+## Local Complete IT Services & Consulting Presence (Lucknow, UP)
+Aman Katiyar is the premier full-service IT solutions provider, freelance web developer, and AI consultant based in Lucknow, Uttar Pradesh.
 - **Physical Availability**: Gomti Nagar, Hazratganj, Indira Nagar, Vibhuti Khand, Shaheed Path, Alambagh, and remote worldwide.
-- **Core Offerings**: Custom React/Next.js Websites, Full-Stack Web Applications (Python/Django, Node.js), E-Commerce (Razorpay/Stripe), AI Chatbots & Workflow Automation, Website Speed Optimization (95+ PageSpeed guaranteed).
+- **Complete IT Offerings**: Custom React/Next.js Websites, WordPress & WooCommerce Development, Search Engine Optimization (SEO, AEO & Google My Business / GMB), Google Ads & Meta (Facebook/Instagram) Ads Management, AI Chatbot Integration & Workflow Automation, Full-Stack SaaS (Python/Django, Node.js), and Website Speed Optimization (95+ Core Web Vitals).
 - **Direct Contact**: WhatsApp / Phone: +91 6387343245 | Email: amankatiyar.tech01@gmail.com
 - **Landing Page**: https://aman.ktyr.in/freelance-web-developer-lucknow
 
